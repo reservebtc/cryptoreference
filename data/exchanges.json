@@ -1,0 +1,12 @@
+{
+  "exchanges": [
+    {
+      "id": "binance",
+      "name": "Binance",
+      "tradingFee": "0.1%",
+      "coins": "350+",
+      "bonus": "$100",
+      "rating": 4.7
+    }
+  ]
+}
