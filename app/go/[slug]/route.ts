@@ -1,10 +1,11 @@
 import { NextResponse } from 'next/server';
 
 const AFFILIATE_LINKS: Record<string, string> = {
-  // CEX
+  // CEX (Centralized Exchanges)
   'binance': 'https://www.binance.com/activity/referral-entry/CPA?ref=CPA_007U0H3CDE&utm_source=default',
   'bybit': 'https://www.bybit.com/invite?ref=YOUR_REF_HERE',
   'okx': 'https://okx.ac/join/9121732',
+  'gate': 'https://www.gate.io/signup/AgBFAApb?ref_type=103',
   
   // DEX - Perpetual Futures
   'asterdex': 'https://www.asterdex.com/en/referral/tlRYkq',
