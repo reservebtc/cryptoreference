@@ -7,12 +7,52 @@ export const metadata: Metadata = {
 
 
 const NEWS_UPDATES = [
+
+    {
+    date: 'November 11, 2025',
+    sentiment: 'Mixed - Cautiously Optimistic',
+    sentimentColor: '#f59e0b',
+    isLatest: true,
+    highlights: [
+        'Market sentiment mixed at 42/100 - balancing altseason hopes against prolonged consolidation fatigue',
+        'Futures markets holding prices in tight range - waiting for risk-on catalyst to break current levels',
+        'Trading community advocating spot strategies over leverage - buy fear, sell relief bounces approach gaining traction',
+        'AI bubble concerns emerging - traders discussing potential correction if profit expectations exceed reality',
+        'Privacy coins gaining attention with regulatory shifts - Zcash (ZEC) mentioned as potential rotation play',
+    ],
+    dexActivity: [
+        'AsterDEX: Continues outperforming broader market with steady volume. Hidden orders feature attracting sophisticated traders.',
+        'Community discussing Avantis as interesting Base chain perp DEX alternative - gaining mindshare among traders.',
+        'Meteora (MET) highlighted as unique play in concentrated liquidity pools - speculative positioning emerging.',
+        'General DEX vs CEX debate ongoing - traders weighing custody risks against regulatory compliance burdens.',
+    ],
+    exchangeDevelopments: [
+        'Binance: Stable trading activity. Traders discussing optimal entry points for accumulation phase.',
+        'General exchange sentiment: Frustration with range-bound conditions but preparing for potential breakout.',
+        'Privacy considerations rising - some traders exploring KYC-free alternatives amid regulatory discussions.',
+    ],
+    tradingSentiment: [
+        'Overall: Mixed sentiment (42/100) - hope for Q4 rally tempered by extended consolidation periods',
+        'Strategy Focus: Spot accumulation preferred over leveraged plays. "Buy dips, sell bounces" becoming dominant approach.',
+        'Altcoin Rotation: Community discussing shift from meme coins to fundamental DeFi projects and privacy plays',
+        'Leverage Caution: Multiple warnings about dangerous funding rates and liquidation risks in current tight ranges',
+        'Patience Theme: Long-term holders accumulating while short-term traders frustrated by lack of volatility',
+    ],
+    riskFactors: [
+        'AI sector bubble concerns - comparisons to dot-com era. High infrastructure spending not translating to profits quickly enough',
+        'Funding rates elevated in futures - risk of sharp liquidation cascades if range breaks down',
+        'Extended consolidation testing trader patience - some discussing rotation out of speculative positions',
+        'Ethereum weakness relative to Bitcoin - "not even Nokia anymore" sentiment emerging among traders',
+        'Regulatory uncertainty around privacy coins despite growing interest',
+    ],
+    traderTakeaway: 'Trading community in wait-and-see mode. Sentiment score of 42/100 reflects fatigue with range-bound action but underlying conviction for eventual breakout remains. Smart money accumulating spot positions during fear, taking profits on relief rallies. Privacy narrative (Zcash) and Base DeFi (Avantis) gaining traction as alternative plays. AI bubble concerns creating macro headwinds but not changing bullish Q4 structural view. Best strategy: patience, spot accumulation, avoid over-leverage.',
+    },
  
   {
     date: 'November 10, 2025',
     sentiment: 'Bullish',
     sentimentColor: '#10b981',
-    isLatest: true, 
+    isLatest: false, 
     highlights: [
       'Bitcoin holding $67,000 support level with strong institutional buying pressure. On-chain metrics show accumulation by large wallets.',
       'Ethereum breaking through $3,400 resistance. ETF inflows accelerating. Network activity at 6-month high.',
