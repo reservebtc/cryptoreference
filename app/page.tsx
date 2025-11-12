@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-// Импортируем данные новостей
+
 import { NEWS_UPDATES } from './news/page';
 
 export const metadata: Metadata = {
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  // Получаем последнее обновление автоматически
+
   const latestUpdate = NEWS_UPDATES[0];
   
   return (
@@ -40,14 +40,14 @@ export default function HomePage() {
         </p>
       </header>
 
-      {/* Latest Market Updates Section - АВТОМАТИЧЕСКИ из NEWS_UPDATES */}
+      {/* Latest Market Updates Section */}
       <section style={{ background: '#f0f9ff', padding: '20px', borderRadius: '8px', marginBottom: '30px', border: '2px solid #0070f3' }}>
         <h2 style={{ marginTop: 0, fontSize: '1.5rem', color: '#000' }}>📰 Latest Crypto Market Updates</h2>
         <p style={{ fontSize: '0.9rem', color: '#666', marginBottom: '15px' }}>
           Daily insights from professional crypto traders and investors
         </p>
         
-        {/* АВТОМАТИЧЕСКИЙ блок из последних новостей */}
+        {/* */}
         <div style={{ background: 'white', padding: '15px', borderRadius: '4px', marginBottom: '10px' }}>
           <p style={{ margin: 0, fontWeight: 'bold', color: latestUpdate.sentimentColor }}>
             {latestUpdate.date} - {latestUpdate.sentiment}
