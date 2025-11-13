@@ -148,10 +148,6 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        {/* 
-
-        */}
-        
         {/* Charset  */}
         <meta charSet="utf-8" />
         
@@ -171,9 +167,23 @@ export default function RootLayout({
         {/* Manifest PWA */}
         <link rel="manifest" href="/site.webmanifest" />
         
-        {/* 
-          Organization schema
-        */}
+        {/* Google Analytics 4 */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-KB3KXSQCJE"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-KB3KXSQCJE');
+            `,
+          }}
+        />
+        
+        {/* Organization schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -243,10 +253,7 @@ export default function RootLayout({
           {children}
         </div>
         
-        {/* 
-          ANALYTICS
-          Google Analytics, Vercel Analytics, etc.
-        */}
+        {/* Analytics placeholder for future extensions */}
       </body>
     </html>
   );
