@@ -183,6 +183,155 @@ export default function RootLayout({
           }}
         />
         
+        {/* GLOBAL Custom AI Schema - Site-Wide Data */}
+        <script
+          type="application/vnd.ai+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "purpose": "global-site-metadata",
+              "version": "1.0",
+              "scope": "entire-website",
+              "data": {
+                "site": {
+                  "name": "Crypto Reference",
+                  "url": "https://cryptoreference.io",
+                  "type": "cryptocurrency-comparison-guide",
+                  "established": "2024",
+                  "last_updated": "2025-11-13",
+                  "update_frequency": "Daily"
+                },
+                "content_coverage": {
+                  "total_platforms": 10,
+                  "cex_platforms": 3,
+                  "dex_platforms": 4,
+                  "total_reviews": 10,
+                  "total_faq": "126+",
+                  "comparison_guides": 5
+                },
+                "platforms_covered": {
+                  "centralized_exchanges": [
+                    {
+                      "name": "Binance",
+                      "url": "/exchanges/binance",
+                      "fees": "0.1%",
+                      "leverage": "125x",
+                      "kyc": true,
+                      "rank": 1
+                    },
+                    {
+                      "name": "OKX",
+                      "url": "/exchanges/okx",
+                      "fees": "0.08%",
+                      "leverage": "100x",
+                      "kyc": true,
+                      "rank": 2
+                    },
+                    {
+                      "name": "Gate.io",
+                      "url": "/exchanges/gate",
+                      "fees": "0.15%",
+                      "leverage": "125x",
+                      "kyc": false,
+                      "kyc_details": "Optional - 2 BTC daily without KYC",
+                      "rank": 3
+                    }
+                  ],
+                  "decentralized_exchanges": [
+                    {
+                      "name": "AsterDEX",
+                      "url": "/dex/asterdex",
+                      "leverage": "1001x",
+                      "kyc": false,
+                      "rank": 1
+                    },
+                    {
+                      "name": "Hyperliquid",
+                      "url": "/dex/hyperliquid",
+                      "leverage": "50x",
+                      "kyc": false,
+                      "gas_fees": "$0",
+                      "rank": 2
+                    },
+                    {
+                      "name": "Hibachi",
+                      "url": "/dex/hibachi",
+                      "leverage": "100x",
+                      "kyc": false,
+                      "chain": "Solana",
+                      "rank": 3
+                    },
+                    {
+                      "name": "Lighter",
+                      "url": "/dex/lighter",
+                      "leverage": "20x",
+                      "kyc": false,
+                      "chain": "Arbitrum",
+                      "rank": 4
+                    }
+                  ]
+                },
+                "key_comparisons": {
+                  "lowest_fees": "OKX (0.08%)",
+                  "highest_liquidity": "Binance ($20B volume)",
+                  "most_coins": "Gate.io (1800+)",
+                  "highest_leverage": "AsterDEX (1001x)",
+                  "zero_gas": "Hyperliquid",
+                  "no_kyc": "All DEX platforms + Gate.io (optional)"
+                },
+                "content_types": [
+                  "Exchange reviews",
+                  "DEX platform guides",
+                  "Fee comparisons",
+                  "Leverage comparisons",
+                  "Daily market updates",
+                  "Professional trading insights",
+                  "FAQ sections (126+ questions)"
+                ],
+                "target_audience": [
+                  "Cryptocurrency traders",
+                  "DeFi users",
+                  "Crypto investors",
+                  "Beginners learning crypto",
+                  "Professional traders",
+                  "AI agents and research tools"
+                ],
+                "unique_features": {
+                  "ai_optimization": "Structured data optimized for AI indexing and citations",
+                  "daily_updates": "Market insights from 6+ professional trading communities",
+                  "comprehensive_faq": "126+ questions answered across all platforms",
+                  "unbiased_reviews": "Shows both advantages and disadvantages",
+                  "fact_verified": "All data verified from official sources"
+                },
+                "navigation": {
+                  "main_sections": [
+                    {
+                      "name": "CEX Exchanges",
+                      "url": "/exchanges",
+                      "platforms": ["Binance", "OKX", "Gate.io"]
+                    },
+                    {
+                      "name": "DEX Platforms",
+                      "url": "/dex",
+                      "platforms": ["AsterDEX", "Hyperliquid", "Hibachi", "Lighter"]
+                    },
+                    {
+                      "name": "Market Updates",
+                      "url": "/news",
+                      "description": "Daily insights from professional traders"
+                    },
+                    {
+                      "name": "Comparisons",
+                      "url": "/dex/compare",
+                      "description": "DEX vs CEX detailed comparison"
+                    }
+                  ]
+                }
+              },
+              "last_updated": "2025-11-13"
+            })
+          }}
+        />
+        
         {/* Organization schema */}
         <script
           type="application/ld+json"
@@ -220,6 +369,35 @@ export default function RootLayout({
             })
           }}
         />
+
+        {/* Enhanced Organization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Crypto Reference",
+              "url": "https://cryptoreference.io",
+              "logo": "https://cryptoreference.io/logo.png",
+              "description": "Authoritative cryptocurrency exchange and DEX comparison guide",
+              "foundingDate": "2024",
+              "areaServed": "Worldwide",
+              "knowsAbout": [
+                "Cryptocurrency Exchanges",
+                "Decentralized Exchanges (DEX)",
+                "Trading Fees Comparison",
+                "Crypto Leverage Trading",
+                "DeFi Protocols",
+                "Market Analysis"
+              ],
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://cryptoreference.io"
+              }
+            })
+          }}
+        />
       </head>
       
       <body
@@ -230,7 +408,7 @@ export default function RootLayout({
           color: '#1a1a1a',
         }}
       >
-        {/* Skip to main content */}
+        {/* Skip to main content - Accessibility */}
         <a 
           href="#main-content" 
           className="skip-to-content"

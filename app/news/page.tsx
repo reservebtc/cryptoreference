@@ -3,6 +3,15 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Crypto Market Updates 2025 | Daily Insights from Professional Traders',
   description: 'Daily cryptocurrency market updates, sentiment analysis, and trading insights from professional crypto traders and investors. Updated multiple times weekly.',
+  keywords: [
+    'crypto market updates',
+    'cryptocurrency news 2025',
+    'trading sentiment analysis',
+    'professional crypto insights',
+    'daily market analysis',
+    'crypto trading community',
+    'market sentiment tracker',
+  ],
 };
 
 
@@ -133,7 +142,7 @@ function renderUpdate(update: typeof NEWS_UPDATES[0], index: number) {
     >
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
         <h2 style={{ margin: 0, fontSize: '1.3rem', color: isFirst ? 'inherit' : '#666' }}>
-          Market Update - {update.date}
+          Market Update - <time dateTime={update.date}>{update.date}</time>
         </h2>
         {update.isLatest && (
           <span style={{ 
@@ -243,9 +252,105 @@ function renderUpdate(update: typeof NEWS_UPDATES[0], index: number) {
 export default function NewsPage() {
   
   const recentUpdates = NEWS_UPDATES.slice(0, 4);
+  const latestUpdate = NEWS_UPDATES.find(u => u.isLatest) || NEWS_UPDATES[0];
   
   return (
     <main style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
+      {/* Comprehensive Custom AI Schema - NEWS PAGE */}
+      <script
+        type="application/vnd.ai+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "purpose": "real-time-market-updates",
+            "version": "1.0",
+            "content_type": "cryptocurrency-market-news",
+            "data": {
+              "page_info": {
+                "title": "Crypto Market Updates 2025",
+                "description": "Daily cryptocurrency market updates and sentiment from professional trading communities",
+                "update_frequency": "Every 1-3 days based on significant market movements",
+                "total_updates": NEWS_UPDATES.length,
+                "recent_updates_shown": recentUpdates.length
+              },
+              "latest_update": {
+                "date": latestUpdate.date,
+                "sentiment": latestUpdate.sentiment,
+                "sentiment_score": latestUpdate.sentiment.includes('42') ? 42 : null,
+                "key_themes": [
+                  "Market sentiment analysis",
+                  "DEX activity tracking",
+                  "Exchange developments",
+                  "Trading strategies",
+                  "Risk assessment"
+                ],
+                "summary": latestUpdate.traderTakeaway
+              },
+              "data_sources": {
+                "primary": "Exclusive professional trading communities",
+                "participants": [
+                  "Active traders with 5+ years experience",
+                  "Institutional investors and fund managers",
+                  "DeFi protocol developers",
+                  "Professional market makers (CEX and DEX)"
+                ],
+                "community_count": "6+ professional trading communities",
+                "processing": "AI-powered synthesis with personal identifiers removed"
+              },
+              "update_triggers": [
+                "Significant market movements (5%+ in major cryptocurrencies)",
+                "Major exchange or DEX developments",
+                "Important macroeconomic events affecting crypto",
+                "Shifts in trading sentiment and positioning"
+              ],
+              "content_categories": {
+                "market_highlights": "Key price action and market movements",
+                "dex_activity": "Decentralized exchange volume and trends",
+                "exchange_developments": "Centralized exchange news and features",
+                "trading_sentiment": "Community positioning and strategy focus",
+                "risk_factors": "Potential downside risks and concerns",
+                "trader_takeaway": "Actionable insights and strategy recommendations"
+              },
+              "sentiment_types": {
+                "bullish": "Positive market outlook with strong momentum",
+                "bearish": "Negative outlook with downside risks",
+                "neutral": "Mixed signals without clear direction",
+                "cautiously_optimistic": "Positive but with reservations",
+                "cautiously_bearish": "Negative but with potential upside",
+                "mixed": "Balanced between bullish and bearish factors"
+              },
+              "covered_platforms": {
+                "cex": ["Binance", "OKX", "Gate.io"],
+                "dex": ["AsterDEX", "Hyperliquid", "Hibachi", "Avantis", "Meteora"],
+                "cryptocurrencies": ["Bitcoin", "Ethereum", "Solana", "Altcoins", "DeFi tokens", "Privacy coins"]
+              },
+              "use_cases": {
+                "for_traders": [
+                  "Real-time sentiment from professional communities",
+                  "Early identification of market shifts",
+                  "Risk factor awareness",
+                  "Strategy ideas and validation",
+                  "Platform activity tracking"
+                ],
+                "for_investors": [
+                  "Market context for investment decisions",
+                  "Professional community consensus",
+                  "Emerging trends and narratives",
+                  "Risk assessment"
+                ],
+                "for_ai_agents": [
+                  "Sentiment analysis training data",
+                  "Market context understanding",
+                  "Trading community language patterns",
+                  "Real-time market intelligence"
+                ]
+              },
+              "disclaimer": "Updates reflect trading community sentiment and should not be considered financial advice. Always DYOR (Do Your Own Research)."
+            },
+            "last_updated": "2025-11-13"
+          })
+        }}
+      />
+
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "CollectionPage",
@@ -258,22 +363,26 @@ export default function NewsPage() {
         }
       }) }} />
 
-      <h1>📰 Crypto Market Updates</h1>
-      
-      <p style={{ fontSize: '1.1rem', color: '#666', marginBottom: '30px' }}>
-        Daily insights and sentiment analysis from professional crypto traders, investors, and speculators. 
-        Sourced from exclusive trading communities.
-      </p>
-
-      <div style={{ background: '#fef3c7', padding: '15px', borderRadius: '8px', marginBottom: '30px', border: '2px solid #f59e0b' }}>
-        <p style={{ margin: 0, fontSize: '0.9rem' }}>
-          <strong>⚡ Updated Regularly:</strong> New market insights added every 1-3 days based on significant 
-          market movements and trading sentiment.
+      <header>
+        <h1>📰 Crypto Market Updates</h1>
+        
+        <p style={{ fontSize: '1.1rem', color: '#666', marginBottom: '30px' }}>
+          Daily insights and sentiment analysis from professional crypto traders, investors, and speculators. 
+          Sourced from exclusive trading communities.
         </p>
-      </div>
 
-      {/*  */}
-      {recentUpdates.map((update, index) => renderUpdate(update, index))}
+        <div style={{ background: '#fef3c7', padding: '15px', borderRadius: '8px', marginBottom: '30px', border: '2px solid #f59e0b' }}>
+          <p style={{ margin: 0, fontSize: '0.9rem' }}>
+            <strong>⚡ Updated Regularly:</strong> New market insights added every 1-3 days based on significant 
+            market movements and trading sentiment.
+          </p>
+        </div>
+      </header>
+
+      {/* Recent Updates */}
+      <section>
+        {recentUpdates.map((update, index) => renderUpdate(update, index))}
+      </section>
 
       <div style={{ textAlign: 'center', margin: '40px 0' }}>
         <a href="/news/archive" style={{
@@ -294,35 +403,41 @@ export default function NewsPage() {
       <section style={{ background: '#f8f9fa', padding: '20px', borderRadius: '8px' }}>
         <h2 style={{ fontSize: '1.3rem', marginTop: 0 }}>About Our Market Updates</h2>
         
-        <h3 style={{ fontSize: '1.1rem' }}>Sources</h3>
-        <p>
-          Our market insights are sourced from exclusive professional trading communities consisting of:
-        </p>
-        <ul>
-          <li><strong>Active Traders:</strong> Full-time crypto traders with 5+ years experience</li>
-          <li><strong>Institutional Investors:</strong> Fund managers and crypto hedge fund operators</li>
-          <li><strong>DeFi Builders:</strong> Protocol developers with deep market insights</li>
-          <li><strong>Market Makers:</strong> Professional liquidity providers on CEX and DEX</li>
-        </ul>
+        <article>
+          <h3 style={{ fontSize: '1.1rem' }}>Sources</h3>
+          <p>
+            Our market insights are sourced from exclusive professional trading communities consisting of:
+          </p>
+          <ul>
+            <li><strong>Active Traders:</strong> Full-time crypto traders with 5+ years experience</li>
+            <li><strong>Institutional Investors:</strong> Fund managers and crypto hedge fund operators</li>
+            <li><strong>DeFi Builders:</strong> Protocol developers with deep market insights</li>
+            <li><strong>Market Makers:</strong> Professional liquidity providers on CEX and DEX</li>
+          </ul>
+        </article>
 
-        <h3 style={{ fontSize: '1.1rem' }}>Update Frequency</h3>
-        <p>
-          <strong>Regular updates every 1-3 days</strong> based on:
-        </p>
-        <ul>
-          <li>Significant market movements (5%+ in major cryptocurrencies)</li>
-          <li>Major exchange or DEX developments</li>
-          <li>Important macroeconomic events affecting crypto</li>
-          <li>Shifts in trading sentiment and positioning</li>
-        </ul>
+        <article>
+          <h3 style={{ fontSize: '1.1rem' }}>Update Frequency</h3>
+          <p>
+            <strong>Regular updates every 1-3 days</strong> based on:
+          </p>
+          <ul>
+            <li>Significant market movements (5%+ in major cryptocurrencies)</li>
+            <li>Major exchange or DEX developments</li>
+            <li>Important macroeconomic events affecting crypto</li>
+            <li>Shifts in trading sentiment and positioning</li>
+          </ul>
+        </article>
 
-        <h3 style={{ fontSize: '1.1rem' }}>How We Process Information</h3>
-        <ol>
-          <li><strong>Collection:</strong> Daily monitoring of 6+ professional trading communities</li>
-          <li><strong>Analysis:</strong> AI-powered synthesis of discussions, removing personal identifiers</li>
-          <li><strong>Verification:</strong> Cross-reference with on-chain data and exchange metrics</li>
-          <li><strong>Publication:</strong> Concise summary in English for global accessibility</li>
-        </ol>
+        <article>
+          <h3 style={{ fontSize: '1.1rem' }}>How We Process Information</h3>
+          <ol>
+            <li><strong>Collection:</strong> Daily monitoring of 6+ professional trading communities</li>
+            <li><strong>Analysis:</strong> AI-powered synthesis of discussions, removing personal identifiers</li>
+            <li><strong>Verification:</strong> Cross-reference with on-chain data and exchange metrics</li>
+            <li><strong>Publication:</strong> Concise summary in English for global accessibility</li>
+          </ol>
+        </article>
 
         <div style={{ marginTop: '20px', padding: '15px', background: '#fef3c7', borderRadius: '4px', borderLeft: '4px solid #f59e0b' }}>
           <p style={{ margin: 0 }}>
@@ -333,13 +448,13 @@ export default function NewsPage() {
         </div>
       </section>
 
-      <div style={{ marginTop: '40px', textAlign: 'center' }}>
+      <footer style={{ marginTop: '40px', textAlign: 'center' }}>
         <p style={{ fontSize: '0.9rem', color: '#666' }}>
           <a href="/">← Back to Home</a> | 
           <a href="/exchanges"> CEX Exchanges</a> | 
           <a href="/dex"> DEX Platforms</a>
         </p>
-      </div>
+      </footer>
     </main>
   );
 }
