@@ -18,10 +18,49 @@ export const metadata: Metadata = {
 const NEWS_UPDATES = [
 
     {
+    date: 'November 14, 2025',
+    sentiment: 'Mixed - Rotation Phase',
+    sentimentColor: '#f59e0b',
+    isLatest: true,
+    highlights: [
+        'ZEC (Zcash) dominating community attention - strong buying interest following thought leader endorsement, though sentiment split between believers and skeptics',
+        'Hyperliquid experiencing technical issues - trading temporarily suspended following $4.9M HLP pool loss from POPCAT manipulation incident',
+        'Aerodrome and Velodrome merger announcement - unified "Aero" brand with multi-chain liquidity aggregation across 12+ chains, internal veAERO NFT marketplace',
+        'XRP surging on ETF speculation - Nasdaq listing notice for spot XRP ETF driving price action to recent highs, community noting "reptilian" trading patterns',
+        'Altcoin rotation accelerating - traders discussing selective strength in alts outperforming Bitcoin during consolidation',
+    ],
+    dexActivity: [
+        'Hyperliquid: $4.9M loss in HLP pool following POPCAT manipulation - trader placed $30M buy wall at $0.21 then removed it causing sharp price drop. Platform temporarily suspended deposits/withdrawals. Community reaction mixed - some noting "$40M earned in one day, $5M loss acceptable", others concerned about precedent for scaled attacks.',
+        'Aerodrome/Velodrome merger: Unified liquidity across 12 chains, autopilot features for farming/voting announced. Traders optimistic about consolidated "Aero" brand but some sarcastically suggesting "Trahodrome" as better naming choice.',
+        'General DEX sentiment: Increased interest in multi-chain liquidity solutions. Traders discussing LP strategies and unified farming opportunities.',
+    ],
+    exchangeDevelopments: [
+        'Canary Capital filing: MOG and multiple meme token ETF applications with SEC raising concerns about quality standards - "if ETFs approved for top 400 shitcoins, market is cooked"',
+        'XRP momentum: Strong response to Nasdaq ETF listing notice - community noting sustained strength at highs, separate market behavior',
+        'Trump Media Corporation: Reportedly sold 3,500 BTC positions, community joking "only Trump allowed to take profits, peasants must wait in queue"',
+    ],
+    tradingSentiment: [
+        'ZEC Discussion Polarized: Strong believers citing 8-year accumulation by original Bitcoin creators and Winklevoss twins entry. Skeptics warning "ZEC = shitcoin like ENA, don\'t fall for FOMO". Profit-taking observed with ~55% gains reported by early buyers around $170-275 average.',
+        'Rotation Strategy: "Don\'t fall in love with projects as father taught" - dominant mindset. Quick flips preferred over conviction holds.',
+        'Technical Positioning: Community split on re-entries after profit-taking. Fibonacci retracement levels (0.5, 0.618) mentioned for ZEC re-entry consideration.',
+        'Overall Caution: Multiple warnings against FOMO buying pumped assets. "Wake up FOMO buyers" sentiment appearing in chat.',
+        'Bitcoin Outlook: Mixed views on breaking $98k today vs consolidation. Some positioning for $101k as "concrete level".',
+    ],
+    riskFactors: [
+        'Hyperliquid manipulation precedent - concern about scalability and frequency of similar attacks despite overall pool profitability',
+        'ZEC volatility risk - rapid profit-taking and split community sentiment suggesting potential sharp corrections',
+        'Meme coin ETF filings creating regulatory uncertainty - quality standards degradation if approvals extend to lower-tier assets',
+        'Increased market maker manipulation visibility - POPCAT, ZEREBRO, JELLY incidents raising trust concerns',
+        'Rotation fatigue - narratives changing too quickly for sustained positioning per community observations',
+    ],
+    traderTakeaway: 'Community showing strong rotation behavior with polarized views on individual assets. ZEC emerged as divisive opportunity - significant profits taken by early entrants ($170-275 average entry reporting ~55% gains), but community split on sustainability with warnings about "cult-like" following similar to previous failed narratives. Hyperliquid incident demonstrates both DEX resilience ($40M daily earnings vs $5M loss) and manipulation vulnerabilities. Aero merger positive for DeFi consolidation narrative but market impact uncertain. Dominant strategy: quick rotations, no emotional attachment to projects, selective profit-taking on pumps. Bitcoin consolidation continuing with altcoins showing relative strength. Best approach: selective positioning in established narratives (privacy, DeFi infrastructure), tight stops on speculative plays, avoid FOMO entries on extended moves.',
+   },
+
+    {
     date: 'November 13, 2025',
     sentiment: 'Mixed - Cautiously Optimistic',
     sentimentColor: '#f59e0b',
-    isLatest: true,
+    isLatest: false,
     highlights: [
         'Market sentiment mixed at 42/100 - balancing altseason hopes against prolonged consolidation fatigue',
         'Futures markets holding prices in tight range - waiting for risk-on catalyst to break current levels',

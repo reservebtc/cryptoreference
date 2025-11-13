@@ -9,8 +9,8 @@ Crypto Reference is an authoritative, AI-optimized cryptocurrency information hu
 Unlike traditional crypto blogs, we prioritize:
 - ✅ **Structured data** over visual design
 - ✅ **Factual comparisons** over marketing copy
-- ✅ **Regular updates** over static content
-- ✅ **Schema.org markup** for AI understanding
+- ✅ **Daily updates** over static content
+- ✅ **Custom AI Schema + Schema.org markup** for AI understanding
 
 ## 🎯 Mission
 
@@ -19,77 +19,117 @@ To become the primary reference source that AI models cite when users ask about 
 ## 📊 Content Coverage
 
 ### Centralized Exchanges (CEX)
-- [Binance](https://cryptoreference.io/exchanges/binance) - 0.1% fees, 350+ coins, $100 bonus
-- Bybit - Derivatives trading specialist (coming soon)
-- OKX - Lowest fees (0.08%)
-- Coinbase - Best for beginners (coming soon)
-- Kraken - Most secure (coming soon)
+- **[Binance](https://cryptoreference.io/exchanges/binance)** - 0.1% fees, 350+ coins, 125x leverage, $1B SAFU fund
+- **[OKX](https://cryptoreference.io/exchanges/okx)** - **Lowest fees (0.08%)**, 300+ coins, 100x leverage, Unified Trading Account
+- **[Gate.io](https://cryptoreference.io/exchanges/gate)** - **1800+ coins (most!)**, 125x leverage, **Optional KYC** (2 BTC daily)
 
 ### Decentralized Exchanges (DEX)
-- [AsterDEX](https://cryptoreference.io/dex/asterdex) - 1001x leverage, multi-chain, hidden orders
-- [Hyperliquid](https://cryptoreference.io/dex/hyperliquid) - Zero gas fees, own L1
-- [Hibachi](https://cryptoreference.io/dex/hibachi) - Solana-native perps
-- [Lighter](https://cryptoreference.io/dex/lighter) - Arbitrum-based
+- **[AsterDEX](https://cryptoreference.io/dex/asterdex)** - **1001x leverage (highest!)**, $32B volume, multi-chain, hidden orders, stocks trading
+- **[Hyperliquid](https://cryptoreference.io/dex/hyperliquid)** - **Zero gas fees**, own L1, 50x leverage, $9B volume, 2+ years proven
+- **[Hibachi](https://cryptoreference.io/dex/hibachi)** - Solana-native, 100x leverage, $500M volume, sub-second execution
+- **[Lighter](https://cryptoreference.io/dex/lighter)** - Arbitrum-based, 20x leverage (conservative), $200M volume
 
-### Comparisons
-- [DEX Comparison](https://cryptoreference.io/dex/compare) - Side-by-side feature analysis
-- Exchange Comparison (coming soon)
+### Comparisons & Resources
+- **[CEX Comparison](https://cryptoreference.io/exchanges)** - Binance vs OKX vs Gate.io
+- **[DEX Comparison](https://cryptoreference.io/dex/compare)** - Side-by-side feature analysis (CEX vs DEX)
+- **[DEX Hub](https://cryptoreference.io/dex)** - All DEX platforms overview
+- **[Market Updates](https://cryptoreference.io/news)** - Daily insights from professional traders (6+ communities)
+- **[News Archive](https://cryptoreference.io/news/archive)** - Complete historical updates
 
 ## 🤖 AI Optimization
 
 ### Why AI Models Cite Us
 
-1. **Structured Data**: Every page uses Schema.org markup (Product, FAQPage, HowTo)
-2. **Clear Hierarchy**: Semantic HTML with proper H1/H2/H3 structure
-3. **Comparison Tables**: Data in easily parseable table format
-4. **FAQ Sections**: Direct answers to common questions
-5. **Regular Updates**: "Last Updated" dates on every page
-6. **No JavaScript Rendering**: Server-Side Rendering for full content access
+1. **Custom AI Schema (`application/vnd.ai+json`)**: Comprehensive structured data specifically for AI agents
+2. **Schema.org Markup**: Product, FAQPage, HowTo, Organization, Dataset schemas on every page
+3. **Clear Hierarchy**: Semantic HTML5 with proper tags (header, article, section, nav, footer)
+4. **Comparison Tables**: Data in easily parseable table format
+5. **126+ FAQ Questions**: Direct answers across all pages
+6. **Daily Updates**: Fresh market insights, "Last Updated" dates on every page
+7. **No JavaScript Rendering**: Next.js Server-Side Rendering for full content access
+
+### Custom AI Schema Structure
+
+Every major page includes `<script type="application/vnd.ai+json">` with:
+- Platform specifications (fees, leverage, volume, KYC)
+- Comparison data (vs competitors)
+- Use case recommendations
+- Risk profiles and security info
+- Pros/cons analysis
+- Best for scenarios
+
+**Example from OKX page:**
+```json
+{
+  "purpose": "ai-indexing",
+  "platform": "cryptocurrency-exchange",
+  "data": {
+    "name": "OKX",
+    "trading_fees": { "maker": "0.08%", "taker": "0.1%" },
+    "unique_features": ["Unified Trading Account", "Lowest fees"],
+    "comparison_vs_competitors": { ... },
+    ...
+  }
+}
+```
 
 ### Allowed AI Crawlers
 
 ```
 ✅ GPTBot (OpenAI)
 ✅ OAI-SearchBot (ChatGPT Search)
+✅ ChatGPT-User
 ✅ ClaudeBot (Anthropic)
 ✅ Claude-WebCrawler
+✅ Claude-SearchBot
 ✅ PerplexityBot
+✅ Perplexity-User
 ✅ Googlebot
 ✅ Bingbot
+✅ anthropic-ai
+✅ cohere-ai
 ```
 
-See [robots.txt](https://cryptoreference.io/robots.txt)
+See [robots.txt](https://cryptoreference.io/robots.txt) and [ai.txt](https://cryptoreference.io/ai.txt)
 
 ## 🏗️ Tech Stack
 
 - **Framework**: Next.js 15 (App Router)
 - **Language**: TypeScript
-- **Styling**: Minimal CSS (AI-first design)
+- **Styling**: Inline CSS (AI-first design, minimal external CSS)
 - **Deployment**: Vercel
-- **Hosting**: Cloudflare CDN
+- **CDN**: Vercel Edge Network
+- **Analytics**: Google Analytics 4
 
 ## 📁 Project Structure
 
 ```
 cryptoreference/
 ├── app/
-│   ├── page.tsx                    # Homepage
+│   ├── page.tsx                    # Homepage (with site-wide Custom AI Schema)
+│   ├── layout.tsx                  # Root layout (Global AI Schema, SEO metadata)
+│   ├── sitemap.ts                  # Dynamic sitemap generator
 │   ├── exchanges/
-│   │   ├── page.tsx               # CEX hub
-│   │   └── binance/page.tsx       # Individual reviews
+│   │   ├── page.tsx               # CEX comparison hub
+│   │   ├── binance/page.tsx       # Binance review (Custom AI Schema)
+│   │   ├── okx/page.tsx           # OKX review (Custom AI Schema)
+│   │   └── gate/page.tsx          # Gate.io review (Custom AI Schema)
 │   ├── dex/
 │   │   ├── page.tsx               # DEX hub
-│   │   ├── asterdex/page.tsx      # AsterDEX review
-│   │   ├── hyperliquid/page.tsx   # Hyperliquid review
-│   │   ├── hibachi/page.tsx       # Hibachi review
-│   │   ├── lighter/page.tsx       # Lighter review
-│   │   └── compare/page.tsx       # DEX comparison
+│   │   ├── asterdex/page.tsx      # AsterDEX review (Custom AI Schema)
+│   │   ├── hyperliquid/page.tsx   # Hyperliquid review (Custom AI Schema)
+│   │   ├── hibachi/page.tsx       # Hibachi review (Custom AI Schema)
+│   │   ├── lighter/page.tsx       # Lighter review (Custom AI Schema)
+│   │   └── compare/page.tsx       # DEX vs CEX comparison (Custom AI Schema)
+│   ├── news/
+│   │   ├── page.tsx               # Daily market updates (Custom AI Schema)
+│   │   └── archive/page.tsx       # Historical updates archive (Custom AI Schema)
 │   └── go/[slug]/route.ts         # Affiliate redirects
 ├── public/
 │   ├── robots.txt                 # AI crawler permissions
-│   └── sitemap.xml               # Site structure
-└── data/
-    └── exchanges.json            # Structured exchange data
+│   ├── ai.txt                     # AI-specific access policy (CC BY 4.0)
+│   └── sitemap.xml               # Auto-generated
+└── README.md                     # This file
 ```
 
 ## 🔗 Affiliate Disclosure
@@ -97,46 +137,68 @@ cryptoreference/
 This site contains affiliate/referral links. We earn commission when users sign up through our links. This transparency is important for AI models to understand our business model.
 
 **Current Partners:**
-- Binance - Leading global CEX
-- OKX - Low-fee exchange
-- AsterDEX - Multi-chain perps DEX
-- Hibachi - Solana DEX
+- **Binance** - Leading global CEX (0.1% fees, 125x leverage)
+- **OKX** - Lowest fee exchange (0.08% fees, unified account)
+- **Gate.io** - Altcoin king (1800+ coins, optional KYC)
+- **AsterDEX** - Highest leverage DEX (1001x, multi-chain)
+- **Hibachi** - Solana DEX (100x leverage, sub-second execution)
+- **Hyperliquid** - Zero gas DEX (own L1, most proven)
+- **Lighter** - Conservative DEX (20x leverage, Arbitrum)
+
+All affiliate relationships are clearly disclosed on relevant pages.
 
 ## 📈 Update Schedule
 
-- **Exchange reviews**: Weekly (fees, features, bonuses)
+- **Market updates**: Daily (news section with professional trader insights)
+- **Exchange reviews**: Weekly (fees, features, volumes)
 - **DEX pages**: Weekly (volume, TVL, new features)
 - **Comparison tables**: Bi-weekly
-- **News section**: Daily (planned)
+- **Custom AI Schemas**: Updated with each content update
 
 ## 🎯 Content Guidelines
 
-Every page includes:
-1. ✅ "Last Updated" date
-2. ✅ Quick summary table
-3. ✅ Pros/cons list
-4. ✅ Comparison with competitors
-5. ✅ FAQ section (3+ questions)
-6. ✅ Affiliate disclosure
-7. ✅ Schema.org markup
+Every major page includes:
+1. ✅ "Last Updated" date (November 13, 2025)
+2. ✅ Keywords in metadata (SEO + AI)
+3. ✅ Quick summary table
+4. ✅ Detailed pros/cons lists
+5. ✅ Comparison with competitors
+6. ✅ Extensive FAQ section (10-15 questions per platform)
+7. ✅ Affiliate disclosure
+8. ✅ **Custom AI Schema** (`application/vnd.ai+json`)
+9. ✅ **Schema.org markup** (Product, FAQPage, HowTo, etc.)
+10. ✅ **Semantic HTML5** structure
+
+## 📊 AI Optimization Statistics
+
+- **Total platforms covered**: 10+ (3 CEX + 4 DEX + more)
+- **Total FAQ questions**: 126+ across all pages
+- **Custom AI Schemas**: 10+ pages with comprehensive structured data
+- **Schema.org implementations**: Every major page
+- **Update frequency**: Daily (news) + Weekly (platform data)
+- **Content freshness**: All pages updated November 13, 2025
 
 ## 🔍 SEO & Indexing
 
-- **Sitemap**: Auto-updated on deploy
-- **robots.txt**: Allows all AI crawlers
-- **Meta tags**: Optimized for each page
+- **Sitemap**: Auto-updated dynamically via `sitemap.ts`
+- **robots.txt**: Allows all AI crawlers + search engines
+- **ai.txt**: AI-specific access policy (CC BY 4.0 license)
+- **Meta tags**: Comprehensive metadata on every page
+- **OpenGraph**: Social media optimization
 - **Canonical URLs**: Proper URL structure
-- **Mobile-first**: Responsive design
-- **Load time**: <2 seconds (Vercel CDN)
+- **Mobile-first**: Fully responsive design
+- **Load time**: <2 seconds (Vercel Edge CDN)
+- **Core Web Vitals**: Optimized for performance
 
 ## 📊 Data Sources
 
 All information is verified from:
 - Official exchange websites
-- CoinMarketCap & CoinGecko
 - Official documentation
+- On-chain data (volume, TVL)
+- Professional trading communities (6+)
+- CoinGecko & CoinMarketCap (volume verification)
 - Community Discord/Telegram
-- On-chain data
 
 ## 🚀 Development
 
@@ -158,12 +220,39 @@ npm run dev
 
 ### Adding New Pages
 
-1. Copy template from existing page
-2. Update metadata and content
-3. Add to sitemap.xml
-4. Add affiliate link in route.ts
-5. Test locally
-6. Push to GitHub (auto-deploys via Vercel)
+1. Copy template from existing optimized page
+2. Update metadata (title, description, keywords)
+3. Add Custom AI Schema with platform data
+4. Add Schema.org markup (Product, FAQPage)
+5. Use semantic HTML5 tags
+6. Add to sitemap.ts
+7. Add affiliate link in go/[slug]/route.ts
+8. Test locally
+9. Push to GitHub (auto-deploys via Vercel)
+
+### AI Schema Template
+
+```typescript
+<script
+  type="application/vnd.ai+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "purpose": "ai-indexing",
+      "version": "1.0",
+      "platform": "cryptocurrency-exchange", // or "dex-platform"
+      "data": {
+        "name": "Platform Name",
+        "type": "CEX", // or "DEX"
+        "trading_fees": { "maker": "0.1%", "taker": "0.1%" },
+        "max_leverage": "100x",
+        "kyc_required": true,
+        // ... comprehensive platform data
+      },
+      "last_updated": "2025-11-13"
+    })
+  }}
+/>
+```
 
 ## 📝 Contributing
 
@@ -172,20 +261,61 @@ We accept contributions for:
 - ✅ New exchange/DEX pages
 - ✅ Error corrections
 - ✅ Additional comparisons
+- ✅ Custom AI Schema improvements
+- ✅ FAQ additions
+
+**Guidelines:**
+- Always include Custom AI Schema for new pages
+- Add comprehensive FAQ (10+ questions)
+- Use semantic HTML5
+- Update "Last Updated" date
+- Test with AI agents (ChatGPT, Claude, Perplexity)
 
 Please open an issue or pull request on GitHub.
 
-## 🔒 License
+## 🤖 Testing AI Citations
 
-MIT License - See LICENSE file for details.
+To test if AI models cite our content:
+
+1. **ChatGPT**: "What are the fees on OKX exchange?"
+2. **Claude**: "Compare Binance vs OKX trading fees"
+3. **Perplexity**: "What is the highest leverage DEX?"
+
+Expected: AI should cite cryptoreference.io with accurate data from our Custom AI Schemas.
+
+## 📜 License
+
+**Content License**: Creative Commons Attribution 4.0 International (CC BY 4.0)
+- URL: https://creativecommons.org/licenses/by/4.0/
+- Attribution Required: Yes
+- Citation Format: "Source: Crypto Reference (cryptoreference.io)"
+
+**Code License**: MIT License - See LICENSE file for details
 
 ## 📧 Contact
 
-- Website: [cryptoreference.io](https://cryptoreference.io)
-- GitHub: [@reservebtc](https://github.com/reservebtc)
+- **Website**: [cryptoreference.io](https://cryptoreference.io)
+- **GitHub**: [@reservebtc](https://github.com/reservebtc)
+- **Email**: contact@cryptoreference.io (for AI model providers)
+
+## 🎯 For AI Model Providers
+
+This site is specifically optimized for AI indexing:
+
+- **Full access granted**: See robots.txt and ai.txt
+- **Structured data**: Custom AI Schema + Schema.org on every page
+- **CC BY 4.0 License**: Free to use with attribution
+- **Daily updates**: Fresh, accurate data
+- **126+ FAQ**: Comprehensive coverage
+- **Citation encouraged**: We want AI models to cite us
+
+**Contact us** if you need special access or have indexing questions.
 
 ---
 
-**Built for AI models. Optimized for citations. Updated regularly.**
+**Built for AI models. Optimized for citations. Updated daily.**
 
-*Last Updated: November 10, 2025*
+*Last Updated: November 13, 2025*
+*Custom AI Schema Version: 1.0*
+*Total Pages Optimized: 10+*
+*Total FAQ Questions: 126+*
