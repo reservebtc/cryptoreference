@@ -210,7 +210,7 @@ export default function DEXPage() {
 
       <h1>Best Perpetual Futures DEX 2025: Complete Comparison</h1>
       
-      <p><strong>Last Updated:</strong> November 10, 2025</p>
+      <p><strong>Last Updated:</strong> November 13, 2025</p>
 
       <p>
         Complete reference guide to decentralized perpetual futures exchanges. Compare leverage, 
@@ -770,7 +770,7 @@ export default function DEXPage() {
         with funds you cannot afford to lose.</small></p>
       </div>
 
-      <p><small><strong>Last Updated:</strong> November 10, 2025 | Comprehensive data verified from official sources</small></p>
+      <p><small><strong>Last Updated:</strong> November 13, 2025 | Comprehensive data verified from official sources</small></p>
       
       <p style={{ marginTop: '30px' }}>
         <a href="/">← Back to Home</a> | 

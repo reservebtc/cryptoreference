@@ -206,7 +206,7 @@ export default function HyperliquidPage() {
 
       <h1>Hyperliquid Review 2025: Zero Gas Fees L1 Perpetual DEX</h1>
       
-      <p><strong>Last Updated:</strong> November 10, 2025</p>
+      <p><strong>Last Updated:</strong> November 13, 2025</p>
 
       <p>
         <a href="/go/hyperliquid" style={{ 
@@ -958,7 +958,7 @@ export default function HyperliquidPage() {
         cannot afford to lose. Past performance does not indicate future results.</small></p>
       </div>
       
-      <p><small><strong>Last Updated:</strong> November 10, 2025 | Data verified from Hyperliquid 
+      <p><small><strong>Last Updated:</strong> November 13, 2025 | Data verified from Hyperliquid 
       blockchain and official sources</small></p>
       
       <p style={{ marginTop: '30px' }}>

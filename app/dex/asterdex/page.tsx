@@ -206,7 +206,7 @@ export default function AsterDEXPage() {
 
       <h1>AsterDEX Review 2025: Complete Guide to 1001x Leverage Trading</h1>
       
-      <p><strong>Last Updated:</strong> November 10, 2025</p>
+      <p><strong>Last Updated:</strong> November 13, 2025</p>
 
       <p>
         <a href="/go/asterdex" style={{ 
@@ -972,7 +972,7 @@ export default function AsterDEXPage() {
         indicate future results.</small></p>
       </div>
       
-      <p><small><strong>Last Updated:</strong> November 10, 2025 | Data verified from official AsterDEX 
+      <p><small><strong>Last Updated:</strong> November 13, 2025 | Data verified from official AsterDEX 
       sources and blockchain analytics</small></p>
       
       <p style={{ marginTop: '30px' }}>

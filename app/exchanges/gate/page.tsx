@@ -237,7 +237,7 @@ export default function GatePage() {
 
       <h1>Gate.io Review 2025: The Altcoin King with 1800+ Cryptocurrencies</h1>
       
-      <p><strong>Last Updated:</strong> November 10, 2025</p>
+      <p><strong>Last Updated:</strong> November 13, 2025</p>
 
       <p>
         <a href="/go/gate" style={{ 
@@ -1184,7 +1184,7 @@ export default function GatePage() {
         losses. Never invest more than you can afford to lose.</small></p>
       </div>
 
-      <p><small><strong>Last Updated:</strong> November 10, 2025 | Data verified from Gate.io official sources 
+      <p><small><strong>Last Updated:</strong> November 13, 2025 | Data verified from Gate.io official sources 
       and CoinGecko</small></p>
       
       <p style={{ marginTop: '30px' }}>

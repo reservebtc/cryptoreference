@@ -178,7 +178,7 @@ export default function HibachiPage() {
 
       <h1>Hibachi Review 2025: Solana Perpetual Futures DEX</h1>
       
-      <p><strong>Last Updated:</strong> November 10, 2025</p>
+      <p><strong>Last Updated:</strong> November 13, 2025</p>
 
       <p>
         <a href="/go/hibachi" style={{ 
@@ -552,7 +552,7 @@ export default function HibachiPage() {
       <p><small><strong>Affiliate Disclosure:</strong> This page contains referral links. We earn commission 
       when you sign up through our links, at no extra cost to you. This supports our free educational content.</small></p>
       
-      <p><small><strong>Last Updated:</strong> November 10, 2025 | Data verified from official sources</small></p>
+      <p><small><strong>Last Updated:</strong> November 13, 2025 | Data verified from official sources</small></p>
       
       <p style={{ marginTop: '20px' }}>
         <a href="/dex">← Back to All DEX</a> | 

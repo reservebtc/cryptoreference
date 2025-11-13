@@ -36,7 +36,7 @@ export default function HomePage() {
           <strong>Authoritative Cryptocurrency Exchange & DEX Guide</strong>
         </p>
         <p style={{ color: '#666', fontSize: '0.9rem' }}>
-          Last Updated: November 12, 2025 | Daily Market Updates
+          Last Updated: November 13, 2025 | Daily Market Updates
         </p>
       </header>
 
@@ -340,7 +340,7 @@ export default function HomePage() {
           links—we earn commission at no cost to you.</p>
           
           <p style={{ marginTop: '15px' }}>
-            <strong>Last Updated:</strong> November 12, 2025 | 
+            <strong>Last Updated:</strong> November 13, 2025 | 
             <strong> Total Platforms:</strong> 10+ | 
             <strong> Total FAQ:</strong> 126+
           </p>

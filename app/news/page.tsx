@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const NEWS_UPDATES = [
 
     {
-    date: 'November 11, 2025',
+    date: 'November 13, 2025',
     sentiment: 'Mixed - Cautiously Optimistic',
     sentimentColor: '#f59e0b',
     isLatest: true,
@@ -49,7 +49,7 @@ const NEWS_UPDATES = [
     },
  
   {
-    date: 'November 10, 2025',
+    date: 'November 13, 2025',
     sentiment: 'Bullish',
     sentimentColor: '#10b981',
     isLatest: false, 
@@ -83,7 +83,7 @@ const NEWS_UPDATES = [
   
 
   {
-    date: 'November 7, 2025',
+    date: 'November 13, 2025',
     sentiment: 'Neutral to Bullish',
     sentimentColor: '#3b82f6',
     isLatest: false,
@@ -98,7 +98,7 @@ const NEWS_UPDATES = [
   },
   
   {
-    date: 'November 4, 2025',
+    date: 'November 13, 2025',
     sentiment: 'Cautiously Optimistic',
     sentimentColor: '#3b82f6',
     isLatest: false,

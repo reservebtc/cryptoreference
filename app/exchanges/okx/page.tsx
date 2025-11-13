@@ -237,7 +237,7 @@ export default function OKXPage() {
 
       <h1>OKX Review 2025: Complete Exchange Analysis</h1>
       
-      <p><strong>Last Updated:</strong> November 10, 2025</p>
+      <p><strong>Last Updated:</strong> November 13, 2025</p>
 
       <p>
         <a href="/go/okx" style={{ 
@@ -1140,7 +1140,7 @@ export default function OKXPage() {
         High leverage amplifies both gains and losses. Never trade with funds you cannot afford to lose.</small></p>
       </div>
 
-      <p><small><strong>Last Updated:</strong> November 10, 2025 | Data verified from OKX official sources 
+      <p><small><strong>Last Updated:</strong> November 13, 2025 | Data verified from OKX official sources 
       and CoinGecko</small></p>
       
       <p style={{ marginTop: '30px' }}>

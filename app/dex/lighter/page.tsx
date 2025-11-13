@@ -190,7 +190,7 @@ export default function LighterPage() {
 
       <h1>Lighter Review 2025: Arbitrum Perpetual Futures DEX</h1>
       
-      <p><strong>Last Updated:</strong> November 10, 2025</p>
+      <p><strong>Last Updated:</strong> November 13, 2025</p>
 
       <p>
         <a href="/go/lighter" style={{ 
@@ -870,7 +870,7 @@ export default function LighterPage() {
         positions. Never trade with funds you cannot afford to lose.</small></p>
       </div>
       
-      <p><small><strong>Last Updated:</strong> November 10, 2025 | Data verified from Lighter platform 
+      <p><small><strong>Last Updated:</strong> November 13, 2025 | Data verified from Lighter platform 
       and Arbitrum blockchain analytics</small></p>
       
       <p style={{ marginTop: '30px' }}>

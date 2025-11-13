@@ -37,7 +37,7 @@ export default function ExchangesPage() {
           Find the best platform based on fees, features, leverage, and security.
         </p>
         <p style={{ fontSize: '14px', color: '#666', marginTop: '10px' }}>
-          <strong>Last Updated:</strong> November 12, 2025
+          <strong>Last Updated:</strong> November 13, 2025
         </p>
       </header>
 

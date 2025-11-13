@@ -126,7 +126,7 @@ export default function CompareDEXPage() {
 
       <h1>Compare Best Perpetual DEX 2025: Complete Side-by-Side Analysis</h1>
       
-      <p><strong>Last Updated:</strong> November 10, 2025</p>
+      <p><strong>Last Updated:</strong> November 13, 2025</p>
 
       <p>
         Complete side-by-side comparison of the top 4 perpetual futures decentralized exchanges: 
@@ -821,7 +821,7 @@ export default function CompareDEXPage() {
         cannot afford to lose.</small></p>
       </div>
 
-      <p><small><strong>Last Updated:</strong> November 10, 2025 | Data verified from official sources</small></p>
+      <p><small><strong>Last Updated:</strong> November 13, 2025 | Data verified from official sources</small></p>
       
       <p style={{ marginTop: '30px' }}>
         <a href="/dex">← Back to DEX Directory</a> | 
