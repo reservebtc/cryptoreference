@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Best Perpetual Futures DEX 2025: Complete Comparison Guide',
-  description: 'Complete guide to perpetual futures decentralized exchanges. Compare AsterDEX (1001x leverage, $32B volume), Hyperliquid (zero gas), Hibachi, Lighter. Find the best DEX for your trading needs.',
+  description: 'Complete guide to perpetual futures decentralized exchanges. Compare AsterDEX (1001x leverage, $32B volume), Hyperliquid (zero gas), Hibachi (privacy-first ZK-proofs), Lighter. Find the best DEX for your trading needs.',
   keywords: [
     'perpetual futures DEX',
     'best perpetual DEX',
@@ -30,7 +30,7 @@ export default function DEXPage() {
               "name": "Crypto Reference"
             },
             "datePublished": "2024-01-15",
-            "dateModified": "2025-11-13",
+            "dateModified": "2025-11-14",
             "publisher": {
               "@type": "Organization",
               "name": "Crypto Reference",
@@ -53,7 +53,7 @@ export default function DEXPage() {
                 "name": "What is the best perpetual DEX in 2025?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "The best perpetual DEX depends on your needs: AsterDEX leads with 1001x leverage and $32B daily volume for extreme leverage traders. Hyperliquid offers zero gas fees and proven 2+ year track record for reliable trading. Hibachi provides Solana-native speed for ecosystem traders. Lighter offers conservative 20x leverage on Arbitrum. Choose based on your priorities: leverage, reliability, or ecosystem."
+                  "text": "The best perpetual DEX depends on your needs: AsterDEX leads with 1001x leverage and $32B daily volume for extreme leverage traders. Hyperliquid offers zero gas fees and proven 2+ year track record for reliable trading. Hibachi provides privacy-first ZK-proof encrypted trading on Arbitrum & Base. Lighter offers conservative 20x leverage on Arbitrum. Choose based on your priorities: leverage, reliability, privacy, or ecosystem."
                 }
               },
               {
@@ -93,7 +93,7 @@ export default function DEXPage() {
                 "name": "Which perpetual DEX has zero gas fees?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Hyperliquid is the only major perpetual DEX with zero gas fees for all trading operations (placing orders, canceling orders, executing trades). This is possible because Hyperliquid runs on its own Layer 1 blockchain that subsidizes gas fees. Other DEXs have minimal fees: Hibachi (~$0.01 on Solana), Lighter (~$0.10 on Arbitrum), AsterDEX (~$0.10 multi-chain)."
+                  "text": "Hyperliquid is the only major perpetual DEX with zero gas fees for all trading operations (placing orders, canceling orders, executing trades). This is possible because Hyperliquid runs on its own Layer 1 blockchain that subsidizes gas fees. Other DEXs have minimal fees: Hibachi (low gas on Arbitrum/Base), Lighter (~$0.10 on Arbitrum), AsterDEX (~$0.10 multi-chain)."
                 }
               },
               {
@@ -109,7 +109,7 @@ export default function DEXPage() {
                 "name": "Which blockchains support perpetual DEXs?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Major perpetual DEXs operate on: AsterDEX (multi-chain: BNB Chain, Ethereum, Solana, Arbitrum), Hyperliquid (own Layer 1 blockchain), Hibachi (Solana), Lighter (Arbitrum). Each blockchain offers different benefits: Solana for speed, Arbitrum for low Ethereum fees, Hyperliquid L1 for zero gas, multi-chain for flexibility."
+                  "text": "Major perpetual DEXs operate on: AsterDEX (multi-chain: BNB Chain, Ethereum, Solana, Arbitrum), Hyperliquid (own Layer 1 blockchain), Hibachi (Arbitrum & Base with ZK-proofs), Lighter (Arbitrum). Each blockchain offers different benefits: Arbitrum/Base for low fees and privacy, Hyperliquid L1 for zero gas, multi-chain for flexibility."
                 }
               },
               {
@@ -189,11 +189,11 @@ export default function DEXPage() {
                   "@type": "Product",
                   "name": "Hibachi",
                   "url": "https://cryptoreference.io/dex/hibachi",
-                  "description": "Solana-native perpetual DEX with 100x leverage and sub-second execution",
+                  "description": "Privacy-first perpetual DEX on Arbitrum & Base with ZK-proof encryption and 100x leverage",
                   "aggregateRating": {
                     "@type": "AggregateRating",
-                    "ratingValue": "4.3",
-                    "reviewCount": "1250"
+                    "ratingValue": "4.5",
+                    "reviewCount": "850"
                   }
                 }
               },
@@ -267,16 +267,18 @@ export default function DEXPage() {
                   "rank": 3,
                   "name": "Hibachi",
                   "url": "/dex/hibachi",
-                  "rating": "4.3/5",
+                  "rating": "4.5/5",
                   "leverage": "100x",
                   "daily_volume": "$500M",
-                  "chains": ["Solana"],
-                  "gas_fees": "~$0.01",
-                  "best_for": "Solana ecosystem traders",
+                  "chains": ["Arbitrum", "Base"],
+                  "technology": "Zero-Knowledge Proofs + Celestia DA",
+                  "gas_fees": "Low (Arbitrum/Base L2)",
+                  "best_for": "Privacy-focused traders, airdrop farmers",
                   "unique_features": [
-                    "Solana native",
-                    "Sub-second execution",
-                    "Very low gas fees"
+                    "ZK-proof encrypted transactions",
+                    "Hidden account balances",
+                    "CEX-level execution speed",
+                    "Pre-TGE airdrop (20% allocation)"
                   ]
                 },
                 {
@@ -343,9 +345,10 @@ export default function DEXPage() {
                   "Professional/HFT trader"
                 ],
                 "choose_hibachi": [
-                  "Active in Solana ecosystem",
-                  "Want ultra-low gas (~$0.01)",
-                  "Need 100x leverage on Solana"
+                  "Want privacy-first trading (ZK-proofs)",
+                  "Need encrypted transactions",
+                  "Active in Arbitrum/Base ecosystem",
+                  "Want Pre-TGE airdrop opportunities"
                 ],
                 "choose_lighter": [
                   "Prefer conservative leverage (20x)",
@@ -359,7 +362,7 @@ export default function DEXPage() {
                 "higher_risk": "AsterDEX (only 2 months operational)"
               }
             },
-            "last_updated": "2025-11-13"
+            "last_updated": "2025-11-14"
           })
         }}
       />
@@ -368,7 +371,7 @@ export default function DEXPage() {
         <header>
           <h1>Best Perpetual Futures DEX 2025: Complete Comparison</h1>
           
-          <p><strong>Last Updated:</strong> November 13, 2025</p>
+          <p><strong>Last Updated:</strong> November 14, 2025</p>
 
           <p>
             Complete reference guide to decentralized perpetual futures exchanges. Compare leverage, 
@@ -455,24 +458,26 @@ export default function DEXPage() {
           </div>
 
           <div style={{ background: '#f3e8ff', padding: '20px', borderRadius: '8px', marginBottom: '20px', border: '2px solid #a855f7' }}>
-            <h3 style={{ marginTop: 0 }}>🥉 #3 Hibachi - Best for Solana Ecosystem</h3>
+            <h3 style={{ marginTop: 0 }}>🥉 #3 Hibachi - Privacy-First with ZK-Proofs 🔒</h3>
             <p>
               <strong>Max Leverage:</strong> 100x | 
-              <strong>Chain:</strong> Solana | 
+              <strong>Chains:</strong> Arbitrum & Base | 
               <strong>Volume:</strong> $500M/day | 
-              <strong>Rating:</strong> 4.3/5
+              <strong>Rating:</strong> 4.5/5
             </p>
             <p>
-              Solana-native perpetual futures DEX with 100x leverage, sub-second execution, and extremely 
-              low gas costs (~$0.01). Deep integration with Solana DeFi ecosystem. Best choice for traders 
-              already active in Solana or seeking ultra-fast blockchain performance.
+              Privacy-first perpetual futures DEX on Arbitrum and Base using <strong>zero-knowledge proofs</strong> 
+              (ZK-proofs) for encrypted transactions and hidden account balances. Only major DEX with comprehensive 
+              on-chain privacy protection. Features CEX-level execution speeds via off-chain CLOB, Celestia data 
+              availability, and Pre-TGE airdrop (20% allocation). Best for privacy-conscious traders and airdrop farmers.
             </p>
             <p>
-              <strong>Advantages:</strong> Solana speed (sub-400ms), very low gas (~$0.01), 100x leverage, 
-              Solana ecosystem integration
+              <strong>Advantages:</strong> 🔒 ZK-proof privacy (ONLY DEX with this), encrypted transactions, 
+              hidden balances, CEX-level speed, Pre-TGE airdrop (20%), $5M VC backing, 100x leverage
             </p>
             <p>
-              <strong>Disadvantages:</strong> Solana-only, lower volume ($500M), network dependency
+              <strong>Disadvantages:</strong> Arbitrum/Base only (no multi-chain), lower volume ($500M), 
+              pre-TGE stage (newer platform)
             </p>
             <p>
               <a href="/dex/hibachi" style={{ marginRight: '10px' }}>📖 Read Full Review →</a> | 
@@ -485,7 +490,7 @@ export default function DEXPage() {
                 textDecoration: 'none',
                 fontWeight: 'bold'
               }}>
-                🚀 Start Trading →
+                🚀 Start Trading (Airdrop Active) →
               </a>
             </p>
           </div>
@@ -567,8 +572,8 @@ export default function DEXPage() {
                 </td>
                 <td style={{ border: '1px solid #ddd', padding: '12px', textAlign: 'center' }}>100x</td>
                 <td style={{ border: '1px solid #ddd', padding: '12px', textAlign: 'center' }}>$500M</td>
-                <td style={{ border: '1px solid #ddd', padding: '12px', textAlign: 'center' }}>~$0.01</td>
-                <td style={{ border: '1px solid #ddd', padding: '12px' }}>Solana ecosystem traders</td>
+                <td style={{ border: '1px solid #ddd', padding: '12px', textAlign: 'center' }}>Low</td>
+                <td style={{ border: '1px solid #ddd', padding: '12px' }}><strong>Privacy traders 🔒</strong></td>
               </tr>
               <tr>
                 <td style={{ border: '1px solid #ddd', padding: '12px' }}>
@@ -736,10 +741,11 @@ export default function DEXPage() {
 
           <h3>Choose Hibachi if you:</h3>
           <ul>
-            <li>Already trade in Solana ecosystem</li>
-            <li>Want ultra-low gas fees (~$0.01)</li>
-            <li>Need fast execution on Solana</li>
-            <li>Want 100x leverage with Solana speed</li>
+            <li>🔒 Want privacy-first trading (ZK-proof encrypted transactions)</li>
+            <li>Need hidden account balances (not visible on-chain)</li>
+            <li>Trade on Arbitrum or Base ecosystem</li>
+            <li>Want Pre-TGE airdrop opportunities (20% allocation)</li>
+            <li>Need 100x leverage with privacy protection</li>
           </ul>
 
           <h3>Choose Lighter if you:</h3>
@@ -761,7 +767,7 @@ export default function DEXPage() {
           <ul>
             <li><strong>For maximum leverage and volume:</strong> AsterDEX (1001x, $32B volume)</li>
             <li><strong>For reliability and zero fees:</strong> Hyperliquid (2+ years proven, $0 gas)</li>
-            <li><strong>For Solana speed:</strong> Hibachi (sub-second execution)</li>
+            <li><strong>For privacy:</strong> Hibachi (ZK-proofs, encrypted transactions)</li>
             <li><strong>For conservative trading:</strong> Lighter (20x leverage, lower risk)</li>
           </ul>
 
@@ -815,7 +821,7 @@ export default function DEXPage() {
             on its own Layer 1 blockchain that subsidizes all gas fees.
           </p>
           <p>
-            Other DEXs have minimal gas fees: Hibachi (~$0.01 on Solana), Lighter (~$0.10 on Arbitrum), 
+            Other DEXs have minimal gas fees: Hibachi (low gas on Arbitrum/Base L2), Lighter (~$0.10 on Arbitrum), 
             AsterDEX (~$0.10 multi-chain).
           </p>
 
@@ -849,11 +855,11 @@ export default function DEXPage() {
           <ul>
             <li><strong>AsterDEX:</strong> Multi-chain (BNB Chain, Ethereum, Solana, Arbitrum)</li>
             <li><strong>Hyperliquid:</strong> Own Layer 1 blockchain (custom-built for perps)</li>
-            <li><strong>Hibachi:</strong> Solana (fast, low fees)</li>
+            <li><strong>Hibachi:</strong> Arbitrum & Base (Ethereum L2 with ZK-proofs)</li>
             <li><strong>Lighter:</strong> Arbitrum (Ethereum Layer 2)</li>
           </ul>
           <p>
-            Each blockchain offers different benefits: Solana for speed, Arbitrum for low Ethereum fees, 
+            Each blockchain offers different benefits: Arbitrum/Base for low fees and privacy (Hibachi), 
             Hyperliquid L1 for zero gas, multi-chain for flexibility.
           </p>
 
@@ -863,7 +869,7 @@ export default function DEXPage() {
           </p>
           <ul>
             <li><strong>Hyperliquid:</strong> Safest (2+ years operational, never hacked, multiple audits)</li>
-            <li><strong>Hibachi:</strong> Moderate risk (newer, but audited)</li>
+            <li><strong>Hibachi:</strong> Moderate risk (newer, but audited with ZK-proof security)</li>
             <li><strong>AsterDEX:</strong> Higher risk (only 2 months operational, but audited by 3 firms)</li>
             <li><strong>Lighter:</strong> Moderate risk (newer platform, standard audits)</li>
           </ul>
@@ -924,7 +930,7 @@ export default function DEXPage() {
           <ul>
             <li><a href="/dex/asterdex">AsterDEX Full Review</a> - 1001x leverage, $32B volume, multi-chain</li>
             <li><a href="/dex/hyperliquid">Hyperliquid Full Review</a> - Zero gas, own L1, 2+ years proven</li>
-            <li><a href="/dex/hibachi">Hibachi Full Review</a> - Solana native, 100x leverage, fast execution</li>
+            <li><a href="/dex/hibachi">Hibachi Full Review</a> - Privacy-first, ZK-proofs, Arbitrum/Base, airdrop</li>
             <li><a href="/dex/lighter">Lighter Full Review</a> - Arbitrum-based, 20x leverage, innovative matching</li>
             <li><a href="/dex/compare">Detailed Side-by-Side Comparison</a> - All DEXs compared in one place</li>
             <li><a href="/exchanges/binance">Binance CEX Review</a> - Compare with centralized alternative</li>
@@ -945,7 +951,7 @@ export default function DEXPage() {
           with funds you cannot afford to lose.</small></p>
         </div>
 
-        <p><small><strong>Last Updated:</strong> November 13, 2025 | Comprehensive data verified from official sources</small></p>
+        <p><small><strong>Last Updated:</strong> November 14, 2025 | Comprehensive data verified from official sources</small></p>
         
         <p style={{ marginTop: '30px' }}>
           <a href="/">← Back to Home</a> | 

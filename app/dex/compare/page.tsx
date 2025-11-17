@@ -30,7 +30,7 @@ export default function CompareDEXPage() {
               "name": "Crypto Reference"
             },
             "datePublished": "2024-01-15",
-            "dateModified": "2025-11-13",
+            "dateModified": "2025-11-14",
             "publisher": {
               "@type": "Organization",
               "name": "Crypto Reference",
@@ -69,7 +69,7 @@ export default function CompareDEXPage() {
                 "name": "Which perpetual DEX has zero gas fees?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Hyperliquid is the only major perpetual DEX with zero gas fees for all trading operations. Other DEXs have low fees: Hibachi (~$0.01 on Solana), Lighter (~$0.10 on Arbitrum), AsterDEX (~$0.10 multi-chain)."
+                  "text": "Hyperliquid is the only major perpetual DEX with zero gas fees for all trading operations. Other DEXs have low fees: Hibachi (low gas on Arbitrum/Base), Lighter (~$0.10 on Arbitrum), AsterDEX (~$0.10 multi-chain)."
                 }
               },
               {
@@ -85,7 +85,7 @@ export default function CompareDEXPage() {
                 "name": "Which perpetual DEX is fastest?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Hyperliquid is fastest with sub-100ms execution on its custom L1 blockchain. Hibachi is second (~400ms on Solana), followed by Lighter (0.5-2s on Arbitrum) and AsterDEX (~300ms multi-chain average)."
+                  "text": "Hyperliquid is fastest with sub-100ms execution on its custom L1 blockchain. Hibachi offers CEX-level speeds via off-chain CLOB, followed by Lighter (0.5-2s on Arbitrum) and AsterDEX (~300ms multi-chain average)."
                 }
               },
               {
@@ -93,7 +93,7 @@ export default function CompareDEXPage() {
                 "name": "Which perpetual DEX supports multiple blockchains?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Only AsterDEX supports multiple blockchains (BNB Chain, Ethereum, Solana, Arbitrum). Hyperliquid uses its own L1, Hibachi is Solana-only, and Lighter is Arbitrum-only."
+                  "text": "Only AsterDEX supports multiple blockchains (BNB Chain, Ethereum, Solana, Arbitrum). Hyperliquid uses its own L1, Hibachi is Arbitrum/Base only, and Lighter is Arbitrum-only."
                 }
               },
               {
@@ -101,7 +101,7 @@ export default function CompareDEXPage() {
                 "name": "Which perpetual DEX has the lowest fees?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Trading fees are similar (0.02%-0.07%), but Hyperliquid has the lowest total cost with $0 gas fees. For gas costs: Hyperliquid ($0), Hibachi (~$0.01), Lighter (~$0.10), AsterDEX (~$0.10)."
+                  "text": "Trading fees are similar (0.02%-0.07%), but Hyperliquid has the lowest total cost with $0 gas fees. For gas costs: Hyperliquid ($0), Hibachi (low Arbitrum/Base fees), Lighter (~$0.10), AsterDEX (~$0.10)."
                 }
               },
               {
@@ -125,7 +125,7 @@ export default function CompareDEXPage() {
                 "name": "Is Hibachi or Lighter better?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Hibachi is better for most traders with 5x higher leverage (100x vs 20x), 2.5x higher volume ($500M vs $200M), faster execution (sub-second vs 0.5-2s), and lower gas fees ($0.01 vs $0.10). Choose Lighter only if you're deeply committed to Arbitrum/Ethereum ecosystem and want conservative 20x leverage."
+                  "text": "Hibachi is better for privacy-focused traders with ZK-proof encryption and pre-TGE airdrop opportunities. Lighter is better for conservative traders wanting 20x leverage in Arbitrum ecosystem. Choose Hibachi for privacy; choose Lighter for lower risk."
                 }
               }
             ]
@@ -182,17 +182,20 @@ export default function CompareDEXPage() {
                 {
                   "name": "Hibachi",
                   "rank": 3,
-                  "rating": "4.3/5",
+                  "rating": "4.5/5",
                   "leverage": "100x",
-                  "chains": 1,
+                  "chains": 2,
+                  "blockchain": "Arbitrum & Base",
                   "daily_volume": "$500M",
-                  "gas_fees": "~$0.01",
+                  "gas_fees": "Low (Arbitrum/Base L2)",
+                  "technology": "ZK-Proofs + Celestia DA",
                   "wins_on": [
-                    "Solana ecosystem integration",
-                    "Very low gas fees",
-                    "Fast execution on Solana"
+                    "Privacy via ZK-proofs (ONLY DEX with this)",
+                    "Encrypted transactions and balances",
+                    "CEX-level execution speed",
+                    "Pre-TGE airdrop (20% allocation)"
                   ],
-                  "best_for": "Solana ecosystem traders"
+                  "best_for": "Privacy-focused traders, airdrop farmers"
                 },
                 {
                   "name": "Lighter",
@@ -217,10 +220,11 @@ export default function CompareDEXPage() {
                 "most_reliable": "Hyperliquid (2+ years)",
                 "fastest_execution": "Hyperliquid (sub-100ms)",
                 "multi_chain": "AsterDEX (only one)",
-                "solana_best": "Hibachi",
+                "privacy_best": "Hibachi (ZK-proofs)",
                 "arbitrum_best": "Lighter",
                 "safest": "Hyperliquid",
-                "lowest_risk": "Lighter (20x)"
+                "lowest_risk": "Lighter (20x)",
+                "airdrop_opportunity": "Hibachi (Pre-TGE, 20% allocation)"
               },
               "head_to_head": {
                 "asterdex_vs_hyperliquid": {
@@ -229,16 +233,18 @@ export default function CompareDEXPage() {
                   "hyperliquid_wins": ["gas fees", "execution speed", "track record", "security"]
                 },
                 "asterdex_vs_hibachi": {
-                  "verdict": "AsterDEX vastly superior, choose Hibachi only for Solana ecosystem",
+                  "verdict": "AsterDEX for leverage and volume, Hibachi for privacy",
                   "volume_ratio": "64x",
-                  "leverage_ratio": "10x"
+                  "leverage_ratio": "10x",
+                  "hibachi_unique": "ZK-proof privacy (no other DEX has this)"
                 },
                 "hyperliquid_vs_hibachi": {
-                  "verdict": "Hyperliquid better for most traders",
-                  "volume_ratio": "18x"
+                  "verdict": "Hyperliquid for reliability and zero fees, Hibachi for privacy",
+                  "volume_ratio": "18x",
+                  "hibachi_unique": "Privacy-first trading with encrypted transactions"
                 },
                 "hibachi_vs_lighter": {
-                  "verdict": "Hibachi better for most traders",
+                  "verdict": "Hibachi for privacy and airdrop, Lighter for conservative low-risk trading",
                   "leverage_ratio": "5x",
                   "volume_ratio": "2.5x"
                 }
@@ -250,13 +256,14 @@ export default function CompareDEXPage() {
                 "most_reliable": "Hyperliquid",
                 "fastest_execution": "Hyperliquid",
                 "multi_chain_trading": "AsterDEX",
-                "solana_ecosystem": "Hibachi",
+                "privacy_trading": "Hibachi",
                 "lowest_risk": "Lighter",
                 "high_frequency_trading": "Hyperliquid",
-                "privacy_features": "AsterDEX"
+                "privacy_features": "Hibachi (ZK-proofs)",
+                "airdrop_farming": "Hibachi"
               }
             },
-            "last_updated": "2025-11-13"
+            "last_updated": "2025-11-14"
           })
         }}
       />
@@ -265,7 +272,7 @@ export default function CompareDEXPage() {
         <header>
           <h1>Compare Best Perpetual DEX 2025: Complete Side-by-Side Analysis</h1>
           
-          <p><strong>Last Updated:</strong> November 13, 2025</p>
+          <p><strong>Last Updated:</strong> November 14, 2025</p>
 
           <p>
             Complete side-by-side comparison of the top 4 perpetual futures decentralized exchanges: 
@@ -341,26 +348,27 @@ export default function CompareDEXPage() {
               <tr style={{ background: '#f3e8ff' }}>
                 <td style={{ border: '1px solid #ddd', padding: '10px' }}>
                   <a href="/dex/hibachi"><strong>Hibachi</strong></a><br/>
-                  <small>⭐ 4.3/5</small>
+                  <small>⭐ 4.5/5</small>
                 </td>
                 <td style={{ border: '1px solid #ddd', padding: '10px', textAlign: 'center' }}>
                   100x<br/>
                   <small>High</small>
                 </td>
                 <td style={{ border: '1px solid #ddd', padding: '10px', textAlign: 'center' }}>
-                  Solana<br/>
-                  <small>Single chain</small>
+                  <strong>Arbitrum & Base</strong><br/>
+                  <small>Ethereum L2</small>
                 </td>
                 <td style={{ border: '1px solid #ddd', padding: '10px', textAlign: 'center' }}>
                   $500M<br/>
                   <small>Medium</small>
                 </td>
                 <td style={{ border: '1px solid #ddd', padding: '10px', textAlign: 'center' }}>
-                  ~$0.01<br/>
-                  <small>Very low</small>
+                  Low<br/>
+                  <small>Arb/Base L2</small>
                 </td>
                 <td style={{ border: '1px solid #ddd', padding: '10px' }}>
-                  Solana ecosystem<br/>traders
+                  <strong>Privacy traders</strong> 🔒<br/>
+                  <small>ZK-proofs</small>
                 </td>
               </tr>
               <tr style={{ background: '#f0fdf4' }}>
@@ -425,8 +433,8 @@ export default function CompareDEXPage() {
                 <td style={{ border: '1px solid #ddd', padding: '12px' }}><strong>Hibachi</strong></td>
                 <td style={{ border: '1px solid #ddd', padding: '12px' }}>0.03%</td>
                 <td style={{ border: '1px solid #ddd', padding: '12px' }}>0.07%</td>
-                <td style={{ border: '1px solid #ddd', padding: '12px' }}>~$0.01</td>
-                <td style={{ border: '1px solid #ddd', padding: '12px' }}>0.03-0.07% + $0.01</td>
+                <td style={{ border: '1px solid #ddd', padding: '12px' }}>Low<br/><small>Arbitrum/Base</small></td>
+                <td style={{ border: '1px solid #ddd', padding: '12px' }}>0.03-0.07% + low gas</td>
               </tr>
               <tr>
                 <td style={{ border: '1px solid #ddd', padding: '12px' }}><strong>Lighter</strong></td>
@@ -465,9 +473,9 @@ export default function CompareDEXPage() {
               </tr>
               <tr>
                 <td style={{ border: '1px solid #ddd', padding: '12px' }}><strong>Hibachi</strong></td>
-                <td style={{ border: '1px solid #ddd', padding: '12px' }}>~400ms<br/><small>Solana speed</small></td>
-                <td style={{ border: '1px solid #ddd', padding: '12px' }}>Newer<br/><small>Limited history</small></td>
-                <td style={{ border: '1px solid #ddd', padding: '12px' }}>Solana-dependent</td>
+                <td style={{ border: '1px solid #ddd', padding: '12px' }}>CEX-level<br/><small>Off-chain CLOB</small></td>
+                <td style={{ border: '1px solid #ddd', padding: '12px' }}>Newer<br/><small>Pre-TGE</small></td>
+                <td style={{ border: '1px solid #ddd', padding: '12px' }}>Good</td>
               </tr>
               <tr>
                 <td style={{ border: '1px solid #ddd', padding: '12px' }}><strong>Lighter</strong></td>
@@ -514,9 +522,11 @@ export default function CompareDEXPage() {
               <tr style={{ background: '#f3e8ff' }}>
                 <td style={{ border: '1px solid #ddd', padding: '12px' }}><strong>Hibachi</strong></td>
                 <td style={{ border: '1px solid #ddd', padding: '12px' }}>
-                  ✅ <strong>Solana Native</strong> - Deep ecosystem integration<br/>
-                  ✅ <strong>Sub-Second Execution</strong> - Solana speed<br/>
-                  ✅ <strong>Very Low Gas</strong> - ~$0.01 per trade<br/>
+                  ✅ <strong>ZK-Proof Privacy</strong> 🔒 - ONLY DEX with encrypted transactions<br/>
+                  ✅ <strong>Hidden Balances</strong> - Account balances not visible on-chain<br/>
+                  ✅ <strong>Celestia DA</strong> - Decentralized data availability layer<br/>
+                  ✅ <strong>CEX-Level Speed</strong> - Off-chain CLOB execution<br/>
+                  ✅ <strong>Pre-TGE Airdrop</strong> - 20% token allocation, $5M VC backing<br/>
                   ✅ <strong>100x Leverage</strong> - High capital efficiency
                 </td>
               </tr>
@@ -598,7 +608,7 @@ export default function CompareDEXPage() {
               <tr>
                 <td style={{ border: '1px solid #ddd', padding: '12px' }}><strong>Hibachi</strong></td>
                 <td style={{ border: '1px solid #ddd', padding: '12px' }}>⚠️ High<br/><small>100x = 1% move needed</small></td>
-                <td style={{ border: '1px solid #ddd', padding: '12px' }}>⚠️ Moderate<br/><small>Newer platform</small></td>
+                <td style={{ border: '1px solid #ddd', padding: '12px' }}>⚠️ Moderate<br/><small>Newer platform, audited</small></td>
                 <td style={{ border: '1px solid #ddd', padding: '12px' }}>⚠️ Moderate Risk</td>
               </tr>
               <tr>
@@ -643,16 +653,17 @@ export default function CompareDEXPage() {
             <ul>
               <li>10x higher leverage (1001x vs 100x)</li>
               <li>64x higher volume ($32B vs $500M)</li>
-              <li>Multi-chain vs Solana-only</li>
+              <li>Multi-chain vs Arbitrum/Base only</li>
               <li>Hidden Orders + stock perpetuals</li>
             </ul>
             <p><strong>Hibachi wins on:</strong></p>
             <ul>
-              <li>Lower gas fees ($0.01 vs $0.10)</li>
-              <li>Faster execution on Solana</li>
-              <li>Solana ecosystem integration</li>
+              <li>🔒 ZK-proof privacy (ONLY DEX with encrypted transactions)</li>
+              <li>Hidden balances (not visible on-chain)</li>
+              <li>Pre-TGE airdrop opportunity (20% allocation)</li>
+              <li>Arbitrum/Base ecosystem integration</li>
             </ul>
-            <p><strong>Verdict:</strong> AsterDEX is vastly superior for serious traders. Choose Hibachi only for Solana ecosystem focus.</p>
+            <p><strong>Verdict:</strong> AsterDEX for leverage and volume. Hibachi for privacy-first trading and airdrop farming.</p>
           </div>
 
           <h3>🟢 Hyperliquid vs Hibachi</h3>
@@ -660,16 +671,18 @@ export default function CompareDEXPage() {
             <p><strong>Hyperliquid wins on:</strong></p>
             <ul>
               <li>18x higher volume ($9B vs $500M)</li>
-              <li>Zero gas fees vs $0.01</li>
-              <li>Faster execution (sub-100ms vs ~400ms)</li>
+              <li>Zero gas fees vs Arbitrum/Base fees</li>
+              <li>Fastest execution (sub-100ms)</li>
               <li>Proven 2+ year track record</li>
             </ul>
             <p><strong>Hibachi wins on:</strong></p>
             <ul>
               <li>2x higher leverage (100x vs 50x)</li>
-              <li>Solana ecosystem integration</li>
+              <li>🔒 Privacy via ZK-proofs (unique)</li>
+              <li>Encrypted transactions and balances</li>
+              <li>Pre-TGE airdrop (20% allocation)</li>
             </ul>
-            <p><strong>Verdict:</strong> Hyperliquid is better for most traders. Choose Hibachi only for Solana-specific needs.</p>
+            <p><strong>Verdict:</strong> Hyperliquid for reliability and zero fees. Hibachi for privacy-conscious traders and airdrop opportunities.</p>
           </div>
 
           <h3>🔴 Hibachi vs Lighter</h3>
@@ -678,16 +691,17 @@ export default function CompareDEXPage() {
             <ul>
               <li>5x higher leverage (100x vs 20x)</li>
               <li>2.5x higher volume ($500M vs $200M)</li>
-              <li>Faster execution (sub-second vs 0.5-2s)</li>
-              <li>Lower gas fees ($0.01 vs $0.10)</li>
+              <li>🔒 ZK-proof privacy (encrypted transactions)</li>
+              <li>Pre-TGE airdrop opportunities</li>
+              <li>Multi-chain (Arbitrum + Base vs Arbitrum only)</li>
             </ul>
             <p><strong>Lighter wins on:</strong></p>
             <ul>
               <li>Lower liquidation risk (20x more conservative)</li>
-              <li>Ethereum/Arbitrum ecosystem</li>
+              <li>Ethereum/Arbitrum ecosystem focus</li>
               <li>Innovative order matching</li>
             </ul>
-            <p><strong>Verdict:</strong> Hibachi is better for most traders. Choose Lighter only for Arbitrum ecosystem or conservative trading.</p>
+            <p><strong>Verdict:</strong> Hibachi for privacy-focused trading and airdrop farming. Lighter for conservative low-risk trading in Arbitrum ecosystem.</p>
           </div>
         </section>
 
@@ -723,11 +737,12 @@ export default function CompareDEXPage() {
           <div style={{ background: '#f3e8ff', padding: '20px', borderRadius: '8px', marginBottom: '20px', border: '2px solid #a855f7' }}>
             <h3 style={{ marginTop: 0 }}>✅ Choose Hibachi if you:</h3>
             <ul>
-              <li>Already trade in Solana ecosystem</li>
-              <li>Want ultra-low gas fees (~$0.01)</li>
-              <li>Need fast execution on Solana</li>
-              <li>Want 100x leverage with Solana speed</li>
-              <li>Prefer deep Solana DeFi integration</li>
+              <li>🔒 Want privacy-first trading (ZK-proof encrypted transactions)</li>
+              <li>Need hidden account balances (not visible on-chain)</li>
+              <li>Trade on Arbitrum or Base ecosystem</li>
+              <li>Want Pre-TGE airdrop opportunities (20% allocation)</li>
+              <li>Need 100x leverage with privacy protection</li>
+              <li>Value mathematical verification (Celestia DA)</li>
             </ul>
             <p><a href="/dex/hibachi" style={{ fontWeight: 'bold' }}>→ Read Hibachi Full Review</a></p>
           </div>
@@ -787,10 +802,10 @@ export default function CompareDEXPage() {
                 <td style={{ border: '1px solid #ddd', padding: '12px' }}><strong>AsterDEX</strong></td>
                 <td style={{ border: '1px solid #ddd', padding: '12px' }}>Only DEX with 4 chains</td>
               </tr>
-              <tr>
-                <td style={{ border: '1px solid #ddd', padding: '12px' }}>Solana ecosystem</td>
+              <tr style={{ background: '#f3e8ff' }}>
+                <td style={{ border: '1px solid #ddd', padding: '12px' }}><strong>Privacy trading</strong> 🔒</td>
                 <td style={{ border: '1px solid #ddd', padding: '12px' }}><strong>Hibachi</strong></td>
-                <td style={{ border: '1px solid #ddd', padding: '12px' }}>Native Solana integration</td>
+                <td style={{ border: '1px solid #ddd', padding: '12px' }}><strong>ONLY DEX with ZK-proof encryption</strong></td>
               </tr>
               <tr>
                 <td style={{ border: '1px solid #ddd', padding: '12px' }}>Lowest risk</td>
@@ -802,10 +817,10 @@ export default function CompareDEXPage() {
                 <td style={{ border: '1px solid #ddd', padding: '12px' }}><strong>Hyperliquid</strong></td>
                 <td style={{ border: '1px solid #ddd', padding: '12px' }}>Zero gas + fastest execution</td>
               </tr>
-              <tr>
-                <td style={{ border: '1px solid #ddd', padding: '12px' }}>Privacy features</td>
-                <td style={{ border: '1px solid #ddd', padding: '12px' }}><strong>AsterDEX</strong></td>
-                <td style={{ border: '1px solid #ddd', padding: '12px' }}>Hidden Orders (unique)</td>
+              <tr style={{ background: '#f3e8ff' }}>
+                <td style={{ border: '1px solid #ddd', padding: '12px' }}><strong>Airdrop farming</strong></td>
+                <td style={{ border: '1px solid #ddd', padding: '12px' }}><strong>Hibachi</strong></td>
+                <td style={{ border: '1px solid #ddd', padding: '12px' }}>Pre-TGE, 20% allocation, $5M VC backing</td>
               </tr>
             </tbody>
           </table>
@@ -840,7 +855,7 @@ export default function CompareDEXPage() {
             Other DEXs have low but non-zero fees:
           </p>
           <ul>
-            <li>Hibachi: ~$0.01 (Solana)</li>
+            <li>Hibachi: Low gas on Arbitrum/Base (Ethereum L2)</li>
             <li>Lighter: ~$0.10 (Arbitrum)</li>
             <li>AsterDEX: ~$0.10 (multi-chain average)</li>
           </ul>
@@ -867,7 +882,7 @@ export default function CompareDEXPage() {
           <ol>
             <li>Hyperliquid: Sub-100ms (fastest)</li>
             <li>AsterDEX: ~300ms (multi-chain average)</li>
-            <li>Hibachi: ~400ms (Solana)</li>
+            <li>Hibachi: CEX-level via off-chain CLOB</li>
             <li>Lighter: 0.5-2 seconds (slowest)</li>
           </ol>
 
@@ -882,7 +897,7 @@ export default function CompareDEXPage() {
             <li>Arbitrum</li>
           </ul>
           <p>
-            Other DEXs are single-chain: Hyperliquid (own L1), Hibachi (Solana only), Lighter (Arbitrum only).
+            Other DEXs are single or dual-chain: Hyperliquid (own L1), Hibachi (Arbitrum & Base), Lighter (Arbitrum only).
           </p>
 
           <h3>Which perpetual DEX has the lowest fees?</h3>
@@ -892,7 +907,7 @@ export default function CompareDEXPage() {
           </p>
           <ol>
             <li>Hyperliquid: 0.02-0.05% + $0 gas = <strong>Lowest</strong></li>
-            <li>Hibachi: 0.03-0.07% + $0.01 gas</li>
+            <li>Hibachi: 0.03-0.07% + low Arbitrum/Base fees</li>
             <li>AsterDEX: 0.02-0.05% + $0.10 gas</li>
             <li>Lighter: 0.05% + $0.10 gas</li>
           </ol>
@@ -907,6 +922,19 @@ export default function CompareDEXPage() {
             <li><strong>1001x Leverage:</strong> Highest in DeFi (10x higher than Hibachi, 50x higher than Lighter)</li>
             <li><strong>Multi-chain Support:</strong> Only DEX with 4 blockchain support</li>
             <li><strong>Yield-bearing Collateral:</strong> Earn yield on your margin (asBNB, USDF)</li>
+          </ul>
+
+          <h3>What unique features does Hibachi have?</h3>
+          <p>
+            Hibachi unique features not found on other perpetual DEXs:
+          </p>
+          <ul>
+            <li><strong>🔒 ZK-Proof Privacy:</strong> ONLY DEX with zero-knowledge encrypted transactions</li>
+            <li><strong>Hidden Balances:</strong> Account balances not visible on-chain</li>
+            <li><strong>Celestia Integration:</strong> Decentralized data availability layer</li>
+            <li><strong>Off-chain CLOB:</strong> CEX-level execution speeds</li>
+            <li><strong>Pre-TGE Airdrop:</strong> 20% token allocation for early users</li>
+            <li><strong>$5M VC Backing:</strong> Funded by Dragonfly, Electric Capital</li>
           </ul>
 
           <h3>Why choose Hyperliquid over AsterDEX?</h3>
@@ -924,18 +952,24 @@ export default function CompareDEXPage() {
 
           <h3>Is Hibachi or Lighter better?</h3>
           <p>
-            Hibachi is better for most traders:
+            <strong>Choose Hibachi if you want:</strong>
           </p>
           <ul>
-            <li><strong>5x higher leverage:</strong> 100x vs 20x</li>
-            <li><strong>2.5x higher volume:</strong> $500M vs $200M (more liquidity)</li>
-            <li><strong>Faster execution:</strong> Sub-second vs 0.5-2s</li>
-            <li><strong>Lower gas fees:</strong> $0.01 vs $0.10</li>
+            <li>🔒 Privacy-first trading (ZK-proof encrypted transactions)</li>
+            <li>5x higher leverage (100x vs 20x)</li>
+            <li>2.5x higher volume ($500M vs $200M)</li>
+            <li>Pre-TGE airdrop opportunities</li>
+            <li>Multi-chain access (Arbitrum + Base)</li>
           </ul>
           <p>
-            Choose Lighter only if you're deeply committed to Arbitrum/Ethereum ecosystem and want conservative 
-            20x leverage (lower liquidation risk: 5% move needed vs 1% at 100x).
+            <strong>Choose Lighter if you want:</strong>
           </p>
+          <ul>
+            <li>Conservative 20x leverage (5% move needed vs 1% at 100x)</li>
+            <li>Lower liquidation risk (safest leverage option)</li>
+            <li>Arbitrum-only ecosystem focus</li>
+            <li>Innovative order matching technology</li>
+          </ul>
         </section>
 
         <section id="summary">
@@ -947,7 +981,8 @@ export default function CompareDEXPage() {
             <p><strong>💰 Lowest Total Fees:</strong> Hyperliquid (zero gas)</p>
             <p><strong>🔥 Highest Leverage:</strong> AsterDEX (1001x)</p>
             <p><strong>🌐 Multi-Chain:</strong> AsterDEX (only one with 4 chains)</p>
-            <p><strong>🟣 Best for Solana:</strong> Hibachi</p>
+            <p><strong>🔒 Best Privacy:</strong> Hibachi (ONLY DEX with ZK-proofs)</p>
+            <p><strong>🎁 Airdrop Opportunity:</strong> Hibachi (Pre-TGE, 20% allocation)</p>
             <p><strong>🔵 Best for Arbitrum:</strong> Lighter</p>
             <p><strong>📊 Best for Large Traders:</strong> AsterDEX (Hidden Orders + highest volume)</p>
             <p><strong>🎯 Best for HFT:</strong> Hyperliquid (zero gas + fastest)</p>
@@ -959,7 +994,7 @@ export default function CompareDEXPage() {
           <ul>
             <li><a href="/dex/asterdex">AsterDEX Full Review</a> - 16 FAQ, detailed analysis</li>
             <li><a href="/dex/hyperliquid">Hyperliquid Full Review</a> - 16 FAQ, proven track record</li>
-            <li><a href="/dex/hibachi">Hibachi Full Review</a> - 13 FAQ, Solana focus</li>
+            <li><a href="/dex/hibachi">Hibachi Full Review</a> - 16 FAQ, ZK-proof privacy focus</li>
             <li><a href="/dex/lighter">Lighter Full Review</a> - 14 FAQ, Arbitrum analysis</li>
             <li><a href="/dex">All DEX Directory</a> - Complete perpetual DEX hub</li>
             <li><a href="/exchanges/binance">Binance CEX Review</a> - Compare with centralized alternative</li>
@@ -979,7 +1014,7 @@ export default function CompareDEXPage() {
           cannot afford to lose.</small></p>
         </div>
 
-        <p><small><strong>Last Updated:</strong> November 13, 2025 | Data verified from official sources</small></p>
+        <p><small><strong>Last Updated:</strong> November 14, 2025 | Data verified from official sources</small></p>
         
         <p style={{ marginTop: '30px' }}>
           <a href="/dex">← Back to DEX Directory</a> | 
