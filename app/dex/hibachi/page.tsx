@@ -162,6 +162,11 @@ export default function HibachiPage() {
             "name": "Hibachi",
             "description": "Privacy-first perpetual futures DEX on Arbitrum and Base using zero-knowledge proofs for transaction encryption",
             "category": "Decentralized Exchange",
+            "image": [
+              "https://cryptoreference.io/images/platforms/hibachi-logo.png",
+              "https://cryptoreference.io/images/platforms/hibachi-interface.png",
+              "https://cryptoreference.io/images/platforms/hibachi-zk.png"
+            ],
             "brand": {
               "@type": "Brand",
               "name": "Hibachi"
@@ -171,7 +176,37 @@ export default function HibachiPage() {
               "url": "https://cryptoreference.io/go/hibachi",
               "priceCurrency": "USD",
               "price": "0",
-              "availability": "https://schema.org/InStock"
+              "availability": "https://schema.org/InStock",
+              "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {
+                  "@type": "MonetaryAmount",
+                  "value": "0",
+                  "currency": "USD"
+                },
+                "deliveryTime": {
+                  "@type": "ShippingDeliveryTime",
+                  "handlingTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": "0",
+                    "maxValue": "0",
+                    "unitCode": "DAY"
+                  },
+                  "transitTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": "0",
+                    "maxValue": "0",
+                    "unitCode": "DAY"
+                  }
+                }
+              },
+              "hasMerchantReturnPolicy": {
+                "@type": "MerchantReturnPolicy",
+                "applicableCountry": "US",
+                "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+                "merchantReturnDays": "0",
+                "returnMethod": "https://schema.org/ReturnByMail"
+              }
             },
             "aggregateRating": {
               "@type": "AggregateRating",

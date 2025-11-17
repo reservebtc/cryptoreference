@@ -28,6 +28,11 @@ export default function AsterDEXPage() {
             "name": "AsterDEX",
             "description": "Multi-chain perpetual futures DEX with 1001x leverage, hidden orders, and stock perpetuals. Highest leverage in DeFi.",
             "category": "Decentralized Exchange",
+            "image": [
+              "https://cryptoreference.io/images/platforms/asterdex-logo.png",
+              "https://cryptoreference.io/images/platforms/asterdex-interface.png",
+              "https://cryptoreference.io/images/platforms/asterdex-trading.png"
+            ],
             "brand": {
               "@type": "Brand",
               "name": "AsterDEX",
@@ -41,7 +46,37 @@ export default function AsterDEXPage() {
               "url": "https://cryptoreference.io/go/asterdex",
               "priceCurrency": "USD",
               "price": "0",
-              "availability": "https://schema.org/InStock"
+              "availability": "https://schema.org/InStock",
+              "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {
+                  "@type": "MonetaryAmount",
+                  "value": "0",
+                  "currency": "USD"
+                },
+                "deliveryTime": {
+                  "@type": "ShippingDeliveryTime",
+                  "handlingTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": "0",
+                    "maxValue": "0",
+                    "unitCode": "DAY"
+                  },
+                  "transitTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": "0",
+                    "maxValue": "0",
+                    "unitCode": "DAY"
+                  }
+                }
+              },
+              "hasMerchantReturnPolicy": {
+                "@type": "MerchantReturnPolicy",
+                "applicableCountry": "US",
+                "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+                "merchantReturnDays": "0",
+                "returnMethod": "https://schema.org/ReturnByMail"
+              }
             },
             "aggregateRating": {
               "@type": "AggregateRating",

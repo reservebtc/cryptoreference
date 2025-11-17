@@ -27,6 +27,11 @@ export default function GatePage() {
             "name": "Gate.io",
             "description": "Cryptocurrency exchange with 1800+ coins (most in industry), 0.15% trading fees, 125x leverage, and copy trading",
             "category": "Cryptocurrency Exchange",
+            "image": [
+              "https://cryptoreference.io/images/platforms/gate-logo.png",
+              "https://cryptoreference.io/images/platforms/gate-interface.png",
+              "https://cryptoreference.io/images/platforms/gate-mobile.png"
+            ],
             "brand": {
               "@type": "Brand",
               "name": "Gate.io",
@@ -40,7 +45,37 @@ export default function GatePage() {
               "url": "https://cryptoreference.io/go/gate",
               "priceCurrency": "USD",
               "price": "0",
-              "availability": "https://schema.org/InStock"
+              "availability": "https://schema.org/InStock",
+              "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {
+                  "@type": "MonetaryAmount",
+                  "value": "0",
+                  "currency": "USD"
+                },
+                "deliveryTime": {
+                  "@type": "ShippingDeliveryTime",
+                  "handlingTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": "0",
+                    "maxValue": "0",
+                    "unitCode": "DAY"
+                  },
+                  "transitTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": "0",
+                    "maxValue": "0",
+                    "unitCode": "DAY"
+                  }
+                }
+              },
+              "hasMerchantReturnPolicy": {
+                "@type": "MerchantReturnPolicy",
+                "applicableCountry": "US",
+                "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+                "merchantReturnDays": "0",
+                "returnMethod": "https://schema.org/ReturnByMail"
+              }
             },
             "aggregateRating": {
               "@type": "AggregateRating",

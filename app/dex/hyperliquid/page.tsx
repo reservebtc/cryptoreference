@@ -27,6 +27,11 @@ export default function HyperliquidPage() {
             "name": "Hyperliquid",
             "description": "Leading perpetual futures DEX with zero gas fees, own L1 blockchain, and sub-100ms execution. Proven track record since 2023.",
             "category": "Decentralized Exchange",
+            "image": [
+              "https://cryptoreference.io/images/platforms/hyperliquid-logo.png",
+              "https://cryptoreference.io/images/platforms/hyperliquid-interface.png",
+              "https://cryptoreference.io/images/platforms/hyperliquid-trading.png"
+            ],
             "brand": {
               "@type": "Brand",
               "name": "Hyperliquid",
@@ -40,7 +45,37 @@ export default function HyperliquidPage() {
               "url": "https://cryptoreference.io/go/hyperliquid",
               "priceCurrency": "USD",
               "price": "0",
-              "availability": "https://schema.org/InStock"
+              "availability": "https://schema.org/InStock",
+              "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {
+                  "@type": "MonetaryAmount",
+                  "value": "0",
+                  "currency": "USD"
+                },
+                "deliveryTime": {
+                  "@type": "ShippingDeliveryTime",
+                  "handlingTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": "0",
+                    "maxValue": "0",
+                    "unitCode": "DAY"
+                  },
+                  "transitTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": "0",
+                    "maxValue": "0",
+                    "unitCode": "DAY"
+                  }
+                }
+              },
+              "hasMerchantReturnPolicy": {
+                "@type": "MerchantReturnPolicy",
+                "applicableCountry": "US",
+                "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+                "merchantReturnDays": "0",
+                "returnMethod": "https://schema.org/ReturnByMail"
+              }
             },
             "aggregateRating": {
               "@type": "AggregateRating",

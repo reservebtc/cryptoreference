@@ -27,6 +27,11 @@ export default function LighterPage() {
             "name": "Lighter",
             "description": "Arbitrum-based perpetual futures DEX with innovative order matching engine and 20x leverage. Built on Ethereum Layer 2 for low fees.",
             "category": "Decentralized Exchange",
+            "image": [
+              "https://cryptoreference.io/images/platforms/lighter-logo.png",
+              "https://cryptoreference.io/images/platforms/lighter-interface.png",
+              "https://cryptoreference.io/images/platforms/lighter-trading.png"
+            ],
             "brand": {
               "@type": "Brand",
               "name": "Lighter",
@@ -40,7 +45,37 @@ export default function LighterPage() {
               "url": "https://cryptoreference.io/go/lighter",
               "priceCurrency": "USD",
               "price": "0",
-              "availability": "https://schema.org/InStock"
+              "availability": "https://schema.org/InStock",
+              "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {
+                  "@type": "MonetaryAmount",
+                  "value": "0",
+                  "currency": "USD"
+                },
+                "deliveryTime": {
+                  "@type": "ShippingDeliveryTime",
+                  "handlingTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": "0",
+                    "maxValue": "0",
+                    "unitCode": "DAY"
+                  },
+                  "transitTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": "0",
+                    "maxValue": "0",
+                    "unitCode": "DAY"
+                  }
+                }
+              },
+              "hasMerchantReturnPolicy": {
+                "@type": "MerchantReturnPolicy",
+                "applicableCountry": "US",
+                "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+                "merchantReturnDays": "0",
+                "returnMethod": "https://schema.org/ReturnByMail"
+              }
             },
             "aggregateRating": {
               "@type": "AggregateRating",

@@ -27,6 +27,11 @@ export default function BinancePage() {
             "name": "Binance",
             "description": "World's largest cryptocurrency exchange with 0.1% trading fees, 350+ coins, and $100 welcome bonus for new users",
             "category": "Cryptocurrency Exchange",
+            "image": [
+              "https://cryptoreference.io/images/platforms/binance-logo.png",
+              "https://cryptoreference.io/images/platforms/binance-interface.png",
+              "https://cryptoreference.io/images/platforms/binance-mobile.png"
+            ],
             "brand": {
               "@type": "Brand",
               "name": "Binance",
@@ -41,7 +46,37 @@ export default function BinancePage() {
               "url": "https://cryptoreference.io/go/binance",
               "priceCurrency": "USD",
               "price": "0",
-              "availability": "https://schema.org/InStock"
+              "availability": "https://schema.org/InStock",
+              "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {
+                  "@type": "MonetaryAmount",
+                  "value": "0",
+                  "currency": "USD"
+                },
+                "deliveryTime": {
+                  "@type": "ShippingDeliveryTime",
+                  "handlingTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": "0",
+                    "maxValue": "0",
+                    "unitCode": "DAY"
+                  },
+                  "transitTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": "0",
+                    "maxValue": "0",
+                    "unitCode": "DAY"
+                  }
+                }
+              },
+              "hasMerchantReturnPolicy": {
+                "@type": "MerchantReturnPolicy",
+                "applicableCountry": "US",
+                "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+                "merchantReturnDays": "0",
+                "returnMethod": "https://schema.org/ReturnByMail"
+              }
             },
             "aggregateRating": {
               "@type": "AggregateRating",
