@@ -46,6 +46,7 @@ export default function BinancePage() {
               "url": "https://cryptoreference.io/go/binance",
               "priceCurrency": "USD",
               "price": "0",
+              "priceValidUntil": "2026-12-31",
               "availability": "https://schema.org/InStock",
               "shippingDetails": {
                 "@type": "OfferShippingDetails",

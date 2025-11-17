@@ -46,6 +46,7 @@ export default function AsterDEXPage() {
               "url": "https://cryptoreference.io/go/asterdex",
               "priceCurrency": "USD",
               "price": "0",
+              "priceValidUntil": "2026-12-31",
               "availability": "https://schema.org/InStock",
               "shippingDetails": {
                 "@type": "OfferShippingDetails",
