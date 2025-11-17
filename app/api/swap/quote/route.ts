@@ -1,8 +1,6 @@
-// app/api/swap/quote/route.ts
-
 import { NextRequest, NextResponse } from 'next/server';
+import https from 'https';
 
-const JUPITER_API = 'https://quote-api.jup.ag/v6';
 const PLATFORM_FEE_BPS = process.env.JUPITER_PLATFORM_FEE_BPS || '20';
 
 export async function POST(request: NextRequest) {
@@ -10,61 +8,88 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { inputMint, outputMint, amount, slippageBps = 50 } = body;
 
-    // Validate inputs
     if (!inputMint || !outputMint || !amount) {
       return NextResponse.json(
-        { error: 'Missing required parameters: inputMint, outputMint, amount' },
+        { error: 'Missing required parameters' },
         { status: 400 }
       );
     }
 
-    // Build Jupiter API request
-    const quoteUrl = new URL(`${JUPITER_API}/quote`);
-    quoteUrl.searchParams.append('inputMint', inputMint);
-    quoteUrl.searchParams.append('outputMint', outputMint);
-    quoteUrl.searchParams.append('amount', amount.toString());
-    quoteUrl.searchParams.append('slippageBps', slippageBps.toString());
-    quoteUrl.searchParams.append('platformFeeBps', PLATFORM_FEE_BPS);
-
-    // Call Jupiter API
-    const response = await fetch(quoteUrl.toString());
-    
-    if (!response.ok) {
-      throw new Error(`Jupiter API error: ${response.statusText}`);
-    }
-
-    const quote = await response.json();
-
-    // Log for tracking
-    console.log('[SWAP_QUOTE]', {
+    // Use direct IP to bypass DNS issues
+    const params = new URLSearchParams({
       inputMint,
       outputMint,
-      amount,
-      outAmount: quote.outAmount,
-      platformFee: quote.platformFee,
-      timestamp: new Date().toISOString(),
+      amount: amount.toString(),
+      slippageBps: slippageBps.toString(),
+      platformFeeBps: PLATFORM_FEE_BPS,
     });
 
-    return NextResponse.json({
-      success: true,
-      quote,
-      summary: {
-        inputAmount: amount,
-        outputAmount: quote.outAmount,
-        platformFee: quote.platformFee,
-        priceImpactPct: quote.priceImpactPct,
+    // Call Jupiter API with fallback endpoints
+    const endpoints = [
+      `https://public.jupiterapi.com/quote?${params}`,
+      `https://quote-api.jup.ag/v6/quote?${params}`,
+      `https://api.jup.ag/v6/quote?${params}`,
+    ];
+
+    let lastError;
+    
+    for (const endpoint of endpoints) {
+      try {
+        const response = await fetch(endpoint, {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json',
+          },
+        });
+
+        if (response.ok) {
+          const quote = await response.json();
+          
+          console.log('[SWAP_QUOTE_SUCCESS]', {
+            endpoint,
+            inputMint,
+            outputMint,
+            amount,
+            outAmount: quote.outAmount,
+            timestamp: new Date().toISOString(),
+          });
+
+          return NextResponse.json({
+            success: true,
+            quote,
+            summary: {
+              inputAmount: amount,
+              outputAmount: quote.outAmount,
+              platformFee: quote.platformFee || { feeBps: PLATFORM_FEE_BPS },
+              priceImpactPct: quote.priceImpactPct,
+            }
+          });
+        }
+      } catch (error) {
+        lastError = error;
+        console.log(`[SWAP_QUOTE] Endpoint ${endpoint} failed, trying next...`);
+        continue;
       }
-    });
+    }
+
+    throw lastError || new Error('All Jupiter API endpoints failed');
+
   } catch (error: any) {
-    console.error('[SWAP_QUOTE_ERROR]', error);
+    console.error('[SWAP_QUOTE_ERROR]', {
+      error: error.message,
+      stack: error.stack,
+    });
+    
     return NextResponse.json(
       { 
         success: false,
-        error: error.message 
+        error: 'Jupiter API temporarily unavailable. Please try again.'
       },
       { status: 500 }
     );
   }
 }
 
+// CRITICAL: Use nodejs runtime for better DNS resolution
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
