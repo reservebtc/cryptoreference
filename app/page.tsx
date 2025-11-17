@@ -127,12 +127,14 @@ export default function HomePage() {
                     "rank": 3,
                     "url": "/dex/hibachi",
                     "leverage": "100x",
-                    "chain": "Solana",
+                    "chains": ["Arbitrum", "Base"],
+                    "technology": "Zero-Knowledge Proofs (ZK) + Celestia DA",
                     "daily_volume": "$500M",
                     "kyc": false,
-                    "best_for": "Fastest execution (Solana), ultra-low gas (~$0.01), DeFi integration",
-                    "unique_features": ["Sub-second execution", "Deep Solana DeFi integration", "Ultra-low gas"],
-                    "launch_date": "2024-03"
+                    "funding": "$5M from Dragonfly, Electric Capital",
+                    "best_for": "Privacy-first trading (ZK-proofs), Arbitrum/Base ecosystem, Pre-TGE airdrop",
+                    "unique_features": ["Privacy via ZK-proofs", "Encrypted transactions", "Off-chain CLOB + on-chain settlement", "Pre-TGE (20% airdrop allocation)"],
+                    "launch_date": "2024"
                   },
                   {
                     "name": "Lighter",
@@ -428,14 +430,14 @@ export default function HomePage() {
 
         <article style={{ border: '1px solid #ddd', padding: '15px', borderRadius: '8px', background: 'white' }}>
           <h3 style={{ marginTop: 0, color: '#000' }}>
-            <a href="/dex/hibachi" style={{ color: '#0070f3' }}>Hibachi</a> - Solana Native
+            <a href="/dex/hibachi" style={{ color: '#0070f3' }}>Hibachi</a> - Privacy-First DEX
           </h3>
           <p style={{ margin: '10px 0', fontSize: '0.9rem', color: '#333' }}>
-            <strong>Leverage:</strong> 100x | <strong>Chain:</strong> Solana | <strong>Volume:</strong> $500M | 
-            <strong>Speed:</strong> Sub-second
+            <strong>Leverage:</strong> 100x | <strong>Chains:</strong> Arbitrum & Base | <strong>Volume:</strong> $500M | 
+            <strong>Privacy:</strong> ZK-Proofs
           </p>
           <p style={{ margin: 0, fontSize: '0.9rem', color: '#666' }}>
-            Fastest execution on Solana. Ultra-low gas (~$0.01). Deep DeFi integration.
+            Only DEX with ZK-proof privacy. Encrypted transactions. Pre-TGE airdrop (20% allocation).
           </p>
         </article>
 
