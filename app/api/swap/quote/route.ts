@@ -2,7 +2,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 
-const JUPITER_API = 'https://quote-api.jup.ag/v6';
+const JUPITER_API = 'https://api.jup.ag/v6';
 const PLATFORM_FEE_BPS = process.env.JUPITER_PLATFORM_FEE_BPS || '20';
 
 export async function POST(request: NextRequest) {
