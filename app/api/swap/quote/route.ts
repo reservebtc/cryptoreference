@@ -2,7 +2,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 
-const JUPITER_API = 'https://api.jup.ag/v6';
+const JUPITER_API = 'https://public.jupiterapi.com/v6';
 const PLATFORM_FEE_BPS = process.env.JUPITER_PLATFORM_FEE_BPS || '20';
 
 export async function POST(request: NextRequest) {
@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Build Jupiter API request
-    const quoteUrl = new URL(`${JUPITER_API}/quote`);
+    const quoteUrl = new URL(`${JUPITER_API}/v6/quote`);
     quoteUrl.searchParams.append('inputMint', inputMint);
     quoteUrl.searchParams.append('outputMint', outputMint);
     quoteUrl.searchParams.append('amount', amount.toString());
