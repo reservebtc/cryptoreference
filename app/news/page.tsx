@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     'crypto trading community',
     'market sentiment tracker',
   ],
+  alternates: {
+    canonical: 'https://cryptoreference.io/news',
+  },
 };
 
 

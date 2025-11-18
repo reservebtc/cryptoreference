@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     'crypto sentiment analysis',
     'historical market data',
   ],
+  alternates: {
+    canonical: 'https://cryptoreference.io/news/archive',
+  },
 };
 
 

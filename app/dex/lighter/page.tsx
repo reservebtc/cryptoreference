@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     'order matching engine',
     'Ethereum L2 DEX',
   ],
+  alternates: {
+    canonical: 'https://cryptoreference.io/dex/lighter',
+  },
 };
 
 export default function LighterPage() {

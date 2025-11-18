@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     'AsterDEX vs Hyperliquid',
     'highest leverage DeFi',
   ],
+  alternates: {
+    canonical: 'https://cryptoreference.io/dex/asterdex',
+  },
 };
 
 export default function AsterDEXPage() {

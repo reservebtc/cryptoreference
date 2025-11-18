@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     '50x leverage',
     'decentralized perpetuals',
   ],
+  alternates: {
+    canonical: 'https://cryptoreference.io/dex/hyperliquid',
+  },
 };
 
 export default function HyperliquidPage() {

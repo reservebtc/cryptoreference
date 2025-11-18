@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     '0.08% fees',
     'OKX safe',
   ],
+  alternates: {
+    canonical: 'https://cryptoreference.io/exchanges/okx',
+  },
 };
 
 export default function OKXPage() {

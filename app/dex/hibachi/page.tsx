@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     'Celestia DEX',
     'Hibachi airdrop',
   ],
+  alternates: {
+    canonical: 'https://cryptoreference.io/dex/hibachi',
+  },
 };
 
 export default function HibachiPage() {

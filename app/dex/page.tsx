@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     'no KYC perpetual trading',
     'high leverage DEX',
   ],
+  alternates: {
+    canonical: 'https://cryptoreference.io/dex',
+  },
 };
 
 export default function DEXPage() {

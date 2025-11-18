@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     'compare leverage DEX',
     'best crypto DEX',
   ],
+  alternates: {
+    canonical: 'https://cryptoreference.io/dex/compare',
+  },
 };
 
 export default function CompareDEXPage() {

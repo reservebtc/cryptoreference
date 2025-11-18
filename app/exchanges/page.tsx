@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     description: 'Compare top crypto exchanges: Binance, OKX, Gate.io. Find lowest fees and best features.',
     url: 'https://cryptoreference.io/exchanges',
   },
+  alternates: {
+    canonical: 'https://cryptoreference.io/exchanges',
+  },
 };
 
 export default function ExchangesPage() {

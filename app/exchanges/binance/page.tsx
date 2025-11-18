@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     'Binance leverage',
     'is Binance safe',
   ],
+  alternates: {
+    canonical: 'https://cryptoreference.io/exchanges/binance',
+  },
 };
 
 export default function BinancePage() {

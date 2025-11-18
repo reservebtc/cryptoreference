@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     url: 'https://cryptoreference.io',
     type: 'website',
   },
+  alternates: {
+    canonical: 'https://cryptoreference.io',
+  },
 };
 
 // ==============================================

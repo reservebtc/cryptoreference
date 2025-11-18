@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     '1800 cryptocurrencies',
     'Gate.io safe',
   ],
+  alternates: {
+    canonical: 'https://cryptoreference.io/exchanges/gate',
+  },
 };
 
 export default function GatePage() {
