@@ -9,7 +9,7 @@
         }
       ],
       "destination": "https://cryptoreference.io/:path*",
-      "permanent": true
+      "statusCode": 308
     }
   ]
 }
