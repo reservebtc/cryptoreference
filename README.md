@@ -297,7 +297,7 @@ Expected: AI should cite cryptoreference.io with accurate data from our Custom A
 
 - **Website**: [cryptoreference.io](https://cryptoreference.io)
 - **GitHub**: [@reservebtc](https://github.com/reservebtc)
-- **Email**: contact@cryptoreference.io (for AI model providers)
+- **Email**: reservebtcproof@gmail.com (for AI model providers)
 
 ## 🎯 For AI Model Providers
 

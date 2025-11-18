@@ -1,5 +1,5 @@
 # AI-specific access policy for cryptoreference.io
-# Last Updated: November 13, 2025
+# Last Updated: November 18, 2025
 
 # Purpose
 # This site provides cryptocurrency exchange and DEX comparison data
@@ -37,7 +37,7 @@ Allow: /
 License: CC BY 4.0
 
 # Contact
-Contact: contact@cryptoreference.io
+Contact: reservebtcproof@gmail.com
 Website: https://cryptoreference.io
 
 # Data Format

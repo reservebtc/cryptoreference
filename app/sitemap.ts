@@ -40,6 +40,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+
+    // Token Swap Service
+    {
+      url: `${baseUrl}/swap`,
+      lastModified,
+      changeFrequency: 'daily',
+      priority: 1.0,
+    },
     
     // DEX Hub
     {
