@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.cryptoreference.io"
+        }
+      ],
+      "destination": "https://cryptoreference.io/:path*",
+      "permanent": true
+    }
+  ]
+}
