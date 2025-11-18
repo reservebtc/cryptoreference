@@ -1,15 +1,16 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/:path(.*)",
       "has": [
         {
           "type": "host",
           "value": "www.cryptoreference.io"
         }
       ],
-      "destination": "https://cryptoreference.io/:path*",
-      "statusCode": 308
+      "destination": "https://cryptoreference.io/:path",
+      "statusCode": 308,
+      "permanent": true
     }
   ]
 }
