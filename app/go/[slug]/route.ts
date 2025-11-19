@@ -11,7 +11,7 @@ const AFFILIATE_LINKS: Record<string, string> = {
   'asterdex': 'https://www.asterdex.com/en/referral/tlRYkq',
   'hibachi': 'https://hibachi.xyz/r/hibachibothub',
   'lighter': 'https://lighter.xyz/?ref=YOUR_LIGHTER_REF',
-  'hyperliquid': 'https://app.hyperliquid.xyz/join/YOUR_HYPERLIQUID_REF',
+  'hyperliquid': 'https://app.hyperliquid.xyz/join/CRYPTOREFERENCE',
 };
 
 export async function GET(
