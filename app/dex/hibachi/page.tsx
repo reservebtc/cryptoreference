@@ -224,12 +224,18 @@ export default function HibachiPage() {
             "@type": "Article",
             "@id": "https://cryptoreference.io/dex/hibachi#article",
             "headline": "Hibachi Review 2025: Privacy-First Perpetual Futures DEX",
+            "image": [
+              "https://cryptoreference.io/images/platforms/hibachi-logo.png",
+              "https://cryptoreference.io/images/platforms/hibachi-interface.png",
+              "https://cryptoreference.io/images/platforms/hibachi-zk.png"
+            ],
             "author": {
               "@type": "Organization",
-              "name": "Crypto Reference"
+              "name": "Crypto Reference",
+              "url": "https://cryptoreference.io"
             },
-            "datePublished": "2025-01-15",
-            "dateModified": "2025-11-14",
+            "datePublished": "2025-01-15T00:00:00+00:00",
+            "dateModified": "2025-11-26T00:00:00+00:00",
             "publisher": {
               "@type": "Organization",
               "name": "Crypto Reference",

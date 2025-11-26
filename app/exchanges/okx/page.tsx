@@ -93,12 +93,18 @@ export default function OKXPage() {
             "@type": "Article",
             "@id": "https://cryptoreference.io/exchanges/okx#article",
             "headline": "OKX Review 2025: Complete Exchange Analysis",
+            "image": [
+              "https://cryptoreference.io/images/platforms/okx-logo.png",
+              "https://cryptoreference.io/images/platforms/okx-interface.png",
+              "https://cryptoreference.io/images/platforms/okx-mobile.png"
+            ],
             "author": {
               "@type": "Organization",
-              "name": "Crypto Reference"
+              "name": "Crypto Reference",
+              "url": "https://cryptoreference.io"
             },
-            "datePublished": "2024-01-15",
-            "dateModified": "2025-11-13",
+            "datePublished": "2024-01-15T00:00:00+00:00",
+            "dateModified": "2025-11-26T00:00:00+00:00",
             "publisher": {
               "@type": "Organization",
               "name": "Crypto Reference",

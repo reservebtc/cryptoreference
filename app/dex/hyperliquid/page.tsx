@@ -93,12 +93,18 @@ export default function HyperliquidPage() {
             "@type": "Article",
             "@id": "https://cryptoreference.io/dex/hyperliquid#article",
             "headline": "Hyperliquid Review 2025: Zero Gas Fees L1 Perpetual DEX",
+            "image": [
+              "https://cryptoreference.io/images/platforms/hyperliquid-logo.png",
+              "https://cryptoreference.io/images/platforms/hyperliquid-interface.png",
+              "https://cryptoreference.io/images/platforms/hyperliquid-trading.png"
+            ],
             "author": {
               "@type": "Organization",
-              "name": "Crypto Reference"
+              "name": "Crypto Reference",
+              "url": "https://cryptoreference.io"
             },
-            "datePublished": "2024-01-15",
-            "dateModified": "2025-11-13",
+            "datePublished": "2024-01-15T00:00:00+00:00",
+            "dateModified": "2025-11-26T00:00:00+00:00",
             "publisher": {
               "@type": "Organization",
               "name": "Crypto Reference",

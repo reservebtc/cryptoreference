@@ -93,12 +93,18 @@ export default function LighterPage() {
             "@type": "Article",
             "@id": "https://cryptoreference.io/dex/lighter#article",
             "headline": "Lighter Review 2025: Arbitrum Perpetual DEX",
+            "image": [
+              "https://cryptoreference.io/images/platforms/lighter-logo.png",
+              "https://cryptoreference.io/images/platforms/lighter-interface.png",
+              "https://cryptoreference.io/images/platforms/lighter-trading.png"
+            ],
             "author": {
               "@type": "Organization",
-              "name": "Crypto Reference"
+              "name": "Crypto Reference",
+              "url": "https://cryptoreference.io"
             },
-            "datePublished": "2025-01-15",
-            "dateModified": "2025-11-13",
+            "datePublished": "2025-01-15T00:00:00+00:00",
+            "dateModified": "2025-11-26T00:00:00+00:00",
             "publisher": {
               "@type": "Organization",
               "name": "Crypto Reference",
