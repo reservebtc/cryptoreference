@@ -94,12 +94,18 @@ export default function AsterDEXPage() {
             "@type": "Article",
             "@id": "https://cryptoreference.io/dex/asterdex#article",
             "headline": "AsterDEX Review 2025: 1001x Leverage Multi-Chain Perpetual Futures DEX",
+            "image": [
+              "https://cryptoreference.io/images/platforms/asterdex-logo.png",
+              "https://cryptoreference.io/images/platforms/asterdex-interface.png",
+              "https://cryptoreference.io/images/platforms/asterdex-trading.png"
+            ],
             "author": {
               "@type": "Organization",
-              "name": "Crypto Reference"
+              "name": "Crypto Reference",
+              "url": "https://cryptoreference.io"
             },
-            "datePublished": "2025-01-15",
-            "dateModified": "2025-11-13",
+            "datePublished": "2025-01-15T00:00:00+00:00",
+            "dateModified": "2025-11-26T00:00:00+00:00",
             "publisher": {
               "@type": "Organization",
               "name": "Crypto Reference",
