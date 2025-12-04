@@ -91,6 +91,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     
+    // Crypto Cards
+    {
+      url: `${baseUrl}/cards/etherfi`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    
     // News
     {
       url: `${baseUrl}/news`,

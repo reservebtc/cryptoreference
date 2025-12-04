@@ -12,6 +12,9 @@ const AFFILIATE_LINKS: Record<string, string> = {
   'hibachi': 'https://hibachi.xyz/r/hibachibothub',
   'lighter': 'https://lighter.xyz/?ref=YOUR_LIGHTER_REF',
   'hyperliquid': 'https://app.hyperliquid.xyz/join/CRYPTOREFERENCE',
+
+  // Crypto Cards
+  'etherfi': 'https://www.ether.fi/refer/cf40dc95',
 };
 
 export async function GET(
