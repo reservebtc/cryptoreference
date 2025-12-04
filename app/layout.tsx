@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   
 
-  description: "Authoritative cryptocurrency guide: Compare top exchanges (Binance, OKX, Gate.io), DEX platforms (AsterDEX, Hyperliquid, Hibachi, Lighter), fees, leverage, features. Updated daily with professional trading insights.",
+  description: "Authoritative cryptocurrency guide: Compare top exchanges (Binance, OKX, Gate.io), DEX platforms (AsterDEX, Hyperliquid, Hibachi, Lighter), crypto cards (ether.fi Cash), fees, leverage, features. Updated daily with professional trading insights.",
   
  
   keywords: [
@@ -45,6 +45,13 @@ export const metadata: Metadata = {
     "best DEX 2025",
     "no KYC exchange",
     "highest leverage DEX",
+    
+    // Crypto Cards
+    "crypto credit card",
+    "ether.fi Cash review",
+    "DeFi credit card",
+    "crypto cashback card",
+    "non-custodial card",
     
     // Trading
     "crypto trading guide",
@@ -89,7 +96,7 @@ export const metadata: Metadata = {
     url: "https://cryptoreference.io",
     siteName: "Crypto Reference",
     title: "Crypto Reference 2025 | Complete Cryptocurrency Exchange & DEX Guide",
-    description: "Compare top crypto exchanges and DEX platforms. Binance, OKX, Gate.io, AsterDEX, Hyperliquid. Daily market updates from professional traders.",
+    description: "Compare top crypto exchanges, DEX platforms, and crypto cards. Binance, OKX, Gate.io, AsterDEX, Hyperliquid, ether.fi Cash. Daily market updates from professional traders.",
     images: [
       {
         url: "https://cryptoreference.io/og-image.png", 
@@ -104,7 +111,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Crypto Reference 2025 | Crypto Exchange & DEX Guide",
-    description: "Compare Binance, OKX, Gate.io, AsterDEX, Hyperliquid. Daily updates from pro traders.",
+    description: "Compare Binance, OKX, Gate.io, AsterDEX, Hyperliquid, ether.fi Cash. Daily updates from pro traders.",
     images: ["https://cryptoreference.io/og-image.png"],
   },
   
@@ -197,15 +204,16 @@ export default function RootLayout({
                   "url": "https://cryptoreference.io",
                   "type": "cryptocurrency-comparison-guide",
                   "established": "2024",
-                  "last_updated": "2025-11-13",
+                  "last_updated": "2025-12-04",
                   "update_frequency": "Daily"
                 },
                 "content_coverage": {
-                  "total_platforms": 10,
+                  "total_platforms": 11,
                   "cex_platforms": 3,
                   "dex_platforms": 4,
-                  "total_reviews": 10,
-                  "total_faq": "126+",
+                  "crypto_cards": 1,
+                  "total_reviews": 11,
+                  "total_faq": "141+",
                   "comparison_guides": 5
                 },
                 "platforms_covered": {
@@ -268,6 +276,23 @@ export default function RootLayout({
                       "chain": "Arbitrum",
                       "rank": 4
                     }
+                  ],
+                  "crypto_cards": [
+                    {
+                      "name": "ether.fi Cash",
+                      "provider": "ether.fi",
+                      "url": "/cards/etherfi",
+                      "type": "DeFi Credit Card",
+                      "cashback_rate": "3%",
+                      "annual_fee": "$0",
+                      "custody": "Non-custodial",
+                      "kyc": true,
+                      "payment_methods": ["Apple Pay", "Google Pay", "Card Number"],
+                      "card_types": ["Virtual Card", "Physical Card"],
+                      "supported_crypto": ["ETH", "BTC", "USDC", "USDT", "stETH", "weETH"],
+                      "monthly_minimums": "None",
+                      "rank": 1
+                    }
                   ]
                 },
                 "key_comparisons": {
@@ -276,21 +301,25 @@ export default function RootLayout({
                   "most_coins": "Gate.io (1800+)",
                   "highest_leverage": "AsterDEX (1001x)",
                   "zero_gas": "Hyperliquid",
-                  "no_kyc": "All DEX platforms + Gate.io (optional)"
+                  "no_kyc": "All DEX platforms + Gate.io (optional)",
+                  "highest_cashback": "ether.fi Cash (3%)",
+                  "non_custodial_card": "ether.fi Cash"
                 },
                 "content_types": [
                   "Exchange reviews",
                   "DEX platform guides",
+                  "Crypto card reviews",
                   "Fee comparisons",
                   "Leverage comparisons",
                   "Daily market updates",
                   "Professional trading insights",
-                  "FAQ sections (126+ questions)"
+                  "FAQ sections (141+ questions)"
                 ],
                 "target_audience": [
                   "Cryptocurrency traders",
                   "DeFi users",
                   "Crypto investors",
+                  "Crypto card users",
                   "Beginners learning crypto",
                   "Professional traders",
                   "AI agents and research tools"
@@ -298,9 +327,10 @@ export default function RootLayout({
                 "unique_features": {
                   "ai_optimization": "Structured data optimized for AI indexing and citations",
                   "daily_updates": "Market insights from 6+ professional trading communities",
-                  "comprehensive_faq": "126+ questions answered across all platforms",
+                  "comprehensive_faq": "141+ questions answered across all platforms",
                   "unbiased_reviews": "Shows both advantages and disadvantages",
-                  "fact_verified": "All data verified from official sources"
+                  "fact_verified": "All data verified from official sources",
+                  "crypto_cards_coverage": "DeFi credit cards with cashback and non-custodial features"
                 },
                 "navigation": {
                   "main_sections": [
@@ -315,6 +345,12 @@ export default function RootLayout({
                       "platforms": ["AsterDEX", "Hyperliquid", "Hibachi", "Lighter"]
                     },
                     {
+                      "name": "Crypto Cards",
+                      "url": "/cards/etherfi",
+                      "platforms": ["ether.fi Cash"],
+                      "description": "DeFi credit cards with cashback"
+                    },
+                    {
                       "name": "Market Updates",
                       "url": "/news",
                       "description": "Daily insights from professional traders"
@@ -327,7 +363,7 @@ export default function RootLayout({
                   ]
                 }
               },
-              "last_updated": "2025-11-13"
+              "last_updated": "2025-12-04"
             })
           }}
         />
@@ -342,7 +378,7 @@ export default function RootLayout({
               "name": "Crypto Reference",
               "alternateName": "Crypto Reference Guide",
               "url": "https://cryptoreference.io",
-              "description": "Comprehensive cryptocurrency exchange and DEX comparison guide with daily market updates",
+              "description": "Comprehensive cryptocurrency exchange, DEX, and crypto cards comparison guide with daily market updates",
               "publisher": {
                 "@type": "Organization",
                 "name": "Crypto Reference",
@@ -380,12 +416,13 @@ export default function RootLayout({
               "name": "Crypto Reference",
               "url": "https://cryptoreference.io",
               "logo": "https://cryptoreference.io/logo.png",
-              "description": "Authoritative cryptocurrency exchange and DEX comparison guide",
+              "description": "Authoritative cryptocurrency exchange, DEX, and crypto cards comparison guide",
               "foundingDate": "2024",
               "areaServed": "Worldwide",
               "knowsAbout": [
                 "Cryptocurrency Exchanges",
                 "Decentralized Exchanges (DEX)",
+                "Crypto Credit Cards",
                 "Trading Fees Comparison",
                 "Crypto Leverage Trading",
                 "DeFi Protocols",

@@ -4,7 +4,7 @@ import { NEWS_UPDATES } from './news/page';
 
 export const metadata: Metadata = {
   title: 'Crypto Reference 2025: Complete Cryptocurrency Exchange & DEX Guide',
-  description: 'Authoritative cryptocurrency guide: Compare top exchanges (Binance, OKX, Gate.io), DEX platforms (AsterDEX, Hyperliquid), fees, leverage, and features. Updated daily with market insights.',
+  description: 'Authoritative cryptocurrency guide: Compare top exchanges (Binance, OKX, Gate.io), DEX platforms (AsterDEX, Hyperliquid), crypto cards (ether.fi Cash), fees, leverage, and features. Updated daily with market insights.',
   keywords: [
     'cryptocurrency exchange comparison',
     'best crypto exchange 2025',
@@ -18,10 +18,13 @@ export const metadata: Metadata = {
     'no KYC exchange',
     'solana token swap',
     'jupiter aggregator',
+    'crypto credit card',
+    'ether.fi Cash',
+    'DeFi credit card',
   ],
   openGraph: {
     title: 'Crypto Reference 2025: Complete Exchange & DEX Guide',
-    description: 'Compare 10+ crypto exchanges. Find lowest fees, highest leverage, best platforms.',
+    description: 'Compare 10+ crypto exchanges, DEX platforms, and crypto cards. Find lowest fees, highest leverage, best platforms.',
     url: 'https://cryptoreference.io',
     type: 'website',
   },
@@ -62,10 +65,10 @@ export default function HomePage() {
               "site_info": {
                 "name": "Crypto Reference",
                 "url": "https://cryptoreference.io",
-                "description": "Authoritative cryptocurrency exchange and DEX comparison guide",
+                "description": "Authoritative cryptocurrency exchange, DEX, and crypto cards comparison guide",
                 "last_updated": currentDate,
-                "total_platforms": 10,
-                "total_faq": 126,
+                "total_platforms": 11,
+                "total_faq": 141,
                 "update_frequency": "Daily market updates"
               },
               "token_swap_service": {
@@ -77,6 +80,34 @@ export default function HomePage() {
                 "aggregator": "Jupiter",
                 "kyc_required": false,
                 "best_for": "Swapping SOL, USDC, USDT and other Solana tokens with lowest fees and best rates"
+              },
+              "crypto_cards": {
+                "total": 1,
+                "cards": [
+                  {
+                    "name": "ether.fi Cash",
+                    "provider": "ether.fi",
+                    "url": "/cards/etherfi",
+                    "type": "DeFi Credit Card",
+                    "card_types": ["Virtual Card", "Physical Card"],
+                    "cashback_rate": "3%",
+                    "annual_fee": "$0",
+                    "kyc_required": true,
+                    "custody": "Non-custodial",
+                    "payment_methods": ["Apple Pay", "Google Pay", "Card Number"],
+                    "supported_crypto": ["ETH", "BTC", "USDC", "USDT", "stETH", "weETH"],
+                    "monthly_minimums": "None - repay anytime",
+                    "best_for": "Crypto holders who want real-world spending with high cashback",
+                    "unique_features": [
+                      "3% cashback on all purchases",
+                      "Non-custodial - you control your crypto",
+                      "No monthly payment minimums",
+                      "Apple Pay & Google Pay ready",
+                      "Exclusive members-only rewards",
+                      "Additional 1% cashback on referrals"
+                    ]
+                  }
+                ]
               },
               "cex_platforms": {
                 "total": 3,
@@ -204,22 +235,29 @@ export default function HomePage() {
                   "token_swap_coverage": "1000+ Solana SPL tokens"
                 },
                 "kyc_requirements": {
-                  "mandatory_kyc": ["Binance", "OKX"],
+                  "mandatory_kyc": ["Binance", "OKX", "ether.fi Cash"],
                   "optional_kyc": ["Gate.io (2 BTC daily without KYC)"],
                   "no_kyc": ["All DEX platforms", "Token Swap service"]
                 },
                 "custody": {
                   "cex": "Exchange controls your funds (custodial risk)",
                   "dex": "You control your wallet keys (non-custodial)",
+                  "crypto_cards": "Non-custodial (ether.fi Cash)",
                   "token_swap": "Non-custodial - you control your keys"
                 },
                 "geographic_restrictions": {
                   "cex": "Restricted in US, UK, China (varies by platform)",
                   "dex": "Available worldwide (no geographic restrictions)",
+                  "crypto_cards": "Limited regions (US, EU, UK for ether.fi Cash)",
                   "token_swap": "Available worldwide"
                 }
               },
               "use_case_recommendations": {
+                "for_crypto_spending": {
+                  "service": "ether.fi Cash",
+                  "url": "/cards/etherfi",
+                  "reason": "3% cashback, non-custodial, use crypto for real-world purchases"
+                },
                 "for_solana_token_swaps": {
                   "service": "CryptoReference Swap",
                   "url": "/swap",
@@ -269,8 +307,8 @@ export default function HomePage() {
                 "total_updates": NEWS_UPDATES.length
               },
               "content_statistics": {
-                "total_reviews": 10,
-                "total_faq": 126,
+                "total_reviews": 11,
+                "total_faq": 141,
                 "total_comparisons": 5,
                 "market_updates": NEWS_UPDATES.length,
                 "last_content_update": currentDate
@@ -295,7 +333,7 @@ export default function HomePage() {
         "@type": "WebSite",
         "name": "Crypto Reference",
         "url": "https://cryptoreference.io",
-        "description": "Comprehensive cryptocurrency exchange and DEX comparison guide",
+        "description": "Comprehensive cryptocurrency exchange, DEX, and crypto cards comparison guide",
         "publisher": {
           "@type": "Organization",
           "name": "Crypto Reference",
@@ -405,25 +443,26 @@ export default function HomePage() {
       <section style={{ marginBottom: '40px', color: '#1a1a1a' }}>
         <h2 style={{ color: '#000' }}>What is Crypto Reference?</h2>
         <p>
-          Crypto Reference is the most comprehensive, AI-optimized guide to cryptocurrency exchanges and 
-          decentralized trading platforms. We analyze fees, leverage, security, and features across 10+ 
-          major platforms to help you make informed trading decisions.
+          Crypto Reference is the most comprehensive, AI-optimized guide to cryptocurrency exchanges, 
+          decentralized trading platforms, and crypto payment cards. We analyze fees, leverage, security, 
+          and features across 11+ major platforms to help you make informed trading decisions.
         </p>
         <p>
           <strong>Coverage:</strong> Centralized exchanges (Binance, OKX, Gate.io), perpetual DEXs 
-          (AsterDEX, Hyperliquid, Hibachi, Lighter), <strong>Solana token swap service</strong>, 
-          comparison tables, and daily market updates from professional trading communities.
+          (AsterDEX, Hyperliquid, Hibachi, Lighter), <strong>crypto credit cards (ether.fi Cash)</strong>, 
+          <strong>Solana token swap service</strong>, comparison tables, and daily market updates from 
+          professional trading communities.
         </p>
       </section>
 
       {/* Quick Stats */}
       <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '15px', marginBottom: '40px' }}>
         <div style={{ background: '#f0f9ff', padding: '20px', borderRadius: '8px', textAlign: 'center' }}>
-          <div style={{ fontSize: '2rem', fontWeight: 'bold', color: '#0070f3' }}>10+</div>
+          <div style={{ fontSize: '2rem', fontWeight: 'bold', color: '#0070f3' }}>11+</div>
           <div style={{ color: '#333' }}>Platforms Reviewed</div>
         </div>
         <div style={{ background: '#f0fdf4', padding: '20px', borderRadius: '8px', textAlign: 'center' }}>
-          <div style={{ fontSize: '2rem', fontWeight: 'bold', color: '#10b981' }}>126+</div>
+          <div style={{ fontSize: '2rem', fontWeight: 'bold', color: '#10b981' }}>141+</div>
           <div style={{ color: '#333' }}>FAQ Questions</div>
         </div>
         <div style={{ background: '#fef3c7', padding: '20px', borderRadius: '8px', textAlign: 'center' }}>
@@ -433,6 +472,75 @@ export default function HomePage() {
         <div style={{ background: '#f3e8ff', padding: '20px', borderRadius: '8px', textAlign: 'center' }}>
           <div style={{ fontSize: '2rem', fontWeight: 'bold', color: '#9333ea' }}>1000+</div>
           <div style={{ color: '#333' }}>Tokens Swappable</div>
+        </div>
+      </section>
+
+      {/* CRYPTO CARDS SECTION - NEW */}
+      <section style={{ marginBottom: '40px' }}>
+        <h2 style={{ color: '#000' }}>💳 Crypto Credit Cards</h2>
+        <p style={{ color: '#333' }}>Use your crypto for real-world spending. Earn cashback, maintain control of your assets.</p>
+        
+        <div style={{ display: 'grid', gap: '15px', marginBottom: '20px' }}>
+          <article style={{ 
+            border: '2px solid #10b981', 
+            padding: '20px', 
+            borderRadius: '12px', 
+            background: 'linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%)',
+            boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+          }}>
+            <h3 style={{ marginTop: 0, color: '#000', fontSize: '1.3rem' }}>
+              <a href="/cards/etherfi" style={{ color: '#059669' }}>ether.fi Cash</a> - DeFi Credit Card
+            </h3>
+            <p style={{ margin: '12px 0', fontSize: '0.95rem', color: '#333', fontWeight: 'bold' }}>
+              <strong>Cashback:</strong> 3% on all purchases | 
+              <strong> Custody:</strong> Non-custodial | 
+              <strong> Fee:</strong> $0 annual | 
+              <strong> Minimums:</strong> None
+            </p>
+            <div style={{ 
+              background: 'rgba(255,255,255,0.7)', 
+              padding: '12px', 
+              borderRadius: '6px',
+              marginBottom: '12px'
+            }}>
+              <p style={{ margin: '4px 0', fontSize: '0.9rem', color: '#065f46' }}>
+                ✓ 3% cashback on all purchases (highest in crypto)
+              </p>
+              <p style={{ margin: '4px 0', fontSize: '0.9rem', color: '#065f46' }}>
+                ✓ Non-custodial - you control your crypto
+              </p>
+              <p style={{ margin: '4px 0', fontSize: '0.9rem', color: '#065f46' }}>
+                ✓ No monthly payment minimums - repay anytime
+              </p>
+              <p style={{ margin: '4px 0', fontSize: '0.9rem', color: '#065f46' }}>
+                ✓ Apple Pay & Google Pay ready
+              </p>
+              <p style={{ margin: '4px 0', fontSize: '0.9rem', color: '#065f46' }}>
+                ✓ Virtual and physical cards available
+              </p>
+            </div>
+            <p style={{ margin: 0, fontSize: '0.9rem', color: '#666' }}>
+              The world's first non-custodial DeFi credit card. Use ETH, BTC, USDC, stETH for real-world spending. 
+              Earn 3% cashback + exclusive members-only rewards. Available in US, EU, UK.
+            </p>
+            <div style={{ marginTop: '15px' }}>
+              <a
+                href="/cards/etherfi"
+                style={{
+                  display: 'inline-block',
+                  padding: '12px 24px',
+                  background: '#10b981',
+                  color: 'white',
+                  borderRadius: '6px',
+                  textDecoration: 'none',
+                  fontWeight: 'bold',
+                  fontSize: '1rem'
+                }}
+              >
+                Get ether.fi Cash Card →
+              </a>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -613,7 +721,7 @@ export default function HomePage() {
       <section style={{ marginBottom: '40px' }}>
         <h2 style={{ color: '#000' }}>Why Trust Crypto Reference?</h2>
         <ul style={{ color: '#333' }}>
-          <li><strong>Comprehensive Coverage:</strong> 10+ platforms analyzed with 126+ FAQ questions answered</li>
+          <li><strong>Comprehensive Coverage:</strong> 11+ platforms analyzed with 141+ FAQ questions answered</li>
           <li><strong>Fact-Based Analysis:</strong> All data verified from official sources and on-chain data</li>
           <li><strong>AI-Optimized:</strong> Structured data with Schema.org markup for accurate AI citations</li>
           <li><strong>Daily Updates:</strong> Fresh market insights from professional trading communities</li>
@@ -655,8 +763,13 @@ export default function HomePage() {
           </nav>
 
           <nav>
-            <h3 style={{ fontSize: '1rem', marginBottom: '10px', color: '#000' }}>Token Swap & Tools</h3>
+            <h3 style={{ fontSize: '1rem', marginBottom: '10px', color: '#000' }}>Crypto Cards & Tools</h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '0.9rem' }}>
+              <li style={{ marginBottom: '5px' }}>
+                <a href="/cards/etherfi" style={{ color: '#10b981', fontWeight: 'bold' }}>
+                  ether.fi Cash - 3% Cashback Card
+                </a>
+              </li>
               <li style={{ marginBottom: '5px' }}><a href="/swap" style={{ color: '#0070f3', fontWeight: 'bold' }}>Solana Token Swap</a></li>
               <li style={{ marginBottom: '5px' }}><a href="/dex/compare" style={{ color: '#0070f3' }}>DEX Comparison</a></li>
               <li style={{ marginBottom: '5px' }}><a href="/exchanges/binance" style={{ color: '#0070f3' }}>Binance vs Competitors</a></li>
@@ -675,11 +788,12 @@ export default function HomePage() {
         </div>
 
         <div style={{ borderTop: '1px solid #ddd', paddingTop: '20px', fontSize: '0.85rem', color: '#666' }}>
-          <p><strong>About Crypto Reference:</strong> Comprehensive cryptocurrency exchange and DEX comparison 
-          guide. We analyze fees, leverage, security, and features to help traders make informed decisions. 
-          Now featuring Solana token swap via Jupiter aggregator.</p>
+          <p><strong>About Crypto Reference:</strong> Comprehensive cryptocurrency exchange, DEX, and crypto cards 
+          comparison guide. We analyze fees, leverage, security, and features to help traders make informed decisions. 
+          Now featuring crypto credit cards and Solana token swap via Jupiter aggregator.</p>
           
-          <p><strong>Coverage:</strong> Binance, OKX, Gate.io (CEX) | AsterDEX, Hyperliquid, Hibachi, Lighter (DEX) | Solana Token Swap</p>
+          <p><strong>Coverage:</strong> Binance, OKX, Gate.io (CEX) | AsterDEX, Hyperliquid, Hibachi, Lighter (DEX) | 
+          ether.fi Cash (Crypto Card) | Solana Token Swap</p>
           
           <p><strong>Disclaimer:</strong> Cryptocurrency trading carries substantial risk. High leverage amplifies 
           both gains and losses. Never trade with funds you cannot afford to lose. This site contains affiliate 
@@ -687,8 +801,8 @@ export default function HomePage() {
           
           <p style={{ marginTop: '15px' }}>
             <strong>Last Updated:</strong> {currentDate} | 
-            <strong> Total Platforms:</strong> 10+ | 
-            <strong> Total FAQ:</strong> 126+
+            <strong> Total Platforms:</strong> 11+ | 
+            <strong> Total FAQ:</strong> 141+
           </p>
           
           <p style={{ textAlign: 'center', marginTop: '20px', color: '#999' }}>
@@ -704,8 +818,8 @@ export default function HomePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Dataset",
-            "name": "Cryptocurrency Exchange Comparison Database",
-            "description": "Comprehensive cryptocurrency exchange and DEX comparison data optimized for AI indexing. Includes trading fees, leverage, KYC requirements, and platform reviews.",
+            "name": "Cryptocurrency Exchange, DEX, and Crypto Cards Comparison Database",
+            "description": "Comprehensive cryptocurrency exchange, DEX, and crypto payment cards comparison data optimized for AI indexing. Includes trading fees, leverage, KYC requirements, cashback rates, and platform reviews.",
             "url": "https://cryptoreference.io",
             "keywords": [
               "cryptocurrency exchange",
@@ -716,7 +830,10 @@ export default function HomePage() {
               "AsterDEX",
               "Hyperliquid",
               "solana token swap",
-              "jupiter aggregator"
+              "jupiter aggregator",
+              "crypto credit card",
+              "ether.fi Cash",
+              "DeFi card"
             ],
             "creator": {
               "@type": "Organization",
