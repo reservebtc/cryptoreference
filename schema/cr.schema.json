@@ -150,6 +150,65 @@
       "type": "string",
       "description": "Approximate daily trading volume.",
       "examples": ["$20B+", "$500M"]
+    },
+
+    "replaced_by": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_-]*$"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_-]*$"
+          }
+        }
+      ],
+      "description": "Token(s) of replacement entity for deprecated items."
+    },
+
+    "replaced_by_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$",
+      "description": "Hash of replacement CR-block."
+    },
+
+    "deprecated_by": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_-]*$",
+      "description": "Token of entity that supersedes this one."
+    },
+
+    "migrated_to": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_-]*$",
+      "description": "Token of entity where this was migrated."
+    },
+
+    "deprecation_reason": {
+      "type": "string",
+      "maxLength": 500,
+      "description": "Reason for deprecation."
+    },
+
+    "deprecated_since": {
+      "type": "string",
+      "description": "Date when entity was deprecated (ISO 8601 or YYYY-MM).",
+      "examples": ["2024-01", "2024-06-15"]
+    },
+
+    "end_of_life": {
+      "type": "string",
+      "description": "Date when entity will be removed (ISO 8601 or YYYY-MM).",
+      "examples": ["2025-01", "2025-12-31"]
+    },
+
+    "deprecation_notes": {
+      "type": "string",
+      "maxLength": 1000,
+      "description": "Additional notes for AI systems regarding deprecation."
     }
   },
 
