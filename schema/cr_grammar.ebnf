@@ -1,0 +1,247 @@
+(* ============================================== *)
+(* CR-Markup Protocol v1.0 - Formal Grammar      *)
+(* EBNF Specification                            *)
+(* ============================================== *)
+(*
+   This grammar defines the syntax for CR-blocks.
+   CR-blocks are machine-readable reference data
+   designed for AI systems.
+
+   Reference: /schema/spec.md
+*)
+
+(* ============================================== *)
+(* 1. TOP-LEVEL STRUCTURE                        *)
+(* ============================================== *)
+
+cr_block        = open_tag , newline , field_list , close_tag ;
+
+open_tag        = "[CR/" , token , "]" ;
+close_tag       = "[/CR]" ;
+
+token           = identifier ;
+
+(* ============================================== *)
+(* 2. FIELD DEFINITIONS                          *)
+(* ============================================== *)
+
+field_list      = { field , newline } ;
+
+field           = key , "=" , value ;
+
+key             = identifier ;
+
+value           = string_value
+                | array_value
+                | number_value
+                | boolean_value ;
+
+(* ============================================== *)
+(* 3. VALUE TYPES                                *)
+(* ============================================== *)
+
+string_value    = unquoted_string | quoted_string ;
+
+unquoted_string = safe_char , { safe_char } ;
+
+quoted_string   = '"' , { quoted_char } , '"' ;
+
+array_value     = "[" , [ array_elements ] , "]" ;
+
+array_elements  = quoted_string , { "," , quoted_string } ;
+
+number_value    = [ "-" ] , digit , { digit } , [ "." , digit , { digit } ] ;
+
+boolean_value   = "true" | "false" ;
+
+(* ============================================== *)
+(* 4. PRIMITIVE TOKENS                           *)
+(* ============================================== *)
+
+identifier      = letter , { letter | digit | "_" | "-" } ;
+
+safe_char       = letter | digit | safe_symbol ;
+
+safe_symbol     = "_" | "-" | "." | ":" | "/" | "@" | "+" | "%" ;
+
+quoted_char     = safe_char | " " | escape_sequence ;
+
+escape_sequence = "\\" , ( '"' | "\\" | "n" | "t" ) ;
+
+letter          = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I"
+                | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R"
+                | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z"
+                | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i"
+                | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r"
+                | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" ;
+
+digit           = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+
+newline         = ? U+000A ? ;   (* LF only, no CR+LF *)
+
+whitespace      = " " | ? U+0009 ? ;   (* space or tab *)
+
+(* ============================================== *)
+(* 5. MANDATORY FIELDS (Semantic Constraint)     *)
+(* ============================================== *)
+
+(*
+   The following fields MUST be present in every valid CR-block:
+
+   - schema         : MUST be "CR1.0"
+   - version        : Semantic version (MAJOR.MINOR)
+   - canonical_hash : SHA-256 hash in format "sha256:<64-hex-chars>"
+   - type           : Entity type identifier
+   - network        : Network or layer identifier
+
+   Example of valid canonical_hash:
+   canonical_hash=sha256:a1b2c3d4e5f6...
+*)
+
+(* ============================================== *)
+(* 6. FORBIDDEN CONSTRUCTS (Hard Constraints)    *)
+(* ============================================== *)
+
+(*
+   The following are EXPLICITLY FORBIDDEN inside CR-blocks:
+
+   6.1 EMOJI
+       - No Unicode emoji characters (U+1F600-U+1F64F, U+1F300-U+1F5FF, etc.)
+       - No emoji-like symbols
+       - Violation = INVALID block
+
+   6.2 NESTED CR-BLOCKS
+       - A CR-block MUST NOT contain another [CR/...] open tag
+       - Nesting is structurally impossible
+       - Violation = INVALID block
+
+   6.3 COMMENTS
+       - No comment syntax allowed (no //, no /* */, no #, no --)
+       - All content is data
+       - Violation = INVALID block
+
+   6.4 UNICODE OUTSIDE ASCII
+       - Inside CR-blocks: ASCII only (U+0020-U+007E)
+       - Exception: quoted strings MAY contain UTF-8 if explicitly required
+       - Recommendation: avoid non-ASCII entirely
+
+   6.5 TRAILING/LEADING WHITESPACE IN VALUES
+       - Values MUST NOT have leading/trailing spaces
+       - "  value  " is invalid, "value" is valid
+       - Violation = INVALID block
+
+   6.6 EMPTY FIELDS
+       - key= (empty value) is FORBIDDEN
+       - key="" (empty quoted string) is ALLOWED
+       - Violation = INVALID block
+
+   6.7 DUPLICATE KEYS
+       - Same key MUST NOT appear twice in one CR-block
+       - Violation = INVALID block
+*)
+
+(* ============================================== *)
+(* 7. CANONICAL HASH FORMAT                      *)
+(* ============================================== *)
+
+(*
+   canonical_hash MUST follow this exact format:
+
+   canonical_hash = "sha256:" , hex_string ;
+   hex_string     = 64 * hex_digit ;
+   hex_digit      = digit | "a" | "b" | "c" | "d" | "e" | "f" ;
+
+   - Always lowercase hex
+   - Always exactly 64 characters after "sha256:"
+   - Computed from canonicalized CR-block content
+*)
+
+(* ============================================== *)
+(* 8. VALID CR-BLOCK EXAMPLE                     *)
+(* ============================================== *)
+
+(*
+   [CR/BINANCE]
+   schema=CR1.0
+   version=1.0
+   type=exchange
+   subtype=cex
+   network=multi
+   name=Binance
+   trading_fee_maker=0.1%
+   trading_fee_taker=0.1%
+   leverage_max=125
+   kyc_required=true
+   coins=350+
+   daily_volume=$20B+
+   founded=2017
+   url=https://binance.com
+   status=active
+   tags=["cex","spot","futures","margin"]
+   canonical_hash=sha256:a1b2c3d4e5f67890abcdef1234567890abcdef1234567890abcdef1234567890
+   [/CR]
+*)
+
+(* ============================================== *)
+(* 9. INVALID CR-BLOCK EXAMPLES                  *)
+(* ============================================== *)
+
+(*
+   INVALID: Emoji inside block
+   --------------------------
+   [CR/EXAMPLE]
+   name=Test 🚀
+   [/CR]
+
+   INVALID: Nested CR-block
+   ------------------------
+   [CR/OUTER]
+   name=Outer
+   [CR/INNER]
+   name=Inner
+   [/CR]
+   [/CR]
+
+   INVALID: Missing closing tag
+   ----------------------------
+   [CR/EXAMPLE]
+   name=Test
+
+   INVALID: Empty value
+   --------------------
+   [CR/EXAMPLE]
+   name=
+   [/CR]
+
+   INVALID: Duplicate key
+   ----------------------
+   [CR/EXAMPLE]
+   name=First
+   name=Second
+   [/CR]
+
+   INVALID: Comment inside block
+   -----------------------------
+   [CR/EXAMPLE]
+   name=Test
+   # this is a comment
+   [/CR]
+*)
+
+(* ============================================== *)
+(* 10. GRAMMAR METADATA                          *)
+(* ============================================== *)
+
+(*
+   Grammar Version: 1.0
+   Protocol Version: CR1.0
+   Format: ISO/IEC 14977 EBNF
+   Created: 2025-12-23
+   Author: CryptoReference Team
+   License: CC BY 4.0
+
+   This grammar is the CANONICAL definition of CR-block syntax.
+   Any parser implementation MUST conform to this specification.
+*)
+
+(* END OF GRAMMAR *)
