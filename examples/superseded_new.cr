@@ -1,0 +1,11 @@
+[CR/PROTOCOLV2]
+schema=CR1.0
+version=2.0
+canonical_hash=sha256:f67890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234
+type=protocol
+network=["ethereum","arbitrum"]
+name=ExampleProtocol
+status=active
+supersedes=PROTOCOLV1
+supersedes_hash=sha256:e5f67890abcdef1234567890abcdef1234567890abcdef1234567890abcdef12
+[/CR]

@@ -1,0 +1,9 @@
+[CR/PROTOCOLV1]
+schema=CR1.0
+version=1.0
+canonical_hash=sha256:e5f67890abcdef1234567890abcdef1234567890abcdef1234567890abcdef12
+type=protocol
+network=ethereum
+name=ExampleProtocol
+status=active
+[/CR]

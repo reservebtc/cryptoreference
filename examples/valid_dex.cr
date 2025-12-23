@@ -1,0 +1,15 @@
+[CR/UNISWAP]
+schema=CR1.0
+version=1.0
+canonical_hash=sha256:b2c3d4e5f67890abcdef1234567890abcdef1234567890abcdef1234567890ab
+type=dex
+subtype=amm
+network=["ethereum","arbitrum","optimism","polygon","base"]
+name=Uniswap
+status=active
+url=https://uniswap.org
+founded=2018
+kyc_required=false
+trading_fee_maker=0.3%
+trading_fee_taker=0.3%
+[/CR]
