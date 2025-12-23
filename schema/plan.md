@@ -1,5 +1,3 @@
-⸻
-
 CR-Markup Protocol v1.0
 
 Implementation Plan (plan.md)

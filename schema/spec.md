@@ -1,5 +1,3 @@
-⸻
-
 CR-Markup Protocol v1.0
 
 Canonical Specification (spec.md)
