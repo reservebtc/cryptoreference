@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cryptoreference.io/schema/cr.schema.json",
+  "title": "CR-Markup Block Schema",
+  "description": "JSON Schema for CR-Markup Protocol v1.0 blocks. Defines mandatory fields, type constraints, and validation rules for machine-readable cryptocurrency reference data.",
+  "type": "object",
+
+  "required": [
+    "_token",
+    "schema",
+    "version",
+    "canonical_hash",
+    "type",
+    "network"
+  ],
+
+  "properties": {
+    "_token": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_-]*$",
+      "description": "Entity token identifier (uppercase). Extracted from [CR/<TOKEN>] tag.",
+      "examples": ["BINANCE", "ASTERDEX", "HYPERLIQUID"]
+    },
+
+    "schema": {
+      "type": "string",
+      "const": "CR1.0",
+      "description": "CR-Markup schema version. Must be exactly 'CR1.0'."
+    },
+
+    "version": {
+      "type": ["string", "number"],
+      "description": "Entity data version in MAJOR.MINOR format.",
+      "examples": ["1.0", 1.0, "2.1"]
+    },
+
+    "canonical_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$",
+      "description": "SHA-256 hash of canonicalized CR-block. Format: sha256:<64-hex-chars>.",
+      "examples": ["sha256:a1b2c3d4e5f67890abcdef1234567890abcdef1234567890abcdef1234567890"]
+    },
+
+    "type": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]*$",
+      "description": "Primary entity type (lowercase).",
+      "examples": ["exchange", "dex", "token", "protocol", "card"]
+    },
+
+    "network": {
+      "type": ["string", "array"],
+      "description": "Network or blockchain layer. Can be single value or array for multi-chain.",
+      "examples": ["ethereum", "solana", "multi", ["arbitrum", "base", "polygon"]]
+    },
+
+    "subtype": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]*$",
+      "description": "Secondary type classification.",
+      "examples": ["cex", "perp-dex", "spot-dex", "defi-card"]
+    },
+
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "description": "Human-readable entity name."
+    },
+
+    "status": {
+      "type": "string",
+      "enum": ["active", "deprecated", "beta", "inactive"],
+      "default": "active",
+      "description": "Entity lifecycle status."
+    },
+
+    "parent_id": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_-]*$",
+      "description": "Parent entity token for hierarchical relationships."
+    },
+
+    "supersedes": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_-]*$",
+      "description": "Token of the CR-block this supersedes."
+    },
+
+    "supersedes_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$",
+      "description": "Hash of the superseded CR-block."
+    },
+
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Official website URL."
+    },
+
+    "founded": {
+      "type": ["integer", "string"],
+      "description": "Year founded or launch date.",
+      "examples": [2017, "2024-09"]
+    },
+
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_-]*$"
+      },
+      "uniqueItems": true,
+      "description": "Classification tags for the entity."
+    },
+
+    "trading_fee_maker": {
+      "type": "string",
+      "pattern": "^[0-9]+(\\.[0-9]+)?%$",
+      "description": "Maker fee as percentage.",
+      "examples": ["0.1%", "0.08%"]
+    },
+
+    "trading_fee_taker": {
+      "type": "string",
+      "pattern": "^[0-9]+(\\.[0-9]+)?%$",
+      "description": "Taker fee as percentage.",
+      "examples": ["0.1%", "0.15%"]
+    },
+
+    "leverage_max": {
+      "type": ["integer", "string"],
+      "description": "Maximum leverage available.",
+      "examples": [125, 1001, "125x"]
+    },
+
+    "kyc_required": {
+      "type": "boolean",
+      "description": "Whether KYC verification is mandatory."
+    },
+
+    "coins": {
+      "type": ["integer", "string"],
+      "description": "Number of supported cryptocurrencies.",
+      "examples": [350, "1800+"]
+    },
+
+    "daily_volume": {
+      "type": "string",
+      "description": "Approximate daily trading volume.",
+      "examples": ["$20B+", "$500M"]
+    }
+  },
+
+  "patternProperties": {
+    "^x_[a-z][a-z0-9_]*$": {
+      "description": "Extension fields must use x_ prefix. Any type allowed."
+    }
+  },
+
+  "additionalProperties": false,
+
+  "$defs": {
+    "hashFormat": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "tokenFormat": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_-]*$"
+    },
+    "percentageFormat": {
+      "type": "string",
+      "pattern": "^[0-9]+(\\.[0-9]+)?%$"
+    }
+  }
+}
