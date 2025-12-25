@@ -38,6 +38,46 @@ jobs:
       - name: Run deterministic test suite
         run: npx tsx tests/run_all.ts
 
+      - name: Validate registry ID uniqueness
+        run: |
+          echo "Validating registry ID uniqueness..."
+          npx tsx registry/validate_id.ts --ci
+
+      - name: Validate registry type semantics
+        run: |
+          echo "Validating registry type semantics..."
+          npx tsx registry/validate_type.ts --ci
+
+      - name: Validate registry hierarchy
+        run: |
+          echo "Validating registry hierarchy..."
+          npx tsx registry/validate_hierarchy.ts --ci
+
+      - name: Validate comparison pages
+        run: |
+          echo "Validating comparison pages..."
+          npx tsx registry/validate_comparison.ts --ci
+
+      - name: Validate registry status
+        run: |
+          echo "Validating registry status state machine..."
+          npx tsx registry/validate_status.ts --ci
+
+      - name: Validate registry structure
+        run: |
+          echo "Validating registry structure..."
+          npx tsx registry/validate_registry.ts
+
+      - name: Validate registry updater
+        run: |
+          echo "Validating registry updater..."
+          npx tsx registry/registry_updater.ts
+
+      - name: Validate official sources
+        run: |
+          echo "Validating official sources..."
+          npx tsx registry/sources/validate_sources.ts
+
       - name: Validate schema files
         run: |
           echo "Validating schema TypeScript files..."
@@ -72,6 +112,28 @@ jobs:
 
           echo "Running deprecation.ts tests..."
           npx tsx schema/deprecation.ts
+
+      - name: Run generator module tests
+        run: |
+          echo "Running typed_generators.ts tests..."
+          npx tsx generators/typed_generators.ts
+
+          echo "Running cr_injection_gate.ts tests..."
+          npx tsx generators/cr_injection_gate.ts
+
+          echo "Running content_linter.ts tests..."
+          npx tsx generators/content_linter.ts
+
+          echo "Running affiliate_constraint.ts tests..."
+          npx tsx generators/affiliate_constraint.ts
+
+          echo "Running validation_pipeline.ts tests..."
+          npx tsx generators/validation_pipeline.ts
+
+      - name: Run regression and replay tests
+        run: |
+          echo "Running regression_replay.ts tests..."
+          npx tsx tests/regression_replay.ts
 
       - name: Check for CR files and validate
         run: |
@@ -114,9 +176,15 @@ jobs:
           echo ""
           echo "All tests passed:"
           echo "  - Deterministic test suite: 61 tests"
-          echo "  - Individual module tests: 10 modules"
+          echo "  - Schema module tests: 10 modules"
+          echo "  - Generator module tests: 5 modules"
+          echo "  - Registry validators: 7 validators"
+          echo "  - Registry updater: verified"
+          echo "  - Regression & replay tests: verified"
           echo "  - CR file validation: complete"
           echo ""
+          echo "Zero-trust pipeline: ACTIVE"
+          echo "Deterministic production engine: READY"
           echo "No invalid CR will reach production."
 
       - name: Validation failed

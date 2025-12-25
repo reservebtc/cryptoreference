@@ -1,0 +1,40 @@
+{
+  "$schema": "./sources.schema.json",
+  "entity": "asterdex",
+  "official_sources": {
+    "official_site": [
+      "https://www.asterdex.com/en",
+      "https://www.asterdex.com/en/trade/pro/futures/",
+      "https://www.asterdex.com/en/trade/pro/spot/",
+      "https://www.asterdex.com/en/portfolio/pro",
+      "https://www.asterdex.com/en/earn",
+      "https://www.asterdex.com/en/usdf",
+      "https://www.asterdex.com/en/referral",
+      "https://www.asterdex.com/en/apx-upgrade",
+      "https://www.asterdex.com/en/trading-leaderboard",
+      "https://www.asterdex.com/en/announcement"
+    ],
+    "official_docs": [
+      "https://docs.asterdex.com/"
+    ],
+    "product_pages": [
+      "https://www.asterdex.com/en/trade/1001x/futures/",
+      "https://www.asterdex.com/en/strategy/futures/grid/",
+      "https://www.asterdex.com/en/api-management",
+      "https://www.asterdex.com/en/futures/futures-info/real-time-funding-rate",
+      "https://www.asterdex.com/en/futures/trading-rules/leverage-and-margin"
+    ],
+    "campaigns": [
+      "https://www.asterdex.com/en/trade-and-earn",
+      "https://www.asterdex.com/en/rocket-launch",
+      "https://www.asterdex.com/en/campaigns/human-vs-ai"
+    ],
+    "analytics": [
+      "https://dune.com/asterdex/aster-overview"
+    ],
+    "official_social": [
+      "https://x.com/Aster_DEX",
+      "https://linktr.ee/AsterDEX"
+    ]
+  }
+}

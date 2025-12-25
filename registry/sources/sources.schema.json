@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://cryptoreference.io/registry/sources/sources.schema.json",
+  "title": "CR Official Sources Schema",
+  "description": "Schema for official source registry - immutable source contract per entity",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON Schema reference"
+    },
+    "entity": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$",
+      "description": "Entity ID this source registry belongs to"
+    },
+    "official_sources": {
+      "type": "object",
+      "properties": {
+        "official_site": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "description": "Official website URLs"
+        },
+        "official_docs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "description": "Official documentation URLs"
+        },
+        "product_pages": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "description": "Product-specific page URLs"
+        },
+        "campaigns": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "description": "Campaign and promotional page URLs"
+        },
+        "analytics": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "description": "Analytics dashboard URLs (Dune, etc.)"
+        },
+        "official_social": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "description": "Official social media URLs"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Official sources organized by scope"
+    }
+  },
+  "required": ["entity", "official_sources"],
+  "additionalProperties": false
+}
