@@ -1,0 +1,13 @@
+[CR/LIGHTER]
+schema=CR1.0
+version=1.0
+canonical_hash=sha256:2c5e791ebd3d95e8e0bcad0741f3e89c9410e4a36e3572ea46e853bf0bb7bb14
+type=dex
+subtype=perp
+network=arbitrum
+name=Lighter
+status=active
+url=https://lighter.xyz
+kyc_required=false
+x_twitter=@lighter_xyz
+[/CR]

@@ -1,0 +1,12 @@
+[CR/HIBACHI]
+schema=CR1.0
+version=1.0
+canonical_hash=sha256:67f6e23d325ee1c73c3a21381f6f84fd5390ec6303586554fc722d84ecccec58
+type=dex
+subtype=perp
+network=solana
+name=Hibachi
+status=active
+url=https://hibachi.xyz
+kyc_required=false
+[/CR]

@@ -1,0 +1,59 @@
+{
+  "version": "1.0",
+  "entity_name": "HIBACHI",
+  "entity_type": "DEX",
+  "extracted_at": "2025-12-24T05:26:59.723Z",
+  "source_file": "app/dex/hibachi/page.tsx",
+  "summary": {
+    "total_facts": 5,
+    "verified_facts": 4,
+    "unverified_facts": 1,
+    "verification_rate": "80%"
+  },
+  "official_sources": [
+    "https://hibachi.xyz",
+    "https://docs.hibachi.xyz",
+    "https://github.com/hibachi-fi"
+  ],
+  "facts": [
+    {
+      "field": "name",
+      "value": "Hibachi",
+      "source_type": "official_docs",
+      "source_url": "https://hibachi.xyz",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    },
+    {
+      "field": "type",
+      "value": "DEX",
+      "source_type": "official_docs",
+      "source_url": "https://hibachi.xyz",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    },
+    {
+      "field": "exchange_type",
+      "value": "Perpetual Futures - Privacy-First",
+      "source_type": "official_docs",
+      "source_url": "https://hibachi.xyz",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    },
+    {
+      "field": "max_leverage",
+      "value": "Up to 100x",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "kyc_required",
+      "value": false,
+      "source_type": "official_docs",
+      "source_url": "https://hibachi.xyz",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    }
+  ]
+}

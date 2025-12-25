@@ -1,0 +1,40 @@
+{
+  "version": "1.0",
+  "generated_at": "2025-12-24T05:21:57.224Z",
+  "rules": {
+    "locked_files": [
+      "app/cards/etherfi/page.tsx",
+      "app/dex/asterdex/page.tsx",
+      "app/dex/hibachi/page.tsx",
+      "app/dex/hyperliquid/page.tsx",
+      "app/dex/lighter/page.tsx",
+      "app/exchanges/binance/page.tsx",
+      "app/exchanges/gate/page.tsx",
+      "app/exchanges/okx/page.tsx"
+    ],
+    "blocked_from_comparison": [
+      "ETHERFI",
+      "ASTERDEX",
+      "HIBACHI",
+      "HYPERLIQUID",
+      "LIGHTER",
+      "BINANCE",
+      "GATE",
+      "OKX"
+    ],
+    "blocked_from_sitemap": [
+      "/cards/etherfi",
+      "/dex/asterdex",
+      "/dex/hibachi",
+      "/dex/hyperliquid",
+      "/dex/lighter",
+      "/exchanges/binance",
+      "/exchanges/gate",
+      "/exchanges/okx"
+    ]
+  },
+  "validation": {
+    "require_cr_for_entity_update": true,
+    "fail_build_on_legacy_publish": true
+  }
+}

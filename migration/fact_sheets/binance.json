@@ -1,0 +1,142 @@
+{
+  "version": "1.0",
+  "entity_name": "BINANCE",
+  "entity_type": "CEX",
+  "extracted_at": "2025-12-24T05:26:59.725Z",
+  "source_file": "app/exchanges/binance/page.tsx",
+  "summary": {
+    "total_facts": 16,
+    "verified_facts": 8,
+    "unverified_facts": 8,
+    "verification_rate": "50%"
+  },
+  "official_sources": [
+    "https://www.binance.com",
+    "https://www.binance.com/en/fee/schedule",
+    "https://www.binance.com/en/support",
+    "https://github.com/binance",
+    "https://binance-docs.github.io/apidocs"
+  ],
+  "facts": [
+    {
+      "field": "trading_fee_spot_maker",
+      "value": "0.10%",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "trading_fee_spot_taker",
+      "value": "0.10%",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "trading_fee_futures_maker",
+      "value": "0.02%",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "trading_fee_futures_taker",
+      "value": "0.04%",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "name",
+      "value": "Binance",
+      "source_type": "official_docs",
+      "source_url": "https://www.binance.com",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    },
+    {
+      "field": "type",
+      "value": "CEX",
+      "source_type": "official_docs",
+      "source_url": "https://www.binance.com",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    },
+    {
+      "field": "exchange_type",
+      "value": "Centralized Exchange",
+      "source_type": "official_docs",
+      "source_url": "https://www.binance.com",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    },
+    {
+      "field": "founded",
+      "value": 2017,
+      "source_type": "official_docs",
+      "source_url": "https://www.binance.com",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    },
+    {
+      "field": "founder",
+      "value": "Changpeng Zhao (CZ)",
+      "source_type": "official_docs",
+      "source_url": "https://www.binance.com",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    },
+    {
+      "field": "headquarters",
+      "value": "Global (no single jurisdiction)",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "trading_pairs",
+      "value": "350+",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "daily_volume",
+      "value": "$20B+",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "max_leverage",
+      "value": "125x",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "kyc_required",
+      "value": true,
+      "source_type": "official_docs",
+      "source_url": "https://www.binance.com",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    },
+    {
+      "field": "twitter_handle",
+      "value": "@binance",
+      "source_type": "official_docs",
+      "source_url": "https://twitter.com/binance",
+      "verified": true,
+      "verification_note": "Verifiable via Twitter/X"
+    },
+    {
+      "field": "official_website",
+      "value": "https://www.linkedin.com/company/binance",
+      "source_type": "official_docs",
+      "source_url": "https://www.linkedin.com/company/binance",
+      "verified": true,
+      "verification_note": "Official website URL"
+    }
+  ]
+}

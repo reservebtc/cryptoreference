@@ -1,0 +1,14 @@
+[CR/GATE]
+schema=CR1.0
+version=1.0
+canonical_hash=sha256:08d846dd7a9362a89e42c00d4d1223f90b3c0567cc239ba9228e895333a9636b
+type=exchange
+subtype=cex
+network=null
+name=Gate
+status=active
+url=https://www.linkedin.com/company/gateio
+founded=2013
+kyc_required=false
+x_twitter=@gate_io
+[/CR]

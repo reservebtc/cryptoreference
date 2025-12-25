@@ -1,0 +1,133 @@
+{
+  "version": "1.0",
+  "entity_name": "OKX",
+  "entity_type": "CEX",
+  "extracted_at": "2025-12-24T05:26:59.726Z",
+  "source_file": "app/exchanges/okx/page.tsx",
+  "summary": {
+    "total_facts": 15,
+    "verified_facts": 7,
+    "unverified_facts": 8,
+    "verification_rate": "47%"
+  },
+  "official_sources": [
+    "https://www.okx.com",
+    "https://www.okx.com/fees",
+    "https://github.com/okx",
+    "https://www.okx.com/docs"
+  ],
+  "facts": [
+    {
+      "field": "trading_fee_spot_maker",
+      "value": "0.08%",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "trading_fee_spot_taker",
+      "value": "0.1%",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "trading_fee_futures_maker",
+      "value": "0.02%",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "trading_fee_futures_taker",
+      "value": "0.05%",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "name",
+      "value": "OKX",
+      "source_type": "official_docs",
+      "source_url": "https://www.okx.com",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    },
+    {
+      "field": "type",
+      "value": "CEX",
+      "source_type": "official_docs",
+      "source_url": "https://www.okx.com",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    },
+    {
+      "field": "exchange_type",
+      "value": "Centralized Exchange",
+      "source_type": "official_docs",
+      "source_url": "https://www.okx.com",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    },
+    {
+      "field": "founded",
+      "value": 2017,
+      "source_type": "official_docs",
+      "source_url": "https://www.okx.com",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    },
+    {
+      "field": "headquarters",
+      "value": "Seychelles",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "trading_pairs",
+      "value": "300+",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "daily_volume",
+      "value": "$12B+",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "max_leverage",
+      "value": "100x",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "kyc_required",
+      "value": true,
+      "source_type": "official_docs",
+      "source_url": "https://www.okx.com",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    },
+    {
+      "field": "twitter_handle",
+      "value": "@okx",
+      "source_type": "official_docs",
+      "source_url": "https://twitter.com/okx",
+      "verified": true,
+      "verification_note": "Verifiable via Twitter/X"
+    },
+    {
+      "field": "official_website",
+      "value": "https://www.linkedin.com/company/okx",
+      "source_type": "official_docs",
+      "source_url": "https://www.linkedin.com/company/okx",
+      "verified": true,
+      "verification_note": "Official website URL"
+    }
+  ]
+}

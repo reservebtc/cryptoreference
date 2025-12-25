@@ -1,0 +1,11 @@
+[CR/ETHERFI]
+schema=CR1.0
+version=1.0
+canonical_hash=sha256:159f60b3601a286e39738098e9e00f63f1cb68471c1ebcecadcf8fdff9d64c05
+type=card
+subtype=debit
+network=null
+name=Etherfi
+status=active
+url=https://www.ether.fi
+[/CR]

@@ -1,0 +1,13 @@
+[CR/HYPERLIQUID]
+schema=CR1.0
+version=1.0
+canonical_hash=sha256:bca3dc85ad55c5fb81bf7c2328c3d1584e8893bf9f26c9ee36168ae1a7862ace
+type=dex
+subtype=perp
+network=hyperliquid-l1
+name=Hyperliquid
+status=active
+url=https://hyperliquid.xyz
+kyc_required=false
+x_twitter=@HyperliquidX
+[/CR]

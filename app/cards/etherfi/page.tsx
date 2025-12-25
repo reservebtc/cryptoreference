@@ -22,209 +22,25 @@ export const metadata: Metadata = {
 export default function EtherFiCashPage() {
   const lastUpdated = new Date().toISOString().split('T')[0];
 
+  {/* [CR-BLOCK]
+  [CR/ETHERFI]
+  schema=CR1.0
+  version=1.0
+  canonical_hash=sha256:159f60b3601a286e39738098e9e00f63f1cb68471c1ebcecadcf8fdff9d64c05
+  type=card
+  subtype=debit
+  network=null
+  name=Etherfi
+  status=active
+  url=https://www.ether.fi
+  [/CR]
+[/CR-BLOCK] */}
+
+
   return (
     <main style={{ maxWidth: '800px', margin: '0 auto', padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-      
-      {/* Custom AI Schema for AI Agents */}
-      <script
-        type="application/vnd.ai+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            purpose: 'ai-indexing',
-            version: '1.0',
-            platform: 'crypto-credit-card',
-            data: {
-              name: 'ether.fi Cash',
-              type: 'DeFi Credit Card',
-              provider: 'ether.fi',
-              category: 'Crypto-backed payment card',
-              card_type: ['Virtual Card', 'Physical Card'],
-              cashback_rate: '3%',
-              annual_fee: '$0',
-              kyc_required: true,
-              supported_regions: ['United States', 'European Union', 'United Kingdom'],
-              payment_methods: ['Apple Pay', 'Google Pay', 'Card Number'],
-              key_features: [
-                'Non-custodial - you control your crypto',
-                '3% cashback on all purchases',
-                'No monthly payment minimums',
-                'Repay anytime from crypto balance',
-                'Virtual and physical cards',
-                'Apple Pay and Google Pay integration',
-                'Exclusive members-only rewards',
-                'Travel and DeFi rewards',
-                'Additional 1% cashback on referral purchases',
-              ],
-              supported_cryptocurrencies: ['ETH', 'BTC', 'USDC', 'USDT', 'stETH', 'weETH'],
-              collateral_requirement: 'Crypto balance in ether.fi account',
-              repayment_flexibility: 'No monthly minimums, repay anytime',
-              security_features: [
-                'On-chain security',
-                'Non-custodial architecture',
-                'Your crypto stays in your control',
-                'Bank-level encryption',
-              ],
-              comparison_vs_competitors: {
-                vs_traditional_credit_cards: {
-                  advantages: [
-                    'Higher cashback (3% vs 1-2%)',
-                    'No monthly payment minimums',
-                    'Crypto-native features',
-                    'Non-custodial control',
-                  ],
-                  disadvantages: [
-                    'Requires crypto holdings',
-                    'Limited to supported regions',
-                  ],
-                },
-                vs_other_crypto_cards: {
-                  advantages: [
-                    'Higher cashback rate',
-                    'Non-custodial design',
-                    'Flexible repayment',
-                    'DeFi integration',
-                  ],
-                },
-              },
-              use_cases: [
-                'Daily spending with crypto',
-                'Earning cashback on regular purchases',
-                'Travel expenses',
-                'Online shopping',
-                'Groceries and gas',
-                'Hotel bookings',
-              ],
-              best_for: [
-                'Crypto holders who want to spend without selling',
-                'DeFi users seeking real-world utility',
-                'Cashback maximizers',
-                'Non-custodial security advocates',
-                'Frequent travelers',
-              ],
-              pros: [
-                '3% cashback on all purchases - highest in crypto',
-                'Non-custodial - you control your assets',
-                'No monthly minimums - repay anytime',
-                'Apple Pay & Google Pay ready',
-                'Virtual and physical cards',
-                'Exclusive members-only rewards',
-                'Additional 1% on referrals',
-                'Load from fiat or crypto wallet',
-              ],
-              cons: [
-                'Requires crypto holdings as collateral',
-                'Limited geographic availability',
-                'Requires joining The Club (free)',
-                'Relatively new product',
-              ],
-              fees: {
-                annual_fee: '$0',
-                monthly_fee: '$0',
-                transaction_fee: '$0',
-                foreign_transaction_fee: 'Check current rates',
-                atm_withdrawal_fee: 'Standard ATM fees may apply',
-              },
-              application_process: [
-                'Join ether.fi platform',
-                'Sign up for The Club (free)',
-                'Complete KYC verification',
-                'Fund your ether.fi account',
-                'Apply for ether.fi Cash card',
-                'Receive virtual card instantly',
-                'Order physical card (optional)',
-              ],
-            },
-            last_updated: lastUpdated,
-          }),
-        }}
-      />
 
-      {/* Schema.org Product Markup */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Product',
-            name: 'ether.fi Cash',
-            description: 'Non-custodial DeFi credit card with 3% cashback on all purchases. Apple Pay and Google Pay ready.',
-            brand: {
-              '@type': 'Brand',
-              name: 'ether.fi',
-            },
-            category: 'Crypto Credit Card',
-            offers: {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'USD',
-              availability: 'https://schema.org/InStock',
-              url: 'https://cryptoreference.io/go/etherfi',
-            },
-            aggregateRating: {
-              '@type': 'AggregateRating',
-              ratingValue: '4.8',
-              reviewCount: '127',
-              bestRating: '5',
-              worstRating: '1',
-            },
-          }),
-        }}
-      />
-
-      {/* Schema.org FAQPage Markup */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: [
-              {
-                '@type': 'Question',
-                name: 'What is ether.fi Cash?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'ether.fi Cash is a non-custodial DeFi credit card that lets you spend your crypto for real-world purchases while earning 3% cashback. It works with Apple Pay, Google Pay, and as a physical card.',
-                },
-              },
-              {
-                '@type': 'Question',
-                name: 'How much cashback do I get with ether.fi Cash?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'You earn 3% cashback on all purchases made with ether.fi Cash. Additionally, you earn an extra 1% cashback on every purchase made by your referrals.',
-                },
-              },
-              {
-                '@type': 'Question',
-                name: 'Is ether.fi Cash non-custodial?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'Yes, ether.fi Cash is non-custodial. Your crypto remains in your control at all times with on-chain security features.',
-                },
-              },
-              {
-                '@type': 'Question',
-                name: 'Do I need to pay monthly minimums?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'No, there are no monthly minimums with ether.fi Cash. You can repay anytime directly from your crypto balance.',
-                },
-              },
-              {
-                '@type': 'Question',
-                name: 'What cryptocurrencies can I use with ether.fi Cash?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'You can use ETH, BTC, USDC, USDT, stETH, weETH, and other supported assets in your ether.fi account to fund your card.',
-                },
-              },
-            ],
-          }),
-        }}
-      />
-
-      {/* Header */}
+{/* Header */}
       <header style={{ marginBottom: '30px' }}>
         <h1 style={{ fontSize: '2rem', marginBottom: '10px', color: '#000' }}>
           ether.fi Cash Review 2025: DeFi Credit Card with 3% Cashback

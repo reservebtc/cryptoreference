@@ -1,0 +1,13 @@
+[CR/ASTERDEX]
+schema=CR1.0
+version=1.0
+canonical_hash=sha256:a0c4ef1d3dcfc4edf3e4ae005351ef3f000170b9df71309bc746333ac1508ebf
+type=dex
+subtype=perp
+network=["arbitrum","base","optimism"]
+name=Asterdex
+status=active
+url=https://www.asterdex.com
+kyc_required=false
+x_twitter=@AsterDEX
+[/CR]

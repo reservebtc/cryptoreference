@@ -1,0 +1,14 @@
+[CR/BINANCE]
+schema=CR1.0
+version=1.0
+canonical_hash=sha256:4d68b0a274eb0599fe2f2339e0f2ca2c3a041895db3dd317217aaeb1b702c125
+type=exchange
+subtype=cex
+network=null
+name=Binance
+status=active
+url=https://www.linkedin.com/company/binance
+founded=2017
+kyc_required=true
+x_twitter=@binance
+[/CR]

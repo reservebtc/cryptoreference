@@ -1,0 +1,89 @@
+{
+  "version": "1.0",
+  "entity_name": "ASTERDEX",
+  "entity_type": "DEX",
+  "extracted_at": "2025-12-24T05:26:59.722Z",
+  "source_file": "app/dex/asterdex/page.tsx",
+  "summary": {
+    "total_facts": 9,
+    "verified_facts": 6,
+    "unverified_facts": 3,
+    "verification_rate": "67%"
+  },
+  "official_sources": [
+    "https://asterdex.fi",
+    "https://docs.asterdex.fi",
+    "https://github.com/AsterDEX"
+  ],
+  "facts": [
+    {
+      "field": "name",
+      "value": "AsterDEX",
+      "source_type": "official_docs",
+      "source_url": "https://asterdex.fi",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    },
+    {
+      "field": "type",
+      "value": "DEX",
+      "source_type": "official_docs",
+      "source_url": "https://asterdex.fi",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    },
+    {
+      "field": "exchange_type",
+      "value": "Perpetual Futures",
+      "source_type": "official_docs",
+      "source_url": "https://asterdex.fi",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    },
+    {
+      "field": "trading_pairs",
+      "value": "50+",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "daily_volume",
+      "value": "$32B+",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "max_leverage",
+      "value": "1001x",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "kyc_required",
+      "value": false,
+      "source_type": "official_docs",
+      "source_url": "https://asterdex.fi",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    },
+    {
+      "field": "twitter_handle",
+      "value": "@AsterDEX",
+      "source_type": "official_docs",
+      "source_url": "https://twitter.com/AsterDEX",
+      "verified": true,
+      "verification_note": "Verifiable via Twitter/X"
+    },
+    {
+      "field": "official_website",
+      "value": "https://www.asterdex.com",
+      "source_type": "official_docs",
+      "source_url": "https://www.asterdex.com",
+      "verified": true,
+      "verification_note": "Official website URL"
+    }
+  ]
+}

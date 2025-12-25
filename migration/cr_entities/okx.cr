@@ -1,0 +1,14 @@
+[CR/OKX]
+schema=CR1.0
+version=1.0
+canonical_hash=sha256:ab3f2a10630c6f0a573e120039381f0bc3323bb911e7beacd9df29ccebe459a1
+type=exchange
+subtype=cex
+network=null
+name=Okx
+status=active
+url=https://www.linkedin.com/company/okx
+founded=2017
+kyc_required=true
+x_twitter=@okx
+[/CR]

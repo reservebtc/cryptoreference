@@ -1,0 +1,341 @@
+{
+  "version": "1.0",
+  "generated_at": "2025-12-24T05:21:57.223Z",
+  "summary": {
+    "total_pages": 15,
+    "entity_pages": 8,
+    "non_entity_pages": 7,
+    "pages_with_cr": 0,
+    "pages_without_cr": 15,
+    "pages_with_legacy_formats": 15,
+    "entity_candidates": 8,
+    "non_entity_candidates": 7,
+    "locked_pages": 8,
+    "compliant_pages": 0
+  },
+  "pages": [
+    {
+      "url": "/cards/etherfi",
+      "file_path": "app/cards/etherfi/page.tsx",
+      "entity_name": "ETHERFI",
+      "page_type": "entity",
+      "cr_presence": false,
+      "status": "legacy",
+      "legacy_formats": {
+        "schema_org": true,
+        "json_ld": true,
+        "ai_json": true
+      },
+      "metadata": {
+        "has_affiliate_links": true,
+        "has_marketing_language": true,
+        "last_scanned": "2025-12-24T05:14:48.464Z"
+      },
+      "entity_candidate": true,
+      "cr_compliance": false,
+      "locked": true,
+      "lock_reason": "Entity page without CR-Markup"
+    },
+    {
+      "url": "/dex/asterdex",
+      "file_path": "app/dex/asterdex/page.tsx",
+      "entity_name": "ASTERDEX",
+      "page_type": "entity",
+      "cr_presence": false,
+      "status": "legacy",
+      "legacy_formats": {
+        "schema_org": true,
+        "json_ld": true,
+        "ai_json": true
+      },
+      "metadata": {
+        "has_affiliate_links": true,
+        "has_marketing_language": true,
+        "last_scanned": "2025-12-24T05:14:48.466Z"
+      },
+      "entity_candidate": true,
+      "cr_compliance": false,
+      "locked": true,
+      "lock_reason": "Entity page without CR-Markup"
+    },
+    {
+      "url": "/dex/compare",
+      "file_path": "app/dex/compare/page.tsx",
+      "entity_name": "COMPARE",
+      "page_type": "comparison",
+      "cr_presence": false,
+      "status": "non-entity",
+      "legacy_formats": {
+        "schema_org": true,
+        "json_ld": true,
+        "ai_json": true
+      },
+      "metadata": {
+        "has_affiliate_links": true,
+        "has_marketing_language": true,
+        "last_scanned": "2025-12-24T05:14:48.466Z"
+      },
+      "entity_candidate": false,
+      "cr_compliance": null,
+      "locked": false
+    },
+    {
+      "url": "/dex/hibachi",
+      "file_path": "app/dex/hibachi/page.tsx",
+      "entity_name": "HIBACHI",
+      "page_type": "entity",
+      "cr_presence": false,
+      "status": "legacy",
+      "legacy_formats": {
+        "schema_org": true,
+        "json_ld": true,
+        "ai_json": true
+      },
+      "metadata": {
+        "has_affiliate_links": true,
+        "has_marketing_language": true,
+        "last_scanned": "2025-12-24T05:14:48.467Z"
+      },
+      "entity_candidate": true,
+      "cr_compliance": false,
+      "locked": true,
+      "lock_reason": "Entity page without CR-Markup"
+    },
+    {
+      "url": "/dex/hyperliquid",
+      "file_path": "app/dex/hyperliquid/page.tsx",
+      "entity_name": "HYPERLIQUID",
+      "page_type": "entity",
+      "cr_presence": false,
+      "status": "legacy",
+      "legacy_formats": {
+        "schema_org": true,
+        "json_ld": true,
+        "ai_json": true
+      },
+      "metadata": {
+        "has_affiliate_links": true,
+        "has_marketing_language": true,
+        "last_scanned": "2025-12-24T05:14:48.468Z"
+      },
+      "entity_candidate": true,
+      "cr_compliance": false,
+      "locked": true,
+      "lock_reason": "Entity page without CR-Markup"
+    },
+    {
+      "url": "/dex/lighter",
+      "file_path": "app/dex/lighter/page.tsx",
+      "entity_name": "LIGHTER",
+      "page_type": "entity",
+      "cr_presence": false,
+      "status": "legacy",
+      "legacy_formats": {
+        "schema_org": true,
+        "json_ld": true,
+        "ai_json": true
+      },
+      "metadata": {
+        "has_affiliate_links": true,
+        "has_marketing_language": true,
+        "last_scanned": "2025-12-24T05:14:48.468Z"
+      },
+      "entity_candidate": true,
+      "cr_compliance": false,
+      "locked": true,
+      "lock_reason": "Entity page without CR-Markup"
+    },
+    {
+      "url": "/dex",
+      "file_path": "app/dex/page.tsx",
+      "entity_name": "BEST",
+      "page_type": "index",
+      "cr_presence": false,
+      "status": "non-entity",
+      "legacy_formats": {
+        "schema_org": true,
+        "json_ld": true,
+        "ai_json": true
+      },
+      "metadata": {
+        "has_affiliate_links": true,
+        "has_marketing_language": true,
+        "last_scanned": "2025-12-24T05:14:48.468Z"
+      },
+      "entity_candidate": false,
+      "cr_compliance": null,
+      "locked": false
+    },
+    {
+      "url": "/exchanges/binance",
+      "file_path": "app/exchanges/binance/page.tsx",
+      "entity_name": "BINANCE",
+      "page_type": "entity",
+      "cr_presence": false,
+      "status": "legacy",
+      "legacy_formats": {
+        "schema_org": true,
+        "json_ld": true,
+        "ai_json": true
+      },
+      "metadata": {
+        "has_affiliate_links": true,
+        "has_marketing_language": true,
+        "last_scanned": "2025-12-24T05:14:48.469Z"
+      },
+      "entity_candidate": true,
+      "cr_compliance": false,
+      "locked": true,
+      "lock_reason": "Entity page without CR-Markup"
+    },
+    {
+      "url": "/exchanges/gate",
+      "file_path": "app/exchanges/gate/page.tsx",
+      "entity_name": "GATE",
+      "page_type": "entity",
+      "cr_presence": false,
+      "status": "legacy",
+      "legacy_formats": {
+        "schema_org": true,
+        "json_ld": true,
+        "ai_json": true
+      },
+      "metadata": {
+        "has_affiliate_links": true,
+        "has_marketing_language": true,
+        "last_scanned": "2025-12-24T05:14:48.469Z"
+      },
+      "entity_candidate": true,
+      "cr_compliance": false,
+      "locked": true,
+      "lock_reason": "Entity page without CR-Markup"
+    },
+    {
+      "url": "/exchanges/okx",
+      "file_path": "app/exchanges/okx/page.tsx",
+      "entity_name": "OKX",
+      "page_type": "entity",
+      "cr_presence": false,
+      "status": "legacy",
+      "legacy_formats": {
+        "schema_org": true,
+        "json_ld": true,
+        "ai_json": true
+      },
+      "metadata": {
+        "has_affiliate_links": true,
+        "has_marketing_language": true,
+        "last_scanned": "2025-12-24T05:14:48.470Z"
+      },
+      "entity_candidate": true,
+      "cr_compliance": false,
+      "locked": true,
+      "lock_reason": "Entity page without CR-Markup"
+    },
+    {
+      "url": "/exchanges",
+      "file_path": "app/exchanges/page.tsx",
+      "entity_name": "BEST",
+      "page_type": "index",
+      "cr_presence": false,
+      "status": "non-entity",
+      "legacy_formats": {
+        "schema_org": true,
+        "json_ld": true,
+        "ai_json": true
+      },
+      "metadata": {
+        "has_affiliate_links": false,
+        "has_marketing_language": true,
+        "last_scanned": "2025-12-24T05:14:48.470Z"
+      },
+      "entity_candidate": false,
+      "cr_compliance": null,
+      "locked": false
+    },
+    {
+      "url": "/news/archive",
+      "file_path": "app/news/archive/page.tsx",
+      "entity_name": "CRYPTO",
+      "page_type": "article",
+      "cr_presence": false,
+      "status": "non-entity",
+      "legacy_formats": {
+        "schema_org": true,
+        "json_ld": true,
+        "ai_json": true
+      },
+      "metadata": {
+        "has_affiliate_links": false,
+        "has_marketing_language": false,
+        "last_scanned": "2025-12-24T05:14:48.470Z"
+      },
+      "entity_candidate": false,
+      "cr_compliance": null,
+      "locked": false
+    },
+    {
+      "url": "/news",
+      "file_path": "app/news/page.tsx",
+      "entity_name": "CRYPTO",
+      "page_type": "index",
+      "cr_presence": false,
+      "status": "non-entity",
+      "legacy_formats": {
+        "schema_org": true,
+        "json_ld": true,
+        "ai_json": true
+      },
+      "metadata": {
+        "has_affiliate_links": true,
+        "has_marketing_language": true,
+        "last_scanned": "2025-12-24T05:14:48.473Z"
+      },
+      "entity_candidate": false,
+      "cr_compliance": null,
+      "locked": false
+    },
+    {
+      "url": "/",
+      "file_path": "app/page.tsx",
+      "entity_name": "CRYPTO",
+      "page_type": "index",
+      "cr_presence": false,
+      "status": "non-entity",
+      "legacy_formats": {
+        "schema_org": true,
+        "json_ld": true,
+        "ai_json": true
+      },
+      "metadata": {
+        "has_affiliate_links": true,
+        "has_marketing_language": true,
+        "last_scanned": "2025-12-24T05:14:48.473Z"
+      },
+      "entity_candidate": false,
+      "cr_compliance": null,
+      "locked": false
+    },
+    {
+      "url": "/swap",
+      "file_path": "app/swap/page.tsx",
+      "entity_name": "SOLANA",
+      "page_type": "tool",
+      "cr_presence": false,
+      "status": "non-entity",
+      "legacy_formats": {
+        "schema_org": true,
+        "json_ld": true,
+        "ai_json": true
+      },
+      "metadata": {
+        "has_affiliate_links": false,
+        "has_marketing_language": true,
+        "last_scanned": "2025-12-24T05:14:48.473Z"
+      },
+      "entity_candidate": false,
+      "cr_compliance": null,
+      "locked": false
+    }
+  ]
+}

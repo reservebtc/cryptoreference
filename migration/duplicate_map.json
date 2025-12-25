@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "generated_at": "2025-12-24T05:38:04.596Z",
+  "summary": {
+    "total_entities": 8,
+    "canonical_entities": 8,
+    "duplicate_entities": 0,
+    "duplicate_groups": 0
+  },
+  "entities": [
+    {
+      "token": "ASTERDEX",
+      "status": "canonical"
+    },
+    {
+      "token": "BINANCE",
+      "status": "canonical"
+    },
+    {
+      "token": "ETHERFI",
+      "status": "canonical"
+    },
+    {
+      "token": "GATE",
+      "status": "canonical"
+    },
+    {
+      "token": "HIBACHI",
+      "status": "canonical"
+    },
+    {
+      "token": "HYPERLIQUID",
+      "status": "canonical"
+    },
+    {
+      "token": "LIGHTER",
+      "status": "canonical"
+    },
+    {
+      "token": "OKX",
+      "status": "canonical"
+    }
+  ],
+  "duplicate_groups": []
+}

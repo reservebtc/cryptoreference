@@ -1,0 +1,89 @@
+{
+  "version": "1.0",
+  "entity_name": "LIGHTER",
+  "entity_type": "DEX",
+  "extracted_at": "2025-12-24T05:26:59.724Z",
+  "source_file": "app/dex/lighter/page.tsx",
+  "summary": {
+    "total_facts": 9,
+    "verified_facts": 6,
+    "unverified_facts": 3,
+    "verification_rate": "67%"
+  },
+  "official_sources": [
+    "https://lighter.xyz",
+    "https://docs.lighter.xyz",
+    "https://github.com/elliottech"
+  ],
+  "facts": [
+    {
+      "field": "name",
+      "value": "Lighter",
+      "source_type": "official_docs",
+      "source_url": "https://lighter.xyz",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    },
+    {
+      "field": "type",
+      "value": "DEX",
+      "source_type": "official_docs",
+      "source_url": "https://lighter.xyz",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    },
+    {
+      "field": "exchange_type",
+      "value": "Perpetual Futures",
+      "source_type": "official_docs",
+      "source_url": "https://lighter.xyz",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    },
+    {
+      "field": "daily_volume",
+      "value": "$200M+",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "max_leverage",
+      "value": "20x",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "kyc_required",
+      "value": false,
+      "source_type": "official_docs",
+      "source_url": "https://lighter.xyz",
+      "verified": true,
+      "verification_note": "Can be verified from official documentation"
+    },
+    {
+      "field": "blockchain",
+      "value": "Arbitrum (Ethereum Layer 2)",
+      "source_type": "marketing",
+      "verified": false,
+      "verification_note": "Extracted from marketing content - needs official verification"
+    },
+    {
+      "field": "twitter_handle",
+      "value": "@lighter_xyz",
+      "source_type": "official_docs",
+      "source_url": "https://twitter.com/lighter_xyz",
+      "verified": true,
+      "verification_note": "Verifiable via Twitter/X"
+    },
+    {
+      "field": "official_website",
+      "value": "https://lighter.xyz",
+      "source_type": "official_docs",
+      "source_url": "https://lighter.xyz",
+      "verified": true,
+      "verification_note": "Official website URL"
+    }
+  ]
+}
