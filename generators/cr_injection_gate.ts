@@ -415,7 +415,7 @@ function runAcceptanceTests(): void {
   // Test 18: Inject CR when already exists fails
   test('Test 18 - Inject CR when exists fails', () => {
     const result = injectCRBlock(contentWithCR, sampleCRBlock, 'entity');
-    return !result.success && result.error?.includes('already contains');
+    return !result.success && (result.error?.includes('already contains') === true);
   });
 
   // Test 19: Remove CR blocks works
