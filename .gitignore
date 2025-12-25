@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# CR schema specs & plans (local-only)
+schema/spec.md
+schema/spec2.md
+schema/spec3.md
+schema/plan.md
+schema/plan2.md
+schema/plan3.md
