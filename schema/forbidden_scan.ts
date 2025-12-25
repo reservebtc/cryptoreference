@@ -42,75 +42,77 @@ export type ViolationType =
 // ============================================
 
 /**
- * Emoji Unicode ranges (comprehensive)
+ * Emoji detection using code points (no unicode regex flag needed)
  */
-const EMOJI_REGEX = new RegExp(
-  [
-    '[\u{1F600}-\u{1F64F}]', // Emoticons
-    '[\u{1F300}-\u{1F5FF}]', // Misc Symbols and Pictographs
-    '[\u{1F680}-\u{1F6FF}]', // Transport and Map
-    '[\u{1F1E0}-\u{1F1FF}]', // Flags
-    '[\u{2600}-\u{26FF}]',   // Misc symbols
-    '[\u{2700}-\u{27BF}]',   // Dingbats
-    '[\u{1F900}-\u{1F9FF}]', // Supplemental Symbols
-    '[\u{1FA00}-\u{1FA6F}]', // Chess Symbols
-    '[\u{1FA70}-\u{1FAFF}]', // Symbols and Pictographs Extended-A
-    '[\u{231A}-\u{231B}]',   // Watch, Hourglass
-    '[\u{23E9}-\u{23F3}]',   // Media control symbols
-    '[\u{23F8}-\u{23FA}]',   // Media control symbols
-    '[\u{25AA}-\u{25AB}]',   // Squares
-    '[\u{25B6}]',            // Play button
-    '[\u{25C0}]',            // Reverse button
-    '[\u{25FB}-\u{25FE}]',   // Squares
-    '[\u{2614}-\u{2615}]',   // Umbrella, Hot Beverage
-    '[\u{2648}-\u{2653}]',   // Zodiac
-    '[\u{267F}]',            // Wheelchair
-    '[\u{2693}]',            // Anchor
-    '[\u{26A1}]',            // High Voltage
-    '[\u{26AA}-\u{26AB}]',   // Circles
-    '[\u{26BD}-\u{26BE}]',   // Soccer, Baseball
-    '[\u{26C4}-\u{26C5}]',   // Snowman, Sun
-    '[\u{26CE}]',            // Ophiuchus
-    '[\u{26D4}]',            // No Entry
-    '[\u{26EA}]',            // Church
-    '[\u{26F2}-\u{26F3}]',   // Fountain, Golf
-    '[\u{26F5}]',            // Sailboat
-    '[\u{26FA}]',            // Tent
-    '[\u{26FD}]',            // Fuel Pump
-    '[\u{2702}]',            // Scissors
-    '[\u{2705}]',            // Check Mark
-    '[\u{2708}-\u{270D}]',   // Airplane to Writing Hand
-    '[\u{270F}]',            // Pencil
-    '[\u{2712}]',            // Black Nib
-    '[\u{2714}]',            // Check Mark
-    '[\u{2716}]',            // X Mark
-    '[\u{271D}]',            // Latin Cross
-    '[\u{2721}]',            // Star of David
-    '[\u{2728}]',            // Sparkles
-    '[\u{2733}-\u{2734}]',   // Eight Spoked Asterisk
-    '[\u{2744}]',            // Snowflake
-    '[\u{2747}]',            // Sparkle
-    '[\u{274C}]',            // Cross Mark
-    '[\u{274E}]',            // Cross Mark
-    '[\u{2753}-\u{2755}]',   // Question Marks
-    '[\u{2757}]',            // Exclamation Mark
-    '[\u{2763}-\u{2764}]',   // Heart Exclamation
-    '[\u{2795}-\u{2797}]',   // Plus, Minus, Divide
-    '[\u{27A1}]',            // Right Arrow
-    '[\u{27B0}]',            // Curly Loop
-    '[\u{27BF}]',            // Double Curly Loop
-    '[\u{2934}-\u{2935}]',   // Arrows
-    '[\u{2B05}-\u{2B07}]',   // Arrows
-    '[\u{2B1B}-\u{2B1C}]',   // Squares
-    '[\u{2B50}]',            // Star
-    '[\u{2B55}]',            // Circle
-    '[\u{3030}]',            // Wavy Dash
-    '[\u{303D}]',            // Part Alternation Mark
-    '[\u{3297}]',            // Circled Ideograph Congratulation
-    '[\u{3299}]',            // Circled Ideograph Secret
-  ].join('|'),
-  'gu'
-);
+function isEmojiCodePoint(code: number): boolean {
+  // Emoticons
+  if (code >= 0x1F600 && code <= 0x1F64F) return true;
+  // Misc Symbols and Pictographs
+  if (code >= 0x1F300 && code <= 0x1F5FF) return true;
+  // Transport and Map
+  if (code >= 0x1F680 && code <= 0x1F6FF) return true;
+  // Flags
+  if (code >= 0x1F1E0 && code <= 0x1F1FF) return true;
+  // Misc symbols
+  if (code >= 0x2600 && code <= 0x26FF) return true;
+  // Dingbats
+  if (code >= 0x2700 && code <= 0x27BF) return true;
+  // Supplemental Symbols
+  if (code >= 0x1F900 && code <= 0x1F9FF) return true;
+  // Chess Symbols
+  if (code >= 0x1FA00 && code <= 0x1FA6F) return true;
+  // Extended-A
+  if (code >= 0x1FA70 && code <= 0x1FAFF) return true;
+  // Watch, Hourglass
+  if (code >= 0x231A && code <= 0x231B) return true;
+  // Media controls
+  if (code >= 0x23E9 && code <= 0x23F3) return true;
+  if (code >= 0x23F8 && code <= 0x23FA) return true;
+  // Squares
+  if (code >= 0x25AA && code <= 0x25AB) return true;
+  if (code >= 0x25FB && code <= 0x25FE) return true;
+  if (code === 0x25B6 || code === 0x25C0) return true;
+  // Various symbols
+  if (code >= 0x2614 && code <= 0x2615) return true;
+  if (code >= 0x2648 && code <= 0x2653) return true;
+  if (code === 0x267F || code === 0x2693 || code === 0x26A1) return true;
+  if (code >= 0x26AA && code <= 0x26AB) return true;
+  if (code >= 0x26BD && code <= 0x26BE) return true;
+  if (code >= 0x26C4 && code <= 0x26C5) return true;
+  if (code === 0x26CE || code === 0x26D4 || code === 0x26EA) return true;
+  if (code >= 0x26F2 && code <= 0x26F3) return true;
+  if (code === 0x26F5 || code === 0x26FA || code === 0x26FD) return true;
+  if (code === 0x2702 || code === 0x2705) return true;
+  if (code >= 0x2708 && code <= 0x270D) return true;
+  if (code === 0x270F || code === 0x2712 || code === 0x2714 || code === 0x2716) return true;
+  if (code === 0x271D || code === 0x2721 || code === 0x2728) return true;
+  if (code >= 0x2733 && code <= 0x2734) return true;
+  if (code === 0x2744 || code === 0x2747 || code === 0x274C || code === 0x274E) return true;
+  if (code >= 0x2753 && code <= 0x2755) return true;
+  if (code === 0x2757) return true;
+  if (code >= 0x2763 && code <= 0x2764) return true;
+  if (code >= 0x2795 && code <= 0x2797) return true;
+  if (code === 0x27A1 || code === 0x27B0 || code === 0x27BF) return true;
+  if (code >= 0x2934 && code <= 0x2935) return true;
+  if (code >= 0x2B05 && code <= 0x2B07) return true;
+  if (code >= 0x2B1B && code <= 0x2B1C) return true;
+  if (code === 0x2B50 || code === 0x2B55) return true;
+  if (code === 0x3030 || code === 0x303D || code === 0x3297 || code === 0x3299) return true;
+  return false;
+}
+
+function findEmojisInText(text: string): { char: string; position: number }[] {
+  const results: { char: string; position: number }[] = [];
+  for (let i = 0; i < text.length; i++) {
+    const code = text.codePointAt(i);
+    if (code === undefined) continue;
+    if (isEmojiCodePoint(code)) {
+      results.push({ char: String.fromCodePoint(code), position: i });
+    }
+    if (code > 0xFFFF) i++; // Skip surrogate pair
+  }
+  return results;
+}
 
 /**
  * Marketing language patterns (case-insensitive)
@@ -292,17 +294,14 @@ const OPINION_TERMS = [
  */
 export function scanEmoji(text: string): Violation[] {
   const violations: Violation[] = [];
-  let match;
+  const emojis = findEmojisInText(text);
 
-  // Reset regex state
-  EMOJI_REGEX.lastIndex = 0;
-
-  while ((match = EMOJI_REGEX.exec(text)) !== null) {
+  for (const emoji of emojis) {
     violations.push({
       type: 'emoji',
-      match: match[0],
-      position: match.index,
-      message: `Emoji character forbidden: "${match[0]}"`
+      match: emoji.char,
+      position: emoji.position,
+      message: `Emoji character forbidden: "${emoji.char}"`
     });
   }
 

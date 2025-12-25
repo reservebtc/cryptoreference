@@ -344,7 +344,7 @@ network=ethereum
 
   // Test 18: Canonical hash is computed for v1.0 CRs
   const test18 = validateCR(V1_MINIMAL);
-  const hashComputed = test18.valid && test18.data?.computedHash?.startsWith('sha256:');
+  const hashComputed = test18.valid && test18.data?.computedHash?.startsWith('sha256:') === true;
   results.push({
     name: 'Test 18: Canonical hash is computed for v1.0 CRs',
     passed: hashComputed,

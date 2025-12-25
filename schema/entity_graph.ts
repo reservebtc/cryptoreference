@@ -277,7 +277,7 @@ export function validateGraphNoCycles(graph: EntityGraph): GraphValidation {
   const errors: string[] = [];
   const warnings: string[] = [];
 
-  for (const token of graph.nodes.keys()) {
+  for (const token of Array.from(graph.nodes.keys())) {
     const result = detectCycle(graph, token);
     if (result.hasCycle) {
       errors.push(`Cycle detected: ${result.cycle?.join(' -> ')}`);

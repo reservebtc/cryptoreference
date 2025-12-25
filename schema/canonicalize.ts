@@ -39,8 +39,37 @@ const CR_OPEN_REGEX = /^\[CR\/([A-Za-z][A-Za-z0-9_-]*)\]$/;
 const CR_CLOSE_TAG = '[/CR]';
 const FIELD_REGEX = /^([A-Za-z][A-Za-z0-9_-]*)=(.+)$/;
 
-// Emoji Unicode ranges (forbidden in CR-blocks)
-const EMOJI_REGEX = /[\u{1F600}-\u{1F64F}]|[\u{1F300}-\u{1F5FF}]|[\u{1F680}-\u{1F6FF}]|[\u{1F1E0}-\u{1F1FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]|[\u{1F900}-\u{1F9FF}]|[\u{1FA00}-\u{1FA6F}]|[\u{1FA70}-\u{1FAFF}]/u;
+// Emoji detection function (forbidden in CR-blocks)
+function containsEmoji(str: string): boolean {
+  // Check for common emoji ranges using code points
+  for (let i = 0; i < str.length; i++) {
+    const code = str.codePointAt(i);
+    if (code === undefined) continue;
+
+    // Skip surrogate pairs (already handled by codePointAt)
+    if (code > 0xFFFF) i++;
+
+    // Emoticons
+    if (code >= 0x1F600 && code <= 0x1F64F) return true;
+    // Misc Symbols and Pictographs
+    if (code >= 0x1F300 && code <= 0x1F5FF) return true;
+    // Transport and Map
+    if (code >= 0x1F680 && code <= 0x1F6FF) return true;
+    // Flags
+    if (code >= 0x1F1E0 && code <= 0x1F1FF) return true;
+    // Misc symbols
+    if (code >= 0x2600 && code <= 0x26FF) return true;
+    // Dingbats
+    if (code >= 0x2700 && code <= 0x27BF) return true;
+    // Supplemental Symbols
+    if (code >= 0x1F900 && code <= 0x1F9FF) return true;
+    // Chess, cards, etc
+    if (code >= 0x1FA00 && code <= 0x1FA6F) return true;
+    // Extended-A
+    if (code >= 0x1FA70 && code <= 0x1FAFF) return true;
+  }
+  return false;
+}
 
 // ============================================
 // 1. CR-BLOCK EXTRACTION
@@ -83,7 +112,7 @@ export function extractCRBlock(input: string): ParseResult {
       }
 
       // Check for emoji (forbidden)
-      if (EMOJI_REGEX.test(line)) {
+      if (containsEmoji(line)) {
         return {
           success: false,
           error: 'Emoji characters are forbidden inside CR-blocks'
@@ -324,7 +353,7 @@ export function canonicalize(input: string): CanonicalResult {
         }
 
         // Check for emoji
-        if (EMOJI_REGEX.test(line)) {
+        if (containsEmoji(line)) {
           return {
             success: false,
             error: 'Emoji characters are forbidden inside CR-blocks'

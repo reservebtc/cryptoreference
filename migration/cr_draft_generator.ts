@@ -19,6 +19,26 @@ import * as path from 'path';
 import * as crypto from 'crypto';
 
 // ============================================
+// EMOJI DETECTION
+// ============================================
+
+function containsEmoji(str: string): boolean {
+  for (let i = 0; i < str.length; i++) {
+    const code = str.codePointAt(i);
+    if (code === undefined) continue;
+    if (code > 0xFFFF) i++;
+    if (code >= 0x1F600 && code <= 0x1F64F) return true;
+    if (code >= 0x1F300 && code <= 0x1F5FF) return true;
+    if (code >= 0x1F680 && code <= 0x1F6FF) return true;
+    if (code >= 0x1F1E0 && code <= 0x1F1FF) return true;
+    if (code >= 0x2600 && code <= 0x26FF) return true;
+    if (code >= 0x2700 && code <= 0x27BF) return true;
+    if (code >= 0x1F900 && code <= 0x1F9FF) return true;
+  }
+  return false;
+}
+
+// ============================================
 // TYPES
 // ============================================
 
@@ -77,7 +97,7 @@ function mapEntityType(entityType: string): { type: string; subtype: string } {
  * Map fact field to CR field
  */
 function mapFactToCRField(field: string): string | null {
-  const mapping: Record<string, string> = {
+  const mapping: Record<string, string | null> = {
     'name': 'name',
     'type': null, // Handled separately
     'exchange_type': null, // Handled separately
@@ -98,7 +118,7 @@ function mapFactToCRField(field: string): string | null {
     'trading_fee_futures_taker': null, // Not in base CR
   };
 
-  return mapping[field] !== undefined ? mapping[field] : null;
+  return field in mapping ? mapping[field] : null;
 }
 
 /**
@@ -285,8 +305,7 @@ function validateCRGrammar(crContent: string): { valid: boolean; errors: string[
   }
 
   // Check for emoji (forbidden in CR)
-  const emojiRegex = /[\u{1F600}-\u{1F6FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F900}-\u{1F9FF}\u{1F300}-\u{1F5FF}]/u;
-  if (emojiRegex.test(crContent)) {
+  if (containsEmoji(crContent)) {
     errors.push('Emoji found in CR block (forbidden)');
   }
 

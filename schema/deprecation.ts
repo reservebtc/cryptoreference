@@ -450,7 +450,7 @@ export class DeprecationRegistry {
   getAllDeprecated(): string[] {
     const deprecated: string[] = [];
 
-    for (const [token, info] of this.entities) {
+    for (const [token, info] of Array.from(this.entities.entries())) {
       if (info.is_deprecated) {
         deprecated.push(token);
       }
@@ -476,7 +476,7 @@ export class DeprecationRegistry {
     let inactive = 0;
     let withReplacements = 0;
 
-    for (const info of this.entities.values()) {
+    for (const info of Array.from(this.entities.values())) {
       switch (info.status) {
         case 'deprecated':
           deprecated++;
