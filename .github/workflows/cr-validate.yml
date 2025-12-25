@@ -77,8 +77,9 @@ jobs:
         run: |
           echo "Searching for CR files..."
 
-          # Find all .cr files if they exist
-          CR_FILES=$(find . -name "*.cr" -type f 2>/dev/null || true)
+          # Find all .cr files excluding partial drafts
+          # migration/cr_drafts/ contains partial CRs (cr_status=partial) which are not canonical
+          CR_FILES=$(find . -name "*.cr" -type f -not -path "./migration/cr_drafts/*" 2>/dev/null || true)
 
           if [ -n "$CR_FILES" ]; then
             echo "Found CR files:"
