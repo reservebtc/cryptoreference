@@ -15,7 +15,8 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import { validateCR, ValidationResult } from '../schema/validate_cr';
+import { validateCR } from '../schema/validate_cr';
+import type { ValidationResult } from '../schema/validate_cr';
 import { computeCanonicalHash } from '../schema/hash';
 
 // ============================================

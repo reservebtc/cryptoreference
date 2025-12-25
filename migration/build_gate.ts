@@ -17,7 +17,8 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import { checkAllEntities, GateCheckResult, EventType } from './event_gate';
+import { checkAllEntities } from './event_gate';
+import type { GateCheckResult, EventType } from './event_gate';
 
 // ============================================
 // BUILD GATE CHECKS
@@ -195,7 +196,8 @@ function main() {
 }
 
 // Export for programmatic use
-export { runBuildGate, BuildGateResult };
+export { runBuildGate };
+export type { BuildGateResult };
 
 // CLI entry point
 if (require.main === module) {
