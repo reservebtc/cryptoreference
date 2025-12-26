@@ -48,7 +48,7 @@ export default function AsterDEXPortfolioPage() {
         </section>
 
         <section>
-          <h2>Position Data</h2>
+          <h2>Declared Parameters</h2>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
@@ -78,7 +78,7 @@ export default function AsterDEXPortfolioPage() {
         </section>
 
         <section>
-          <h2>Account Metrics</h2>
+          <h2>Declared Attributes</h2>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
@@ -96,7 +96,7 @@ export default function AsterDEXPortfolioPage() {
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Margin Used</td>
+                <td style={{ padding: '8px' }}>Attribute_C</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>

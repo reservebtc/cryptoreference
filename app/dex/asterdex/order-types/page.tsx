@@ -18,7 +18,7 @@ export default function AsterDEXOrderTypesPage() {
         </header>
 
         <section>
-          <h2>Declared Order Types</h2>
+          <h2>Declared Categories</h2>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>

@@ -28,7 +28,7 @@ export default function AsterDEXSpotTradingPage() {
             </thead>
             <tbody>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Trading Type</td>
+                <td style={{ padding: '8px' }}>Parameter_A</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
@@ -44,7 +44,7 @@ export default function AsterDEXSpotTradingPage() {
         </section>
 
         <section>
-          <h2>Order Types</h2>
+          <h2>Declared Categories</h2>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>

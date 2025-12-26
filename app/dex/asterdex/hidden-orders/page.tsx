@@ -18,7 +18,7 @@ export default function AsterDEXHiddenOrdersPage() {
         </header>
 
         <section>
-          <h2>Hidden Order Specifications</h2>
+          <h2>Declared Parameters</h2>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>

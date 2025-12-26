@@ -18,7 +18,7 @@ export default function AsterDEXAPXTokenPage() {
         </header>
 
         <section>
-          <h2>Token Information</h2>
+          <h2>Declared Attributes</h2>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>

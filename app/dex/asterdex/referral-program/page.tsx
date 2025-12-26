@@ -44,7 +44,7 @@ export default function AsterDEXReferralProgramPage() {
         </section>
 
         <section>
-          <h2>Dashboard Metrics</h2>
+          <h2>Declared Attributes</h2>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
