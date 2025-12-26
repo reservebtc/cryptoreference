@@ -126,7 +126,7 @@ export default function AsterDEXFuturesTradingPage() {
             </thead>
             <tbody>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Total Trading Volume</td>
+                <td style={{ padding: '8px' }}>Attribute_A</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>

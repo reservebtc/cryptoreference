@@ -49,7 +49,7 @@ export default function AsterDEXTradingPairsPage() {
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
                 <th style={{ textAlign: 'left', padding: '8px' }}>Market Type</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Features</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
               </tr>
             </thead>
             <tbody>

@@ -36,7 +36,7 @@ export default function AsterDEXTradingFeesPage() {
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Funding Rate</td>
+                <td style={{ padding: '8px' }}>Parameter_C</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>
@@ -58,11 +58,11 @@ export default function AsterDEXTradingFeesPage() {
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Volume Tiers</td>
+                <td style={{ padding: '8px' }}>Method_B</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Post-Only Orders</td>
+                <td style={{ padding: '8px' }}>Method_C</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>

@@ -66,7 +66,7 @@ export default function AsterDEXInterfaceOverviewPage() {
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Portfolio</td>
+                <td style={{ padding: '8px' }}>Section_D</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
@@ -100,7 +100,7 @@ export default function AsterDEXInterfaceOverviewPage() {
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Positions Panel</td>
+                <td style={{ padding: '8px' }}>Element_D</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>

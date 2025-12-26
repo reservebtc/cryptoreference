@@ -28,7 +28,7 @@ export default function AsterDEXTradingVolumePage() {
             </thead>
             <tbody>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Total Trading Volume</td>
+                <td style={{ padding: '8px' }}>Attribute_A</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
@@ -66,7 +66,7 @@ export default function AsterDEXTradingVolumePage() {
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Trading Modes</td>
+                <td style={{ padding: '8px' }}>Parameter_C</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>

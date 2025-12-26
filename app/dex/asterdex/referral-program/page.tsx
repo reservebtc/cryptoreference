@@ -36,7 +36,7 @@ export default function AsterDEXReferralProgramPage() {
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>History Delay</td>
+                <td style={{ padding: '8px' }}>Parameter_C</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>
@@ -54,7 +54,7 @@ export default function AsterDEXReferralProgramPage() {
             </thead>
             <tbody>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Total referred volume</td>
+                <td style={{ padding: '8px' }}>Attribute_A</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>

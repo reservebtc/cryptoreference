@@ -18,7 +18,7 @@ export default function AsterDEXGridTradingPage() {
         </header>
 
         <section>
-          <h2>Grid Trading Options</h2>
+          <h2>Declared Identifiers</h2>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
