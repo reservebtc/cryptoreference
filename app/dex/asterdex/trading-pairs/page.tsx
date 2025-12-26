@@ -32,7 +32,7 @@ export default function AsterDEXTradingPairsPage() {
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Market Types</td>
+                <td style={{ padding: '8px' }}>Attribute_B</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
@@ -48,7 +48,7 @@ export default function AsterDEXTradingPairsPage() {
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Market Type</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Category</th>
                 <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
               </tr>
             </thead>

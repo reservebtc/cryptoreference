@@ -40,7 +40,7 @@ export default function AsterDEXTradingVolumePage() {
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Total Value Locked (TVL)</td>
+                <td style={{ padding: '8px' }}>Attribute_D</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>

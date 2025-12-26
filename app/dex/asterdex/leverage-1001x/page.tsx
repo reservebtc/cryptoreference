@@ -40,7 +40,7 @@ export default function AsterDEXLeverage1001xPage() {
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Liquidity</td>
+                <td style={{ padding: '8px' }}>Parameter_D</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
@@ -68,7 +68,7 @@ export default function AsterDEXLeverage1001xPage() {
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Liquidity Source</td>
+                <td style={{ padding: '8px' }}>Parameter_E</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
