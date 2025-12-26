@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "lint:cr": "bash scripts/lint-cr-pages.sh",
+    "ci": "npm run lint:cr && npm run build"
   },
   "dependencies": {
     "react": "19.2.0",

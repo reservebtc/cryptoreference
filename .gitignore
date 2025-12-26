@@ -47,3 +47,9 @@ schema/spec3.md
 schema/plan.md
 schema/plan2.md
 schema/plan3.md
+schema/plan3.1.md
+schema/templates/education-page.template.tsx
+scripts/lint-cr-pages.sh
+schema/DAILY GENERATION PROMPT.md
+schema/LEGACY PAGE MIGRATION PROMPT.md
+schema/templates/interface-page.template.tsx

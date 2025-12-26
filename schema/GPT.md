@@ -220,4 +220,52 @@ That usually means it is **correct**.
 
 ---
 
+## 11. Education/Interface Page Generator Constraints (plan3.1.md)
+
+**Applies to:** All pages under `/app/dex/*/` except entity `page.tsx`
+
+### 11.1 Default Behaviors
+- Default to `unknown` or `not disclosed` for missing data
+- Refuse to elaborate mechanisms
+- Prefer omission over explanation
+- Never infer facts from memory
+
+### 11.2 Prohibited Language (Hard Ban)
+FORBIDDEN in content, metadata, headings:
+- `guide`, `learn`, `how to`
+- `earned through`, `based on`
+- `allows users to`, `designed to`, `helps`, `enables`
+- `recent`, `recently`, `last updated`
+- Any date not from registry state
+
+### 11.3 Structure Requirements
+- Tables ONLY (no `<ul>`, `<ol>` with explanations)
+- Declarative sentences stating existence only
+- Example allowed: `The platform references X. Details not disclosed.`
+
+### 11.4 Metadata Rules
+- Titles: entity/feature name only, no adjectives
+- Descriptions: descriptive, no CTA verbs (`learn`, `discover`, `earn`)
+
+### 11.5 Affiliate Anchor Rules
+- Allowed: `[Entity] platform link`, `[Entity] official access`
+- Forbidden: `Register`, `Sign up`, `Start trading`
+
+### 11.6 Temporal Rules
+- No `Last Updated`, no dates, no recency phrases
+- Temporal state lives in registry only
+
+### 11.7 Acceptance Test
+Generated page MUST pass:
+1. Zero prohibited language
+2. Zero inferred facts
+3. Zero narrative structures
+4. Zero temporal signals
+5. Neutral metadata
+6. Neutral affiliate anchors
+
+If ANY test fails → page is INVALID
+
+---
+
 End of GPT.md

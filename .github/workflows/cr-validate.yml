@@ -253,3 +253,49 @@ jobs:
             }
             console.log('Schema consistency: OK');
           "
+
+  # plan3.1.md enforcement
+  education-pages-check:
+    name: Education Pages Compliance (plan3.1.md)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run plan3.1.md compliance linter
+        run: |
+          echo "Running CR-Markup Protocol compliance check..."
+          chmod +x scripts/lint-cr-pages.sh
+          ./scripts/lint-cr-pages.sh
+
+      - name: Compliance check passed
+        if: success()
+        run: |
+          echo "========================================"
+          echo "  plan3.1.md Compliance: PASSED"
+          echo "========================================"
+          echo ""
+          echo "All education pages comply with:"
+          echo "  - Step 1: Absolute Language Ban"
+          echo "  - Step 2: Zero Inference Rule"
+          echo "  - Step 3: Numeric & Quantitative Ban"
+          echo "  - Step 4: Structural-Only Content Rule"
+          echo "  - Step 5: Metadata Minimalism Law"
+          echo "  - Step 6: Affiliate Neutrality Law"
+          echo "  - Step 7: Temporal Erasure Rule"
+
+      - name: Compliance check failed
+        if: failure()
+        run: |
+          echo "========================================"
+          echo "  plan3.1.md Compliance: FAILED"
+          echo "========================================"
+          echo ""
+          echo "Education pages violate plan3.1.md rules."
+          echo "Failure Semantics:"
+          echo "  - FAIL = page does not exist"
+          echo "  - No partial acceptance"
+          echo "  - No warnings"
+          echo "  - No auto-fixes"
+          exit 1
