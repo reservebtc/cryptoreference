@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'AsterDEX Registry_13',
   description: '',
   alternates: {
-    canonical: 'https://cryptoreference.io/dex/asterdex/registry-13',
+    canonical: '',
   },
 };
 
