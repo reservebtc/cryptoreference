@@ -14,7 +14,6 @@ export default function AsterDEXRegistry07Page() {
       <article>
         <header>
           <h1>AsterDEX Registry_07</h1>
-          <div><strong>Page Type:</strong> Education</div>
         </header>
 
         <section>

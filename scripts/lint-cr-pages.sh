@@ -187,18 +187,9 @@ done
 echo ""
 
 # =========================================================
-# STEP 9 — Page Type Validation
+# STEP 9 — (REMOVED: Page Type Validation)
+# Superseded by Step 17.1 Page Type Semantic Leak Ban
 # =========================================================
-echo "[Step 9] Page Type Validation..."
-
-for file in "$PAGES_DIR"/*/page.tsx; do
-  grep -q "Page Type:</strong> Education" "$file" || \
-  grep -q "Page Type:</strong> Interface" "$file" || \
-  fail "Invalid Page Type in $file"
-done
-
-[ $ERRORS -eq 0 ] && pass
-echo ""
 
 # =========================================================
 # STEP 10 — Footer & Affiliate Law
@@ -305,6 +296,15 @@ SECTION_STANDALONE=$(grep -riE "<h2>[^<]*Section[^<]*</h2>" "$PAGES_DIR"/*/page.
 [ -n "$SECTION_STANDALONE" ] && VIOLATIONS="$VIOLATIONS$SECTION_STANDALONE"
 
 [ -n "$VIOLATIONS" ] && fail "Semantic <h2> detected — opaque section headers required"
+
+# =========================================================
+# STEP 17.1 — Page Type Semantic Leak Ban (HARD)
+# =========================================================
+echo "[Step] Page Type Semantic Leak..."
+
+PAGE_TYPE_VIOLATIONS=$(grep -riE "Page Type|>Education<|>Interface<" "$PAGES_DIR"/*/page.tsx || true)
+
+[ -n "$PAGE_TYPE_VIOLATIONS" ] && fail "Semantic Page Type leakage detected"
 
 
 # =========================================================
