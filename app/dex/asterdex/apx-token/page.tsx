@@ -22,8 +22,8 @@ export default function AsterDEXRegistry08Page() {
           <table>
             <thead>
               <tr>
-                <th>Attribute</th>
-                <th>Value</th>
+                <th>Column_A</th>
+                <th>Column_B</th>
               </tr>
             </thead>
             <tbody>
@@ -52,8 +52,8 @@ export default function AsterDEXRegistry08Page() {
           <table>
             <thead>
               <tr>
-                <th>Category</th>
-                <th>Value</th>
+                <th>Column_A</th>
+                <th>Column_B</th>
               </tr>
             </thead>
             <tbody>
