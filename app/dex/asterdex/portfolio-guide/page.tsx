@@ -27,19 +27,19 @@ export default function AsterDEXRegistry11Page() {
             </thead>
             <tbody>
               <tr>
-                <td>Section_A</td>
+                <td>Category_A</td>
                 <td>Not disclosed</td>
               </tr>
               <tr>
-                <td>Section_B</td>
+                <td>Category_B</td>
                 <td>Not disclosed</td>
               </tr>
               <tr>
-                <td>Section_C</td>
+                <td>Category_C</td>
                 <td>Not disclosed</td>
               </tr>
               <tr>
-                <td>Section_D</td>
+                <td>Category_D</td>
                 <td>Not disclosed</td>
               </tr>
             </tbody>
