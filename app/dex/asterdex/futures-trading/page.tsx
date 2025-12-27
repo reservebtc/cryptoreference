@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function AsterDEXRegistry15Page() {
   return (
-    <main style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
+    <main>
       <article>
         <header>
           <h1>AsterDEX Registry_15</h1>
@@ -19,33 +19,33 @@ export default function AsterDEXRegistry15Page() {
 
         <section>
           <h2>Declared Parameters</h2>
-          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <table>
             <thead>
-              <tr style={{ borderBottom: '2px solid #333' }}>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Parameter</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
+              <tr>
+                <th>Parameter</th>
+                <th>Value</th>
               </tr>
             </thead>
             <tbody>
-              <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Parameter_A</td>
-                <td style={{ padding: '8px' }}>Not disclosed</td>
+              <tr>
+                <td>Parameter_A</td>
+                <td>Not disclosed</td>
               </tr>
-              <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Parameter_B</td>
-                <td style={{ padding: '8px' }}>Not disclosed</td>
+              <tr>
+                <td>Parameter_B</td>
+                <td>Not disclosed</td>
               </tr>
-              <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Parameter_C</td>
-                <td style={{ padding: '8px' }}>Not disclosed</td>
+              <tr>
+                <td>Parameter_C</td>
+                <td>Not disclosed</td>
               </tr>
-              <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Parameter_D</td>
-                <td style={{ padding: '8px' }}>Not disclosed</td>
+              <tr>
+                <td>Parameter_D</td>
+                <td>Not disclosed</td>
               </tr>
-              <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Parameter_E</td>
-                <td style={{ padding: '8px' }}>Not disclosed</td>
+              <tr>
+                <td>Parameter_E</td>
+                <td>Not disclosed</td>
               </tr>
             </tbody>
           </table>
@@ -53,21 +53,21 @@ export default function AsterDEXRegistry15Page() {
 
         <section>
           <h2>Declared Identifiers</h2>
-          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <table>
             <thead>
-              <tr style={{ borderBottom: '2px solid #333' }}>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Identifier</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
+              <tr>
+                <th>Identifier</th>
+                <th>Value</th>
               </tr>
             </thead>
             <tbody>
-              <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Identifier_A</td>
-                <td style={{ padding: '8px' }}>Not disclosed</td>
+              <tr>
+                <td>Identifier_A</td>
+                <td>Not disclosed</td>
               </tr>
-              <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Identifier_B</td>
-                <td style={{ padding: '8px' }}>Not disclosed</td>
+              <tr>
+                <td>Identifier_B</td>
+                <td>Not disclosed</td>
               </tr>
             </tbody>
           </table>
@@ -75,41 +75,41 @@ export default function AsterDEXRegistry15Page() {
 
         <section>
           <h2>Declared Categories</h2>
-          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <table>
             <thead>
-              <tr style={{ borderBottom: '2px solid #333' }}>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Category</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
+              <tr>
+                <th>Category</th>
+                <th>Value</th>
               </tr>
             </thead>
             <tbody>
-              <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Category_A</td>
-                <td style={{ padding: '8px' }}>Not disclosed</td>
+              <tr>
+                <td>Category_A</td>
+                <td>Not disclosed</td>
               </tr>
-              <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Category_B</td>
-                <td style={{ padding: '8px' }}>Not disclosed</td>
+              <tr>
+                <td>Category_B</td>
+                <td>Not disclosed</td>
               </tr>
-              <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Category_C</td>
-                <td style={{ padding: '8px' }}>Not disclosed</td>
+              <tr>
+                <td>Category_C</td>
+                <td>Not disclosed</td>
               </tr>
-              <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Category_D</td>
-                <td style={{ padding: '8px' }}>Not disclosed</td>
+              <tr>
+                <td>Category_D</td>
+                <td>Not disclosed</td>
               </tr>
-              <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Category_E</td>
-                <td style={{ padding: '8px' }}>Not disclosed</td>
+              <tr>
+                <td>Category_E</td>
+                <td>Not disclosed</td>
               </tr>
-              <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Category_F</td>
-                <td style={{ padding: '8px' }}>Not disclosed</td>
+              <tr>
+                <td>Category_F</td>
+                <td>Not disclosed</td>
               </tr>
-              <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Category_G</td>
-                <td style={{ padding: '8px' }}>Not disclosed</td>
+              <tr>
+                <td>Category_G</td>
+                <td>Not disclosed</td>
               </tr>
             </tbody>
           </table>
@@ -117,35 +117,35 @@ export default function AsterDEXRegistry15Page() {
 
         <section>
           <h2>Declared Attributes</h2>
-          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <table>
             <thead>
-              <tr style={{ borderBottom: '2px solid #333' }}>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Attribute</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
+              <tr>
+                <th>Attribute</th>
+                <th>Value</th>
               </tr>
             </thead>
             <tbody>
-              <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Attribute_A</td>
-                <td style={{ padding: '8px' }}>Not disclosed</td>
+              <tr>
+                <td>Attribute_A</td>
+                <td>Not disclosed</td>
               </tr>
-              <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Attribute_B</td>
-                <td style={{ padding: '8px' }}>Not disclosed</td>
+              <tr>
+                <td>Attribute_B</td>
+                <td>Not disclosed</td>
               </tr>
-              <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Attribute_C</td>
-                <td style={{ padding: '8px' }}>Not disclosed</td>
+              <tr>
+                <td>Attribute_C</td>
+                <td>Not disclosed</td>
               </tr>
             </tbody>
           </table>
         </section>
 
-        <footer style={{ marginTop: '40px', padding: '20px', borderTop: '1px solid #ddd' }}>
+        <footer>
           <div>
-            <a href="/go/asterdex" style={{ color: '#0066cc' }}>AsterDEX platform link</a> (affiliate)
+            <a href="/go/asterdex">AsterDEX platform link</a> (affiliate)
           </div>
-          <div style={{ fontSize: '12px', color: '#666' }}>
+          <div>
             Source: asterdex.com
           </div>
         </footer>
