@@ -110,20 +110,6 @@ export default function AsterDEXRegistry15Page() {
                 <td>Category_G</td>
                 <td>Not disclosed</td>
               </tr>
-            </tbody>
-          </table>
-        </section>
-
-        <section>
-          <h2>Section_D</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Column_A</th>
-                <th>Column_B</th>
-              </tr>
-            </thead>
-            <tbody>
               <tr>
                 <td>Attribute_A</td>
                 <td>Not disclosed</td>
