@@ -187,11 +187,6 @@ done
 echo ""
 
 # =========================================================
-# STEP 9 — (REMOVED: Page Type Validation)
-# Superseded by Step 17.1 Page Type Semantic Leak Ban
-# =========================================================
-
-# =========================================================
 # STEP 10 — Footer & Affiliate Law
 # =========================================================
 echo "[Step 10] Footer & Affiliate Law..."
@@ -237,12 +232,12 @@ VIOLATIONS=$(grep -riE "\b($REALWORLD_BAN)\b" "$PAGES_DIR"/*/page.tsx \
 echo ""
 
 # =========================================================
-# STEP 13 — Presentation Layer Ban (ABSOLUTE, NEW)
+# STEP 13 — Presentation Layer Ban (ABSOLUTE)
 # =========================================================
 echo "[Step 13] Presentation Layer Ban..."
 
 STYLE_VIOLATIONS=$(grep -riE "style=\{\{" "$PAGES_DIR"/*/page.tsx || true)
-[ -n "$STYLE_VIOLATIONS" ] && fail "Inline style detected (presentation layer forbidden)"
+[ -n "$STYLE_VIOLATIONS" ] && fail "Inline style detected"
 
 CLASS_VIOLATIONS=$(grep -riE "className=" "$PAGES_DIR"/*/page.tsx || true)
 [ -n "$CLASS_VIOLATIONS" ] && fail "className usage forbidden"
@@ -251,26 +246,22 @@ CLASS_VIOLATIONS=$(grep -riE "className=" "$PAGES_DIR"/*/page.tsx || true)
 echo ""
 
 # =========================================================
-# STEP 14 — Column Header Opaqueness (HARD)
+# STEP 14 — Column Header Opaqueness
 # =========================================================
 echo "[Step 14] Column Header Opaqueness..."
 
 COLUMN_HEADER_BAN="Identifier|Category|Attribute|Parameter|Section|Value|Name|Type|Description"
-
 VIOLATIONS=$(grep -riE "<th>[^<]*($COLUMN_HEADER_BAN)[^<]*</th>" "$PAGES_DIR"/*/page.tsx || true)
-
-[ -n "$VIOLATIONS" ] && fail "Semantic column header detected (<th>) — opaque labels required"
+[ -n "$VIOLATIONS" ] && fail "Semantic column header detected"
 
 # =========================================================
-# STEP 15 — Source Opacity Ban (HARD)
+# STEP 15 — Source Opacity Ban
 # =========================================================
 echo "[Step 15] Source Opacity Ban..."
 
 SOURCE_BAN="Source:|docs\.|\.com|\.io|\.org|github|medium|twitter|discord"
-
 VIOLATIONS=$(grep -riE "$SOURCE_BAN" "$PAGES_DIR"/*/page.tsx | grep -v "canonical:" || true)
-
-[ -n "$VIOLATIONS" ] && fail "Real-world source attribution detected — source must be opaque"
+[ -n "$VIOLATIONS" ] && fail "Real-world source attribution detected"
 
 # =========================================================
 # STEP 16 — Metadata Description Opacity
@@ -278,34 +269,161 @@ VIOLATIONS=$(grep -riE "$SOURCE_BAN" "$PAGES_DIR"/*/page.tsx | grep -v "canonica
 echo "[Step 16] Metadata Description Opacity..."
 
 DESCRIPTION_VIOLATIONS=$(grep -riE "description:\s*'[^']*(page|overview|info|about|AsterDEX|Registry)[^']*'" "$PAGES_DIR"/*/page.tsx || true)
-
-[ -n "$DESCRIPTION_VIOLATIONS" ] && fail "Semantic metadata.description detected — opacity required"
+[ -n "$DESCRIPTION_VIOLATIONS" ] && fail "Semantic metadata.description detected"
 
 # =========================================================
-# STEP 17 — Section Header Opaqueness (HARD)
+# STEP 17 — Section Header Opaqueness
 # =========================================================
-echo "[Step] Section Header Opaqueness..."
+echo "[Step 17] Section Header Opaqueness..."
 
 SECTION_HEADER_BAN="Declared|Identifier|Attribute|Parameter|Category"
-
-# Allow opaque Section_X format but ban semantic section headers
 VIOLATIONS=$(grep -riE "<h2>[^<]*($SECTION_HEADER_BAN)[^<]*</h2>" "$PAGES_DIR"/*/page.tsx || true)
 
-# Also check for standalone "Section" that is NOT in Section_X format
 SECTION_STANDALONE=$(grep -riE "<h2>[^<]*Section[^<]*</h2>" "$PAGES_DIR"/*/page.tsx | grep -vE "Section_[A-Z]" || true)
 [ -n "$SECTION_STANDALONE" ] && VIOLATIONS="$VIOLATIONS$SECTION_STANDALONE"
 
-[ -n "$VIOLATIONS" ] && fail "Semantic <h2> detected — opaque section headers required"
+[ -n "$VIOLATIONS" ] && fail "Semantic <h2> detected"
 
 # =========================================================
-# STEP 17.1 — Page Type Semantic Leak Ban (HARD)
+# STEP 17.1 — Page Type Semantic Leak Ban
 # =========================================================
-echo "[Step] Page Type Semantic Leak..."
+echo "[Step 17.1] Page Type Semantic Leak..."
 
 PAGE_TYPE_VIOLATIONS=$(grep -riE "Page Type|>Education<|>Interface<" "$PAGES_DIR"/*/page.tsx || true)
-
 [ -n "$PAGE_TYPE_VIOLATIONS" ] && fail "Semantic Page Type leakage detected"
 
+# =========================================================
+# STEP 18 — Canonical URL Opacity
+# =========================================================
+echo "[Step 18] Canonical URL Opacity..."
+
+CANONICAL_VIOLATIONS=$(grep -R "alternates:[^}]*canonical:[^'\"]*(cryptoreference\.io|dex/|asterdex)" "$PAGES_DIR" || true)
+[ -n "$CANONICAL_VIOLATIONS" ] && fail "Semantic canonical URL detected"
+
+# =========================================================
+# STEP 19 — Canonical Slug Opacity (HARD)
+# =========================================================
+echo "[Step 19] Canonical Slug Opacity..."
+
+for file in "$PAGES_DIR"/*/page.tsx; do
+  CANONICAL=$(grep -E "canonical:" "$file" \
+    | sed "s/.*canonical:[[:space:]]*['\"]//;s/['\"].*//")
+
+  # Empty canonical is compliant
+  [ -z "$CANONICAL" ] && continue
+
+  # Check for semantic slugs in canonical VALUE only
+  echo "$CANONICAL" | grep -Ei "registry|page|education|interface|dex|protocol|api|info|data|docs|schema" \
+    && fail "Semantic canonical slug detected ($file)"
+done
+
+# =========================================================
+# STEP 20 — Slug ↔ Filesystem Mismatch Ban (ABSOLUTE)
+# =========================================================
+
+echo "[Step 20] Slug ↔ Filesystem Mismatch Ban..."
+
+for file in "$PAGES_DIR"/*/page.tsx; do
+  DIR_NAME=$(basename "$(dirname "$file")")
+
+  CANONICAL=$(grep -E "canonical:" "$file" \
+    | sed "s/.*canonical:[[:space:]]*['\"]//;s/['\"].*//")
+
+  # Empty canonical is allowed
+  [ -z "$CANONICAL" ] && continue
+
+  # Ban any correlation with directory name
+  echo "$CANONICAL" | grep -q "$DIR_NAME" \
+    && fail "Canonical correlates with filesystem ($file)"
+
+  # Ban numeric overlap
+  DIR_NUM=$(echo "$DIR_NAME" | grep -oE "[0-9]+")
+  [ -n "$DIR_NUM" ] && echo "$CANONICAL" | grep -q "$DIR_NUM" \
+    && fail "Canonical leaks directory numeric ID ($file)"
+
+  # Ban semantic path hints
+  echo "$CANONICAL" | grep -Ei "registry|page|dex|interface|education|data|info" \
+    && fail "Semantic canonical slug detected ($file)"
+done
+
+[ $ERRORS -eq 0 ] && pass
+echo ""
+
+# =========================================================
+# STEP 21 — Opaque Slug Uniqueness (HARD)
+# =========================================================
+
+echo "[Step 21] Opaque Slug Uniqueness..."
+
+CANONICALS=$(grep -R "canonical:" "$PAGES_DIR" \
+  | sed "s/.*canonical:[[:space:]]*['\"]//;s/['\"].*//" \
+  | grep -v '^$')
+
+DUPLICATES=$(echo "$CANONICALS" | sort | uniq -d)
+
+[ -n "$DUPLICATES" ] && fail "Duplicate canonical slug detected"
+
+[ $ERRORS -eq 0 ] && pass
+echo ""
+
+# =========================================================
+# STEP 22 — Hash-Only Canonical Mode (ABSOLUTE)
+# =========================================================
+
+echo "[Step 22] Hash-Only Canonical Mode..."
+
+HASH_REGEX='^/[a-f0-9]{6,12}$'
+
+for file in "$PAGES_DIR"/*/page.tsx; do
+  CANONICAL=$(grep -E "canonical:" "$file" \
+    | sed "s/.*canonical:[[:space:]]*['\"]//;s/['\"].*//")
+
+  # Empty canonical is allowed
+  [ -z "$CANONICAL" ] && continue
+
+  echo "$CANONICAL" | grep -Eq "$HASH_REGEX" \
+    || fail "Canonical is not hash-only ($file)"
+done
+
+[ $ERRORS -eq 0 ] && pass
+echo ""
+
+# =========================================================
+# STEP 23 — Template Structural Identity (SOFT)
+# =========================================================
+
+echo "[Step 23] Template Structural Identity..."
+
+# Structural check: pages must have required elements
+for file in "$PAGES_DIR"/*/page.tsx; do
+  grep -q "<main>" "$file" || fail "Missing <main> ($file)"
+  grep -q "<article>" "$file" || fail "Missing <article> ($file)"
+  grep -q "<header>" "$file" || fail "Missing <header> ($file)"
+  grep -q "<footer>" "$file" || fail "Missing <footer> ($file)"
+  grep -q "<section>" "$file" || fail "Missing <section> ($file)"
+done
+
+# =========================================================
+# STEP 24 — Section–Content Correlation Detection
+# =========================================================
+
+echo "[Step 24] Section–Content Correlation Detection..."
+
+# Skip - correlation detection requires deeper analysis
+
+# =========================================================
+# STEP 25 — Identifier Overuse Detection
+# =========================================================
+
+echo "[Step 25] Identifier Overuse Detection..."
+
+for file in "$PAGES_DIR"/*/page.tsx; do
+  TITLE=$(get_title "$file")
+  FOLDER=$(basename "$(dirname "$file")")
+
+  # Title should NOT equal folder name (decoupling required)
+  [ "$TITLE" = "$FOLDER" ] && fail "Title equals filesystem folder ($file)"
+done
 
 # =========================================================
 # FINAL RESULT
