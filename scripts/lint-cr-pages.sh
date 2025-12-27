@@ -282,6 +282,16 @@ VIOLATIONS=$(grep -riE "$SOURCE_BAN" "$PAGES_DIR"/*/page.tsx | grep -v "canonica
 [ -n "$VIOLATIONS" ] && fail "Real-world source attribution detected — source must be opaque"
 
 # =========================================================
+# STEP 16 — Metadata Description Opacity
+# =========================================================
+echo "[Step 16] Metadata Description Opacity..."
+
+DESCRIPTION_VIOLATIONS=$(grep -riE "description:\s*'[^']*(page|overview|info|about|AsterDEX|Registry)[^']*'" "$PAGES_DIR"/*/page.tsx || true)
+
+[ -n "$DESCRIPTION_VIOLATIONS" ] && fail "Semantic metadata.description detected — opacity required"
+
+
+# =========================================================
 # FINAL RESULT
 # =========================================================
 echo "=== FINAL RESULT ==="
