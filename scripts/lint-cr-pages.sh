@@ -45,30 +45,28 @@ get_h1() {
 # STEP 0 — Canonical Template Presence
 # =========================================================
 echo "[Step 0] Canonical Template Presence..."
+
 [ -f "$EDU_TEMPLATE" ] || fail "Missing education template"
 [ -f "$INT_TEMPLATE" ] || fail "Missing interface template"
+
 [ $ERRORS -eq 0 ] && pass
 echo ""
 
 # =========================================================
-# STEP 1 — AST & File Integrity Law (NEW, HARD)
+# STEP 1 — AST & File Integrity Law (HARD)
 # =========================================================
 echo "[Step 1] AST & File Integrity..."
 
 for file in "$PAGES_DIR"/*/page.tsx; do
-  # Exactly one export default function
   [ "$(grep -c "export default function" "$file")" -eq 1 ] \
     || fail "Invalid export count (must be 1) in $file"
 
-  # No multiple metadata blocks
   [ "$(grep -c "export const metadata" "$file")" -eq 1 ] \
     || fail "Invalid metadata block count in $file"
 
-  # No trailing JSX after </main>
   grep -q "</main>[[:space:]]*$" "$file" \
     || fail "Trailing content after </main> in $file"
 
-  # Balanced critical tags
   for tag in main article header footer section table thead tbody tr td h1 h2; do
     OPEN=$(grep -c "<$tag" "$file")
     CLOSE=$(grep -c "</$tag>" "$file")
@@ -210,14 +208,14 @@ echo "[Step 10] Footer & Affiliate Law..."
 for file in "$PAGES_DIR"/*/page.tsx; do
   grep -q 'href="/go/asterdex"' "$file" || fail "Missing affiliate link ($file)"
   grep -q "AsterDEX platform link" "$file" || fail "Invalid anchor text ($file)"
-  grep -q "Source:" "$file" || fail "Missing Source ($file)"
+  grep -q "Source_" "$file" || fail "Missing Source ($file)"
 done
 
 [ $ERRORS -eq 0 ] && pass
 echo ""
 
 # =========================================================
-# STEP 11 — Semantic Label Neutrality (ABSOLUTE)
+# STEP 11 — Semantic Label Neutrality
 # =========================================================
 echo "[Step 11] Semantic Label Neutrality..."
 
@@ -230,6 +228,58 @@ VIOLATIONS=$(grep -riE "\b($SEMANTIC_LABEL_BAN)\b" "$PAGES_DIR"/*/page.tsx \
 
 [ -n "$VIOLATIONS" ] && fail "Semantic label leakage detected" || pass
 echo ""
+
+# =========================================================
+# STEP 12 — Real-world Term Ban (HARD)
+# =========================================================
+echo "[Step 12] Real-world Term Ban..."
+
+REALWORLD_BAN="btc|eth|usdt|usdc|bnb|metamask|walletconnect|chart|dashboard|referral|earn|spot|futures|grid|margin|leverage|trading|fees"
+
+VIOLATIONS=$(grep -riE "\b($REALWORLD_BAN)\b" "$PAGES_DIR"/*/page.tsx \
+  | grep -E "<h2>|<th>|<td>" \
+  | grep -v "Not disclosed\|Unknown" \
+  | grep -v "<h1>|canonical:|title:|description:" \
+  || true)
+
+[ -n "$VIOLATIONS" ] && fail "Real-world semantic label detected" || pass
+echo ""
+
+# =========================================================
+# STEP 13 — Presentation Layer Ban (ABSOLUTE, NEW)
+# =========================================================
+echo "[Step 13] Presentation Layer Ban..."
+
+STYLE_VIOLATIONS=$(grep -riE "style=\{\{" "$PAGES_DIR"/*/page.tsx || true)
+[ -n "$STYLE_VIOLATIONS" ] && fail "Inline style detected (presentation layer forbidden)"
+
+CLASS_VIOLATIONS=$(grep -riE "className=" "$PAGES_DIR"/*/page.tsx || true)
+[ -n "$CLASS_VIOLATIONS" ] && fail "className usage forbidden"
+
+[ $ERRORS -eq 0 ] && pass
+echo ""
+
+# =========================================================
+# STEP 14 — Column Header Opaqueness (HARD)
+# =========================================================
+echo "[Step 14] Column Header Opaqueness..."
+
+COLUMN_HEADER_BAN="Identifier|Category|Attribute|Parameter|Section|Value|Name|Type|Description"
+
+VIOLATIONS=$(grep -riE "<th>[^<]*($COLUMN_HEADER_BAN)[^<]*</th>" "$PAGES_DIR"/*/page.tsx || true)
+
+[ -n "$VIOLATIONS" ] && fail "Semantic column header detected (<th>) — opaque labels required"
+
+# =========================================================
+# STEP 15 — Source Opacity Ban (HARD)
+# =========================================================
+echo "[Step 15] Source Opacity Ban..."
+
+SOURCE_BAN="Source:|docs\.|\.com|\.io|\.org|github|medium|twitter|discord"
+
+VIOLATIONS=$(grep -riE "$SOURCE_BAN" "$PAGES_DIR"/*/page.tsx | grep -v "canonical:" || true)
+
+[ -n "$VIOLATIONS" ] && fail "Real-world source attribution detected — source must be opaque"
 
 # =========================================================
 # FINAL RESULT
