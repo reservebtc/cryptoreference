@@ -52,25 +52,25 @@ export default function AsterDEXPortfolioPage() {
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Field</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Description</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Parameter</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
               </tr>
             </thead>
             <tbody>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Entry Price</td>
+                <td style={{ padding: '8px' }}>Parameter_A</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Size</td>
+                <td style={{ padding: '8px' }}>Parameter_B</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Unrealized PnL</td>
+                <td style={{ padding: '8px' }}>Parameter_C</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Liquidation Price</td>
+                <td style={{ padding: '8px' }}>Parameter_D</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>
@@ -82,17 +82,17 @@ export default function AsterDEXPortfolioPage() {
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Metric</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Description</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Attribute</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
               </tr>
             </thead>
             <tbody>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Total Balance</td>
+                <td style={{ padding: '8px' }}>Attribute_A</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Balance</td>
+                <td style={{ padding: '8px' }}>Attribute_B</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>

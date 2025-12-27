@@ -22,7 +22,7 @@ export default function AsterDEXTradingPairsPage() {
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Parameter</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Attribute</th>
                 <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
               </tr>
             </thead>
@@ -36,8 +36,8 @@ export default function AsterDEXTradingPairsPage() {
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Quote Currency</td>
-                <td style={{ padding: '8px' }}>USDF</td>
+                <td style={{ padding: '8px' }}>Attribute_C</td>
+                <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>
           </table>
@@ -54,11 +54,11 @@ export default function AsterDEXTradingPairsPage() {
             </thead>
             <tbody>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Futures</td>
+                <td style={{ padding: '8px' }}>Category_A</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Spot</td>
+                <td style={{ padding: '8px' }}>Category_B</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>
@@ -70,17 +70,17 @@ export default function AsterDEXTradingPairsPage() {
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Pair</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Type</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Identifier</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
               </tr>
             </thead>
             <tbody>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>BTC</td>
+                <td style={{ padding: '8px' }}>Identifier_A</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>ETH</td>
+                <td style={{ padding: '8px' }}>Identifier_B</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>

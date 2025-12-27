@@ -18,7 +18,7 @@ export default function AsterDEXReferralProgramPage() {
         </header>
 
         <section>
-          <h2>Referral Program Details</h2>
+          <h2>Declared Parameters</h2>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
@@ -28,11 +28,11 @@ export default function AsterDEXReferralProgramPage() {
             </thead>
             <tbody>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Maximum Rebate</td>
+                <td style={{ padding: '8px' }}>Parameter_A</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Tracking Method</td>
+                <td style={{ padding: '8px' }}>Parameter_B</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
@@ -48,8 +48,8 @@ export default function AsterDEXReferralProgramPage() {
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Metric</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Availability</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Attribute</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
               </tr>
             </thead>
             <tbody>
@@ -58,11 +58,11 @@ export default function AsterDEXReferralProgramPage() {
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Total rebates</td>
+                <td style={{ padding: '8px' }}>Attribute_B</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Referred friends count</td>
+                <td style={{ padding: '8px' }}>Attribute_C</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>
@@ -74,7 +74,7 @@ export default function AsterDEXReferralProgramPage() {
             <a href="/go/asterdex" style={{ color: '#0066cc' }}>AsterDEX platform link</a> (affiliate)
           </div>
           <div style={{ fontSize: '12px', color: '#666' }}>
-            Source: asterdex.com/referral
+            Source: asterdex.com
           </div>
         </footer>
       </article>

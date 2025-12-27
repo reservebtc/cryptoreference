@@ -22,7 +22,7 @@ export default function AsterDEXTradingVolumePage() {
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Metric</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Attribute</th>
                 <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
               </tr>
             </thead>

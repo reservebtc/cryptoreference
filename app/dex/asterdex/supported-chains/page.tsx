@@ -18,17 +18,17 @@ export default function AsterDEXSupportedChainsPage() {
         </header>
 
         <section>
-          <h2>Networks</h2>
+          <h2>Declared Identifiers</h2>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Network</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Status</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Identifier</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
               </tr>
             </thead>
             <tbody>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>BNB Chain</td>
+                <td style={{ padding: '8px' }}>Identifier_A</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>
@@ -36,25 +36,25 @@ export default function AsterDEXSupportedChainsPage() {
         </section>
 
         <section>
-          <h2>Wallet Compatibility</h2>
+          <h2>Declared Categories</h2>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Wallet</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Status</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Category</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
               </tr>
             </thead>
             <tbody>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>MetaMask</td>
+                <td style={{ padding: '8px' }}>Category_A</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>WalletConnect</td>
+                <td style={{ padding: '8px' }}>Category_B</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Other EVM Wallets</td>
+                <td style={{ padding: '8px' }}>Category_C</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>

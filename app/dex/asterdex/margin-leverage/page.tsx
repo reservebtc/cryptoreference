@@ -28,7 +28,7 @@ export default function AsterDEXMarginLeveragePage() {
             </thead>
             <tbody>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Maximum (Pro Mode)</td>
+                <td style={{ padding: '8px' }}>Parameter_A</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
@@ -40,7 +40,7 @@ export default function AsterDEXMarginLeveragePage() {
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Adjustment</td>
+                <td style={{ padding: '8px' }}>Parameter_D</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>
@@ -52,8 +52,8 @@ export default function AsterDEXMarginLeveragePage() {
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Mode</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Description</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Identifier</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
               </tr>
             </thead>
             <tbody>

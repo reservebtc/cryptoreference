@@ -23,7 +23,7 @@ export default function AsterDEXHiddenOrdersPage() {
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
                 <th style={{ textAlign: 'left', padding: '8px' }}>Parameter</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Description</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
               </tr>
             </thead>
             <tbody>
@@ -32,7 +32,7 @@ export default function AsterDEXHiddenOrdersPage() {
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Execution</td>
+                <td style={{ padding: '8px' }}>Parameter_B</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>

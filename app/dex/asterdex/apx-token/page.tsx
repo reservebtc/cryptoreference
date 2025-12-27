@@ -22,25 +22,25 @@ export default function AsterDEXAPXTokenPage() {
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Parameter</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Attribute</th>
                 <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
               </tr>
             </thead>
             <tbody>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Token Name</td>
-                <td style={{ padding: '8px' }}>Aster Token</td>
-              </tr>
-              <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Legacy Token</td>
-                <td style={{ padding: '8px' }}>APX</td>
-              </tr>
-              <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Token Supply</td>
+                <td style={{ padding: '8px' }}>Attribute_A</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Distribution</td>
+                <td style={{ padding: '8px' }}>Attribute_B</td>
+                <td style={{ padding: '8px' }}>Not disclosed</td>
+              </tr>
+              <tr style={{ borderBottom: '1px solid #ddd' }}>
+                <td style={{ padding: '8px' }}>Attribute_C</td>
+                <td style={{ padding: '8px' }}>Not disclosed</td>
+              </tr>
+              <tr style={{ borderBottom: '1px solid #ddd' }}>
+                <td style={{ padding: '8px' }}>Attribute_D</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>
@@ -58,11 +58,11 @@ export default function AsterDEXAPXTokenPage() {
             </thead>
             <tbody>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Au</td>
+                <td style={{ padding: '8px' }}>Category_A</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Rh</td>
+                <td style={{ padding: '8px' }}>Category_B</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>

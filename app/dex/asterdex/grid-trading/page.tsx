@@ -22,17 +22,17 @@ export default function AsterDEXGridTradingPage() {
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Type</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Description</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Identifier</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
               </tr>
             </thead>
             <tbody>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Manual Grid</td>
+                <td style={{ padding: '8px' }}>Identifier_A</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Automated Grid</td>
+                <td style={{ padding: '8px' }}>Identifier_B</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>
@@ -40,25 +40,25 @@ export default function AsterDEXGridTradingPage() {
         </section>
 
         <section>
-          <h2>Grid Parameters</h2>
+          <h2>Declared Parameters</h2>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
                 <th style={{ textAlign: 'left', padding: '8px' }}>Parameter</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Description</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
               </tr>
             </thead>
             <tbody>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Upper Bound</td>
+                <td style={{ padding: '8px' }}>Parameter_A</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Lower Bound</td>
+                <td style={{ padding: '8px' }}>Parameter_B</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Grid Levels</td>
+                <td style={{ padding: '8px' }}>Parameter_C</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>

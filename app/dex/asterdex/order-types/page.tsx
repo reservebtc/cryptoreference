@@ -23,7 +23,7 @@ export default function AsterDEXOrderTypesPage() {
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
                 <th style={{ textAlign: 'left', padding: '8px' }}>Category</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Availability</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
               </tr>
             </thead>
             <tbody>

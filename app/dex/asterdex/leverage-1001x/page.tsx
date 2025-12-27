@@ -18,7 +18,7 @@ export default function AsterDEXLeverage1001xPage() {
         </header>
 
         <section>
-          <h2>Specifications</h2>
+          <h2>Declared Parameters</h2>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
@@ -32,11 +32,11 @@ export default function AsterDEXLeverage1001xPage() {
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Interface</td>
+                <td style={{ padding: '8px' }}>Parameter_B</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Contract Type</td>
+                <td style={{ padding: '8px' }}>Parameter_C</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
@@ -44,7 +44,7 @@ export default function AsterDEXLeverage1001xPage() {
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>MEV Protection</td>
+                <td style={{ padding: '8px' }}>Parameter_E</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>
@@ -52,24 +52,21 @@ export default function AsterDEXLeverage1001xPage() {
         </section>
 
         <section>
-          <h2>Mode Comparison</h2>
+          <h2>Declared Attributes</h2>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Aspect</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>1001x Mode</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Pro Mode</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Attribute</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
               </tr>
             </thead>
             <tbody>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Complexity</td>
-                <td style={{ padding: '8px' }}>Not disclosed</td>
+                <td style={{ padding: '8px' }}>Attribute_A</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Parameter_E</td>
-                <td style={{ padding: '8px' }}>Not disclosed</td>
+                <td style={{ padding: '8px' }}>Attribute_B</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>

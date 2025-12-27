@@ -18,7 +18,7 @@ export default function AsterDEXSpotTradingPage() {
         </header>
 
         <section>
-          <h2>Specifications</h2>
+          <h2>Declared Parameters</h2>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
@@ -32,7 +32,7 @@ export default function AsterDEXSpotTradingPage() {
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Settlement</td>
+                <td style={{ padding: '8px' }}>Parameter_B</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
@@ -48,8 +48,8 @@ export default function AsterDEXSpotTradingPage() {
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Type</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Availability</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Category</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
               </tr>
             </thead>
             <tbody>

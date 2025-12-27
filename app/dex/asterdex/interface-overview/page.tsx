@@ -22,17 +22,17 @@ export default function AsterDEXInterfaceOverviewPage() {
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Mode</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Description</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Identifier</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
               </tr>
             </thead>
             <tbody>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Pro Mode</td>
+                <td style={{ padding: '8px' }}>Identifier_A</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Lite Mode</td>
+                <td style={{ padding: '8px' }}>Identifier_B</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
@@ -44,12 +44,12 @@ export default function AsterDEXInterfaceOverviewPage() {
         </section>
 
         <section>
-          <h2>Navigation Sections</h2>
+          <h2>Declared Sections</h2>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
                 <th style={{ textAlign: 'left', padding: '8px' }}>Section</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Function</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
               </tr>
             </thead>
             <tbody>
@@ -70,7 +70,7 @@ export default function AsterDEXInterfaceOverviewPage() {
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Referral</td>
+                <td style={{ padding: '8px' }}>Section_E</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>
@@ -78,29 +78,29 @@ export default function AsterDEXInterfaceOverviewPage() {
         </section>
 
         <section>
-          <h2>Interface Elements</h2>
+          <h2>Declared Attributes</h2>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #333' }}>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Element</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Function</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Attribute</th>
+                <th style={{ textAlign: 'left', padding: '8px' }}>Value</th>
               </tr>
             </thead>
             <tbody>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Chart Panel</td>
+                <td style={{ padding: '8px' }}>Attribute_A</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Element_A</td>
+                <td style={{ padding: '8px' }}>Attribute_B</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Element_B</td>
+                <td style={{ padding: '8px' }}>Attribute_C</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>Element_D</td>
+                <td style={{ padding: '8px' }}>Attribute_D</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
             </tbody>

@@ -28,11 +28,11 @@ export default function AsterDEXEarnFeaturesPage() {
             </thead>
             <tbody>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>asUSDF</td>
+                <td style={{ padding: '8px' }}>Identifier_A</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: '8px' }}>USDF</td>
+                <td style={{ padding: '8px' }}>Identifier_B</td>
                 <td style={{ padding: '8px' }}>Not disclosed</td>
               </tr>
               <tr style={{ borderBottom: '1px solid #ddd' }}>
