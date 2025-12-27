@@ -290,6 +290,22 @@ DESCRIPTION_VIOLATIONS=$(grep -riE "description:\s*'[^']*(page|overview|info|abo
 
 [ -n "$DESCRIPTION_VIOLATIONS" ] && fail "Semantic metadata.description detected — opacity required"
 
+# =========================================================
+# STEP 17 — Section Header Opaqueness (HARD)
+# =========================================================
+echo "[Step] Section Header Opaqueness..."
+
+SECTION_HEADER_BAN="Declared|Identifier|Attribute|Parameter|Category"
+
+# Allow opaque Section_X format but ban semantic section headers
+VIOLATIONS=$(grep -riE "<h2>[^<]*($SECTION_HEADER_BAN)[^<]*</h2>" "$PAGES_DIR"/*/page.tsx || true)
+
+# Also check for standalone "Section" that is NOT in Section_X format
+SECTION_STANDALONE=$(grep -riE "<h2>[^<]*Section[^<]*</h2>" "$PAGES_DIR"/*/page.tsx | grep -vE "Section_[A-Z]" || true)
+[ -n "$SECTION_STANDALONE" ] && VIOLATIONS="$VIOLATIONS$SECTION_STANDALONE"
+
+[ -n "$VIOLATIONS" ] && fail "Semantic <h2> detected — opaque section headers required"
+
 
 # =========================================================
 # FINAL RESULT

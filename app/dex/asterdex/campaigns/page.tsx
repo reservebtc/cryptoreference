@@ -18,7 +18,7 @@ export default function AsterDEXRegistry05Page() {
         </header>
 
         <section>
-          <h2>Declared Identifiers</h2>
+          <h2>Section_A</h2>
           <table>
             <thead>
               <tr>
@@ -44,7 +44,7 @@ export default function AsterDEXRegistry05Page() {
         </section>
 
         <section>
-          <h2>Declared Categories</h2>
+          <h2>Section_B</h2>
           <table>
             <thead>
               <tr>

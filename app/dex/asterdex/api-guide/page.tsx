@@ -18,7 +18,7 @@ export default function AsterDEXRegistry02Page() {
         </header>
 
         <section>
-          <h2>Declared Identifiers</h2>
+          <h2>Section_A</h2>
           <table>
             <thead>
               <tr>

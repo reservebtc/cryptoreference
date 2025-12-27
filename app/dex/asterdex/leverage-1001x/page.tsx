@@ -18,7 +18,7 @@ export default function AsterDEXRegistry18Page() {
         </header>
 
         <section>
-          <h2>Declared Parameters</h2>
+          <h2>Section_A</h2>
           <table>
             <thead>
               <tr>
@@ -52,7 +52,7 @@ export default function AsterDEXRegistry18Page() {
         </section>
 
         <section>
-          <h2>Declared Attributes</h2>
+          <h2>Section_B</h2>
           <table>
             <thead>
               <tr>
