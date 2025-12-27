@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'AsterDEX Registry_08',
-  description: 'AsterDEX Registry_08 page.',
+  description: '',
   alternates: {
     canonical: 'https://cryptoreference.io/dex/asterdex/registry-08',
   },
