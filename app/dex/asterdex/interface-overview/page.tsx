@@ -1,19 +1,19 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'AsterDEX Interface',
-  description: 'AsterDEX interface page.',
+  title: 'AsterDEX Registry_13',
+  description: 'AsterDEX Registry_13 page.',
   alternates: {
-    canonical: 'https://cryptoreference.io/dex/asterdex/interface-overview',
+    canonical: 'https://cryptoreference.io/dex/asterdex/registry-13',
   },
 };
 
-export default function AsterDEXInterfaceOverviewPage() {
+export default function AsterDEXRegistry13Page() {
   return (
     <main style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
       <article>
         <header>
-          <h1>AsterDEX Interface</h1>
+          <h1>AsterDEX Registry_13</h1>
           <div><strong>Page Type:</strong> Interface</div>
         </header>
 

@@ -1,19 +1,19 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'AsterDEX Margin and Leverage',
-  description: 'AsterDEX margin and leverage page.',
+  title: 'AsterDEX Registry_12',
+  description: 'AsterDEX Registry_12 page.',
   alternates: {
-    canonical: 'https://cryptoreference.io/dex/asterdex/margin-leverage',
+    canonical: 'https://cryptoreference.io/dex/asterdex/registry-12',
   },
 };
 
-export default function AsterDEXMarginLeveragePage() {
+export default function AsterDEXRegistry12Page() {
   return (
     <main style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
       <article>
         <header>
-          <h1>AsterDEX Margin and Leverage</h1>
+          <h1>AsterDEX Registry_12</h1>
           <div><strong>Page Type:</strong> Education</div>
         </header>
 

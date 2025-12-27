@@ -1,19 +1,19 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'AsterDEX Order Types',
-  description: 'AsterDEX order types page.',
+  title: 'AsterDEX Registry_19',
+  description: 'AsterDEX Registry_19 page.',
   alternates: {
-    canonical: 'https://cryptoreference.io/dex/asterdex/order-types',
+    canonical: 'https://cryptoreference.io/dex/asterdex/registry-19',
   },
 };
 
-export default function AsterDEXOrderTypesPage() {
+export default function AsterDEXRegistry19Page() {
   return (
     <main style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
       <article>
         <header>
-          <h1>AsterDEX Order Types</h1>
+          <h1>AsterDEX Registry_19</h1>
           <div><strong>Page Type:</strong> Education</div>
         </header>
 

@@ -1,19 +1,19 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'AsterDEX APX Token',
-  description: 'AsterDEX APX token page.',
+  title: 'AsterDEX Registry_08',
+  description: 'AsterDEX Registry_08 page.',
   alternates: {
-    canonical: 'https://cryptoreference.io/dex/asterdex/apx-token',
+    canonical: 'https://cryptoreference.io/dex/asterdex/registry-08',
   },
 };
 
-export default function AsterDEXAPXTokenPage() {
+export default function AsterDEXRegistry08Page() {
   return (
     <main style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
       <article>
         <header>
-          <h1>AsterDEX APX Token</h1>
+          <h1>AsterDEX Registry_08</h1>
           <div><strong>Page Type:</strong> Education</div>
         </header>
 

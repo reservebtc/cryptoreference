@@ -1,19 +1,19 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'AsterDEX USDF',
-  description: 'AsterDEX USDF page.',
+  title: 'AsterDEX Registry_04',
+  description: 'AsterDEX Registry_04 page.',
   alternates: {
-    canonical: 'https://cryptoreference.io/dex/asterdex/usdf-stablecoin',
+    canonical: 'https://cryptoreference.io/dex/asterdex/registry-04',
   },
 };
 
-export default function AsterDEXUSDFStablecoinPage() {
+export default function AsterDEXRegistry04Page() {
   return (
     <main style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
       <article>
         <header>
-          <h1>AsterDEX USDF</h1>
+          <h1>AsterDEX Registry_04</h1>
           <div><strong>Page Type:</strong> Education</div>
         </header>
 

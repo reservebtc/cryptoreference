@@ -1,19 +1,19 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'AsterDEX Trading Pairs',
-  description: 'AsterDEX trading pairs page.',
+  title: 'AsterDEX Registry_16',
+  description: 'AsterDEX Registry_16 page.',
   alternates: {
-    canonical: 'https://cryptoreference.io/dex/asterdex/trading-pairs',
+    canonical: 'https://cryptoreference.io/dex/asterdex/registry-16',
   },
 };
 
-export default function AsterDEXTradingPairsPage() {
+export default function AsterDEXRegistry16Page() {
   return (
     <main style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
       <article>
         <header>
-          <h1>AsterDEX Trading Pairs</h1>
+          <h1>AsterDEX Registry_16</h1>
           <div><strong>Page Type:</strong> Education</div>
         </header>
 
