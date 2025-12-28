@@ -42,9 +42,9 @@ const AFFILIATE_LINKS: Record<string, string> = {
 
 export async function GET(
   _request: Request,
-  context: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
-  const { slug } = context.params;
+  const { slug } = await params;
   const affiliateUrl = AFFILIATE_LINKS[slug];
 
   /**
