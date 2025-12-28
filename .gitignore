@@ -44,6 +44,7 @@ next-env.d.ts
 schema/spec.md
 schema/spec2.md
 schema/spec3.md
+schema/spec4.md
 schema/plan.md
 schema/plan2.md
 schema/plan3.md
@@ -53,3 +54,6 @@ scripts/lint-cr-pages.sh
 schema/DAILY GENERATION PROMPT.md
 schema/LEGACY PAGE MIGRATION PROMPT.md
 schema/templates/interface-page.template.tsx
+schema/templates
+schema/CLAUDE.md
+schema/spec5.md

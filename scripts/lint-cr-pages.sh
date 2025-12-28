@@ -425,6 +425,157 @@ for file in "$PAGES_DIR"/*/page.tsx; do
   [ "$TITLE" = "$FOLDER" ] && fail "Title equals filesystem folder ($file)"
 done
 
+# allow Section_A–Z
+INVALID_SECTIONS=$(grep -riE "<h2>Section_[^A-Z]" "$PAGES_DIR"/*/page.tsx || true)
+
+# =========================================================
+# STEP 26 — Section Token Scope Law (HARD)
+# =========================================================
+echo "[Step 26] Section Token Scope Law..."
+
+SECTION_DATA_VIOLATIONS=$(
+  grep -riE "<t[dh]>[^<]*Section_[A-Z][^<]*</t[dh]>" "$PAGES_DIR"/*/page.tsx || true
+)
+
+[ -n "$SECTION_DATA_VIOLATIONS" ] && fail "Section_* token used as data (<td>/<th>) — structural scope violation"
+
+[ $ERRORS -eq 0 ] && pass
+echo ""
+
+# =========================================================
+# STEP 27 — forbid structural tokens inside <td>
+# =========================================================
+echo "[Step 27] forbid structural tokens inside..."
+
+grep -RIn '<td>.*\(Section_[A-Z]\|Column_[A-Z]\|Source_[A-Z]\|Registry_[0-9]\+\).*<\/td>' app/dex/asterdex && exit 1
+
+# =========================================================
+# STEP 28 — Root Page Hub-Only Law (spec5)
+# =========================================================
+echo "[Step 28] Root Page Hub-Only Law..."
+
+ROOT_PAGE="app/page.tsx"
+
+# Forbidden: direct entity links from root
+ROOT_ENTITY_LINKS=$(grep -E 'href="/dex/[^"]+/|href="/exchanges/[^"]+/|href="/cards/[^"]+/' "$ROOT_PAGE" || true)
+
+[ -n "$ROOT_ENTITY_LINKS" ] && fail "Root page links directly to entity pages (hub-only violation)"
+
+# Allowed hubs only
+grep -q 'href="/dex"' "$ROOT_PAGE" || fail "Root page missing /dex hub link"
+grep -q 'href="/exchanges"' "$ROOT_PAGE" || fail "Root page missing /exchanges hub link"
+
+[ $ERRORS -eq 0 ] && pass
+echo ""
+
+# =========================================================
+# STEP 28.1 — ROOT LAW: Hub Limit & Allowlist (HARD)
+# =========================================================
+
+echo "[Step 28.1] ROOT LAW — Hub Limit & Allowlist..."
+
+ROOT_PAGE="app/page.tsx"
+
+if [ -f "$ROOT_PAGE" ]; then
+  # Count outbound links
+  ROOT_LINKS=$(grep -o 'href="/[^"]*"' "$ROOT_PAGE" | wc -l | tr -d ' ')
+
+  # Enforce link count (1–3)
+  if [ "$ROOT_LINKS" -lt 1 ] || [ "$ROOT_LINKS" -gt 3 ]; then
+    fail "ROOT LAW violation: invalid number of root links ($ROOT_LINKS)"
+  fi
+
+  # Allowlist enforcement
+  FORBIDDEN_ROOT_LINKS=$(grep -o 'href="/[^"]*"' "$ROOT_PAGE" \
+    | grep -vE 'href="/dex"|href="/exchanges"|href="/cards"' || true)
+
+  if [ -n "$FORBIDDEN_ROOT_LINKS" ]; then
+    fail "ROOT LAW violation: forbidden hub linked from root"
+  fi
+
+  # Semantic anchor ban (defensive)
+  SEMANTIC_ROOT_ANCHORS=$(grep -E '<a[^>]*>[^<]*(dex|exchange|card|news|swap|compare)[^<]*</a>' "$ROOT_PAGE" || true)
+
+  if [ -n "$SEMANTIC_ROOT_ANCHORS" ]; then
+    fail "ROOT LAW violation: semantic anchor detected on root page"
+  fi
+fi
+
+[ $ERRORS -eq 0 ] && pass
+echo ""
+
+# =========================================================
+# STEP 29 — Root Page CR / Dataset Ban (spec5)
+# =========================================================
+echo "[Step 29] Root Page CR / Dataset Ban..."
+
+ROOT_CR=$(grep -riE "CR-|Registry_|Dataset|application/vnd\.ai\+json" "$ROOT_PAGE" || true)
+
+[ -n "$ROOT_CR" ] && fail "Root page contains CR / dataset structures (router-only violation)"
+
+[ $ERRORS -eq 0 ] && pass
+echo ""
+
+# =========================================================
+# STEP 30 — Entity Hub Inbound Link Enforcement (spec4)
+# =========================================================
+echo "[Step 30] Entity Hub Inbound Link Enforcement..."
+
+HUB_FILES=$(find app -maxdepth 3 -name "page.tsx" | grep -E "/dex$|/exchanges$|/cards$")
+
+for file in "$PAGES_DIR"/*/page.tsx; do
+  ENTITY_PATH=$(echo "$file" | sed 's|app||;s|/page.tsx||')
+
+  FOUND=0
+  for hub in $HUB_FILES; do
+    grep -q "href=\"$ENTITY_PATH\"" "$hub" && FOUND=1
+  done
+
+  [ "$FOUND" -eq 0 ] && fail "Entity page has no inbound hub link ($file)"
+done
+
+[ $ERRORS -eq 0 ] && pass
+echo ""
+
+# =========================================================
+# STEP 31 — Hub Link Count Enforcement (10–50) (spec4)
+# =========================================================
+echo "[Step 31] Hub Link Count Enforcement..."
+
+for hub in $HUB_FILES; do
+  COUNT=$(grep -oE 'href="/[^"]+"' "$hub" | wc -l | tr -d ' ')
+  [ "$COUNT" -lt 10 ] && fail "Hub has too few links ($COUNT) in $hub"
+  [ "$COUNT" -gt 50 ] && fail "Hub has too many links ($COUNT) in $hub"
+done
+
+[ $ERRORS -eq 0 ] && pass
+echo ""
+
+# =========================================================
+# STEP 32 — Entity Depth Law (≤ 2 hops) (spec4)
+# =========================================================
+echo "[Step 32] Entity Depth Law..."
+
+for file in "$PAGES_DIR"/*/page.tsx; do
+  DEPTH=$(echo "$file" | sed 's|app/||' | tr -cd '/' | wc -c | tr -d ' ')
+  [ "$DEPTH" -gt 2 ] && fail "Entity page exceeds max depth (>$DEPTH hops): $file"
+done
+
+[ $ERRORS -eq 0 ] && pass
+echo ""
+
+# =========================================================
+# STEP 33 — Sitemap Non-Authority Law (spec4)
+# =========================================================
+echo "[Step 33] Sitemap Non-Authority Law..."
+
+SITEMAP_USAGE=$(grep -riE "sitemap|sitemap.ts" app | grep -v "sitemap.ts" || true)
+
+[ -n "$SITEMAP_USAGE" ] && fail "Sitemap referenced inside content (forbidden discovery source)"
+
+[ $ERRORS -eq 0 ] && pass
+echo ""
+
 # =========================================================
 # FINAL RESULT
 # =========================================================
