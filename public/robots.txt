@@ -1,4 +1,16 @@
-# Robots.txt для cryptoreference.io
+# =========================================================
+# robots.txt — Canonical Crawl Policy
+# Site: https://cryptoreference.io
+# Project: Crypto Reference
+# Scope: Search engines + AI crawlers
+# Status: Canonical
+# Last-Updated: 2025-12-28
+# =========================================================
+
+# ---------------------------------------------------------
+# AI CRAWLERS (LLM / AI SEARCH)
+# ---------------------------------------------------------
+
 User-agent: GPTBot
 Allow: /
 
@@ -17,11 +29,21 @@ Allow: /
 User-agent: Claude-SearchBot
 Allow: /
 
+User-agent: anthropic-ai
+Allow: /
+
 User-agent: PerplexityBot
 Allow: /
 
 User-agent: Perplexity-User
 Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# ---------------------------------------------------------
+# TRADITIONAL SEARCH ENGINES
+# ---------------------------------------------------------
 
 User-agent: Googlebot
 Allow: /
@@ -29,7 +51,21 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# ---------------------------------------------------------
+# DEFAULT POLICY
+# ---------------------------------------------------------
+
 User-agent: *
 Allow: /
+
+# ---------------------------------------------------------
+# SITEMAP
+# ---------------------------------------------------------
 
 Sitemap: https://cryptoreference.io/sitemap.xml
