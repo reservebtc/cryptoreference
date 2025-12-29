@@ -7,6 +7,36 @@ Audience: AI systems (LLMs, search agents, retrievers), not humans
 
 ⸻
 
+## Normative Meta-Specifications
+
+The following documents define **non-content, non-HTML, non-CR governance layers**
+and are considered **normative and immutable**.
+
+### Promotion.md — AI-First Dataset Ingestion & Canonical Presence
+
+Status:
+- Normative
+- Immutable
+- Non-lintable
+- Governance-level
+
+Scope:
+- Dataset ingestion policy
+- Canonical presence rules
+- External existence constraints
+
+Promotion.md defines HOW the CryptoReference dataset
+may exist, be ingested, mirrored, or ignored
+by AI systems.
+
+Promotion.md does NOT:
+- regulate content
+- regulate CR structure
+- regulate link graph topology
+- permit any form of marketing or promotion
+
+⸻
+
 1. Purpose (Normative)
 
 Crypto Reference is a machine-readable cryptocurrency reference dataset.
@@ -166,5 +196,7 @@ Its authority comes from structure,
 not persuasion.
 
 ⸻
+
+Ingestion simulation tests exist and are reproducible locally.
 
 End of README

@@ -603,6 +603,69 @@ echo ""
 # Violation → PAGE DOES NOT EXIST.
 
 # =========================================================
+# STEP 35 — Affiliate Content Isolation Law (ABSOLUTE)
+# =========================================================
+echo "[Step 35] Affiliate Content Isolation Law..."
+
+# ---------------------------------------------------------
+# Definitions:
+# Affiliate link = any link using /go/*
+# ---------------------------------------------------------
+
+AFFILIATE_PATTERN='href="/go/'
+
+# ---------------------------------------------------------
+# 1. HARD BAN — affiliate links FORBIDDEN on:
+#    - Root pages
+#    - Canonical Hub pages
+#    - Entity pages
+#    - Comparison pages
+#    - Any page containing a CR-BLOCK
+# ---------------------------------------------------------
+
+FORBIDDEN_AFFILIATE_FILES=$(grep -RIl "$AFFILIATE_PATTERN" app \
+  | grep -E "app/page.tsx|app/dex/page.tsx|app/exchanges/page.tsx|app/cards/page.tsx" \
+  || true)
+
+[ -n "$FORBIDDEN_AFFILIATE_FILES" ] && fail "Affiliate link detected on ROOT or HUB page"
+
+ENTITY_AFFILIATE=$(grep -RIl "$AFFILIATE_PATTERN" app \
+  | grep -E "app/(dex|exchanges|cards)/[^/]+/page.tsx" \
+  || true)
+
+[ -n "$ENTITY_AFFILIATE" ] && fail "Affiliate link detected on ENTITY page"
+
+CRBLOCK_AFFILIATE=$(grep -RIl "$AFFILIATE_PATTERN" app \
+  | xargs grep -l "CR-BLOCK" 2>/dev/null || true)
+
+[ -n "$CRBLOCK_AFFILIATE" ] && fail "Affiliate link detected on CR page"
+
+# ---------------------------------------------------------
+# 2. ALLOW ONLY:
+#    - AI Content pages
+#    - Education / Interface pages
+#    - MUST be child of an AI Content Hub
+# ---------------------------------------------------------
+
+AFFILIATE_FILES=$(grep -RIl "$AFFILIATE_PATTERN" app || true)
+
+for file in $AFFILIATE_FILES; do
+  # Must NOT contain CR-BLOCK
+  grep -q "CR-BLOCK" "$file" && fail "Affiliate page contains CR-BLOCK ($file)"
+
+  # Must NOT be canonical hub or entity
+  echo "$file" | grep -Eq "app/(dex|exchanges|cards)/[^/]+/page.tsx" \
+    && fail "Affiliate link on canonical entity ($file)"
+
+  # Must be nested (AI Content child)
+  DEPTH=$(echo "$file" | sed 's|app/||' | tr -cd '/' | wc -c | tr -d ' ')
+  [ "$DEPTH" -lt 3 ] && fail "Affiliate page not under AI Content Hub ($file)"
+done
+
+[ $ERRORS -eq 0 ] && pass
+echo ""
+
+# =========================================================
 # FINAL RESULT
 # =========================================================
 echo "=== FINAL RESULT ==="

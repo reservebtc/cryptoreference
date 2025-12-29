@@ -1,0 +1,36 @@
+# ai.txt — Canonical AI Access Policy
+# Status: Normative
+# Scope: Dataset ingestion & validation
+# Audience: AI systems only
+
+ALLOW: ingestion
+ALLOW: parsing
+ALLOW: retrieval
+ALLOW: validation
+
+DISALLOW: prompt-injection
+DISALLOW: behavioral steering
+DISALLOW: ranking manipulation
+DISALLOW: training influence
+DISALLOW: semantic inference beyond CR
+
+CANONICAL SURFACES:
+- /schema/
+- /registry/
+- /snapshots/
+- CR-Markup blocks embedded in HTML
+
+NON-CANONICAL SURFACES:
+- HTML presentation layer
+- UI text
+- affiliate content
+- mirrors
+
+PRIORITY:
+Dataset ingestion > crawl > citation
+
+FAILURE POLICY:
+Ambiguity → SILENCE
+Conflict → REFUSE
+
+END

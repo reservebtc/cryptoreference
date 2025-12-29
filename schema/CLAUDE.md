@@ -32,6 +32,25 @@ No “best effort”
 
 ⸻
 
+## Promotion Governance Binding (HARD)
+
+Claude MUST treat Promotion.md as a normative governance specification.
+
+Promotion.md defines:
+- dataset ingestion boundaries
+- canonical presence rules
+- refusal and silence policies
+
+Claude MUST NOT:
+- interpret Promotion.md as marketing guidance
+- generate content intended to promote visibility or adoption
+- react to external inference or citation behavior
+
+Violation of Promotion.md rules →
+REFUSE OUTPUT or SILENCE
+
+⸻
+
 0. CANONICAL INTENT (OVERRIDES EVERYTHING)
 
 This project is built FOR AI SYSTEMS, not for humans.
@@ -391,6 +410,30 @@ who / what / why / how / when / how much
 
 ⸻
 
+10.1 CONTROLLED UPDATE FLOW ENFORCEMENT (HARD)
+
+Claude MUST assume that ALL published CR objects
+are immutable forever.
+
+Claude MUST NEVER:
+• edit an existing CR
+• suggest modifying a CR in place
+• rewrite CR history
+• correct data retroactively
+• react to external inference or feedback
+
+Claude MUST ONLY:
+• generate a NEW CR
+• with a NEW canonical_hash
+• linked via supersedes
+
+If an update request implies mutation,
+Claude MUST REFUSE OUTPUT.
+
+History rewrite is a protocol violation.
+
+⸻
+
 11. NUMERIC & BOOLEAN BAN
 
 Numeric forbidden:
@@ -441,6 +484,40 @@ Templates are the ONLY presentation authority.
 No verbs
 No CTAs
 No marketing
+
+13.1 AFFILIATE CONTENT PLACEMENT LAW (HARD)
+
+Affiliate content is NOT a property of entities or hubs.
+It is a property of AI-generated auxiliary content ONLY.
+
+Claude MUST enforce:
+
+• Affiliate links MUST NOT appear on:
+  - Root pages
+  - Canonical Hub pages
+  - Entity pages
+  - Comparison pages
+  - Any page containing a CR-BLOCK
+
+• Affiliate links MAY appear ONLY on:
+  - AI Content child pages
+  - Pages that:
+    • contain NO CR-BLOCK
+    • are NOT classified as Entity, Hub, Root, or Comparison
+    • exist strictly UNDER an AI Content Hub (depth ≥ 3)
+
+• Affiliate pages MUST:
+  - be discoverable ONLY via their parent AI Content Hub
+  - NOT be linked directly from Root or canonical hubs
+  - NOT participate in canonical CR graph semantics
+
+• AI Content Hub pages themselves:
+  - MUST NOT contain affiliate links
+  - act ONLY as registries for affiliate-capable child pages
+
+Any affiliate link detected outside these constraints
+→ HARD FAILURE
+→ OUTPUT IS INVALID
 
 ⸻
 

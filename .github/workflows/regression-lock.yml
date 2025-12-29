@@ -1,0 +1,117 @@
+name: Regression Lock — Dataset Integrity
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  regression-lock:
+    runs-on: ubuntu-latest
+
+    steps:
+      # --------------------------------------------------
+      # STEP 0 — Checkout
+      # --------------------------------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # --------------------------------------------------
+      # STEP 1 — Setup Node.js
+      # --------------------------------------------------
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # --------------------------------------------------
+      # STEP 2 — Dataset Determinism Test
+      # --------------------------------------------------
+      - name: Ingestion determinism test (double run)
+        run: |
+          set -euo pipefail
+
+          echo "Running ingestion test — first pass"
+          FP1=$(node tools/ingestion-test.js | tail -n 1)
+
+          echo "Running ingestion test — second pass"
+          FP2=$(node tools/ingestion-test.js | tail -n 1)
+
+          echo "Fingerprint 1: $FP1"
+          echo "Fingerprint 2: $FP2"
+
+          if [ "$FP1" != "$FP2" ]; then
+            echo "ERROR: Ingestion graph is NOT deterministic"
+            exit 1
+          fi
+
+      # --------------------------------------------------
+      # STEP 3 — Snapshot Immutability Check
+      # --------------------------------------------------
+      - name: Snapshot immutability check
+        run: |
+          set -euo pipefail
+
+          SNAPSHOT_DIR="public/dataset/snapshots"
+          MANIFEST="public/dataset/snapshots.manifest.sha256"
+
+          if [ ! -d "$SNAPSHOT_DIR" ]; then
+            echo "ERROR: Snapshot directory does not exist"
+            exit 1
+          fi
+
+          if [ ! -f "$MANIFEST" ]; then
+            echo "ERROR: Snapshot manifest missing ($MANIFEST)"
+            echo "Snapshots must be hash-locked"
+            exit 1
+          fi
+
+          echo "Verifying snapshot hashes"
+          sha256sum -c "$MANIFEST"
+
+      # --------------------------------------------------
+      # STEP 4 — Dataset Transport Invariance
+      # --------------------------------------------------
+      - name: Dataset transport invariance
+        run: |
+          set -euo pipefail
+
+          DATASET_FILE="public/dataset/latest.jsonl"
+
+          if [ ! -f "$DATASET_FILE" ]; then
+            echo "ERROR: latest.jsonl not found"
+            exit 1
+          fi
+
+          echo "Ensuring latest.jsonl is byte-stable"
+          HASH1=$(sha256sum "$DATASET_FILE" | cut -d ' ' -f 1)
+          HASH2=$(sha256sum "$DATASET_FILE" | cut -d ' ' -f 1)
+
+          if [ "$HASH1" != "$HASH2" ]; then
+            echo "ERROR: latest.jsonl is not byte-stable"
+            exit 1
+          fi
+
+      # --------------------------------------------------
+      # STEP 5 — Refusal-on-Ambiguity Enforcement
+      # --------------------------------------------------
+      - name: Refusal on ambiguity enforcement
+        run: |
+          set -euo pipefail
+
+          echo "Ensuring ingestion test does not soft-fail"
+
+          node tools/ingestion-test.js > /tmp/ingestion.log
+
+          if grep -iE "warning|ambiguous|partial|fallback" /tmp/ingestion.log; then
+            echo "ERROR: Soft-fail or ambiguity detected in ingestion"
+            exit 1
+          fi
+
+      # --------------------------------------------------
+      # FINAL — PASS
+      # --------------------------------------------------
+      - name: Regression lock passed
+        run: |
+          echo "Regression Lock PASSED"

@@ -1,71 +1,34 @@
-# =========================================================
 # robots.txt — Canonical Crawl Policy
-# Site: https://cryptoreference.io
-# Project: Crypto Reference
-# Scope: Search engines + AI crawlers
-# Status: Canonical
-# Last-Updated: 2025-12-28
-# =========================================================
-
-# ---------------------------------------------------------
-# AI CRAWLERS (LLM / AI SEARCH)
-# ---------------------------------------------------------
-
-User-agent: GPTBot
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-WebCrawler
-Allow: /
-
-User-agent: Claude-SearchBot
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Perplexity-User
-Allow: /
-
-User-agent: cohere-ai
-Allow: /
-
-# ---------------------------------------------------------
-# TRADITIONAL SEARCH ENGINES
-# ---------------------------------------------------------
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: YandexBot
-Allow: /
-
-# ---------------------------------------------------------
-# DEFAULT POLICY
-# ---------------------------------------------------------
+# Status: Normative
+# Scope: Crawl access clarification
+# Audience: Crawlers and AI agents
 
 User-agent: *
 Allow: /
 
-# ---------------------------------------------------------
-# SITEMAP
-# ---------------------------------------------------------
+# Explicit dataset & schema access
+Allow: /schema/
+Allow: /registry/
+Allow: /snapshots/
+Allow: /ai.txt
 
+# Explicitly non-authoritative layers (still crawlable)
+Allow: /app/
+Allow: /public/
+
+# Forbidden interaction surfaces
+Disallow: /submit
+Disallow: /submit/
+Disallow: /feedback
+Disallow: /feedback/
+Disallow: /contact
+Disallow: /contact/
+Disallow: /api/submit
+Disallow: /api/feedback
+
+# No crawl traps
+Disallow: /*?*
+Disallow: /*&*
+
+# Sitemap is NOT authoritative
 Sitemap: https://cryptoreference.io/sitemap.xml

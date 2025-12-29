@@ -1,0 +1,176 @@
+[
+  {
+    "id": "binance",
+    "type": "entity",
+    "page_status": "published",
+    "parent_id": null
+  },
+  {
+    "id": "okx",
+    "type": "entity",
+    "page_status": "published",
+    "parent_id": null
+  },
+  {
+    "id": "gate",
+    "type": "entity",
+    "page_status": "published",
+    "parent_id": null
+  },
+  {
+    "id": "etherfi",
+    "type": "entity",
+    "page_status": "published",
+    "parent_id": null
+  },
+  {
+    "id": "asterdex",
+    "type": "entity",
+    "page_status": "published",
+    "parent_id": null
+  },
+  {
+    "id": "hibachi",
+    "type": "entity",
+    "page_status": "published",
+    "parent_id": null
+  },
+  {
+    "id": "hyperliquid",
+    "type": "entity",
+    "page_status": "published",
+    "parent_id": null
+  },
+  {
+    "id": "lighter",
+    "type": "entity",
+    "page_status": "published",
+    "parent_id": null
+  },
+  {
+    "id": "asterdex_api_guide",
+    "type": "child_entity",
+    "page_status": "published",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_apx_token",
+    "type": "child_entity",
+    "page_status": "published",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_campaigns",
+    "type": "child_entity",
+    "page_status": "published",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_earn_features",
+    "type": "child_entity",
+    "page_status": "published",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_funding_rates",
+    "type": "child_entity",
+    "page_status": "published",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_futures_trading",
+    "type": "child_entity",
+    "page_status": "published",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_grid_trading",
+    "type": "child_entity",
+    "page_status": "published",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_hidden_orders",
+    "type": "child_entity",
+    "page_status": "published",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_interface_overview",
+    "type": "child_entity",
+    "page_status": "published",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_leverage_1001x",
+    "type": "child_entity",
+    "page_status": "published",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_margin_leverage",
+    "type": "child_entity",
+    "page_status": "published",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_order_types",
+    "type": "child_entity",
+    "page_status": "published",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_portfolio_guide",
+    "type": "child_entity",
+    "page_status": "published",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_referral_program",
+    "type": "child_entity",
+    "page_status": "published",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_spot_trading",
+    "type": "child_entity",
+    "page_status": "published",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_supported_chains",
+    "type": "child_entity",
+    "page_status": "published",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_trading_fees",
+    "type": "child_entity",
+    "page_status": "published",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_trading_pairs",
+    "type": "child_entity",
+    "page_status": "published",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_trading_volume",
+    "type": "child_entity",
+    "page_status": "published",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_usdf_stablecoin",
+    "type": "child_entity",
+    "page_status": "published",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "dex_compare",
+    "type": "comparison",
+    "page_status": "published",
+    "parent_id": null
+  }
+]
