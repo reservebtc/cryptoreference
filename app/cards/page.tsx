@@ -50,7 +50,7 @@ export default function CardsHubPage() {
 
         <footer>
           <div>
-            <a href="/">Root</a>
+            <a href="/">Hub_A</a>
           </div>
           <div>Source_A</div>
         </footer>

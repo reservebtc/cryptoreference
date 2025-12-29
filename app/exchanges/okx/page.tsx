@@ -29,7 +29,7 @@ export default function OKXPage() {
           <h1>OKX</h1>
         </header>
 
-        {/* Section A — Entity classification */}
+        {/* Section A */}
         <section>
           <h2>Section_A</h2>
           <table>
@@ -42,23 +42,23 @@ export default function OKXPage() {
           </table>
         </section>
 
-        {/* Section B — Functional surface (labels only) */}
+        {/* Section B */}
         <section>
           <h2>Section_B</h2>
           <table>
             <tbody>
-              <tr><td>Trading_Modes</td><td>Available</td></tr>
-              <tr><td>Derivatives</td><td>Available</td></tr>
-              <tr><td>Margin</td><td>Available</td></tr>
-              <tr><td>Options</td><td>Available</td></tr>
-              <tr><td>Copy_Trading</td><td>Available</td></tr>
-              <tr><td>Automation</td><td>Available</td></tr>
-              <tr><td>API_Access</td><td>Available</td></tr>
+              <tr><td>Trading_Modes</td><td>Not_Disclosed</td></tr>
+              <tr><td>Derivatives</td><td>Not_Disclosed</td></tr>
+              <tr><td>Margin</td><td>Not_Disclosed</td></tr>
+              <tr><td>Options</td><td>Not_Disclosed</td></tr>
+              <tr><td>Copy_Trading</td><td>Not_Disclosed</td></tr>
+              <tr><td>Automation</td><td>Not_Disclosed</td></tr>
+              <tr><td>API_Access</td><td>Not_Disclosed</td></tr>
             </tbody>
           </table>
         </section>
 
-        {/* Section C — Operational scope */}
+        {/* Section C */}
         <section>
           <h2>Section_C</h2>
           <table>
@@ -71,7 +71,7 @@ export default function OKXPage() {
           </table>
         </section>
 
-        {/* Section D — Relationships */}
+        {/* Section D */}
         <section>
           <h2>Section_D</h2>
           <table>
@@ -96,7 +96,7 @@ export default function OKXPage() {
           <div>
             <a href="/go/okx">Platform_Link</a>
           </div>
-          <div>Source: public platform information</div>
+          <div>Source_A</div>
         </footer>
       </article>
     </main>

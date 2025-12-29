@@ -16,7 +16,6 @@ export default function DEXHubPage() {
           <h1>DEX Directory</h1>
         </header>
 
-        {/* Section A — Hub identity (navigation only) */}
         <section>
           <h2>Section_A</h2>
           <table>
@@ -27,7 +26,7 @@ export default function DEXHubPage() {
               </tr>
               <tr>
                 <td>Hub_Function</td>
-                <td>Entity_Directory</td>
+                <td>Directory</td>
               </tr>
               <tr>
                 <td>Namespace</td>
@@ -37,7 +36,6 @@ export default function DEXHubPage() {
           </table>
         </section>
 
-        {/* Section B — Linked entities */}
         <section>
           <h2>Section_B</h2>
           <table>
@@ -62,7 +60,6 @@ export default function DEXHubPage() {
           </table>
         </section>
 
-        {/* Section C — Related navigation */}
         <section>
           <h2>Section_C</h2>
           <table>
@@ -77,9 +74,9 @@ export default function DEXHubPage() {
 
         <footer>
           <div>
-            <a href="/">Root</a>
+            <a href="/">Root_A</a>
           </div>
-          <div>Source: internal navigation</div>
+          <div>Source_A</div>
         </footer>
       </article>
     </main>

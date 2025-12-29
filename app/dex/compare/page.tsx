@@ -16,7 +16,6 @@ export default function DexComparePage() {
           <h1>DEX Comparison</h1>
         </header>
 
-        {/* Section A — Page role (navigation only) */}
         <section>
           <h2>Section_A</h2>
           <table>
@@ -33,7 +32,6 @@ export default function DexComparePage() {
           </table>
         </section>
 
-        {/* Section B — Linked entities */}
         <section>
           <h2>Section_B</h2>
           <table>
@@ -58,25 +56,24 @@ export default function DexComparePage() {
           </table>
         </section>
 
-        {/* Section C — Comparison dimensions (labels only) */}
         <section>
           <h2>Section_C</h2>
           <table>
             <tbody>
-              <tr><td>Comparison_Label</td><td>Leverage_Model</td></tr>
-              <tr><td>Comparison_Label</td><td>Fee_Structure</td></tr>
-              <tr><td>Comparison_Label</td><td>Execution_Model</td></tr>
-              <tr><td>Comparison_Label</td><td>Chain_Support</td></tr>
-              <tr><td>Comparison_Label</td><td>Risk_Profile</td></tr>
+              <tr><td>Comparison_Label</td><td>Label_A</td></tr>
+              <tr><td>Comparison_Label</td><td>Label_B</td></tr>
+              <tr><td>Comparison_Label</td><td>Label_C</td></tr>
+              <tr><td>Comparison_Label</td><td>Label_D</td></tr>
+              <tr><td>Comparison_Label</td><td>Label_E</td></tr>
             </tbody>
           </table>
         </section>
 
         <footer>
           <div>
-            <a href="/dex">DEX_Hub</a>
+            <a href="/dex">Hub_A</a>
           </div>
-          <div>Source: internal comparison navigation</div>
+          <div>Source_A</div>
         </footer>
       </article>
     </main>

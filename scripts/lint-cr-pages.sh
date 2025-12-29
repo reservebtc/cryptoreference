@@ -576,6 +576,32 @@ SITEMAP_USAGE=$(grep -riE "sitemap|sitemap.ts" app | grep -v "sitemap.ts" || tru
 [ $ERRORS -eq 0 ] && pass
 echo ""
 
+# STEP 34 — AI Content Hub Append-Only Navigation Law
+#
+# For AI Content Hubs operating in batch or continuous generation mode:
+#
+# 1. Parent AI Content Hub pages MUST be append-only.
+# 2. Existing outbound links MUST NOT be removed, reordered, or replaced.
+# 3. Every newly generated child page MUST be linked
+#    from its parent AI Content Hub page
+#    within the SAME build cycle.
+#
+# Canonical application:
+#   - /app/dex/asterdex/page.tsx is an AI Content Hub
+#   - All pages generated under:
+#       /app/dex/asterdex/*
+#     MUST be linked from:
+#       /app/dex/asterdex/page.tsx
+#
+# Enforcement rules:
+#   - Missing hub link → CHILD PAGE IS INVALID
+#   - Modified existing hub links → HUB PAGE IS INVALID
+#   - Hub page MUST NOT contain CR-BLOCK
+#   - Hub page MUST NOT contain entity facts
+#
+# This rule is ABSOLUTE.
+# Violation → PAGE DOES NOT EXIST.
+
 # =========================================================
 # FINAL RESULT
 # =========================================================

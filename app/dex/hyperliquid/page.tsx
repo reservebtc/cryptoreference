@@ -26,7 +26,6 @@ export default function HyperliquidPage() {
           <h1>Hyperliquid</h1>
         </header>
 
-        {/* Section A — Entity labels */}
         <section>
           <h2>Section_A</h2>
           <table>
@@ -40,7 +39,6 @@ export default function HyperliquidPage() {
           </table>
         </section>
 
-        {/* Section B — Architecture labels */}
         <section>
           <h2>Section_B</h2>
           <table>
@@ -53,7 +51,6 @@ export default function HyperliquidPage() {
           </table>
         </section>
 
-        {/* Section C — Trading surface labels */}
         <section>
           <h2>Section_C</h2>
           <table>
@@ -70,7 +67,7 @@ export default function HyperliquidPage() {
           <div><a href="/go/hyperliquid">Platform_Link</a></div>
           <div><a href="/dex/compare">DEX_Comparison</a></div>
           <div><a href="/dex">DEX_Hub</a></div>
-          <div>Source: public platform reference</div>
+          <div>Source_A</div>
         </footer>
       </article>
     </main>
