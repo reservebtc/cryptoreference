@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default function OKXPage() {
-  {/* [CR-BLOCK]
+  /* [CR-BLOCK]
   [CR/OKX]
   schema=CR1.0
   version=1.0
@@ -20,7 +20,7 @@ export default function OKXPage() {
   kyc_required=not_disclosed
   url=https://www.okx.com
   [/CR]
-  [/CR-BLOCK] */}
+  [/CR-BLOCK] */
 
   return (
     <main>
@@ -29,7 +29,6 @@ export default function OKXPage() {
           <h1>OKX</h1>
         </header>
 
-        {/* Section A */}
         <section>
           <h2>Section_A</h2>
           <table>
@@ -42,7 +41,6 @@ export default function OKXPage() {
           </table>
         </section>
 
-        {/* Section B */}
         <section>
           <h2>Section_B</h2>
           <table>
@@ -58,7 +56,6 @@ export default function OKXPage() {
           </table>
         </section>
 
-        {/* Section C */}
         <section>
           <h2>Section_C</h2>
           <table>
@@ -71,7 +68,6 @@ export default function OKXPage() {
           </table>
         </section>
 
-        {/* Section D */}
         <section>
           <h2>Section_D</h2>
           <table>
@@ -93,9 +89,6 @@ export default function OKXPage() {
         </section>
 
         <footer>
-          <div>
-            <a href="/go/okx">Platform_Link</a>
-          </div>
           <div>Source_A</div>
         </footer>
       </article>

@@ -26,7 +26,6 @@ export default function LighterPage() {
           <h1>Lighter</h1>
         </header>
 
-        {/* Section A */}
         <section>
           <h2>Section_A</h2>
           <table>
@@ -40,7 +39,6 @@ export default function LighterPage() {
           </table>
         </section>
 
-        {/* Section B */}
         <section>
           <h2>Section_B</h2>
           <table>
@@ -53,7 +51,6 @@ export default function LighterPage() {
           </table>
         </section>
 
-        {/* Section C */}
         <section>
           <h2>Section_C</h2>
           <table>
@@ -67,9 +64,6 @@ export default function LighterPage() {
         </section>
 
         <footer>
-          <div><a href="/go/lighter">Platform_Link</a></div>
-          <div><a href="/dex/compare">DEX_Comparison</a></div>
-          <div><a href="/dex">DEX_Hub</a></div>
           <div>Source_A</div>
         </footer>
       </article>

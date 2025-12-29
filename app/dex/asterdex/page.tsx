@@ -16,7 +16,6 @@ export default function AsterDEXHubPage() {
           <h1>AsterDEX</h1>
         </header>
 
-        {/* Section A */}
         <section>
           <h2>Section_A</h2>
           <table>
@@ -35,7 +34,6 @@ export default function AsterDEXHubPage() {
           </table>
         </section>
 
-        {/* Section B */}
         <section>
           <h2>Section_B</h2>
           <table>
@@ -54,7 +52,6 @@ export default function AsterDEXHubPage() {
           </table>
         </section>
 
-        {/* Section C */}
         <section>
           <h2>Section_C</h2>
           <table>
@@ -65,7 +62,6 @@ export default function AsterDEXHubPage() {
         </section>
 
         <footer>
-          <div><a href="/go/asterdex">Platform_Link</a></div>
           <div>Source_A</div>
         </footer>
       </article>

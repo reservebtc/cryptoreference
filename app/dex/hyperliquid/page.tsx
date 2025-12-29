@@ -64,9 +64,6 @@ export default function HyperliquidPage() {
         </section>
 
         <footer>
-          <div><a href="/go/hyperliquid">Platform_Link</a></div>
-          <div><a href="/dex/compare">DEX_Comparison</a></div>
-          <div><a href="/dex">DEX_Hub</a></div>
           <div>Source_A</div>
         </footer>
       </article>

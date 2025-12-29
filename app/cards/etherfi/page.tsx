@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'EtherFi Card',
+  title: 'EtherFi',
   description: '',
   alternates: {
     canonical: '',
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default function EtherFiPage() {
-  {/* [CR-BLOCK]
+  /* [CR-BLOCK]
   [CR/ETHERFI]
   schema=CR1.0
   version=1.0
@@ -19,7 +19,7 @@ export default function EtherFiPage() {
   custody_model=not_disclosed
   url=https://ether.fi
   [/CR]
-  [/CR-BLOCK] */}
+  [/CR-BLOCK] */
 
   return (
     <main>
@@ -28,7 +28,6 @@ export default function EtherFiPage() {
           <h1>EtherFi</h1>
         </header>
 
-        {/* Section A — Entity classification */}
         <section>
           <h2>Section_A</h2>
           <table>
@@ -49,7 +48,6 @@ export default function EtherFiPage() {
           </table>
         </section>
 
-        {/* Section B — Attribute surface (opaque) */}
         <section>
           <h2>Section_B</h2>
           <table>
@@ -74,7 +72,6 @@ export default function EtherFiPage() {
           </table>
         </section>
 
-        {/* Section C — Usage surface */}
         <section>
           <h2>Section_C</h2>
           <table>
@@ -92,10 +89,7 @@ export default function EtherFiPage() {
         </section>
 
         <footer>
-          <div>
-            <a href="/go/etherfi">Platform_Link</a>
-          </div>
-          <div>Source: public platform information</div>
+          <div>Source_A</div>
         </footer>
       </article>
     </main>

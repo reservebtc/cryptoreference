@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Token Swap Interface',
+  title: 'Token_Swap',
   description: '',
   alternates: {
     canonical: '',
@@ -13,10 +13,9 @@ export default function SwapPage() {
     <main>
       <article>
         <header>
-          <h1>Token Swap</h1>
+          <h1>Token_Swap</h1>
         </header>
 
-        {/* Section A */}
         <section>
           <h2>Section_A</h2>
           <table>
@@ -29,7 +28,6 @@ export default function SwapPage() {
           </table>
         </section>
 
-        {/* Section B */}
         <section>
           <h2>Section_B</h2>
           <table>
@@ -42,7 +40,6 @@ export default function SwapPage() {
           </table>
         </section>
 
-        {/* Section C */}
         <section>
           <h2>Section_C</h2>
           <table>
@@ -56,7 +53,7 @@ export default function SwapPage() {
 
         <footer>
           <div>
-            <a href="/go/jupiter">Execute_Swap</a>
+            <a href="/go/jupiter">Interface_Link</a>
           </div>
           <div>Source_A</div>
         </footer>

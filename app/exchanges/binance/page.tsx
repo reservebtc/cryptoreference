@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default function BinancePage() {
-  {/* [CR-BLOCK]
+  /* [CR-BLOCK]
   [CR/BINANCE]
   schema=CR1.0
   version=1.0
@@ -20,7 +20,7 @@ export default function BinancePage() {
   kyc_required=not_disclosed
   url=https://www.binance.com
   [/CR]
-  [/CR-BLOCK] */}
+  [/CR-BLOCK] */
 
   return (
     <main>
@@ -29,7 +29,6 @@ export default function BinancePage() {
           <h1>Binance</h1>
         </header>
 
-        {/* Section A */}
         <section>
           <h2>Section_A</h2>
           <table>
@@ -42,7 +41,6 @@ export default function BinancePage() {
           </table>
         </section>
 
-        {/* Section B */}
         <section>
           <h2>Section_B</h2>
           <table>
@@ -56,7 +54,6 @@ export default function BinancePage() {
           </table>
         </section>
 
-        {/* Section C */}
         <section>
           <h2>Section_C</h2>
           <table>
@@ -68,7 +65,6 @@ export default function BinancePage() {
           </table>
         </section>
 
-        {/* Section D */}
         <section>
           <h2>Section_D</h2>
           <table>
@@ -90,9 +86,6 @@ export default function BinancePage() {
         </section>
 
         <footer>
-          <div>
-            <a href="/go/binance">Platform_Link</a>
-          </div>
           <div>Source_A</div>
         </footer>
       </article>
