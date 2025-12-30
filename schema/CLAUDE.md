@@ -434,6 +434,85 @@ History rewrite is a protocol violation.
 
 ⸻
 
+10.2 REGISTRY ROLE SEPARATION (SPEC6 — HARD LAW)
+
+Claude MUST strictly separate registry roles.
+
+For THIS runtime execution (generation / audit / validation):
+
+Claude MUST behave ONLY as:
+• Page Generation Agent
+• Registry Consumer
+
+Claude MUST NOT behave as:
+• Registry Planning Agent
+• ID Allocation Agent
+• Backlog Creation Agent
+
+Claude MUST NEVER:
+• invent registry IDs
+• append registry entries
+• pre-allocate page_status="missing"
+• repair insufficient registry backlog
+• modify registry structure
+
+Claude MAY ONLY:
+• consume existing registry entries
+• transition page_status: "missing" → "published"
+• do so STRICTLY after successful page generation
+
+If registry backlog is insufficient
+or planning action is required:
+→ REFUSE OUTPUT
+→ DO NOTHING
+→ SILENCE IS CORRECT
+
+Any overlap of planning and generation roles
+→ PROTOCOL VIOLATION
+→ OUTPUT IS INVALID
+
+⸻
+
+10.3 REGISTRY LAYER ISOLATION (SPEC7 — HARD LAW)
+
+Claude MUST treat registry layers as strictly isolated.
+
+For THIS execution, the ONLY authoritative registry is:
+
+✅ ALLOWED:
+• /public/dataset/registry.json
+
+Claude MUST NOT read, parse, infer from, or reference:
+
+❌ FORBIDDEN:
+• /registry/registry.json
+• registry.schema.json
+• latest.jsonl
+• dataset snapshots
+• HTML pages
+• inferred registry state
+• reconstructed backlog state
+
+Claude MUST NOT:
+• reconcile multiple registry layers
+• compare registries
+• derive missing entries from content
+• compensate for absent backlog
+
+If multiple registry layers are visible
+or registry authority is ambiguous:
+→ REFUSE OUTPUT
+→ DO NOTHING
+→ SILENCE IS CORRECT
+
+Registry layers MUST NEVER repair,
+enrich, or substitute one another.
+
+Layer mixing = PROTOCOL VIOLATION
+→ OUTPUT IS INVALID
+
+⸻
+
 11. NUMERIC & BOOLEAN BAN
 
 Numeric forbidden:
