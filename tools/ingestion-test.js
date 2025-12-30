@@ -2,8 +2,8 @@
 // PURPOSE: Ingestion Simulation Test (Step 12)
 // HARD RULES: no HTML, deterministic, dataset-only
 
-import fs from "fs";
-import crypto from "crypto";
+const fs = require("fs");
+const crypto = require("crypto");
 
 const DATASET_PATH = "./public/dataset/latest.jsonl";
 const REGISTRY_PATH = "./public/dataset/registry.json";
@@ -19,7 +19,8 @@ function hashObject(obj) {
 const lines = fs
   .readFileSync(DATASET_PATH, "utf8")
   .trim()
-  .split("\n");
+  .split("\n")
+  .filter((line) => line.trim() !== "");
 
 // 2. Parse NDJSON
 const records = lines.map((line) => JSON.parse(line));

@@ -15,8 +15,8 @@
  * - Produce NO suggestions
  */
 
-import fs from "fs";
-import path from "path";
+const fs = require("fs");
+const path = require("path");
 
 const REGISTRY_PATH = path.join(
   process.cwd(),

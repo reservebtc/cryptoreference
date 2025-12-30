@@ -292,5 +292,125 @@
     "type": "child_entity",
     "page_status": "published",
     "parent_id": "gate"
+  },
+  {
+    "id": "hyperliquid_funding_rates",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "hyperliquid"
+  },
+  {
+    "id": "hyperliquid_liquidation_guide",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "hyperliquid"
+  },
+  {
+    "id": "hyperliquid_vault_system",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "hyperliquid"
+  },
+  {
+    "id": "hyperliquid_referral_program",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "hyperliquid"
+  },
+  {
+    "id": "hibachi_funding_rates",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "hibachi"
+  },
+  {
+    "id": "hibachi_liquidation_guide",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "hibachi"
+  },
+  {
+    "id": "hibachi_referral_program",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "hibachi"
+  },
+  {
+    "id": "hibachi_spot_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "hibachi"
+  },
+  {
+    "id": "lighter_funding_rates",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "lighter"
+  },
+  {
+    "id": "lighter_liquidation_guide",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "lighter"
+  },
+  {
+    "id": "lighter_referral_program",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "lighter"
+  },
+  {
+    "id": "lighter_spot_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "lighter"
+  },
+  {
+    "id": "binance_margin_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "binance"
+  },
+  {
+    "id": "binance_staking_guide",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "binance"
+  },
+  {
+    "id": "binance_api_guide",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "binance"
+  },
+  {
+    "id": "binance_trading_fees",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "binance"
+  },
+  {
+    "id": "okx_margin_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "okx"
+  },
+  {
+    "id": "okx_api_guide",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "okx"
+  },
+  {
+    "id": "okx_trading_fees",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "okx"
+  },
+  {
+    "id": "gate_futures_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "gate"
   }
 ]

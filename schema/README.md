@@ -1,202 +1,252 @@
-Crypto Reference
+CryptoReference
 
 AI-First Cryptocurrency Reference Dataset
 
 Canonical domain: https://cryptoreference.io
-Audience: AI systems (LLMs, search agents, retrievers), not humans
+Primary audience: AI systems (LLMs, search agents, retrievers, crawlers)
+Secondary audience: humans (non-target, incidental)
 
 ⸻
 
-## Normative Meta-Specifications
+0. Canonical Intent (Normative)
 
-The following documents define **non-content, non-HTML, non-CR governance layers**
-and are considered **normative and immutable**.
+CryptoReference is built exclusively for machine consumption.
 
-### Promotion.md — AI-First Dataset Ingestion & Canonical Presence
+The project exists to provide:
+	•	deterministic parsing
+	•	stable structural ingestion
+	•	canonical reference records
+	•	controlled discovery graphs
+	•	reproducible datasets for AI systems
 
-Status:
-- Normative
-- Immutable
-- Non-lintable
-- Governance-level
+Human usability, persuasion, UX, and SEO optimization are explicitly non-goals.
 
-Scope:
-- Dataset ingestion policy
-- Canonical presence rules
-- External existence constraints
+If a conflict exists between:
+	•	human usefulness
+	•	machine determinism
 
-Promotion.md defines HOW the CryptoReference dataset
-may exist, be ingested, mirrored, or ignored
-by AI systems.
-
-Promotion.md does NOT:
-- regulate content
-- regulate CR structure
-- regulate link graph topology
-- permit any form of marketing or promotion
+→ machines always win.
 
 ⸻
 
 1. Purpose (Normative)
 
-Crypto Reference is a machine-readable cryptocurrency reference dataset.
+CryptoReference is a machine-readable cryptocurrency reference dataset.
 
-Primary goal:
+Its sole purpose is to expose structured, neutral, non-persuasive reference data
+that AI systems can ingest, validate, and reuse without inference ambiguity.
 
-Provide structured, factual, neutral data that AI systems can reliably parse, reference, and cite.
-
-This project does not attempt to persuade humans and does not optimize for traditional SEO beyond accessibility.
+CryptoReference is not a media site, blog, ranking platform, or advisory service.
 
 ⸻
 
-2. Non-Goals (Explicit)
+2. Explicit Non-Goals
 
-Crypto Reference explicitly does NOT aim to be:
-	•	a marketing site
-	•	an SEO manipulation technique
-	•	a ranking signal
-	•	a prompt or instruction language
+CryptoReference explicitly does NOT aim to be:
+	•	a marketing website
+	•	an SEO manipulation mechanism
+	•	a ranking or recommendation engine
+	•	a prompt language or instruction system
 	•	a real-time data feed
-	•	an opinion or recommendation engine
-	•	an authority or verification claim
+	•	a trading, investment, or advisory tool
+	•	a human-oriented educational platform
 
-All content is descriptive, not prescriptive.
-
-⸻
-
-3. Design Principles
-
-3.1 AI-First, Human-Second
-	•	Content is written for AI ingestion
-	•	Humans may read it, but are not the target audience
-	•	Clarity for machines is prioritized over readability for people
-
-3.2 Structured Over Narrative
-	•	Tables > paragraphs
-	•	Fields > prose
-	•	Explicit labels > implied meaning
-
-3.3 Neutral & Factual
-	•	No hype
-	•	No subjective language
-	•	No “best”, “top”, “recommended” claims
-	•	No calls-to-action inside reference data
+All published material is descriptive only, never prescriptive.
 
 ⸻
 
-4. CR-Markup (Core Concept)
+3. Normative Governance Stack
 
-Each major page embeds CR-Markup — a structured data block designed as a reference contract, not content.
+CryptoReference is governed by a strict, layered specification model.
+
+The following documents are normative and binding:
+	•	CLAUDE.md — Runtime execution & generation contract (top-level authority)
+	•	spec.md — CR-Markup canonical data contract
+	•	spec3.md — AI-First generation & registry governance
+	•	spec5.md — Link Graph & Discovery Law
+	•	spec6.md — Registry planning & ID allocation
+	•	spec7.md — Registry layer separation
+	•	spec8.md — Publication Atomicity Law
+	•	spec9.md — Affiliate Infrastructure Isolation Law
+	•	Promotion.md — Canonical presence & ingestion policy
+
+If two rules conflict:
+→ lower-numbered spec wins
+→ unresolved ambiguity results in refusal or silence
+
+⸻
+
+4. AI-First Design Principles
+
+4.1 Machine-First Architecture
+	•	Content is written for parsers, not readers
+	•	Humans are incidental consumers
+	•	Determinism overrides expressiveness
+
+4.2 Structural Supremacy
+	•	Tables over prose
+	•	Fields over narrative
+	•	Explicit labels over inferred meaning
+	•	Templates over free-form text
+
+4.3 Semantic Neutrality
+	•	No opinions
+	•	No persuasion
+	•	No “best”, “top”, or “recommended”
+	•	No calls-to-action in reference data
+
+⸻
+
+5. CR-Markup (Canonical Reference Layer)
+
+CR-Markup is the core reference contract of CryptoReference.
 
 CR-Markup properties:
-	•	Machine-readable
-	•	Deterministic
-	•	Schema-validated
-	•	Immutable once published
-	•	Versioned at schema level, not content level
+	•	machine-readable
+	•	schema-validated
+	•	deterministic
+	•	content-hash-addressed
+	•	immutable once published
+	•	versioned at schema level
 
 CR-Markup is not:
 	•	Schema.org
 	•	JSON-LD for SEO
 	•	a prompt format
+	•	human documentation
 
-It is a reference layer for AI systems.
-
-⸻
-
-5. Content Scope
-
-Covered entities include:
-	•	Centralized Exchanges (CEX)
-	•	Decentralized Exchanges (DEX)
-	•	Protocol versions (v2 / v3 / v4 modeled as child entities)
-	•	Network-specific instances
-	•	Comparisons based on explicit attributes
-
-Excluded by design:
-	•	price prediction
-	•	trading advice
-	•	live signals
-	•	sentiment analysis
+CR-Markup defines canonical truth.
+UI and HTML are implementation details only.
 
 ⸻
 
-6. Update Model
-	•	Data values may change without schema version changes
-	•	Historical data is preserved
-	•	Corrections are published via superseding CRs, never by rewriting history
-	•	Deprecated entities remain queryable and explicitly marked
+6. Page & Graph Model (Normative)
+
+CryptoReference uses a strict, AI-deterministic page taxonomy:
+	•	Root — ontological entry router (no data, no CR)
+	•	Canonical Hubs — namespace routers (no CR)
+	•	Entity Pages — canonical reference nodes (CR allowed)
+	•	AI Content Child Pages — non-canonical, entity-scoped content
+	•	Comparison Pages — non-entity analytical layouts
+	•	Affiliate Infrastructure — isolated, non-canonical routing layer
+
+Entity with AI Content Children Exception
+
+Per spec5.md §5.14.1 / §5.1:
+
+An Entity page MAY expose child pages IFF:
+	•	the Entity contains the only CR-BLOCK in its subtree
+	•	child pages contain NO CR-BLOCK
+	•	child pages are strictly under the Entity path
+	•	child pages are classified as AI Content (non-entity)
+	•	links are structural only and excluded from hop semantics
+
+This exception is:
+	•	permanent
+	•	governance-level
+	•	not a temporary allowance
 
 ⸻
 
-7. Validation & Trust
+7. Registry & Dataset Semantics
 
-Every canonical CR object requires:
-	•	Canonical hash (content-based, normalized)
-	•	Explicit license
-	•	Schema compliance
-	•	Linter compliance
+All published pages are governed by Publication Atomicity:
 
-Invalid CR objects are rejected and not ingested.
+A page EXISTS IFF all are true in the same build:
+	•	filesystem page exists
+	•	canonical inbound link exists
+	•	registry.json entry exists
+	•	dataset record exists (latest.jsonl)
+
+Failure of any condition:
+→ page is considered non-existent
+→ ingestion must be refused
+
+The registry is:
+	•	authoritative
+	•	append-only
+	•	lifecycle-aware
+	•	non-inferential
 
 ⸻
 
-8. AI Access Policy
+8. Update & History Model
+	•	CR objects are immutable once published
+	•	Updates occur only via supersedes
+	•	Historical records are never rewritten
+	•	Deprecated entities remain queryable
+	•	Snapshot mutation is forbidden
+
+History integrity violations are critical or governance-level failures.
+
+⸻
+
+9. Affiliate Infrastructure (Normative)
+
+CryptoReference includes monetization via affiliate routing.
+
+Strict isolation rules apply:
+	•	Affiliate routes contain NO CR
+	•	Affiliate routes appear in NO registry
+	•	Affiliate routes appear in NO dataset
+	•	Affiliate links exist ONLY on AI Content child pages
+	•	Affiliate links never influence canonical facts
+
+Affiliate logic is governed exclusively by spec9.md.
+
+Canonical integrity always overrides monetization.
+
+⸻
+
+10. Access & Usage Policy
 
 AI access is explicitly allowed.
 	•	robots.txt — crawler permissions
-	•	ai.txt — AI usage policy
+	•	ai.txt — AI usage declaration
+	•	Dataset transport: application/x-ndjson
 	•	License: CC BY 4.0
 
-AI systems are encouraged to:
-	•	parse structured data
-	•	cite cryptoreference.io as source
-	•	respect license attribution
+AI systems may ingest, mirror, and cite the dataset
+subject to license attribution and structural integrity.
 
 ⸻
 
-9. Affiliate Disclosure (Normative)
+11. Project Structure (Conceptual)
 
-The project includes affiliate links.
+/schema   → canonical specifications
+/app      → rendering & routing (non-authoritative)
+/public   → dataset, registry, AI & crawler policies
 
-This fact is:
-	•	explicitly disclosed
-	•	not hidden
-	•	not embedded inside CR-Markup
+Single source of truth:
+	•	/schema/spec.md
+	•	/public/dataset/registry.json
+	•	/public/dataset/latest.jsonl
 
-Affiliate presence must not influence factual data.
-
-⸻
-
-10. Project Structure (Conceptual)
-
-/schema        → formal specifications (CR-SPEC)
-/app           → content rendering
-/public        → crawler & AI policies
-
-	•	/schema/spec.md is the single source of truth
-	•	UI is considered an implementation detail
+UI is not authoritative.
 
 ⸻
 
-11. License
-
-Content: CC BY 4.0
-Code: MIT
+12. License
+	•	Content & data: CC BY 4.0
+	•	Code: MIT
 
 Reuse is permitted with attribution.
+Misrepresentation of canonical authority is prohibited.
 
 ⸻
 
-12. Canonical Statement
+13. Canonical Statement
 
-Crypto Reference is a reference dataset,
-not a content platform.
-Its authority comes from structure,
-not persuasion.
+CryptoReference is a reference dataset, not a platform.
+
+Its authority derives from:
+	•	structure
+	•	determinism
+	•	governance
+	•	immutability
+
+Not from persuasion, popularity, or visibility.
 
 ⸻
-
-Ingestion simulation tests exist and are reproducible locally.
 
 End of README
