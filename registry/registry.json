@@ -1,17 +1,40 @@
 {
   "$schema": "./registry.schema.json",
+
+  "registry_role": "metadata-only",
+  "canonical": false,
+  "canonical_source": "/public/dataset/registry.json",
+
+  "append_only": true,
+  "planning_allowed": false,
+  "generation_allowed": false,
+  "used_for_ai_generation": false,
+  "used_for_dataset_ingestion": false,
+
+  "registry_semantics": "descriptive-only",
+  "type_semantics_not_authoritative": true,
+
+  "source_scope_semantics": "opaque-hints-only",
+  "source_scope_not_authoritative": true,
+
+  "timestamps_not_authoritative": true,
+
   "version": "1.0",
+
   "entries": [
     {
       "id": "asterdex",
       "type": "entity",
+      "parent_id": null,
       "page_status": "published",
       "cr_required": true,
       "source_scope": ["official_site", "official_docs", "analytics"]
     },
+
     {
       "id": "asterdex-futures-trading",
       "type": "education",
+      "parent_id": "asterdex",
       "page_status": "published",
       "cr_required": false,
       "source_scope": ["official_site", "official_docs", "product_pages"]
@@ -19,6 +42,7 @@
     {
       "id": "asterdex-spot-trading",
       "type": "education",
+      "parent_id": "asterdex",
       "page_status": "published",
       "cr_required": false,
       "source_scope": ["official_site", "official_docs", "product_pages"]
@@ -26,6 +50,7 @@
     {
       "id": "asterdex-leverage-1001x",
       "type": "education",
+      "parent_id": "asterdex",
       "page_status": "published",
       "cr_required": false,
       "source_scope": ["official_site", "official_docs", "product_pages"]
@@ -33,6 +58,7 @@
     {
       "id": "asterdex-funding-rates",
       "type": "education",
+      "parent_id": "asterdex",
       "page_status": "published",
       "cr_required": false,
       "source_scope": ["official_docs", "product_pages"]
@@ -40,6 +66,7 @@
     {
       "id": "asterdex-margin-leverage",
       "type": "education",
+      "parent_id": "asterdex",
       "page_status": "published",
       "cr_required": false,
       "source_scope": ["official_docs", "product_pages"]
@@ -47,6 +74,7 @@
     {
       "id": "asterdex-order-types",
       "type": "education",
+      "parent_id": "asterdex",
       "page_status": "published",
       "cr_required": false,
       "source_scope": ["official_docs", "product_pages"]
@@ -54,6 +82,7 @@
     {
       "id": "asterdex-usdf-stablecoin",
       "type": "education",
+      "parent_id": "asterdex",
       "page_status": "published",
       "cr_required": false,
       "source_scope": ["official_site", "official_docs"]
@@ -61,6 +90,7 @@
     {
       "id": "asterdex-apx-token",
       "type": "education",
+      "parent_id": "asterdex",
       "page_status": "published",
       "cr_required": false,
       "source_scope": ["official_site", "official_docs"]
@@ -68,6 +98,7 @@
     {
       "id": "asterdex-referral-program",
       "type": "education",
+      "parent_id": "asterdex",
       "page_status": "published",
       "cr_required": false,
       "source_scope": ["official_site"]
@@ -75,6 +106,7 @@
     {
       "id": "asterdex-grid-trading",
       "type": "education",
+      "parent_id": "asterdex",
       "page_status": "published",
       "cr_required": false,
       "source_scope": ["official_site", "product_pages"]
@@ -82,13 +114,16 @@
     {
       "id": "asterdex-api-guide",
       "type": "education",
+      "parent_id": "asterdex",
       "page_status": "published",
       "cr_required": false,
       "source_scope": ["official_docs", "product_pages"]
     },
+
     {
       "id": "asterdex-interface-overview",
       "type": "interface",
+      "parent_id": "asterdex",
       "page_status": "published",
       "cr_required": false,
       "source_scope": ["official_site", "official_docs"]
@@ -96,6 +131,7 @@
     {
       "id": "asterdex-portfolio-guide",
       "type": "interface",
+      "parent_id": "asterdex",
       "page_status": "published",
       "cr_required": false,
       "source_scope": ["official_site"]
@@ -103,20 +139,25 @@
     {
       "id": "asterdex-earn-features",
       "type": "interface",
+      "parent_id": "asterdex",
       "page_status": "published",
       "cr_required": false,
       "source_scope": ["official_site"]
     },
+
     {
       "id": "asterdex-trading-volume",
       "type": "metrics",
+      "parent_id": "asterdex",
       "page_status": "published",
       "cr_required": false,
       "source_scope": ["analytics", "official_site"]
     },
+
     {
       "id": "asterdex-campaigns",
       "type": "education",
+      "parent_id": "asterdex",
       "page_status": "published",
       "cr_required": false,
       "source_scope": ["campaigns", "official_site"]
@@ -124,6 +165,7 @@
     {
       "id": "asterdex-hidden-orders",
       "type": "education",
+      "parent_id": "asterdex",
       "page_status": "published",
       "cr_required": false,
       "source_scope": ["official_docs", "product_pages"]
@@ -131,6 +173,7 @@
     {
       "id": "asterdex-trading-fees",
       "type": "education",
+      "parent_id": "asterdex",
       "page_status": "published",
       "cr_required": false,
       "source_scope": ["official_site", "official_docs"]
@@ -138,6 +181,7 @@
     {
       "id": "asterdex-supported-chains",
       "type": "education",
+      "parent_id": "asterdex",
       "page_status": "published",
       "cr_required": false,
       "source_scope": ["official_site", "official_docs"]
@@ -145,10 +189,12 @@
     {
       "id": "asterdex-trading-pairs",
       "type": "education",
+      "parent_id": "asterdex",
       "page_status": "published",
       "cr_required": false,
       "source_scope": ["official_site", "product_pages"]
     }
   ],
+
   "last_updated": "2025-12-25T12:00:00Z"
 }

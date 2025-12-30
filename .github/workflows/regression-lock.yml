@@ -47,6 +47,14 @@ jobs:
           fi
 
       # --------------------------------------------------
+      # STEP 2.5 — Registry Backlog Enforcement (spec6)
+      # --------------------------------------------------
+      - name: Enforce registry backlog (spec6)
+        run: |
+          set -euo pipefail
+          node tools/check-registry-backlog.js
+
+      # --------------------------------------------------
       # STEP 3 — Snapshot Immutability Check
       # --------------------------------------------------
       - name: Snapshot immutability check

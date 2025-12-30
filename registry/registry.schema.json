@@ -1,50 +1,125 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://cryptoreference.io/registry/registry.schema.json",
-  "title": "CR Registry Schema",
-  "description": "Schema for the canonical registry - single source of memory for AI-first content generation",
+
+  "title": "CR Metadata Registry Schema (Non-Canonical)",
+  "description": "Non-canonical, metadata-only registry schema. This file is NOT authoritative for generation, ingestion, or planning. Canonical registry is /public/dataset/registry.json.",
+
   "type": "object",
+
   "properties": {
     "$schema": {
       "type": "string",
       "description": "JSON Schema reference"
     },
+
     "version": {
       "type": "string",
       "pattern": "^[0-9]+\\.[0-9]+$",
-      "description": "Registry schema version"
+      "description": "Metadata registry schema version"
     },
+
+    "registry_role": {
+      "type": "string",
+      "const": "metadata-only",
+      "description": "Hard lock: this registry is metadata-only"
+    },
+
+    "canonical": {
+      "type": "boolean",
+      "const": false,
+      "description": "This registry is NOT canonical"
+    },
+
+    "canonical_source": {
+      "type": "string",
+      "const": "/public/dataset/registry.json",
+      "description": "The ONLY canonical registry source"
+    },
+
+    "planning_allowed": {
+      "type": "boolean",
+      "const": false,
+      "description": "Planning is forbidden in this registry"
+    },
+
+    "generation_allowed": {
+      "type": "boolean",
+      "const": false,
+      "description": "Page generation is forbidden from this registry"
+    },
+
+    "used_for_ai_generation": {
+      "type": "boolean",
+      "const": false
+    },
+
+    "used_for_dataset_ingestion": {
+      "type": "boolean",
+      "const": false
+    },
+
     "entries": {
       "type": "array",
+      "description": "Descriptive registry entries (non-authoritative)",
       "items": {
         "$ref": "#/definitions/RegistryEntry"
-      },
-      "description": "Array of registry entries"
+      }
+    },
+
+    "last_updated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Non-authoritative timestamp (informational only)"
     }
   },
-  "required": ["version", "entries"],
+
+  "required": [
+    "version",
+    "registry_role",
+    "canonical",
+    "canonical_source",
+    "planning_allowed",
+    "generation_allowed",
+    "used_for_ai_generation",
+    "used_for_dataset_ingestion",
+    "entries"
+  ],
+
   "additionalProperties": false,
+
   "definitions": {
     "RegistryEntry": {
       "type": "object",
+
       "properties": {
         "id": {
           "type": "string",
           "pattern": "^[a-z][a-z0-9-]*$",
           "minLength": 2,
           "maxLength": 100,
-          "description": "Unique registry ID (lowercase, hyphen-separated)"
+          "description": "Stable opaque identifier (non-semantic)"
         },
+
         "type": {
           "type": "string",
-          "enum": ["entity", "child_entity", "education", "comparison", "interface", "metrics"],
-          "description": "Page type determining CR requirements"
+          "enum": [
+            "entity",
+            "child_entity",
+            "education",
+            "comparison",
+            "interface",
+            "metrics"
+          ],
+          "description": "Descriptive page category (NOT authoritative)"
         },
+
         "parent_id": {
           "type": "string",
           "pattern": "^[a-z][a-z0-9-]*$",
-          "description": "Parent entity ID (required for child_entity, forbidden for others)"
+          "description": "Descriptive parent relationship (non-authoritative)"
         },
+
         "entities": {
           "type": "array",
           "items": {
@@ -52,43 +127,59 @@
             "pattern": "^[a-z][a-z0-9-]*$"
           },
           "minItems": 2,
-          "description": "Referenced entity IDs (required for comparison)"
+          "description": "Descriptive comparison participants"
         },
+
         "cr_required": {
           "type": "boolean",
-          "description": "Whether CR-Markup is required (true for entity/child_entity, false for others)"
+          "description": "CR requirement hint (NOT enforcement)"
         },
+
         "page_status": {
           "type": "string",
           "enum": ["missing", "published", "deprecated", "duplicate"],
-          "description": "Current page lifecycle status"
+          "description": "Lifecycle hint (canonical status defined elsewhere)"
         },
+
         "source_scope": {
           "type": "array",
           "items": {
             "type": "string",
-            "enum": ["official_site", "official_docs", "product_pages", "campaigns", "analytics", "official_social"]
+            "enum": [
+              "official_site",
+              "official_docs",
+              "product_pages",
+              "campaigns",
+              "analytics",
+              "official_social"
+            ]
           },
-          "description": "Allowed official source scopes for fact extraction"
+          "description": "Opaque source hints (NOT authoritative)"
         },
+
         "canonical_id": {
           "type": "string",
           "pattern": "^[a-z][a-z0-9-]*$",
-          "description": "Reference to canonical ID (required when page_status=duplicate)"
+          "description": "Reference to canonical ID (only for duplicate)"
         },
+
         "created_at": {
           "type": "string",
           "format": "date-time",
-          "description": "ISO 8601 timestamp of entry creation"
+          "description": "Informational timestamp only"
         },
+
         "published_at": {
           "type": "string",
           "format": "date-time",
-          "description": "ISO 8601 timestamp of publication"
+          "description": "Informational timestamp only"
         }
       },
-      "required": ["id", "type", "cr_required", "page_status", "source_scope"],
+
+      "required": ["id", "type", "page_status", "cr_required", "source_scope"],
+
       "additionalProperties": false,
+
       "allOf": [
         {
           "if": {
@@ -111,24 +202,7 @@
             "properties": { "type": { "const": "comparison" } }
           },
           "then": {
-            "required": ["entities"],
-            "not": { "required": ["parent_id"] }
-          }
-        },
-        {
-          "if": {
-            "properties": { "type": { "enum": ["entity", "child_entity"] } }
-          },
-          "then": {
-            "properties": { "cr_required": { "const": true } }
-          }
-        },
-        {
-          "if": {
-            "properties": { "type": { "enum": ["education", "comparison", "interface", "metrics"] } }
-          },
-          "then": {
-            "properties": { "cr_required": { "const": false } }
+            "required": ["entities"]
           }
         },
         {
