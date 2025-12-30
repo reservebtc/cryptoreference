@@ -85,6 +85,23 @@ export default function BinancePage() {
           </table>
         </section>
 
+        {/* === CHILD ROUTER — APPEND ONLY === */}
+        <section>
+          <h2>Section_E</h2>
+          <table>
+            <tbody>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/binance/spot-trading">Link_A</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/binance/futures-trading">Link_B</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
         <footer>
           <div>Source_A</div>
         </footer>

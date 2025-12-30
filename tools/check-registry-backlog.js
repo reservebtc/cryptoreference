@@ -110,6 +110,27 @@ if (missing.length < REQUIRED_BATCH_SIZE) {
 }
 
 // -----------------------------
+// PARENT CONSISTENCY (SPEC6 + SPEC5)
+// -----------------------------
+const invalidParent = missing.filter(e => {
+  if (e.type === "child_entity") {
+    return !e.parent_id;
+  }
+  if (e.type === "entity") {
+    return e.parent_id !== null;
+  }
+  return false;
+});
+
+if (invalidParent.length > 0) {
+  console.error("❌ REGISTRY VIOLATION");
+  console.error(
+    "Invalid parent_id / type combination detected in missing entries"
+  );
+  process.exit(1);
+}
+
+// -----------------------------
 // PASS (SILENT SUCCESS)
 // -----------------------------
 console.log(

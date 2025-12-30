@@ -67,21 +67,27 @@ export default function GatePage() {
           </table>
         </section>
 
+        {/* === CHILD ROUTER — APPEND ONLY === */}
         <section>
           <h2>Section_D</h2>
           <table>
             <tbody>
               <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/spot-trading">Link_A</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        {/* === RELATED / HUB LINK === */}
+        <section>
+          <h2>Section_E</h2>
+          <table>
+            <tbody>
+              <tr>
                 <td>Exchange_Hub</td>
                 <td><a href="/exchanges">/exchanges</a></td>
-              </tr>
-              <tr>
-                <td>Related_DEX</td>
-                <td>
-                  <a href="/dex/asterdex">/dex/asterdex</a>,{' '}
-                  <a href="/dex/hyperliquid">/dex/hyperliquid</a>,{' '}
-                  <a href="/dex/hibachi">/dex/hibachi</a>
-                </td>
               </tr>
             </tbody>
           </table>

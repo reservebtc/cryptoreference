@@ -68,21 +68,31 @@ export default function OKXPage() {
           </table>
         </section>
 
+        {/* === CHILD ROUTER — APPEND ONLY === */}
         <section>
           <h2>Section_D</h2>
           <table>
             <tbody>
               <tr>
-                <td>Exchange_Hub</td>
-                <td><a href="/exchanges">/exchanges</a></td>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/okx/spot-trading">Link_A</a></td>
               </tr>
               <tr>
-                <td>Related_DEX</td>
-                <td>
-                  <a href="/dex/asterdex">/dex/asterdex</a>,{' '}
-                  <a href="/dex/hyperliquid">/dex/hyperliquid</a>,{' '}
-                  <a href="/dex/hibachi">/dex/hibachi</a>
-                </td>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/okx/futures-trading">Link_B</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        {/* === RELATED / HUB LINK === */}
+        <section>
+          <h2>Section_E</h2>
+          <table>
+            <tbody>
+              <tr>
+                <td>Exchange_Hub</td>
+                <td><a href="/exchanges">/exchanges</a></td>
               </tr>
             </tbody>
           </table>

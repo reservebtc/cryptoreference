@@ -1,3 +1,13 @@
+/* [CR-BLOCK]
+[CR/HIBACHI]
+schema=CR1.0
+version=1.0
+canonical_hash=sha256:COMPUTE_AT_BUILD
+type=dex
+url=https://hibachi.xyz
+[/CR]
+[/CR-BLOCK] */
+
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,16 +19,6 @@ export const metadata: Metadata = {
 };
 
 export default function HibachiPage() {
-  {/* [CR-BLOCK]
-  [CR/HIBACHI]
-  schema=CR1.0
-  version=1.0
-  canonical_hash=sha256:COMPUTE_AT_BUILD
-  type=dex
-  url=https://hibachi.xyz
-  [/CR]
-  [/CR-BLOCK] */}
-
   return (
     <main>
       <article>
@@ -26,38 +26,52 @@ export default function HibachiPage() {
           <h1>Hibachi</h1>
         </header>
 
+        {/* STRUCTURAL ENTITY TABLE */}
         <section>
           <h2>Section_A</h2>
           <table>
             <tbody>
-              <tr><td>Entity_Type</td><td>DEX</td></tr>
-              <tr><td>Entity_Subtype</td><td>Perpetual</td></tr>
-              <tr><td>Lifecycle_State</td><td>Not_Disclosed</td></tr>
-              <tr><td>Network</td><td>Not_Disclosed</td></tr>
-              <tr><td>KYC_Model</td><td>Not_Disclosed</td></tr>
+              <tr>
+                <td>Attribute_A</td>
+                <td>Not_Disclosed</td>
+              </tr>
+              <tr>
+                <td>Attribute_B</td>
+                <td>Not_Disclosed</td>
+              </tr>
+              <tr>
+                <td>Attribute_C</td>
+                <td>Not_Disclosed</td>
+              </tr>
             </tbody>
           </table>
         </section>
 
+        {/* CHILD ENTITY ROUTING (STRUCTURAL, NON-SEMANTIC) */}
         <section>
           <h2>Section_B</h2>
           <table>
             <tbody>
-              <tr><td>Execution_Model</td><td>Not_Disclosed</td></tr>
-              <tr><td>Privacy_Model</td><td>Not_Disclosed</td></tr>
-              <tr><td>Custody_Model</td><td>Not_Disclosed</td></tr>
-              <tr><td>Data_Availability</td><td>Not_Disclosed</td></tr>
-            </tbody>
-          </table>
-        </section>
-
-        <section>
-          <h2>Section_C</h2>
-          <table>
-            <tbody>
-              <tr><td>Leverage_Model</td><td>Not_Disclosed</td></tr>
-              <tr><td>Margin_Model</td><td>Not_Disclosed</td></tr>
-              <tr><td>Order_Types</td><td>Not_Disclosed</td></tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hibachi/api-guide">Link_A</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hibachi/margin-leverage">Link_B</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hibachi/order-types">Link_C</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hibachi/supported-chains">Link_D</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hibachi/trading-fees">Link_E</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

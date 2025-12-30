@@ -88,7 +88,7 @@ export default function AsterDEXRegistry16Page() {
 
         <footer>
           <div>
-            <a href="/go/asterdex">AsterDEX platform link</a> (affiliate)
+            <a href="/go/asterdex">AsterDEX platform link</a>
           </div>
           <div>
             Source_A

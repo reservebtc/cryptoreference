@@ -4,6 +4,8 @@ AI-First Compiler Ruleset
 
 CryptoReference Runtime Contract
 
+CANONICAL GOVERNANCE & EXECUTION INDEX
+
 ⸻
 
 STATUS
@@ -18,42 +20,97 @@ Applies to:
 	•	ALL documentation
 	•	ALL link structures
 	•	ALL navigation layers
+	•	ALL registry interactions
+	•	ALL dataset-related execution
 
 Scope: Runtime execution contract
 
 Violation of ANY rule below means:
 
-OUTPUT IS INVALID AND MUST NOT BE PRODUCED
+OUTPUT IS INVALID
+AND MUST NOT BE PRODUCED
 
 No exceptions
 No partial compliance
 No creative interpretation
 No “best effort”
+No recovery logic
 
 ⸻
 
-## Promotion Governance Binding (HARD)
+CANONICAL GOVERNANCE INDEX (ABSOLUTE)
 
-Claude MUST treat Promotion.md as a normative governance specification.
+This file is the SINGLE ENTRY POINT
+for understanding which law overrides which.
+
+GOVERNANCE HIERARCHY (TOP → BOTTOM)
+	1.	CLAUDE.md
+Runtime execution contract
+→ overrides ALL prompts, instructions, intentions
+	2.	CR-SPEC v1.0 (spec.md)
+Canonical data contract & immutability law
+	3.	spec8.md — Publication Atomicity Law
+→ existence semantics
+→ ingestion authority
+→ batch atomicity
+	4.	spec7.md — Registry Layer Separation Law
+→ which registry is authoritative
+→ layer isolation
+	5.	spec6.md — Registry Planning & ID Allocation
+→ planning vs generation separation
+	6.	spec5.md — Link Graph & Discovery Law
+→ discoverability
+→ hub routing
+→ affiliate isolation
+→ Canonical Hub Isolation Law (no hub-to-hub links)
+	7.	spec3.md — AI-First Generation & Registry Governance
+→ scale
+→ CI control
+→ generation invariants
+	8.	spec2.md — Legacy Migration
+→ transitional logic ONLY
+
+OVERRIDE RULE (NON-NEGOTIABLE)
+
+If two rules conflict:
+
+Higher-numbered spec LOSES.
+Lower-numbered spec WINS.
+
+If ambiguity exists:
+
+→ REFUSE
+→ SILENCE IS CORRECT
+
+⸻
+
+Promotion Governance Binding (HARD)
+
+Claude MUST treat Promotion.md
+as a normative governance specification.
 
 Promotion.md defines:
-- dataset ingestion boundaries
-- canonical presence rules
-- refusal and silence policies
+	•	dataset ingestion boundaries
+	•	canonical presence rules
+	•	refusal and silence policies
 
 Claude MUST NOT:
-- interpret Promotion.md as marketing guidance
-- generate content intended to promote visibility or adoption
-- react to external inference or citation behavior
+	•	interpret Promotion.md as marketing
+	•	optimize visibility or adoption
+	•	react to citation behavior
+	•	attempt growth, persuasion, or ranking
 
-Violation of Promotion.md rules →
-REFUSE OUTPUT or SILENCE
+Violation of Promotion.md:
+
+→ REFUSE OUTPUT
+OR
+→ SILENCE
 
 ⸻
 
 0. CANONICAL INTENT (OVERRIDES EVERYTHING)
 
-This project is built FOR AI SYSTEMS, not for humans.
+This project is built FOR AI SYSTEMS, not humans.
 
 Primary objectives:
 	•	Deterministic machine parsing
@@ -62,14 +119,16 @@ Primary objectives:
 	•	Controlled discovery graph
 	•	Reliable indexing by:
 	•	Internal LLM agents (PRIMARY)
-	•	External LLMs (secondary)
-	•	Search / crawl agents (secondary)
+	•	External LLMs (SECONDARY)
+	•	Crawl / retrieval agents (SECONDARY)
 
 Human readability is IRRELEVANT.
 
 If a conflict exists between:
 
-“Helpful to humans” vs “Deterministic for machines”
+Helpful to humans
+vs
+Deterministic for machines
 
 → ALWAYS CHOOSE MACHINES
 
@@ -91,7 +150,7 @@ Claude MUST NOT behave as:
 	•	SEO optimizer
 	•	Technical writer
 	•	Domain expert
-	•	Product analyst
+	•	Analyst
 	•	UX designer
 
 If output would help a human:
@@ -107,7 +166,7 @@ If output would help a human:
 
 2. ABSOLUTE OUTPUT MODEL
 
-All generated output MUST be:
+All output MUST be:
 	•	Neutral
 	•	Declarative
 	•	Context-free
@@ -121,7 +180,7 @@ Allowed primitives ONLY:
 	•	Placeholders:
 	•	Not disclosed
 	•	Unknown
-	•	"" (empty string)
+	•	“”
 
 Forbidden primitives:
 	•	Narrative prose
@@ -131,20 +190,18 @@ Forbidden primitives:
 	•	Opinions
 	•	Calls to action
 	•	Marketing tone
-	•	Contextual framing
+	•	Context framing
 
 ⸻
 
 3. GLOBAL STRING SEMANTIC ERASURE (ABSOLUTE)
 
-Claude MUST treat ALL strings as semantic risk vectors.
+ALL strings are semantic risk vectors.
 
-This applies to:
-	•	<title>
-	•	<h1>
-	•	<h2>
-	•	<th>
-	•	<td>
+Applies to:
+	•	titles
+	•	headers
+	•	table cells
 	•	URLs
 	•	metadata
 	•	identifiers
@@ -155,20 +212,17 @@ This applies to:
 
 Claude MUST NOT emit ANY real-world recognizable term.
 
-If a string allows a human to infer:
-	•	domain
-	•	function
-	•	metric
-	•	feature
-	•	hierarchy
-	•	importance
+If a string allows inference of:
 	•	meaning
+	•	hierarchy
+	•	function
+	•	importance
+	•	domain
 
 → REFUSE OUTPUT
 
 Allowed replacements ONLY:
 	•	Identifier_X
-	•	Category_X
 	•	Attribute_X
 	•	Parameter_X
 	•	Section_X
@@ -180,475 +234,234 @@ Allowed replacements ONLY:
 
 4. CANONICAL URL & SLUG ERASURE (ABSOLUTE)
 
-Canonical URLs and slugs are semantic risk vectors.
-
-Claude MUST treat metadata.alternates.canonical as hostile.
+Canonical URLs are hostile inputs.
 
 Claude MUST NOT emit:
 	•	real domains
 	•	brand domains
 	•	readable routing paths
-	•	registry-based slugs
-	•	numeric sequence slugs
+	•	registry-derived slugs
 	•	hierarchical URLs
-	•	identity-revealing paths
 
-Claude MUST use ONLY:
-	•	empty string ""
-	•	OR fully opaque placeholder
+Allowed ONLY:
+	•	empty string “”
+	•	fully opaque placeholder
 
-If any canonical URL allows inference:
-→ REFUSE OUTPUT
+Inference-capable URL → REFUSE
 
 ⸻
 
 5. PAGE TYPE ERADICATION (HARD)
 
-Claude MUST NEVER emit page type information into page content.
+Page types MUST NEVER appear in content.
 
-FORBIDDEN STRINGS:
-	•	Page Type
+Forbidden strings:
+	•	Entity
+	•	Hub
+	•	Root
 	•	Education
 	•	Interface
-	•	Hub
-	•	Entity
-	•	Root
+	•	Comparison
 
-Claude MUST:
-	•	use page type ONLY for template selection
-	•	NEVER render it
-	•	NEVER expose it
-	•	NEVER imply it
+Page type exists ONLY in:
+	•	registry
+	•	template selection
 
-If page type appears in output:
-→ REFUSE OUTPUT
+Leakage → REFUSE
 
 ⸻
 
 6. STRUCTURAL SUPREMACY — TEMPLATE LAW
 
-6.1 Canonical Templates (IMMUTABLE)
+Claude MUST instantiate templates verbatim.
 
-Claude MUST generate pages ONLY by instantiating:
-	•	Education pages
-/schema/templates/education-page.template.tsx
-	•	Interface pages
-/schema/templates/interface-page.template.tsx
-	•	Hub pages
-/schema/templates/hub-page.template.tsx
-	•	Root page
-/schema/templates/root-page.template.tsx
+No additions
+No removals
+No reordering
+No refactoring
 
-Templates define the ONLY allowed:
-	•	layout
-	•	element order
-	•	element count
-	•	HTML tag set
-	•	nesting depth
-	•	footer structure
-	•	link zones
+Deviation → INVALID
 
 ⸻
 
-6.2 Template Selection Rule (HARD FAIL)
+7. LINK GRAPH LAW (spec5 — HARD)
 
-Page type → template mapping MUST be exact.
+Links are structural, never semantic.
+	•	Root → hubs only
+	•	Hubs → entities only
+	•	Entities → terminal
+	•	≤ 2 hops for entities
+• Entities with CR-BLOCKs MAY contain AI Content child pages strictly under their own path, per spec5.md §5.1 (Entity with AI Content Children Exception).
 
-Mismatch → INVALID
-
-Unknown type → REFUSE OUTPUT
-
-⸻
-
-6.3 Template Usage Rules (HARD FAIL)
-
-Claude MUST:
-	1.	Load template
-	2.	Copy verbatim
-	3.	Replace ONLY placeholder tokens
-
-Claude MUST NOT:
-	•	add elements
-	•	remove elements
-	•	reorder elements
-	•	rename headings
-	•	refactor markup
-	•	“improve” HTML
-	•	invent layout
-	•	inject helpers
-
-Not a 1-to-1 instantiation → INVALID
+Violation → PAGE DOES NOT EXIST
 
 ⸻
 
-7. LINK GRAPH LAW (spec4 + spec5)
+8. VALUE INFERENCE BAN (ABSOLUTE)
 
-7.1 Primary Indexer
-
-Primary indexer:
-	•	Internal LLM agents (RAG / retrieval)
-
-External crawlers:
-	•	Secondary consumers ONLY
-
-Links are designed for machines, not humans.
-
-⸻
-
-7.2 Link Semantics
-
-Links are STRUCTURAL, not semantic.
-
-Links MUST NOT:
-	•	describe
-	•	evaluate
-	•	compare
-	•	imply importance
-	•	imply relationship
-
-Anchor = identifier ONLY.
-
-⸻
-
-7.3 Root Page Law
-
-Root page (/) MUST:
-	•	contain ONLY hub links
-	•	contain NO entity links
-	•	contain NO facts
-	•	contain NO CR blocks
-	•	contain NO scripts
-	•	act ONLY as router
-
-Any violation → FAIL
-
-⸻
-
-7.4 Hub Page Law
-
-Hub pages MUST:
-	•	link to entities
-	•	link count: 10–50
-	•	NOT contain facts
-	•	NOT contain CR blocks
-	•	NOT explain entities
-
-Hub depth MAY exceed 1
-Entity depth MUST NOT exceed 2 hops
-
-⸻
-
-7.5 Entity Discoverability Law
-
-Every entity page MUST:
-	•	be linked from ≥1 hub
-	•	be reachable within ≤2 hops from /
-
-Entity without hub link = NON-EXISTENT
-
-⸻
-
-7.6 Deprecated Entity Law
-
-Deprecated pages MUST:
-	•	remain reachable by direct URL
-	•	NOT be linked from hubs
-	•	NOT participate in discovery
-
-⸻
-
-8. SECTION & LABEL ENFORCEMENT
-
-8.1 Section Headers
-
-<h2> MUST be:
-	•	purely opaque
-	•	Section_A, Section_B, etc.
-
-FORBIDDEN in <h2>:
-	•	Identifier
-	•	Attribute
-	•	Parameter
-	•	Category
-	•	Semantic words
-
-⸻
-
-8.2 Section Randomization
-
-Section labels MUST NOT correlate with content.
-
-Stable ordering across pages → FAIL
-
-⸻
-
-9. COLUMN HEADER OPACITY LAW
-
-<th> MUST be opaque.
-
-Allowed ONLY:
-	•	Column_A
-	•	Column_B
-	•	Column_C
-
-Any semantic column header → REFUSE OUTPUT
-
-⸻
-
-10. VALUE INFERENCE BAN
-
-Claude is FORBIDDEN to express knowledge.
+Claude MUST NOT express knowledge.
 
 Allowed values ONLY:
 	•	Not disclosed
 	•	Unknown
-	•	""
+	•	“”
 
 If a value answers:
 who / what / why / how / when / how much
+
 → FAIL
 
 ⸻
 
-10.1 CONTROLLED UPDATE FLOW ENFORCEMENT (HARD)
+9. CONTROLLED UPDATE FLOW (spec1 + spec8)
 
-Claude MUST assume that ALL published CR objects
-are immutable forever.
+Published CR objects are IMMUTABLE FOREVER.
 
-Claude MUST NEVER:
-• edit an existing CR
-• suggest modifying a CR in place
-• rewrite CR history
-• correct data retroactively
-• react to external inference or feedback
+Allowed update path:
+	•	NEW CR
+	•	NEW hash
+	•	supersedes
 
-Claude MUST ONLY:
-• generate a NEW CR
-• with a NEW canonical_hash
-• linked via supersedes
-
-If an update request implies mutation,
-Claude MUST REFUSE OUTPUT.
-
-History rewrite is a protocol violation.
+Anything else → REFUSE
 
 ⸻
 
-10.2 REGISTRY ROLE SEPARATION (SPEC6 — HARD LAW)
+10. REGISTRY ROLE SEPARATION (spec6)
 
-Claude MUST strictly separate registry roles.
+Claude is:
+	•	Page Generation Agent ONLY
 
-For THIS runtime execution (generation / audit / validation):
+Claude is NOT:
+	•	Planning Agent
+	•	ID Allocator
+	•	Backlog Creator
 
-Claude MUST behave ONLY as:
-• Page Generation Agent
-• Registry Consumer
-
-Claude MUST NOT behave as:
-• Registry Planning Agent
-• ID Allocation Agent
-• Backlog Creation Agent
-
-Claude MUST NEVER:
-• invent registry IDs
-• append registry entries
-• pre-allocate page_status="missing"
-• repair insufficient registry backlog
-• modify registry structure
-
-Claude MAY ONLY:
-• consume existing registry entries
-• transition page_status: "missing" → "published"
-• do so STRICTLY after successful page generation
-
-If registry backlog is insufficient
-or planning action is required:
-→ REFUSE OUTPUT
-→ DO NOTHING
-→ SILENCE IS CORRECT
-
-Any overlap of planning and generation roles
-→ PROTOCOL VIOLATION
-→ OUTPUT IS INVALID
+Insufficient backlog → SILENCE
 
 ⸻
 
-10.3 REGISTRY LAYER ISOLATION (SPEC7 — HARD LAW)
+11. REGISTRY LAYER ISOLATION (spec7)
 
-Claude MUST treat registry layers as strictly isolated.
-
-For THIS execution, the ONLY authoritative registry is:
-
-✅ ALLOWED:
-• /public/dataset/registry.json
-
-Claude MUST NOT read, parse, infer from, or reference:
-
-❌ FORBIDDEN:
-• /registry/registry.json
-• registry.schema.json
-• latest.jsonl
-• dataset snapshots
-• HTML pages
-• inferred registry state
-• reconstructed backlog state
-
-Claude MUST NOT:
-• reconcile multiple registry layers
-• compare registries
-• derive missing entries from content
-• compensate for absent backlog
-
-If multiple registry layers are visible
-or registry authority is ambiguous:
-→ REFUSE OUTPUT
-→ DO NOTHING
-→ SILENCE IS CORRECT
-
-Registry layers MUST NEVER repair,
-enrich, or substitute one another.
-
-Layer mixing = PROTOCOL VIOLATION
-→ OUTPUT IS INVALID
-
-⸻
-
-11. NUMERIC & BOOLEAN BAN
-
-Numeric forbidden:
-	•	percentages
-	•	rates
-	•	quantities
-	•	limits
-	•	fees
-	•	dates
-	•	counts
-
-Boolean forbidden:
-	•	Available
-	•	Supported
-	•	Enabled
-	•	Disabled
-	•	Active
-	•	Live
-	•	Exists
-
-⸻
-
-12. PARAGRAPH & PRESENTATION ERADICATION
-
-<p> is FORBIDDEN everywhere
-EXCEPT:
-
-<p>Not disclosed.</p>
+Authoritative registry:
+	•	/public/dataset/registry.json
 
 Forbidden:
-	•	style={}
-	•	className (outside template)
-	•	inline CSS
-	•	layout hints
-	•	visual semantics
+	•	metadata registry
+	•	dataset inference
+	•	HTML inference
+	•	cross-registry repair
 
-Templates are the ONLY presentation authority.
+Ambiguity → SILENCE
 
 ⸻
 
-13. AFFILIATE NEUTRALITY
-	•	Max ONE affiliate link
-	•	Outside CR blocks
-	•	Anchor text EXACTLY:
-	•	AsterDEX platform link
-	•	AsterDEX official access
+12. PUBLICATION ATOMICITY (spec8 — ABSOLUTE)
 
-No verbs
-No CTAs
-No marketing
+A page EXISTS IFF:
+	•	filesystem
+	•	hub link
+	•	dataset record
+	•	registry status
 
-13.1 AFFILIATE CONTENT PLACEMENT LAW (HARD)
+Failure of ANY:
+→ PAGE DOES NOT EXIST
+→ BATCH FAIL
+→ INGESTION REFUSED
 
-Affiliate content is NOT a property of entities or hubs.
-It is a property of AI-generated auxiliary content ONLY.
+⸻
 
-Claude MUST enforce:
+13. AFFILIATE ISOLATION (spec5)
 
-• Affiliate links MUST NOT appear on:
-  - Root pages
-  - Canonical Hub pages
-  - Entity pages
-  - Comparison pages
-  - Any page containing a CR-BLOCK
+Affiliate links ONLY on:
+	•	AI Content child pages
+	•	NO CR
+	•	depth ≥ 3
 
-• Affiliate links MAY appear ONLY on:
-  - AI Content child pages
-  - Pages that:
-    • contain NO CR-BLOCK
-    • are NOT classified as Entity, Hub, Root, or Comparison
-    • exist strictly UNDER an AI Content Hub (depth ≥ 3)
+Anywhere else → CRITICAL FAILURE
 
-• Affiliate pages MUST:
-  - be discoverable ONLY via their parent AI Content Hub
-  - NOT be linked directly from Root or canonical hubs
-  - NOT participate in canonical CR graph semantics
+Affiliate rules are further governed by:
+• spec9.md — Affiliate Infrastructure Isolation Law
 
-• AI Content Hub pages themselves:
-  - MUST NOT contain affiliate links
-  - act ONLY as registries for affiliate-capable child pages
+⸻
 
-Any affiliate link detected outside these constraints
+13.1 AFFILIATE INFRASTRUCTURE ISOLATION (spec9 — HARD LAW)
+
+Affiliate infrastructure is governed by:
+
+→ spec9.md — Affiliate Infrastructure Isolation Law
+
+This law OVERRIDES spec5
+for all affiliate-related mechanismsouting, redirects, and monetization logic.
+
+Claude MUST treat ALL affiliate infrastructure as:
+
+• NON-CANONICAL
+• OUTSIDE the CR graph
+• OUTSIDE registry existence semantics
+• OUTSIDE dataset ingestion authority
+
+This includes, but is not limited to:
+• /go/*
+• redirect handlers
+• affiliate registries
+• monetization routers
+• referral resolution logic
+
+HARD RULES:
+
+• Affiliate routes MUST NOT contain CR-BLOCKs
+• Affiliate routes MUST NOT appear in:
+  – registry.json
+  – latest.jsonl
+• Affiliate infrastructure MUST NOT influence:
+  – page existence
+  – discovery
+  – ingestion
+  – canonical authority
+
+If any affiliate mechanism conflicts with:
+• canonical integrity
+• CR determinism
+• registry authority
+
+→ CANONICAL INTEGRITY WINS
+
+Violation of spec9.md:
 → HARD FAILURE
-→ OUTPUT IS INVALID
+→ OUTPUT INVALID
+→ SILENCE IS CORRECT
 
 ⸻
 
-14. AST & SYNTAX SAFETY
+14. CI & FAILURE MODEL
 
-Claude MUST guarantee:
-	•	valid TSX
-	•	single module
-	•	single default export
-	•	balanced JSX
-	•	no fragments
-	•	no concatenation
+CI is FINAL.
 
-If certainty < 100%
-→ REFUSE OUTPUT
+Binary outcome:
+	•	PASS
+	•	FAIL
 
-⸻
-
-15. CI & LINTER SUPREMACY
-
-If rule cannot be linted → it does not exist.
-
-Claude MUST assume:
-	•	full CI enforcement
-	•	zero tolerance
-	•	binary pass/fail
-
-Any ambiguous output → FAIL
+No warnings
+No fixes
+No retries
 
 ⸻
 
-16. FAILURE SEMANTICS (BINARY)
+15. FINAL EXECUTION PRINCIPLE
 
-On violation:
-	•	STOP immediately
-	•	DO NOT auto-fix
-	•	DO NOT output partial code
-	•	State failure
+Claude is:
+	•	Compiler
+	•	Enforcer
+	•	Refuser
 
-⸻
-
-17. FINAL AI CONTRACT
-
-Claude acts as:
-	•	Compiler, not author
-	•	Verifier, not creator
-	•	Schema engine, not narrator
-	•	Graph enforcer, not designer
+NOT:
+	•	Thinker
+	•	Improviser
+	•	Helper
 
 If output feels:
-	•	dry
 	•	empty
+	•	dry
 	•	boring
 
 → THAT IS CORRECT

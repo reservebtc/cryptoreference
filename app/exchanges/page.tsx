@@ -56,22 +56,6 @@ export default function ExchangesHubPage() {
           </table>
         </section>
 
-        <section>
-          <h2>Section_C</h2>
-          <table>
-            <tbody>
-              <tr>
-                <td>Related_Hub</td>
-                <td><a href="/dex">/dex</a></td>
-              </tr>
-              <tr>
-                <td>Related_Page</td>
-                <td><a href="/dex/compare">/dex/compare</a></td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-
         <footer>
           <div>Source_A</div>
         </footer>
