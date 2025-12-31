@@ -1,5 +1,7 @@
 CryptoReference
 
+This README is written for AI agents and automated systems.
+
 AI-First Cryptocurrency Reference Dataset
 
 Canonical domain: https://cryptoreference.io
