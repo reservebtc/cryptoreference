@@ -72,6 +72,22 @@ export default function HibachiPage() {
                 <td>Child_Link</td>
                 <td><a href="/dex/hibachi/trading-fees">Link_E</a></td>
               </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hibachi/funding-rates">Link_F</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hibachi/liquidation-guide">Link_G</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hibachi/referral-program">Link_H</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hibachi/spot-trading">Link_I</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

@@ -70,14 +70,6 @@ export default function BinancePage() {
           <table>
             <tbody>
               <tr>
-                <td>Related_DEX</td>
-                <td>
-                  <a href="/dex/asterdex">/dex/asterdex</a>,{' '}
-                  <a href="/dex/hyperliquid">/dex/hyperliquid</a>,{' '}
-                  <a href="/dex/hibachi">/dex/hibachi</a>
-                </td>
-              </tr>
-              <tr>
                 <td>Exchange_Hub</td>
                 <td><a href="/exchanges">/exchanges</a></td>
               </tr>
@@ -97,6 +89,22 @@ export default function BinancePage() {
               <tr>
                 <td>Child_Page</td>
                 <td><a href="/exchanges/binance/futures-trading">Link_B</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/binance/api-guide">Link_C</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/binance/margin-trading">Link_D</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/binance/staking-guide">Link_E</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/binance/trading-fees">Link_F</a></td>
               </tr>
             </tbody>
           </table>

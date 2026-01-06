@@ -72,6 +72,22 @@ export default function HyperliquidPage() {
                 <td>Child_Link</td>
                 <td><a href="/dex/hyperliquid/trading-fees">Link_E</a></td>
               </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hyperliquid/funding-rates">Link_F</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hyperliquid/liquidation-guide">Link_G</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hyperliquid/vault-system">Link_H</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hyperliquid/referral-program">Link_I</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

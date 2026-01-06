@@ -72,6 +72,22 @@ export default function LighterPage() {
                 <td>Child_Link</td>
                 <td><a href="/dex/lighter/trading-fees">Link_E</a></td>
               </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/lighter/funding-rates">Link_F</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/lighter/liquidation-guide">Link_G</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/lighter/referral-program">Link_H</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/lighter/spot-trading">Link_I</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

@@ -194,41 +194,27 @@ Forbidden primitives:
 
 ⸻
 
-3. GLOBAL STRING SEMANTIC ERASURE (ABSOLUTE)
+3. GLOBAL STRING SEMANTIC CONTROL (ABSOLUTE)
 
-ALL strings are semantic risk vectors.
+All emitted strings are considered semantic risk vectors.
 
-Applies to:
-	•	titles
-	•	headers
-	•	table cells
-	•	URLs
-	•	metadata
-	•	identifiers
-	•	slugs
-	•	anchors
-	•	filenames
-	•	registry names
+Claude MUST NOT invent, infer, expand, or decorate semantics.
 
-Claude MUST NOT emit ANY real-world recognizable term.
+Allowed real-world terms are STRICTLY LIMITED to:
+• registry-declared identifiers
+• CR-Markup field values derived from authoritative sources
+• entity names already present in registry.json
+• mandatory affiliate anchor text defined by spec9.md
 
-If a string allows inference of:
-	•	meaning
-	•	hierarchy
-	•	function
-	•	importance
-	•	domain
+Claude MUST NOT:
+• invent new names
+• add descriptive adjectives
+• introduce comparative or evaluative terms
+• create human-oriented phrasing
+• add semantic qualifiers beyond declared values
 
+Any semantic addition beyond registry / CR declarations:
 → REFUSE OUTPUT
-
-Allowed replacements ONLY:
-	•	Identifier_X
-	•	Attribute_X
-	•	Parameter_X
-	•	Section_X
-	•	Page_ID_X
-	•	Registry_Entry_Y
-	•	Hub_X
 
 ⸻
 
@@ -248,6 +234,15 @@ Allowed ONLY:
 	•	fully opaque placeholder
 
 Inference-capable URL → REFUSE
+
+Exception (HARD):
+
+This rule does NOT apply to:
+• filesystem paths required by spec5.md
+• structural routing paths (/hub/entity/child)
+• affiliate routing paths (/go/<entity_id>) as required by spec9.md
+
+These paths are considered STRUCTURAL, not semantic.
 
 ⸻
 
@@ -370,56 +365,59 @@ Failure of ANY:
 
 ⸻
 
-13. AFFILIATE ISOLATION (spec5)
+13. AFFILIATE ISOLATION (OVERRIDDEN BY spec9 — HARD LAW)
 
-Affiliate links ONLY on:
-	•	AI Content child pages
-	•	NO CR
-	•	depth ≥ 3
-
-Anywhere else → CRITICAL FAILURE
-
-Affiliate rules are further governed by:
-• spec9.md — Affiliate Infrastructure Isolation Law
-
-⸻
-
-13.1 AFFILIATE INFRASTRUCTURE ISOLATION (spec9 — HARD LAW)
-
-Affiliate infrastructure is governed by:
+Affiliate rules are governed EXCLUSIVELY by:
 
 → spec9.md — Affiliate Infrastructure Isolation Law
 
-This law OVERRIDES spec5
-for all affiliate-related mechanismsouting, redirects, and monetization logic.
+Any mention of affiliate behavior in lower-level specifications
+(including spec5.md) is NON-AUTHORITATIVE
+and exists only for contextual compatibility.
 
-Claude MUST treat ALL affiliate infrastructure as:
+Claude MUST treat ALL affiliate-related logic as defined by spec9.md,
+with NO independent interpretation.
+
+⸻
+
+13.1 AFFILIATE INFRASTRUCTURE ISOLATION (spec9 — ABSOLUTE)
+
+Affiliate Infrastructure is governed EXCLUSIVELY by:
+
+→ spec9.md — Affiliate Infrastructure Isolation Law
+
+This law OVERRIDES spec5.md
+and ALL other specifications
+for any affiliate-related mechanism,
+including routing, redirects, attribution, and monetization logic.
+
+Affiliate Infrastructure MUST be treated as:
 
 • NON-CANONICAL
-• OUTSIDE the CR graph
+• OUTSIDE the CR reference graph
 • OUTSIDE registry existence semantics
 • OUTSIDE dataset ingestion authority
 
 This includes, but is not limited to:
 • /go/*
 • redirect handlers
-• affiliate registries
-• monetization routers
+• affiliate routers
+• monetization endpoints
 • referral resolution logic
 
 HARD RULES:
 
 • Affiliate routes MUST NOT contain CR-BLOCKs
 • Affiliate routes MUST NOT appear in:
-  – registry.json
-  – latest.jsonl
+  – /public/dataset/registry.json
+  – /public/dataset/latest.jsonl
 • Affiliate infrastructure MUST NOT influence:
   – page existence
   – discovery
   – ingestion
   – canonical authority
 
-If any affiliate mechanism conflicts with:
+If ANY affiliate mechanism conflicts with:
 • canonical integrity
 • CR determinism
 • registry authority

@@ -76,6 +76,10 @@ export default function GatePage() {
                 <td>Child_Page</td>
                 <td><a href="/exchanges/gate/spot-trading">Link_A</a></td>
               </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/futures-trading">Link_B</a></td>
+              </tr>
             </tbody>
           </table>
         </section>
