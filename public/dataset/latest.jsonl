@@ -79,3 +79,24 @@
 {"record_type":"registry","id":"okx_trading_fees","page_status":"published","parent_id":"okx"}
 
 {"record_type":"registry","id":"gate_futures_trading","page_status":"published","parent_id":"gate"}
+
+{"record_type":"registry","id":"binance_funding_rates","page_status":"published","parent_id":"binance"}
+{"record_type":"registry","id":"binance_order_types","page_status":"published","parent_id":"binance"}
+{"record_type":"registry","id":"binance_referral_program","page_status":"published","parent_id":"binance"}
+{"record_type":"registry","id":"binance_supported_chains","page_status":"published","parent_id":"binance"}
+{"record_type":"registry","id":"gate_trading_fees","page_status":"published","parent_id":"gate"}
+{"record_type":"registry","id":"hibachi_grid_trading","page_status":"published","parent_id":"hibachi"}
+{"record_type":"registry","id":"hibachi_interface_guide","page_status":"published","parent_id":"hibachi"}
+{"record_type":"registry","id":"hibachi_portfolio_guide","page_status":"published","parent_id":"hibachi"}
+{"record_type":"registry","id":"hibachi_trading_pairs","page_status":"published","parent_id":"hibachi"}
+{"record_type":"registry","id":"hyperliquid_grid_trading","page_status":"published","parent_id":"hyperliquid"}
+{"record_type":"registry","id":"hyperliquid_interface_guide","page_status":"published","parent_id":"hyperliquid"}
+{"record_type":"registry","id":"hyperliquid_spot_trading","page_status":"published","parent_id":"hyperliquid"}
+{"record_type":"registry","id":"hyperliquid_trading_pairs","page_status":"published","parent_id":"hyperliquid"}
+{"record_type":"registry","id":"lighter_grid_trading","page_status":"published","parent_id":"lighter"}
+{"record_type":"registry","id":"lighter_interface_guide","page_status":"published","parent_id":"lighter"}
+{"record_type":"registry","id":"lighter_portfolio_guide","page_status":"published","parent_id":"lighter"}
+{"record_type":"registry","id":"lighter_trading_pairs","page_status":"published","parent_id":"lighter"}
+{"record_type":"registry","id":"okx_order_types","page_status":"published","parent_id":"okx"}
+{"record_type":"registry","id":"okx_referral_program","page_status":"published","parent_id":"okx"}
+{"record_type":"registry","id":"okx_supported_chains","page_status":"published","parent_id":"okx"}

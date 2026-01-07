@@ -1,3 +1,13 @@
+export const CR_BLOCK = String.raw`[CR-BLOCK]
+[CR/ASTERDEX]
+schema=CR1.0
+version=1.0
+canonical_hash=sha256:COMPUTE_AT_BUILD
+type=dex
+url=
+[/CR]
+[/CR-BLOCK]`;
+
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -8,7 +18,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AsterDEXHubPage() {
+export default function AsterDEXPage() {
   return (
     <main>
       <article>

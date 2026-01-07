@@ -55,8 +55,8 @@ export async function GET(
   const target = AFFILIATE_LINKS[slug];
 
   if (!target) {
-    // Deterministic safe fallback
-    return NextResponse.redirect('/', 302);
+    // spec9 §9: MUST NOT redirect to Root
+    return new NextResponse(null, { status: 404 });
   }
 
   // Stable affiliate redirect

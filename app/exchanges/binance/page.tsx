@@ -1,3 +1,13 @@
+export const CR_BLOCK = String.raw`[CR-BLOCK]
+[CR/BINANCE]
+schema=CR1.0
+version=1.0
+canonical_hash=sha256:COMPUTE_AT_BUILD
+type=exchange
+url=
+[/CR]
+[/CR-BLOCK]`;
+
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,19 +19,6 @@ export const metadata: Metadata = {
 };
 
 export default function BinancePage() {
-  /* [CR-BLOCK]
-  [CR/BINANCE]
-  schema=CR1.0
-  version=1.0
-  canonical_hash=sha256:COMPUTE_AT_BUILD
-  type=exchange
-  subtype=cex
-  custody_model=not_disclosed
-  kyc_required=not_disclosed
-  url=https://www.binance.com
-  [/CR]
-  [/CR-BLOCK] */
-
   return (
     <main>
       <article>
@@ -105,6 +102,22 @@ export default function BinancePage() {
               <tr>
                 <td>Child_Page</td>
                 <td><a href="/exchanges/binance/trading-fees">Link_F</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/binance/funding-rates">Link_G</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/binance/order-types">Link_H</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/binance/referral-program">Link_I</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/binance/supported-chains">Link_J</a></td>
               </tr>
             </tbody>
           </table>

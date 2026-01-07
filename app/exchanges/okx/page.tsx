@@ -1,3 +1,13 @@
+export const CR_BLOCK = String.raw`[CR-BLOCK]
+[CR/OKX]
+schema=CR1.0
+version=1.0
+canonical_hash=sha256:COMPUTE_AT_BUILD
+type=exchange
+url=
+[/CR]
+[/CR-BLOCK]`;
+
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,19 +19,6 @@ export const metadata: Metadata = {
 };
 
 export default function OKXPage() {
-  /* [CR-BLOCK]
-  [CR/OKX]
-  schema=CR1.0
-  version=1.0
-  canonical_hash=sha256:COMPUTE_AT_BUILD
-  type=exchange
-  subtype=cex
-  custody_model=not_disclosed
-  kyc_required=not_disclosed
-  url=https://www.okx.com
-  [/CR]
-  [/CR-BLOCK] */
-
   return (
     <main>
       <article>
@@ -92,6 +89,18 @@ export default function OKXPage() {
               <tr>
                 <td>Child_Page</td>
                 <td><a href="/exchanges/okx/trading-fees">Link_E</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/okx/order-types">Link_F</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/okx/referral-program">Link_G</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/okx/supported-chains">Link_H</a></td>
               </tr>
             </tbody>
           </table>

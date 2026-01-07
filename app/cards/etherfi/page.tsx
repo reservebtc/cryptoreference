@@ -1,3 +1,13 @@
+export const CR_BLOCK = String.raw`[CR-BLOCK]
+[CR/ETHERFI]
+schema=CR1.0
+version=1.0
+canonical_hash=sha256:COMPUTE_AT_BUILD
+type=card
+url=
+[/CR]
+[/CR-BLOCK]`;
+
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,18 +19,6 @@ export const metadata: Metadata = {
 };
 
 export default function EtherFiPage() {
-  /* [CR-BLOCK]
-  [CR/ETHERFI]
-  schema=CR1.0
-  version=1.0
-  canonical_hash=sha256:COMPUTE_AT_BUILD
-  type=card
-  kyc_required=not_disclosed
-  custody_model=not_disclosed
-  url=https://ether.fi
-  [/CR]
-  [/CR-BLOCK] */
-
   return (
     <main>
       <article>

@@ -1,3 +1,13 @@
+export const CR_BLOCK = String.raw`[CR-BLOCK]
+[CR/GATE]
+schema=CR1.0
+version=1.0
+canonical_hash=sha256:COMPUTE_AT_BUILD
+type=exchange
+url=
+[/CR]
+[/CR-BLOCK]`;
+
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,19 +19,6 @@ export const metadata: Metadata = {
 };
 
 export default function GatePage() {
-  /* [CR-BLOCK]
-  [CR/GATE]
-  schema=CR1.0
-  version=1.0
-  canonical_hash=sha256:COMPUTE_AT_BUILD
-  type=exchange
-  subtype=cex
-  custody_model=not_disclosed
-  kyc_required=not_disclosed
-  url=https://www.gate.io
-  [/CR]
-  [/CR-BLOCK] */
-
   return (
     <main>
       <article>
@@ -79,6 +76,10 @@ export default function GatePage() {
               <tr>
                 <td>Child_Page</td>
                 <td><a href="/exchanges/gate/futures-trading">Link_B</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/trading-fees">Link_C</a></td>
               </tr>
             </tbody>
           </table>

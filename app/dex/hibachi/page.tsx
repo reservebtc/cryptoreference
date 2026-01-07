@@ -1,12 +1,12 @@
-/* [CR-BLOCK]
+export const CR_BLOCK = String.raw`[CR-BLOCK]
 [CR/HIBACHI]
 schema=CR1.0
 version=1.0
 canonical_hash=sha256:COMPUTE_AT_BUILD
 type=dex
-url=https://hibachi.xyz
+url=
 [/CR]
-[/CR-BLOCK] */
+[/CR-BLOCK]`;
 
 import type { Metadata } from 'next';
 
@@ -87,6 +87,22 @@ export default function HibachiPage() {
               <tr>
                 <td>Child_Link</td>
                 <td><a href="/dex/hibachi/spot-trading">Link_I</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hibachi/grid-trading">Link_J</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hibachi/interface-guide">Link_K</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hibachi/portfolio-guide">Link_L</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hibachi/trading-pairs">Link_M</a></td>
               </tr>
             </tbody>
           </table>

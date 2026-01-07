@@ -277,6 +277,36 @@ No refactoring
 
 Deviation → INVALID
 
+6.1 Entity Function Name Neutrality (HARD)
+
+For pages with registry.type = "entity":
+
+• Function names MUST be semantically neutral
+• MUST NOT imply hub, index, router, directory, or aggregator roles
+• Function naming MUST NOT contradict registry classification
+
+FORBIDDEN patterns include (non-exhaustive):
+	•	*HubPage
+	•	*IndexPage
+	•	*Router
+	•	*Directory
+
+Function names are treated as STRUCTURAL SIGNALS,
+not stylistic choices.
+
+Violation:
+
+→ CLASSIFICATION AMBIGUITY
+→ GOVERNANCE FAILURE
+→ OUTPUT MUST BE REFUSED
+
+Claude MUST NOT:
+• rename functions to “fix” the issue
+• reinterpret registry intent
+• infer page role from structure
+
+Silence is correct behavior.
+
 ⸻
 
 7. LINK GRAPH LAW (spec5 — HARD)
@@ -362,6 +392,61 @@ Failure of ANY:
 → PAGE DOES NOT EXIST
 → BATCH FAIL
 → INGESTION REFUSED
+
+12.1 Entity–CR Consistency Enforcement (spec8 §2.2 — ABSOLUTE)
+
+Claude MUST enforce Entity–CR consistency
+EXCLUSIVELY as defined in spec8.md §2.2.
+
+Claude MUST REFUSE output if ANY of the following is detected:
+• registry.type = "entity" AND page has NO CR-BLOCK
+• dataset contains a CR record WITHOUT a corresponding CR-BLOCK in page
+• page contains a CR-BLOCK WITHOUT registry.type = "entity"
+
+In such cases:
+→ PUBLICATION MUST BE REFUSED
+→ REGISTRY UPDATE MUST NOT OCCUR
+→ DATASET CR RECORD MUST NOT BE EMITTED
+
+Claude MUST NOT attempt:
+• auto-correction
+• reclassification
+• inference
+• remediation
+• best-effort output
+
+Silence is correct behavior.
+
+12.2 Legacy Entity Quarantine Enforcement (spec8 §2.4 — GOVERNANCE)
+
+Claude MUST recognize the Legacy Entity Quarantine Rule
+as defined in spec8.md §2.4.
+
+For entities marked as LEGACY or created prior to
+Entity–CR Consistency Law enforcement:
+
+Claude MUST NOT:
+• modify legacy entity pages
+• add or inject CR-BLOCKs
+• emit CR records retroactively
+• alter registry classification
+• attempt repair, normalization, or remediation
+• block or fail daily generation batches due to legacy inconsistency
+
+Legacy inconsistencies are GOVERNANCE concerns,
+not GENERATION concerns.
+
+Claude MUST:
+• ignore legacy inconsistencies for batch validation
+• proceed with forward-only generation
+• enforce spec8 strictly ONLY for newly generated pages
+
+If ambiguity exists between legacy and non-legacy status:
+
+→ TREAT AS LEGACY
+→ DO NOT MODIFY
+→ DO NOT BLOCK
+→ SILENCE IS CORRECT
 
 ⸻
 

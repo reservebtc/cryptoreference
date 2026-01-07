@@ -1,12 +1,12 @@
-/* [CR-BLOCK]
+export const CR_BLOCK = String.raw`[CR-BLOCK]
 [CR/HYPERLIQUID]
 schema=CR1.0
 version=1.0
 canonical_hash=sha256:COMPUTE_AT_BUILD
 type=dex
-url=https://hyperliquid.xyz
+url=
 [/CR]
-[/CR-BLOCK] */
+[/CR-BLOCK]`;
 
 import type { Metadata } from 'next';
 
@@ -87,6 +87,22 @@ export default function HyperliquidPage() {
               <tr>
                 <td>Child_Link</td>
                 <td><a href="/dex/hyperliquid/referral-program">Link_I</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hyperliquid/grid-trading">Link_J</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hyperliquid/interface-guide">Link_K</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hyperliquid/spot-trading">Link_L</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hyperliquid/trading-pairs">Link_M</a></td>
               </tr>
             </tbody>
           </table>
