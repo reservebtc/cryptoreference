@@ -48,6 +48,7 @@ export default function AsterDEXPage() {
           <h2>Section_B</h2>
           <table>
             <tbody>
+              <tr><td>Content_Link</td><td><a href="/dex/asterdex/liquidation-guide">/dex/asterdex/liquidation-guide</a></td></tr>
               <tr><td>Content_Link</td><td><a href="/dex/asterdex/margin-leverage">/dex/asterdex/margin-leverage</a></td></tr>
               <tr><td>Content_Link</td><td><a href="/dex/asterdex/order-types">/dex/asterdex/order-types</a></td></tr>
               <tr><td>Content_Link</td><td><a href="/dex/asterdex/portfolio-guide">/dex/asterdex/portfolio-guide</a></td></tr>
@@ -58,6 +59,7 @@ export default function AsterDEXPage() {
               <tr><td>Content_Link</td><td><a href="/dex/asterdex/trading-pairs">/dex/asterdex/trading-pairs</a></td></tr>
               <tr><td>Content_Link</td><td><a href="/dex/asterdex/trading-volume">/dex/asterdex/trading-volume</a></td></tr>
               <tr><td>Content_Link</td><td><a href="/dex/asterdex/usdf-stablecoin">/dex/asterdex/usdf-stablecoin</a></td></tr>
+              <tr><td>Content_Link</td><td><a href="/dex/asterdex/vault-system">/dex/asterdex/vault-system</a></td></tr>
             </tbody>
           </table>
         </section>

@@ -104,6 +104,14 @@ export default function HyperliquidPage() {
                 <td>Child_Link</td>
                 <td><a href="/dex/hyperliquid/trading-pairs">Link_M</a></td>
               </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hyperliquid/copy-trading">Link_N</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hyperliquid/portfolio-guide">Link_O</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

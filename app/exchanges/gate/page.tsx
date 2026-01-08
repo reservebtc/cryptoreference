@@ -81,6 +81,34 @@ export default function GatePage() {
                 <td>Child_Page</td>
                 <td><a href="/exchanges/gate/trading-fees">Link_C</a></td>
               </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/api-guide">Link_D</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/funding-rates">Link_E</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/liquidation-guide">Link_F</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/margin-trading">Link_G</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/order-types">Link_H</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/referral-program">Link_I</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/supported-chains">Link_J</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

@@ -119,6 +119,14 @@ export default function BinancePage() {
                 <td>Child_Page</td>
                 <td><a href="/exchanges/binance/supported-chains">Link_J</a></td>
               </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/binance/copy-trading">Link_K</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/binance/liquidation-guide">Link_L</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

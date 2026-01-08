@@ -104,6 +104,14 @@ export default function HibachiPage() {
                 <td>Child_Link</td>
                 <td><a href="/dex/hibachi/trading-pairs">Link_M</a></td>
               </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hibachi/copy-trading">Link_N</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hibachi/vault-system">Link_O</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

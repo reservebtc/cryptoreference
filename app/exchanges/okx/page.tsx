@@ -102,6 +102,18 @@ export default function OKXPage() {
                 <td>Child_Page</td>
                 <td><a href="/exchanges/okx/supported-chains">Link_H</a></td>
               </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/okx/copy-trading">Link_I</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/okx/funding-rates">Link_J</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/okx/liquidation-guide">Link_K</a></td>
+              </tr>
             </tbody>
           </table>
         </section>
