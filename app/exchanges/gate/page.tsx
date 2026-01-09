@@ -137,7 +137,7 @@ export default function GatePage() {
           </table>
         </section>
 
-        {/* === RELATED / HUB LINK === */}}
+        {/* === RELATED / HUB LINK === */}
         <section>
           <h2>Section_E</h2>
           <table>
