@@ -127,6 +127,18 @@ export default function BinancePage() {
                 <td>Child_Page</td>
                 <td><a href="/exchanges/binance/liquidation-guide">Link_L</a></td>
               </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/binance/grid-trading">Link_M</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/binance/portfolio-guide">Link_N</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/binance/trading-pairs">Link_O</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

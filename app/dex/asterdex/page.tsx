@@ -60,6 +60,8 @@ export default function AsterDEXPage() {
               <tr><td>Content_Link</td><td><a href="/dex/asterdex/trading-volume">/dex/asterdex/trading-volume</a></td></tr>
               <tr><td>Content_Link</td><td><a href="/dex/asterdex/usdf-stablecoin">/dex/asterdex/usdf-stablecoin</a></td></tr>
               <tr><td>Content_Link</td><td><a href="/dex/asterdex/vault-system">/dex/asterdex/vault-system</a></td></tr>
+              <tr><td>Content_Link</td><td><a href="/dex/asterdex/copy-trading">/dex/asterdex/copy-trading</a></td></tr>
+              <tr><td>Content_Link</td><td><a href="/dex/asterdex/staking-guide">/dex/asterdex/staking-guide</a></td></tr>
             </tbody>
           </table>
         </section>

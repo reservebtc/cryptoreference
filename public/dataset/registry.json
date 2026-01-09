@@ -656,121 +656,121 @@
   {
     "id": "asterdex_copy_trading",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "asterdex"
   },
   {
     "id": "asterdex_staking_guide",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "asterdex"
   },
   {
     "id": "binance_grid_trading",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "binance"
   },
   {
     "id": "binance_portfolio_guide",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "binance"
   },
   {
     "id": "binance_trading_pairs",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "binance"
   },
   {
     "id": "okx_grid_trading",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "okx"
   },
   {
     "id": "okx_portfolio_guide",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "okx"
   },
   {
     "id": "okx_trading_pairs",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "okx"
   },
   {
     "id": "okx_staking_guide",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "okx"
   },
   {
     "id": "okx_vault_system",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "okx"
   },
   {
     "id": "gate_copy_trading",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "gate"
   },
   {
     "id": "gate_grid_trading",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "gate"
   },
   {
     "id": "gate_portfolio_guide",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "gate"
   },
   {
     "id": "gate_trading_pairs",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "gate"
   },
   {
     "id": "gate_staking_guide",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "gate"
   },
   {
     "id": "gate_vault_system",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "gate"
   },
   {
     "id": "etherfi_staking_guide",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "etherfi"
   },
   {
     "id": "etherfi_rewards_program",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "etherfi"
   },
   {
     "id": "etherfi_supported_chains",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "etherfi"
   },
   {
     "id": "etherfi_api_guide",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "etherfi"
   }
 ]

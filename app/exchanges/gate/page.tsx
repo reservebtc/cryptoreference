@@ -109,11 +109,35 @@ export default function GatePage() {
                 <td>Child_Page</td>
                 <td><a href="/exchanges/gate/supported-chains">Link_J</a></td>
               </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/copy-trading">Link_K</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/grid-trading">Link_L</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/portfolio-guide">Link_M</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/staking-guide">Link_N</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/trading-pairs">Link_O</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/vault-system">Link_P</a></td>
+              </tr>
             </tbody>
           </table>
         </section>
 
-        {/* === RELATED / HUB LINK === */}
+        {/* === RELATED / HUB LINK === */}}
         <section>
           <h2>Section_E</h2>
           <table>

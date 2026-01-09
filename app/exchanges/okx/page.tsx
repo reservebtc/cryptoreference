@@ -114,6 +114,26 @@ export default function OKXPage() {
                 <td>Child_Page</td>
                 <td><a href="/exchanges/okx/liquidation-guide">Link_K</a></td>
               </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/okx/grid-trading">Link_L</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/okx/portfolio-guide">Link_M</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/okx/staking-guide">Link_N</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/okx/trading-pairs">Link_O</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/okx/vault-system">Link_P</a></td>
+              </tr>
             </tbody>
           </table>
         </section>
