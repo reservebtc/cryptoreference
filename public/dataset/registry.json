@@ -772,5 +772,125 @@
     "type": "child_entity",
     "page_status": "published",
     "parent_id": "etherfi"
+  },
+  {
+    "id": "asterdex_insurance_fund",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_security_features",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "binance_vault_system",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "binance"
+  },
+  {
+    "id": "binance_withdrawal_limits",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "binance"
+  },
+  {
+    "id": "binance_deposit_methods",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "binance"
+  },
+  {
+    "id": "okx_withdrawal_limits",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "okx"
+  },
+  {
+    "id": "okx_deposit_methods",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "okx"
+  },
+  {
+    "id": "okx_p2p_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "okx"
+  },
+  {
+    "id": "okx_options_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "okx"
+  },
+  {
+    "id": "gate_withdrawal_limits",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "gate"
+  },
+  {
+    "id": "gate_deposit_methods",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "gate"
+  },
+  {
+    "id": "gate_p2p_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "gate"
+  },
+  {
+    "id": "gate_options_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "gate"
+  },
+  {
+    "id": "etherfi_liquid_staking",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "etherfi"
+  },
+  {
+    "id": "etherfi_governance",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "etherfi"
+  },
+  {
+    "id": "hibachi_futures_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "hibachi"
+  },
+  {
+    "id": "hyperliquid_futures_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "hyperliquid"
+  },
+  {
+    "id": "hyperliquid_staking_guide",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "hyperliquid"
+  },
+  {
+    "id": "lighter_futures_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "lighter"
+  },
+  {
+    "id": "lighter_staking_guide",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "lighter"
   }
 ]
