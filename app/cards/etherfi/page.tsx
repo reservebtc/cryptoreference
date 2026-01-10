@@ -106,6 +106,14 @@ export default function EtherFiPage() {
                 <td>Child_Page</td>
                 <td><a href="/cards/etherfi/supported-chains">Link_D</a></td>
               </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/cards/etherfi/liquid-staking">Link_E</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/cards/etherfi/governance">Link_F</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

@@ -112,6 +112,14 @@ export default function LighterPage() {
                 <td>Child_Link</td>
                 <td><a href="/dex/lighter/vault-system">Link_O</a></td>
               </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/lighter/futures-trading">Link_P</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/lighter/staking-guide">Link_Q</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

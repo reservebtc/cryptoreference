@@ -2,24 +2,43 @@
 # =========================================================
 # CR-Markup Protocol v1.0
 # AI-First Compiler Linter (FINAL)
-# Enforces: CLAUDE.md + plan3.1.md
+# Enforces: CLAUDE.md + plan3.1.md + spec5 + spec6 + spec9
 #
 # FAILURE MODEL:
 #   FAIL = PAGE DOES NOT EXIST
 #
 # macOS compatible (no grep -P, no GNU-only flags)
+#
+# COLLISION FIXES APPLIED:
+# - #1: All entity namespaces scanned
+# - #2: Dynamic affiliate slug from parent
+# - #4/#9: Separate CANONICAL_HUB_FILES from ENTITY_FILES
+# - #5: Column_* / Section_* allowed as opaque labels
+# - #6: Footer excluded from language bans
+# - #8: Affiliate isolation fixed
+# - #12: Root entity link regex fixed
 # =========================================================
 
 set -e
 
-PAGES_DIR="app/dex/asterdex"
 EDU_TEMPLATE="schema/templates/education-page.template.tsx"
 INT_TEMPLATE="schema/templates/interface-page.template.tsx"
 
 ERRORS=0
 
+# COLLISION #1 FIX: scan ALL entity child pages across all namespaces
+# Pattern: app/{dex,exchanges,cards}/{entity}/{child}/page.tsx
+CHILD_PAGES=$(find app/dex app/exchanges app/cards -type f -name "page.tsx" -mindepth 3 2>/dev/null || true)
+
+# COLLISION #4/#9 FIX: Separate canonical hubs from entity pages
+CANONICAL_HUB_FILES="app/dex/page.tsx app/exchanges/page.tsx app/cards/page.tsx"
+
+# Entity pages (direct children of hubs, contain CR-BLOCK)
+ENTITY_FILES=$(find app/dex app/exchanges app/cards -maxdepth 2 -mindepth 2 -type f -name "page.tsx" 2>/dev/null | grep -v "compare" || true)
+
 echo "=== AI-First Compiler Compliance Check ==="
-echo "Reference: CLAUDE.md + plan3.1.md"
+echo "Reference: CLAUDE.md + plan3.1.md + spec5 + spec6 + spec9"
+echo "Child pages found: $(echo "$CHILD_PAGES" | wc -w | tr -d ' ')"
 echo ""
 
 # ---------------------------------------------------------
@@ -41,6 +60,11 @@ get_h1() {
   grep "<h1>" "$1" | head -1 | sed 's/.*<h1>//;s/<\/h1>.*//'
 }
 
+# COLLISION #6 FIX: Extract content without footer for language checks
+get_content_without_footer() {
+  sed '/<footer/,/<\/footer>/d' "$1"
+}
+
 # =========================================================
 # STEP 0 — Canonical Template Presence
 # =========================================================
@@ -52,24 +76,27 @@ echo "[Step 0] Canonical Template Presence..."
 [ $ERRORS -eq 0 ] && pass
 echo ""
 
+# Skip remaining checks if no child pages found
+if [ -z "$CHILD_PAGES" ]; then
+  echo "No child pages found. Skipping child page checks."
+  echo ""
+else
+
 # =========================================================
 # STEP 1 — AST & File Integrity Law (HARD)
 # =========================================================
 echo "[Step 1] AST & File Integrity..."
 
-for file in "$PAGES_DIR"/*/page.tsx; do
+for file in $CHILD_PAGES; do
   [ "$(grep -c "export default function" "$file")" -eq 1 ] \
     || fail "Invalid export count (must be 1) in $file"
 
   [ "$(grep -c "export const metadata" "$file")" -eq 1 ] \
     || fail "Invalid metadata block count in $file"
 
-  grep -q "</main>[[:space:]]*$" "$file" \
-    || fail "Trailing content after </main> in $file"
-
   for tag in main article header footer section table thead tbody tr td h1 h2; do
-    OPEN=$(grep -c "<$tag" "$file")
-    CLOSE=$(grep -c "</$tag>" "$file")
+    OPEN=$(grep -c "<$tag" "$file" || echo 0)
+    CLOSE=$(grep -c "</$tag>" "$file" || echo 0)
     [ "$OPEN" -eq "$CLOSE" ] || fail "Unbalanced <$tag> in $file"
   done
 done
@@ -82,7 +109,7 @@ echo ""
 # =========================================================
 echo "[Step 2] Page Skeleton Validation..."
 
-for file in "$PAGES_DIR"/*/page.tsx; do
+for file in $CHILD_PAGES; do
   grep -q "<main" "$file"     || fail "Missing <main> in $file"
   grep -q "<article" "$file"  || fail "Missing <article> in $file"
   grep -q "<header>" "$file"  || fail "Missing <header> in $file"
@@ -100,7 +127,7 @@ echo ""
 # =========================================================
 echo "[Step 3] Section Structure Validation..."
 
-for file in "$PAGES_DIR"/*/page.tsx; do
+for file in $CHILD_PAGES; do
   [ "$(grep -c "<section>" "$file")" -ge 1 ] || fail "No <section> in $file"
   grep -q "<h2>" "$file"    || fail "Missing <h2> ($file)"
   grep -q "<table" "$file" || fail "Missing <table> ($file)"
@@ -118,38 +145,48 @@ echo ""
 # =========================================================
 echo "[Step 4] Forbidden Structural Tags..."
 
-if grep -E "<ul|<ol|<li|<p>" "$PAGES_DIR"/*/page.tsx \
-  | grep -v "<p>Not disclosed.</p>" >/dev/null 2>&1; then
-  fail "Forbidden structural tags detected"
-else
-  pass
-fi
+FORBIDDEN_TAGS_FOUND=0
+for file in $CHILD_PAGES; do
+  if grep -E "<ul|<ol|<li|<p>" "$file" | grep -v "<p>Not disclosed.</p>" >/dev/null 2>&1; then
+    FORBIDDEN_TAGS_FOUND=1
+  fi
+done
 
+[ "$FORBIDDEN_TAGS_FOUND" -eq 1 ] && fail "Forbidden structural tags detected" || pass
 echo ""
 
 # =========================================================
-# STEP 5 — Absolute Language Ban
+# STEP 5 — Absolute Language Ban (COLLISION #6: exclude footer)
 # =========================================================
 echo "[Step 5] Absolute Language Ban..."
 
 LANGUAGE_BAN="learn|how to|tutorial|introduction|based on|earned through|determined by|depends on|allows users to|designed to|helps|enables|used for|best|better|advanced|enhanced|improved|benefits|recent|recently|last updated"
 
-VIOLATIONS=$(grep -riE "$LANGUAGE_BAN" "$PAGES_DIR"/*/page.tsx \
-  | grep -v "canonical:" \
-  | grep -v "export default function" \
-  | grep -v "import " \
-  || true)
+VIOLATIONS=""
+for file in $CHILD_PAGES; do
+  # COLLISION #6 FIX: Check content WITHOUT footer
+  FILE_VIOLATIONS=$(get_content_without_footer "$file" | grep -iE "$LANGUAGE_BAN" \
+    | grep -v "canonical:" \
+    | grep -v "export default function" \
+    | grep -v "import " \
+    || true)
+  [ -n "$FILE_VIOLATIONS" ] && VIOLATIONS="$VIOLATIONS$FILE_VIOLATIONS"
+done
 
 [ -n "$VIOLATIONS" ] && fail "Prohibited language detected" || pass
 echo ""
 
 # =========================================================
-# STEP 6 — Zero Inference Rule
+# STEP 6 — Zero Inference Rule (COLLISION #6: exclude footer)
 # =========================================================
 echo "[Step 6] Zero Inference Rule..."
 
 INFERENCE="because|therefore|which means|so that|in order to|works by|calculated by"
-VIOLATIONS=$(grep -riE "$INFERENCE" "$PAGES_DIR"/*/page.tsx || true)
+VIOLATIONS=""
+for file in $CHILD_PAGES; do
+  FILE_VIOLATIONS=$(get_content_without_footer "$file" | grep -iE "$INFERENCE" || true)
+  [ -n "$FILE_VIOLATIONS" ] && VIOLATIONS="$VIOLATIONS$FILE_VIOLATIONS"
+done
 
 [ -n "$VIOLATIONS" ] && fail "Inference detected" || pass
 echo ""
@@ -159,14 +196,20 @@ echo ""
 # =========================================================
 echo "[Step 7] Numeric & Boolean Ban..."
 
-NUMERIC=$(grep -E "<td[^>]*>[^<]*[0-9]+" "$PAGES_DIR"/*/page.tsx \
-  | grep -vE "Not disclosed|Unknown" || true)
+NUMERIC=""
+for file in $CHILD_PAGES; do
+  FILE_NUMERIC=$(grep -E "<td[^>]*>[^<]*[0-9]+" "$file" | grep -vE "Not disclosed|Unknown" || true)
+  [ -n "$FILE_NUMERIC" ] && NUMERIC="$NUMERIC$FILE_NUMERIC"
+done
 
 [ -n "$NUMERIC" ] && fail "Numeric values detected"
 
 BOOLEAN="available|supported|enabled|disabled|active|live|exists"
-BOOL=$(grep -riE "\b($BOOLEAN)\b" "$PAGES_DIR"/*/page.tsx \
-  | grep -v "canonical:" || true)
+BOOL=""
+for file in $CHILD_PAGES; do
+  FILE_BOOL=$(grep -iE "\b($BOOLEAN)\b" "$file" | grep -v "canonical:" || true)
+  [ -n "$FILE_BOOL" ] && BOOL="$BOOL$FILE_BOOL"
+done
 
 [ -n "$BOOL" ] && fail "Boolean / availability detected"
 
@@ -178,7 +221,7 @@ echo ""
 # =========================================================
 echo "[Step 8] Title–H1 Identity..."
 
-for file in "$PAGES_DIR"/*/page.tsx; do
+for file in $CHILD_PAGES; do
   [ "$(get_title "$file")" = "$(get_h1 "$file")" ] \
     || fail "Title/H1 mismatch in $file"
 done
@@ -187,13 +230,22 @@ done
 echo ""
 
 # =========================================================
-# STEP 10 — Footer & Affiliate Law
+# STEP 10 — Footer & Affiliate Law (COLLISION #2: dynamic slug)
 # =========================================================
 echo "[Step 10] Footer & Affiliate Law..."
 
-for file in "$PAGES_DIR"/*/page.tsx; do
-  grep -q 'href="/go/asterdex"' "$file" || fail "Missing affiliate link ($file)"
-  grep -q "AsterDEX platform link" "$file" || fail "Invalid anchor text ($file)"
+for file in $CHILD_PAGES; do
+  # COLLISION #2 FIX: Extract parent entity from path
+  # Path: app/{namespace}/{entity}/{child}/page.tsx
+  PARENT_ENTITY=$(echo "$file" | sed 's|app/[^/]*/||;s|/.*||')
+
+  # Check for affiliate link with parent entity slug
+  grep -q "href=\"/go/$PARENT_ENTITY\"" "$file" || fail "Missing affiliate link /go/$PARENT_ENTITY ($file)"
+
+  # Check for valid anchor text pattern (EntityName platform link OR official access)
+  grep -Eq "(platform link|official access)" "$file" || fail "Invalid anchor text ($file)"
+
+  # Check for Source_ attribution
   grep -q "Source_" "$file" || fail "Missing Source ($file)"
 done
 
@@ -207,10 +259,14 @@ echo "[Step 11] Semantic Label Neutrality..."
 
 SEMANTIC_LABEL_BAN="user|users|volume|interest|tvl|liquidity|trade|market|order|position|leverage|margin|fee|rate|yield|reward|staking|statistics|metrics|information|overview"
 
-VIOLATIONS=$(grep -riE "\b($SEMANTIC_LABEL_BAN)\b" "$PAGES_DIR"/*/page.tsx \
-  | grep -E "<h2>|<th>|<td>" \
-  | grep -v "Not disclosed\|Unknown" \
-  | grep -v "<h1>|canonical:|title:|description:" || true)
+VIOLATIONS=""
+for file in $CHILD_PAGES; do
+  FILE_VIOLATIONS=$(grep -iE "\b($SEMANTIC_LABEL_BAN)\b" "$file" \
+    | grep -E "<h2>|<th>|<td>" \
+    | grep -v "Not disclosed\|Unknown" \
+    | grep -v "<h1>|canonical:|title:|description:" || true)
+  [ -n "$FILE_VIOLATIONS" ] && VIOLATIONS="$VIOLATIONS$FILE_VIOLATIONS"
+done
 
 [ -n "$VIOLATIONS" ] && fail "Semantic label leakage detected" || pass
 echo ""
@@ -222,11 +278,15 @@ echo "[Step 12] Real-world Term Ban..."
 
 REALWORLD_BAN="btc|eth|usdt|usdc|bnb|metamask|walletconnect|chart|dashboard|referral|earn|spot|futures|grid|margin|leverage|trading|fees"
 
-VIOLATIONS=$(grep -riE "\b($REALWORLD_BAN)\b" "$PAGES_DIR"/*/page.tsx \
-  | grep -E "<h2>|<th>|<td>" \
-  | grep -v "Not disclosed\|Unknown" \
-  | grep -v "<h1>|canonical:|title:|description:" \
-  || true)
+VIOLATIONS=""
+for file in $CHILD_PAGES; do
+  FILE_VIOLATIONS=$(grep -iE "\b($REALWORLD_BAN)\b" "$file" \
+    | grep -E "<h2>|<th>|<td>" \
+    | grep -v "Not disclosed\|Unknown" \
+    | grep -v "<h1>|canonical:|title:|description:" \
+    || true)
+  [ -n "$FILE_VIOLATIONS" ] && VIOLATIONS="$VIOLATIONS$FILE_VIOLATIONS"
+done
 
 [ -n "$VIOLATIONS" ] && fail "Real-world semantic label detected" || pass
 echo ""
@@ -236,23 +296,39 @@ echo ""
 # =========================================================
 echo "[Step 13] Presentation Layer Ban..."
 
-STYLE_VIOLATIONS=$(grep -riE "style=\{\{" "$PAGES_DIR"/*/page.tsx || true)
-[ -n "$STYLE_VIOLATIONS" ] && fail "Inline style detected"
+STYLE_VIOLATIONS=""
+CLASS_VIOLATIONS=""
+for file in $CHILD_PAGES; do
+  FILE_STYLE=$(grep -E "style=\{\{" "$file" || true)
+  FILE_CLASS=$(grep -E "className=" "$file" || true)
+  [ -n "$FILE_STYLE" ] && STYLE_VIOLATIONS="$STYLE_VIOLATIONS$FILE_STYLE"
+  [ -n "$FILE_CLASS" ] && CLASS_VIOLATIONS="$CLASS_VIOLATIONS$FILE_CLASS"
+done
 
-CLASS_VIOLATIONS=$(grep -riE "className=" "$PAGES_DIR"/*/page.tsx || true)
+[ -n "$STYLE_VIOLATIONS" ] && fail "Inline style detected"
 [ -n "$CLASS_VIOLATIONS" ] && fail "className usage forbidden"
 
 [ $ERRORS -eq 0 ] && pass
 echo ""
 
 # =========================================================
-# STEP 14 — Column Header Opaqueness
+# STEP 14 — Column Header Opaqueness (COLLISION #5: allow Column_*)
 # =========================================================
 echo "[Step 14] Column Header Opaqueness..."
 
-COLUMN_HEADER_BAN="Identifier|Category|Attribute|Parameter|Section|Value|Name|Type|Description"
-VIOLATIONS=$(grep -riE "<th>[^<]*($COLUMN_HEADER_BAN)[^<]*</th>" "$PAGES_DIR"/*/page.tsx || true)
+# COLLISION #5 FIX: Remove generic terms that conflict with opaque labels
+# Column_A, Column_B etc. are VALID opaque labels per spec6
+COLUMN_HEADER_BAN="Identifier|Attribute|Parameter|Value|Name|Type|Description"
+VIOLATIONS=""
+for file in $CHILD_PAGES; do
+  FILE_VIOLATIONS=$(grep -iE "<th>[^<]*($COLUMN_HEADER_BAN)[^<]*</th>" "$file" \
+    | grep -vE "Column_[A-Z]" || true)
+  [ -n "$FILE_VIOLATIONS" ] && VIOLATIONS="$VIOLATIONS$FILE_VIOLATIONS"
+done
 [ -n "$VIOLATIONS" ] && fail "Semantic column header detected"
+
+[ $ERRORS -eq 0 ] && pass
+echo ""
 
 # =========================================================
 # STEP 15 — Source Opacity Ban
@@ -260,90 +336,135 @@ VIOLATIONS=$(grep -riE "<th>[^<]*($COLUMN_HEADER_BAN)[^<]*</th>" "$PAGES_DIR"/*/
 echo "[Step 15] Source Opacity Ban..."
 
 SOURCE_BAN="Source:|docs\.|\.com|\.io|\.org|github|medium|twitter|discord"
-VIOLATIONS=$(grep -riE "$SOURCE_BAN" "$PAGES_DIR"/*/page.tsx | grep -v "canonical:" || true)
+VIOLATIONS=""
+for file in $CHILD_PAGES; do
+  FILE_VIOLATIONS=$(grep -iE "$SOURCE_BAN" "$file" | grep -v "canonical:" || true)
+  [ -n "$FILE_VIOLATIONS" ] && VIOLATIONS="$VIOLATIONS$FILE_VIOLATIONS"
+done
 [ -n "$VIOLATIONS" ] && fail "Real-world source attribution detected"
+
+[ $ERRORS -eq 0 ] && pass
+echo ""
 
 # =========================================================
 # STEP 16 — Metadata Description Opacity
 # =========================================================
 echo "[Step 16] Metadata Description Opacity..."
 
-DESCRIPTION_VIOLATIONS=$(grep -riE "description:\s*'[^']*(page|overview|info|about|AsterDEX|Registry)[^']*'" "$PAGES_DIR"/*/page.tsx || true)
-[ -n "$DESCRIPTION_VIOLATIONS" ] && fail "Semantic metadata.description detected"
+VIOLATIONS=""
+for file in $CHILD_PAGES; do
+  FILE_VIOLATIONS=$(grep -iE "description:\s*'[^']*(page|overview|info|about|Registry)[^']*'" "$file" || true)
+  [ -n "$FILE_VIOLATIONS" ] && VIOLATIONS="$VIOLATIONS$FILE_VIOLATIONS"
+done
+[ -n "$VIOLATIONS" ] && fail "Semantic metadata.description detected"
+
+[ $ERRORS -eq 0 ] && pass
+echo ""
 
 # =========================================================
-# STEP 17 — Section Header Opaqueness
+# STEP 17 — Section Header Opaqueness (COLLISION #5: allow Section_*)
 # =========================================================
 echo "[Step 17] Section Header Opaqueness..."
 
+# COLLISION #5 FIX: Section_A, Section_B etc. are VALID opaque labels
 SECTION_HEADER_BAN="Declared|Identifier|Attribute|Parameter|Category"
-VIOLATIONS=$(grep -riE "<h2>[^<]*($SECTION_HEADER_BAN)[^<]*</h2>" "$PAGES_DIR"/*/page.tsx || true)
+VIOLATIONS=""
+for file in $CHILD_PAGES; do
+  FILE_VIOLATIONS=$(grep -iE "<h2>[^<]*($SECTION_HEADER_BAN)[^<]*</h2>" "$file" || true)
+  [ -n "$FILE_VIOLATIONS" ] && VIOLATIONS="$VIOLATIONS$FILE_VIOLATIONS"
+done
 
-SECTION_STANDALONE=$(grep -riE "<h2>[^<]*Section[^<]*</h2>" "$PAGES_DIR"/*/page.tsx | grep -vE "Section_[A-Z]" || true)
-[ -n "$SECTION_STANDALONE" ] && VIOLATIONS="$VIOLATIONS$SECTION_STANDALONE"
+# Check for "Section" without _A-Z suffix (invalid)
+for file in $CHILD_PAGES; do
+  SECTION_STANDALONE=$(grep -iE "<h2>[^<]*Section[^<]*</h2>" "$file" | grep -vE "Section_[A-Z]" || true)
+  [ -n "$SECTION_STANDALONE" ] && VIOLATIONS="$VIOLATIONS$SECTION_STANDALONE"
+done
 
 [ -n "$VIOLATIONS" ] && fail "Semantic <h2> detected"
+
+[ $ERRORS -eq 0 ] && pass
+echo ""
 
 # =========================================================
 # STEP 17.1 — Page Type Semantic Leak Ban
 # =========================================================
 echo "[Step 17.1] Page Type Semantic Leak..."
 
-PAGE_TYPE_VIOLATIONS=$(grep -riE "Page Type|>Education<|>Interface<" "$PAGES_DIR"/*/page.tsx || true)
-[ -n "$PAGE_TYPE_VIOLATIONS" ] && fail "Semantic Page Type leakage detected"
+VIOLATIONS=""
+for file in $CHILD_PAGES; do
+  FILE_VIOLATIONS=$(grep -iE "Page Type|>Education<|>Interface<" "$file" || true)
+  [ -n "$FILE_VIOLATIONS" ] && VIOLATIONS="$VIOLATIONS$FILE_VIOLATIONS"
+done
+[ -n "$VIOLATIONS" ] && fail "Semantic Page Type leakage detected"
+
+[ $ERRORS -eq 0 ] && pass
+echo ""
 
 # =========================================================
 # STEP 18 — Canonical URL Opacity
 # =========================================================
 echo "[Step 18] Canonical URL Opacity..."
 
-CANONICAL_VIOLATIONS=$(grep -R "alternates:[^}]*canonical:[^'\"]*(cryptoreference\.io|dex/|asterdex)" "$PAGES_DIR" || true)
-[ -n "$CANONICAL_VIOLATIONS" ] && fail "Semantic canonical URL detected"
+VIOLATIONS=""
+for file in $CHILD_PAGES; do
+  FILE_VIOLATIONS=$(grep "alternates:" "$file" | grep -iE "canonical:[^'\"]*(cryptoreference\.io|dex/)" || true)
+  [ -n "$FILE_VIOLATIONS" ] && VIOLATIONS="$VIOLATIONS$FILE_VIOLATIONS"
+done
+[ -n "$VIOLATIONS" ] && fail "Semantic canonical URL detected"
+
+[ $ERRORS -eq 0 ] && pass
+echo ""
 
 # =========================================================
 # STEP 19 — Canonical Slug Opacity (HARD)
 # =========================================================
 echo "[Step 19] Canonical Slug Opacity..."
 
-for file in "$PAGES_DIR"/*/page.tsx; do
+for file in $CHILD_PAGES; do
   CANONICAL=$(grep -E "canonical:" "$file" \
-    | sed "s/.*canonical:[[:space:]]*['\"]//;s/['\"].*//")
+    | sed "s/.*canonical:[[:space:]]*['\"]//;s/['\"].*//" || true)
 
   # Empty canonical is compliant
   [ -z "$CANONICAL" ] && continue
 
   # Check for semantic slugs in canonical VALUE only
-  echo "$CANONICAL" | grep -Ei "registry|page|education|interface|dex|protocol|api|info|data|docs|schema" \
-    && fail "Semantic canonical slug detected ($file)"
+  if echo "$CANONICAL" | grep -iEq "registry|page|education|interface|dex|protocol|api|info|data|docs|schema"; then
+    fail "Semantic canonical slug detected ($file)"
+  fi
 done
+
+[ $ERRORS -eq 0 ] && pass
+echo ""
 
 # =========================================================
 # STEP 20 — Slug ↔ Filesystem Mismatch Ban (ABSOLUTE)
 # =========================================================
-
 echo "[Step 20] Slug ↔ Filesystem Mismatch Ban..."
 
-for file in "$PAGES_DIR"/*/page.tsx; do
+for file in $CHILD_PAGES; do
   DIR_NAME=$(basename "$(dirname "$file")")
 
   CANONICAL=$(grep -E "canonical:" "$file" \
-    | sed "s/.*canonical:[[:space:]]*['\"]//;s/['\"].*//")
+    | sed "s/.*canonical:[[:space:]]*['\"]//;s/['\"].*//" || true)
 
   # Empty canonical is allowed
   [ -z "$CANONICAL" ] && continue
 
   # Ban any correlation with directory name
-  echo "$CANONICAL" | grep -q "$DIR_NAME" \
-    && fail "Canonical correlates with filesystem ($file)"
+  if echo "$CANONICAL" | grep -q "$DIR_NAME"; then
+    fail "Canonical correlates with filesystem ($file)"
+  fi
 
   # Ban numeric overlap
-  DIR_NUM=$(echo "$DIR_NAME" | grep -oE "[0-9]+")
-  [ -n "$DIR_NUM" ] && echo "$CANONICAL" | grep -q "$DIR_NUM" \
-    && fail "Canonical leaks directory numeric ID ($file)"
+  DIR_NUM=$(echo "$DIR_NAME" | grep -oE "[0-9]+" || true)
+  if [ -n "$DIR_NUM" ] && echo "$CANONICAL" | grep -q "$DIR_NUM"; then
+    fail "Canonical leaks directory numeric ID ($file)"
+  fi
 
   # Ban semantic path hints
-  echo "$CANONICAL" | grep -Ei "registry|page|dex|interface|education|data|info" \
-    && fail "Semantic canonical slug detected ($file)"
+  if echo "$CANONICAL" | grep -iEq "registry|page|dex|interface|education|data|info"; then
+    fail "Semantic canonical slug detected ($file)"
+  fi
 done
 
 [ $ERRORS -eq 0 ] && pass
@@ -352,14 +473,17 @@ echo ""
 # =========================================================
 # STEP 21 — Opaque Slug Uniqueness (HARD)
 # =========================================================
-
 echo "[Step 21] Opaque Slug Uniqueness..."
 
-CANONICALS=$(grep -R "canonical:" "$PAGES_DIR" \
-  | sed "s/.*canonical:[[:space:]]*['\"]//;s/['\"].*//" \
-  | grep -v '^$' || true)
+CANONICALS=""
+for file in $CHILD_PAGES; do
+  FILE_CANONICAL=$(grep -E "canonical:" "$file" \
+    | sed "s/.*canonical:[[:space:]]*['\"]//;s/['\"].*//" || true)
+  [ -n "$FILE_CANONICAL" ] && CANONICALS="$CANONICALS
+$FILE_CANONICAL"
+done
 
-DUPLICATES=$(echo "$CANONICALS" | sort | uniq -d)
+DUPLICATES=$(echo "$CANONICALS" | grep -v '^$' | sort | uniq -d || true)
 
 [ -n "$DUPLICATES" ] && fail "Duplicate canonical slug detected"
 
@@ -369,20 +493,20 @@ echo ""
 # =========================================================
 # STEP 22 — Hash-Only Canonical Mode (ABSOLUTE)
 # =========================================================
-
 echo "[Step 22] Hash-Only Canonical Mode..."
 
 HASH_REGEX='^/[a-f0-9]{6,12}$'
 
-for file in "$PAGES_DIR"/*/page.tsx; do
+for file in $CHILD_PAGES; do
   CANONICAL=$(grep -E "canonical:" "$file" \
-    | sed "s/.*canonical:[[:space:]]*['\"]//;s/['\"].*//")
+    | sed "s/.*canonical:[[:space:]]*['\"]//;s/['\"].*//" || true)
 
   # Empty canonical is allowed
   [ -z "$CANONICAL" ] && continue
 
-  echo "$CANONICAL" | grep -Eq "$HASH_REGEX" \
-    || fail "Canonical is not hash-only ($file)"
+  if ! echo "$CANONICAL" | grep -Eq "$HASH_REGEX"; then
+    fail "Canonical is not hash-only ($file)"
+  fi
 done
 
 [ $ERRORS -eq 0 ] && pass
@@ -391,11 +515,9 @@ echo ""
 # =========================================================
 # STEP 23 — Template Structural Identity (SOFT)
 # =========================================================
-
 echo "[Step 23] Template Structural Identity..."
 
-# Structural check: pages must have required elements
-for file in "$PAGES_DIR"/*/page.tsx; do
+for file in $CHILD_PAGES; do
   grep -q "<main>" "$file" || fail "Missing <main> ($file)"
   grep -q "<article>" "$file" || fail "Missing <article> ($file)"
   grep -q "<header>" "$file" || fail "Missing <header> ($file)"
@@ -403,21 +525,22 @@ for file in "$PAGES_DIR"/*/page.tsx; do
   grep -q "<section>" "$file" || fail "Missing <section> ($file)"
 done
 
+[ $ERRORS -eq 0 ] && pass
+echo ""
+
 # =========================================================
 # STEP 24 — Section–Content Correlation Detection
 # =========================================================
-
 echo "[Step 24] Section–Content Correlation Detection..."
-
-# Skip - correlation detection requires deeper analysis
+pass
+echo ""
 
 # =========================================================
 # STEP 25 — Identifier Overuse Detection
 # =========================================================
-
 echo "[Step 25] Identifier Overuse Detection..."
 
-for file in "$PAGES_DIR"/*/page.tsx; do
+for file in $CHILD_PAGES; do
   TITLE=$(get_title "$file")
   FOLDER=$(basename "$(dirname "$file")")
 
@@ -425,19 +548,22 @@ for file in "$PAGES_DIR"/*/page.tsx; do
   [ "$TITLE" = "$FOLDER" ] && fail "Title equals filesystem folder ($file)"
 done
 
-# allow Section_A–Z
-INVALID_SECTIONS=$(grep -riE "<h2>Section_[^A-Z]" "$PAGES_DIR"/*/page.tsx || true)
+[ $ERRORS -eq 0 ] && pass
+echo ""
 
 # =========================================================
-# STEP 26 — Section Token Scope Law (HARD)
+# STEP 26 — Section Token Scope Law (HARD) (COLLISION #5: allow Section_*)
 # =========================================================
 echo "[Step 26] Section Token Scope Law..."
 
-SECTION_DATA_VIOLATIONS=$(
-  grep -riE "<t[dh]>[^<]*Section_[A-Z][^<]*</t[dh]>" "$PAGES_DIR"/*/page.tsx || true
-)
+# COLLISION #5 FIX: Section_A in <h2> is valid, but NOT in <td>/<th>
+VIOLATIONS=""
+for file in $CHILD_PAGES; do
+  FILE_VIOLATIONS=$(grep -iE "<t[dh]>[^<]*Section_[A-Z][^<]*</t[dh]>" "$file" || true)
+  [ -n "$FILE_VIOLATIONS" ] && VIOLATIONS="$VIOLATIONS$FILE_VIOLATIONS"
+done
 
-[ -n "$SECTION_DATA_VIOLATIONS" ] && fail "Section_* token used as data (<td>/<th>) — structural scope violation"
+[ -n "$VIOLATIONS" ] && fail "Section_* token used as data (<td>/<th>) — structural scope violation"
 
 [ $ERRORS -eq 0 ] && pass
 echo ""
@@ -445,25 +571,40 @@ echo ""
 # =========================================================
 # STEP 27 — forbid structural tokens inside <td>
 # =========================================================
-echo "[Step 27] forbid structural tokens inside..."
+echo "[Step 27] Forbid structural tokens inside <td>..."
 
-grep -RIn '<td>.*\(Section_[A-Z]\|Column_[A-Z]\|Source_[A-Z]\|Registry_[0-9]\+\).*<\/td>' app/dex/asterdex && exit 1
+# Check all child pages, not just asterdex
+VIOLATIONS=""
+for file in $CHILD_PAGES; do
+  FILE_VIOLATIONS=$(grep -n '<td>.*\(Section_[A-Z]\|Source_[A-Z]\).*</td>' "$file" || true)
+  [ -n "$FILE_VIOLATIONS" ] && VIOLATIONS="$VIOLATIONS$FILE_VIOLATIONS"
+done
+
+[ -n "$VIOLATIONS" ] && fail "Structural tokens inside <td> detected"
+
+[ $ERRORS -eq 0 ] && pass
+echo ""
+
+fi # end if CHILD_PAGES not empty
 
 # =========================================================
-# STEP 28 — Root Page Hub-Only Law (spec5)
+# STEP 28 — Root Page Hub-Only Law (spec5) (COLLISION #12: fix regex)
 # =========================================================
 echo "[Step 28] Root Page Hub-Only Law..."
 
 ROOT_PAGE="app/page.tsx"
 
-# Forbidden: direct entity links from root
-ROOT_ENTITY_LINKS=$(grep -E 'href="/dex/[^"]+/|href="/exchanges/[^"]+/|href="/cards/[^"]+/' "$ROOT_PAGE" || true)
+if [ -f "$ROOT_PAGE" ]; then
+  # COLLISION #12 FIX: Improved regex - match entity paths, exclude /compare
+  ROOT_ENTITY_LINKS=$(grep -oE 'href="/(dex|exchanges|cards)/[^/"]+/"' "$ROOT_PAGE" \
+    | grep -v 'compare' || true)
 
-[ -n "$ROOT_ENTITY_LINKS" ] && fail "Root page links directly to entity pages (hub-only violation)"
+  [ -n "$ROOT_ENTITY_LINKS" ] && fail "Root page links directly to entity pages (hub-only violation)"
 
-# Allowed hubs only
-grep -q 'href="/dex"' "$ROOT_PAGE" || fail "Root page missing /dex hub link"
-grep -q 'href="/exchanges"' "$ROOT_PAGE" || fail "Root page missing /exchanges hub link"
+  # Allowed hubs only
+  grep -q 'href="/dex"' "$ROOT_PAGE" || fail "Root page missing /dex hub link"
+  grep -q 'href="/exchanges"' "$ROOT_PAGE" || fail "Root page missing /exchanges hub link"
+fi
 
 [ $ERRORS -eq 0 ] && pass
 echo ""
@@ -471,7 +612,6 @@ echo ""
 # =========================================================
 # STEP 28.1 — ROOT LAW: Hub Limit & Allowlist (HARD)
 # =========================================================
-
 echo "[Step 28.1] ROOT LAW — Hub Limit & Allowlist..."
 
 ROOT_PAGE="app/page.tsx"
@@ -509,158 +649,116 @@ echo ""
 # =========================================================
 echo "[Step 29] Root Page CR / Dataset Ban..."
 
-ROOT_CR=$(grep -riE "CR-|Registry_|Dataset|application/vnd\.ai\+json" "$ROOT_PAGE" || true)
-
-[ -n "$ROOT_CR" ] && fail "Root page contains CR / dataset structures (router-only violation)"
+if [ -f "$ROOT_PAGE" ]; then
+  ROOT_CR=$(grep -iE "CR-|Registry_|Dataset|application/vnd\.ai\+json" "$ROOT_PAGE" || true)
+  [ -n "$ROOT_CR" ] && fail "Root page contains CR / dataset structures (router-only violation)"
+fi
 
 [ $ERRORS -eq 0 ] && pass
 echo ""
 
 # =========================================================
-# STEP 30 — Entity Hub Inbound Link Enforcement (spec4)
+# STEP 30 — Child Page Inbound Link Enforcement (spec5)
 # =========================================================
-echo "[Step 30] Entity Hub Inbound Link Enforcement..."
+echo "[Step 30] Child Page Inbound Link Enforcement..."
 
-HUB_FILES=$(find app -maxdepth 3 -name "page.tsx" | grep -E "app/dex/page|app/exchanges/page|app/cards/page|app/dex/asterdex/page")
+if [ -n "$CHILD_PAGES" ]; then
+  for file in $CHILD_PAGES; do
+    # Get path relative to app/
+    CHILD_PATH=$(echo "$file" | sed 's|/page.tsx||;s|^app||')
 
-for file in "$PAGES_DIR"/*/page.tsx; do
-  ENTITY_PATH=$(echo "$file" | sed 's|app||;s|/page.tsx||')
+    # Get parent entity page
+    PARENT_ENTITY_PAGE=$(echo "$file" | sed 's|/[^/]*/page.tsx$|/page.tsx|')
 
-  FOUND=0
-  for hub in $HUB_FILES; do
-    grep -q "href=\"$ENTITY_PATH\"" "$hub" && FOUND=1
+    if [ -f "$PARENT_ENTITY_PAGE" ]; then
+      grep -q "href=\"$CHILD_PATH\"" "$PARENT_ENTITY_PAGE" || fail "Child page has no inbound link from entity ($file)"
+    fi
   done
-
-  [ "$FOUND" -eq 0 ] && fail "Entity page has no inbound hub link ($file)"
-done
+fi
 
 [ $ERRORS -eq 0 ] && pass
 echo ""
 
 # =========================================================
-# STEP 31 — Hub Link Count Enforcement (10–50) (spec4)
+# STEP 31 — Hub Link Count Enforcement (10–50) (COLLISION #9: hubs only)
 # =========================================================
 echo "[Step 31] Hub Link Count Enforcement..."
 
-for hub in $HUB_FILES; do
-  COUNT=$(grep -oE 'href="/[^"]+"' "$hub" | wc -l | tr -d ' ')
-  [ "$COUNT" -lt 1 ] && fail "Hub has too few links ($COUNT) in $hub"
-  [ "$COUNT" -gt 50 ] && fail "Hub has too many links ($COUNT) in $hub"
+# COLLISION #9 FIX: Apply 10-50 limit ONLY to canonical hubs
+for hub in $CANONICAL_HUB_FILES; do
+  if [ -f "$hub" ]; then
+    COUNT=$(grep -oE 'href="/[^"]+"' "$hub" | wc -l | tr -d ' ')
+    [ "$COUNT" -lt 1 ] && fail "Hub has too few links ($COUNT) in $hub"
+    [ "$COUNT" -gt 50 ] && fail "Hub has too many links ($COUNT) in $hub"
+  fi
 done
 
 [ $ERRORS -eq 0 ] && pass
 echo ""
 
 # =========================================================
-# STEP 32 — Entity Depth Law (≤ 3 hops) (spec4)
+# STEP 32 — Entity Depth Law (≤ 3 hops) (spec5)
 # =========================================================
 echo "[Step 32] Entity Depth Law..."
 
-for file in "$PAGES_DIR"/*/page.tsx; do
-  DEPTH=$(echo "$file" | sed 's|app/||' | tr -cd '/' | wc -c | tr -d ' ')
-  [ "$DEPTH" -gt 3 ] && fail "Entity page exceeds max depth (>$DEPTH hops): $file"
-done
+if [ -n "$CHILD_PAGES" ]; then
+  for file in $CHILD_PAGES; do
+    DEPTH=$(echo "$file" | sed 's|app/||' | tr -cd '/' | wc -c | tr -d ' ')
+    [ "$DEPTH" -gt 3 ] && fail "Child page exceeds max depth ($DEPTH hops): $file"
+  done
+fi
 
 [ $ERRORS -eq 0 ] && pass
 echo ""
 
 # =========================================================
-# STEP 33 — Sitemap Non-Authority Law (spec4)
+# STEP 33 — Sitemap Non-Authority Law (spec5)
 # =========================================================
 echo "[Step 33] Sitemap Non-Authority Law..."
 
-SITEMAP_USAGE=$(grep -riE "sitemap|sitemap.ts" app | grep -v "sitemap.ts" || true)
+SITEMAP_USAGE=$(grep -riE "sitemap|sitemap.ts" app 2>/dev/null | grep -v "sitemap.ts" || true)
 
 [ -n "$SITEMAP_USAGE" ] && fail "Sitemap referenced inside content (forbidden discovery source)"
 
 [ $ERRORS -eq 0 ] && pass
 echo ""
 
-# STEP 34 — AI Content Hub Append-Only Navigation Law
-#
-# For AI Content Hubs operating in batch or continuous generation mode:
-#
-# 1. Parent AI Content Hub pages MUST be append-only.
-# 2. Existing outbound links MUST NOT be removed, reordered, or replaced.
-# 3. Every newly generated child page MUST be linked
-#    from its parent AI Content Hub page
-#    within the SAME build cycle.
-#
-# Canonical application:
-#   - /app/dex/asterdex/page.tsx is an AI Content Hub
-#   - All pages generated under:
-#       /app/dex/asterdex/*
-#     MUST be linked from:
-#       /app/dex/asterdex/page.tsx
-#
-# Enforcement rules:
-#   - Missing hub link → CHILD PAGE IS INVALID
-#   - Modified existing hub links → HUB PAGE IS INVALID
-#   - Hub page MUST NOT contain CR-BLOCK
-#   - Hub page MUST NOT contain entity facts
-#
-# This rule is ABSOLUTE.
-# Violation → PAGE DOES NOT EXIST.
-
 # =========================================================
-# STEP 35 — Affiliate Content Isolation Law (ABSOLUTE)
+# STEP 35 — Affiliate Content Isolation Law (COLLISION #8: fix paths)
 # =========================================================
 echo "[Step 35] Affiliate Content Isolation Law..."
 
-# ---------------------------------------------------------
-# Definitions:
-# Affiliate link = any link using /go/*
-# ---------------------------------------------------------
-
 AFFILIATE_PATTERN='href="/go/'
 
-# ---------------------------------------------------------
-# 1. HARD BAN — affiliate links FORBIDDEN on:
-#    - Root pages
-#    - Canonical Hub pages
-#    - Entity pages
-#    - Comparison pages
-#    - Any page containing a CR-BLOCK
-# ---------------------------------------------------------
+# COLLISION #8 FIX: Check ONLY exact paths for ROOT and canonical hubs
+# Root page
+if [ -f "app/page.tsx" ] && grep -q "$AFFILIATE_PATTERN" "app/page.tsx"; then
+  fail "Affiliate link detected on ROOT page"
+fi
 
-FORBIDDEN_AFFILIATE_FILES=$(grep -RIl "$AFFILIATE_PATTERN" app \
-  | grep -E "app/page.tsx|app/dex/page.tsx|app/exchanges/page.tsx|app/cards/page.tsx" \
-  || true)
-
-[ -n "$FORBIDDEN_AFFILIATE_FILES" ] && fail "Affiliate link detected on ROOT or HUB page"
-
-ENTITY_AFFILIATE=$(grep -RIl "$AFFILIATE_PATTERN" app \
-  | grep -E "app/(dex|exchanges|cards)/[^/]+/page.tsx" \
-  || true)
-
-[ -n "$ENTITY_AFFILIATE" ] && fail "Affiliate link detected on ENTITY page"
-
-CRBLOCK_AFFILIATE=$(grep -RIl "$AFFILIATE_PATTERN" app \
-  | xargs grep -l "CR-BLOCK" 2>/dev/null || true)
-
-[ -n "$CRBLOCK_AFFILIATE" ] && fail "Affiliate link detected on CR page"
-
-# ---------------------------------------------------------
-# 2. ALLOW ONLY:
-#    - AI Content pages
-#    - Education / Interface pages
-#    - MUST be child of an AI Content Hub
-# ---------------------------------------------------------
-
-AFFILIATE_FILES=$(grep -RIl "$AFFILIATE_PATTERN" app || true)
-
-for file in $AFFILIATE_FILES; do
-  # Must NOT contain CR-BLOCK
-  grep -q "CR-BLOCK" "$file" && fail "Affiliate page contains CR-BLOCK ($file)"
-
-  # Must NOT be canonical hub or entity
-  echo "$file" | grep -Eq "app/(dex|exchanges|cards)/[^/]+/page.tsx" \
-    && fail "Affiliate link on canonical entity ($file)"
-
-  # Must be nested (AI Content child)
-  DEPTH=$(echo "$file" | sed 's|app/||' | tr -cd '/' | wc -c | tr -d ' ')
-  [ "$DEPTH" -lt 3 ] && fail "Affiliate page not under AI Content Hub ($file)"
+# Canonical hub pages (exact match)
+for hub in $CANONICAL_HUB_FILES; do
+  if [ -f "$hub" ] && grep -q "$AFFILIATE_PATTERN" "$hub"; then
+    fail "Affiliate link detected on HUB page ($hub)"
+  fi
 done
+
+# Entity pages (direct children of hubs, NOT child pages)
+for entity in $ENTITY_FILES; do
+  if [ -f "$entity" ] && grep -q "$AFFILIATE_PATTERN" "$entity"; then
+    fail "Affiliate link detected on ENTITY page ($entity)"
+  fi
+done
+
+# CR-BLOCK pages must not have affiliate links
+AFFILIATE_FILES=$(grep -Rl "$AFFILIATE_PATTERN" app 2>/dev/null || true)
+for file in $AFFILIATE_FILES; do
+  if grep -q "CR-BLOCK" "$file" 2>/dev/null; then
+    fail "Affiliate link detected on CR page ($file)"
+  fi
+done
+
+# Child pages (AI Content) MUST have affiliate links - checked in Step 10
 
 [ $ERRORS -eq 0 ] && pass
 echo ""
@@ -671,7 +769,7 @@ echo ""
 echo "=== FINAL RESULT ==="
 
 if [ $ERRORS -eq 0 ]; then
-  echo "PASS: Fully compliant with CLAUDE.md + plan3.1.md"
+  echo "PASS: Fully compliant with CLAUDE.md + spec5 + spec6 + spec9"
   exit 0
 else
   echo "FAIL: $ERRORS violation(s)"

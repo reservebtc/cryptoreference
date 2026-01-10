@@ -225,7 +225,8 @@ function findPosition(content: string, index: number): { line: number; column: n
 }
 
 /**
- * Remove code blocks and quoted strings from content for linting
+ * Remove code blocks, quoted strings, and footer sections from content for linting
+ * COLLISION #11 FIX: Exclude footer from evaluative checks per spec9 §4
  */
 function preprocessContent(content: string): { cleaned: string; codeBlockRanges: Array<[number, number]> } {
   const codeBlockRanges: Array<[number, number]> = [];
@@ -238,7 +239,11 @@ function preprocessContent(content: string): { cleaned: string; codeBlockRanges:
   }
 
   // Remove code blocks for linting
-  const cleaned = content.replace(codeBlockPattern, (m) => ' '.repeat(m.length));
+  let cleaned = content.replace(codeBlockPattern, (m) => ' '.repeat(m.length));
+
+  // COLLISION #11 FIX: Remove footer sections from linting
+  // Footer may contain affiliate text per spec9 §4
+  cleaned = cleaned.replace(/<footer[\s\S]*?<\/footer>/gi, (m) => ' '.repeat(m.length));
 
   return { cleaned, codeBlockRanges };
 }
