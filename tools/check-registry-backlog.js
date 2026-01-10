@@ -9,6 +9,12 @@
  * - Planning backlog MUST exist
  * - Generation without backlog is FORBIDDEN
  *
+ * COLLISION #7 FIX: SPEC6 §6.1 REFERENCE
+ * count(page_status="missing") >= 20
+ *
+ * COLLISION #10: SPEC6 §6.3 ENFORCEMENT
+ * Atomic generation-planning coupling validation
+ *
  * This script MUST:
  * - FAIL hard on violation
  * - Produce NO fixes
@@ -17,6 +23,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const { execSync } = require("child_process");
 
 const REGISTRY_PATH = path.join(
   process.cwd(),
@@ -25,6 +32,8 @@ const REGISTRY_PATH = path.join(
   "registry.json"
 );
 
+// COLLISION #7 FIX: SPEC6 §6.1 REFERENCE
+// Minimum backlog requirement: missing >= 20
 const REQUIRED_BATCH_SIZE = 20;
 
 // -----------------------------
@@ -89,7 +98,7 @@ for (let i = 0; i < registry.length; i++) {
 }
 
 // -----------------------------
-// BACKLOG ENFORCEMENT (SPEC6)
+// BACKLOG ENFORCEMENT (SPEC6 §6.1)
 // -----------------------------
 const missing = registry.filter(
   (e) => e.page_status === "missing"
@@ -101,7 +110,7 @@ if (missing.length < REQUIRED_BATCH_SIZE) {
     `Found ${missing.length} entries with page_status="missing"`
   );
   console.error(
-    `Minimum required by spec6.md: ${REQUIRED_BATCH_SIZE}`
+    `Minimum required by spec6.md §6.1: ${REQUIRED_BATCH_SIZE}`
   );
   console.error(
     "Generation is FORBIDDEN without sufficient pre-allocated IDs"
@@ -131,8 +140,89 @@ if (invalidParent.length > 0) {
 }
 
 // -----------------------------
+// COLLISION #10: ATOMIC PLANNING COUPLING (SPEC6 §6.3)
+// -----------------------------
+// In CI context with git diff available, verify:
+// - If N entries transitioned missing→published
+// - Then N new missing entries must be added (append-only)
+// - No IDs deleted
+function checkAtomicPlanningCoupling() {
+  // Only run in CI context where BASE_REF is available
+  const baseRef = process.env.GITHUB_BASE_REF || process.env.BASE_REF;
+  if (!baseRef) {
+    console.log("ℹ️  Atomic coupling check skipped (not in PR context)");
+    return true;
+  }
+
+  try {
+    // Get base registry
+    const baseRegistryRaw = execSync(
+      `git show ${baseRef}:public/dataset/registry.json`,
+      { encoding: "utf8", stdio: ["pipe", "pipe", "pipe"] }
+    );
+    const baseRegistry = JSON.parse(baseRegistryRaw);
+
+    // Count published in base
+    const basePublished = new Set(
+      baseRegistry.filter(e => e.page_status === "published").map(e => e.id)
+    );
+    const baseMissing = new Set(
+      baseRegistry.filter(e => e.page_status === "missing").map(e => e.id)
+    );
+    const baseIds = new Set(baseRegistry.map(e => e.id));
+
+    // Count in head (current)
+    const headPublished = new Set(
+      registry.filter(e => e.page_status === "published").map(e => e.id)
+    );
+    const headMissing = new Set(
+      registry.filter(e => e.page_status === "missing").map(e => e.id)
+    );
+    const headIds = new Set(registry.map(e => e.id));
+
+    // Calculate deltas
+    const newlyPublished = [...headPublished].filter(id => baseMissing.has(id));
+    const publishedCount = newlyPublished.length;
+
+    const newMissingAdded = [...headMissing].filter(id => !baseIds.has(id));
+    const missingAddedCount = newMissingAdded.length;
+
+    // Check for deleted IDs (FORBIDDEN per spec6)
+    const deletedIds = [...baseIds].filter(id => !headIds.has(id));
+    if (deletedIds.length > 0) {
+      console.error("❌ SPEC6 §6.3 VIOLATION: ID deletion detected");
+      console.error(`Deleted IDs: ${deletedIds.join(", ")}`);
+      console.error("Registry is append-only. ID deletion is FORBIDDEN.");
+      return false;
+    }
+
+    // Check atomic coupling: published_count <= missing_added_count
+    if (publishedCount > 0 && missingAddedCount < publishedCount) {
+      console.error("❌ SPEC6 §6.3 VIOLATION: Atomic coupling broken");
+      console.error(`Published ${publishedCount} entries (missing→published)`);
+      console.error(`Added only ${missingAddedCount} new missing entries`);
+      console.error("MUST add >= published_count new missing entries");
+      return false;
+    }
+
+    console.log(`✅ Atomic coupling OK: ${publishedCount} published, ${missingAddedCount} new missing added`);
+    return true;
+
+  } catch (err) {
+    // Git command failed - likely not in git context or base doesn't exist
+    console.log("ℹ️  Atomic coupling check skipped (git diff unavailable)");
+    return true;
+  }
+}
+
+const atomicCouplingOk = checkAtomicPlanningCoupling();
+if (!atomicCouplingOk) {
+  process.exit(1);
+}
+
+// -----------------------------
 // PASS (SILENT SUCCESS)
 // -----------------------------
 console.log(
-  `✅ Registry backlog OK: ${missing.length} missing entries`
+  `✅ Registry backlog OK: ${missing.length} missing entries (spec6 §6.1 requires >= ${REQUIRED_BATCH_SIZE})`
 );

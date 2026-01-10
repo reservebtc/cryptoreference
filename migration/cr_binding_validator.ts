@@ -46,21 +46,42 @@ interface LegacyInventory {
 
 // ============================================
 // CR EXTRACTION
+// COLLISION #3 FIX: Support both old JSX comment format
+// and new export const CR_BLOCK format
 // ============================================
 
-const CR_BLOCK_START = '{/* [CR-BLOCK]';
-const CR_BLOCK_END = '[/CR-BLOCK] */}';
+// Old format (legacy)
+const CR_BLOCK_START_JSX = '{/* [CR-BLOCK]';
+const CR_BLOCK_END_JSX = '[/CR-BLOCK] */}';
+
+// New format (current)
+const CR_BLOCK_START_EXPORT = 'export const CR_BLOCK = String.raw`[CR-BLOCK]';
+const CR_BLOCK_END_EXPORT = '[/CR-BLOCK]`;';
 
 function extractEmbeddedCR(pageContent: string): string | null {
-  const startIndex = pageContent.indexOf(CR_BLOCK_START);
-  const endIndex = pageContent.indexOf(CR_BLOCK_END);
+  // Try new export format first (current)
+  let startIndex = pageContent.indexOf(CR_BLOCK_START_EXPORT);
+  let endIndex = pageContent.indexOf(CR_BLOCK_END_EXPORT);
+
+  if (startIndex !== -1 && endIndex !== -1) {
+    const crSection = pageContent.substring(
+      startIndex + CR_BLOCK_START_EXPORT.length,
+      endIndex
+    ).trim();
+    const lines = crSection.split('\n');
+    return lines.map(line => line.replace(/^  /, '')).join('\n');
+  }
+
+  // Fall back to old JSX comment format (legacy)
+  startIndex = pageContent.indexOf(CR_BLOCK_START_JSX);
+  endIndex = pageContent.indexOf(CR_BLOCK_END_JSX);
 
   if (startIndex === -1 || endIndex === -1) {
     return null;
   }
 
   const crSection = pageContent.substring(
-    startIndex + CR_BLOCK_START.length,
+    startIndex + CR_BLOCK_START_JSX.length,
     endIndex
   ).trim();
 
