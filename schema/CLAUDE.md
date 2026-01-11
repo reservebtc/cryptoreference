@@ -192,6 +192,29 @@ Forbidden primitives:
 	•	Marketing tone
 	•	Context framing
 
+2.1 EXTRACTION-FRIENDLY OUTPUT LAW (ABSOLUTE, FUTURE-ONLY)
+
+All generated pages MUST follow an extraction-friendly structure.
+
+Rules (HARD):
+
+• Output MUST be table-first.
+• Free-form explanatory prose is FORBIDDEN.
+• <p> elements are permitted ONLY for the literal value:
+  “Not disclosed.”
+• Each <td> MUST contain exactly one atomic fact.
+• Compound statements, definitions, summaries, or causal language
+  (“because”, “which means”, “therefore”, etc.) are FORBIDDEN.
+• If a fact cannot be expressed atomically, the ONLY allowed values are:
+  “Unknown” or “Not disclosed.”
+
+This law applies ONLY to newly generated pages.
+Previously published pages are exempt and MUST NOT be revalidated.
+
+Violation:
+→ OUTPUT INVALID
+→ REFUSE
+
 ⸻
 
 3. GLOBAL STRING SEMANTIC CONTROL (ABSOLUTE)

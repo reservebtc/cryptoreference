@@ -66,6 +66,18 @@ get_content_without_footer() {
 }
 
 # =========================================================
+# FUTURE-ONLY ERA GATE (treat missing marker as LEGACY)
+# New extraction-friendly guards MUST apply only to new pages.
+# If marker absent → treat as LEGACY → skip new guards.
+# =========================================================
+is_new_era_page() {
+  # REQUIRED marker to be injected by the new engine into newly generated pages
+  # Example expected line anywhere in file:
+  #   // ENGINE_ERA: vNEXT
+  grep -q "ENGINE_ERA: vNEXT" "$1"
+}
+
+# =========================================================
 # STEP 0 — Canonical Template Presence
 # =========================================================
 echo "[Step 0] Canonical Template Presence..."
@@ -189,6 +201,36 @@ for file in $CHILD_PAGES; do
 done
 
 [ -n "$VIOLATIONS" ] && fail "Inference detected" || pass
+echo ""
+
+# =========================================================
+# STEP 6.1 — Extraction-Friendly Guards (FUTURE-ONLY, vNEXT)
+# =========================================================
+echo "[Step 6.1] Extraction-Friendly Guards (vNEXT, future-only)..."
+
+# HARD: forbid <p> except Not disclosed (already enforced in Step 4)
+# Add additional hard guards:
+# - <td> length limit (atomic fact)
+# - ban sentence/compound delimiters inside <td>
+
+TD_MAX_CHARS=120
+TD_DELIM_BAN='[.;:]\s+[A-Za-z]'  # defensive: sentence-like pattern
+
+VIOLATIONS=""
+for file in $CHILD_PAGES; do
+  # future-only gate
+  is_new_era_page "$file" || continue
+
+  # 1) <td> max length
+  LONG_TD=$(grep -nE "<td[^>]*>[^<]{$((TD_MAX_CHARS+1)),}</td>" "$file" | grep -vE "Not disclosed|Unknown" || true)
+  [ -n "$LONG_TD" ] && VIOLATIONS="$VIOLATIONS$LONG_TD"
+
+  # 2) sentence-like delimiters inside <td> (compound statement heuristic)
+  DELIM_TD=$(grep -nE "<td[^>]*>[^<]*${TD_DELIM_BAN}[^<]*</td>" "$file" | grep -vE "Not disclosed|Unknown" || true)
+  [ -n "$DELIM_TD" ] && VIOLATIONS="$VIOLATIONS$DELIM_TD"
+done
+
+[ -n "$VIOLATIONS" ] && fail "Extraction-friendly violation detected in vNEXT pages" || pass
 echo ""
 
 # =========================================================
