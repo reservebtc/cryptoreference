@@ -1,0 +1,231 @@
+# Monitoring CI Job
+#
+# Internal Canonical Integrity & Distortion Detection
+#
+# Governed by: /schema/monitoring-spec.md
+#
+# HARD RULES:
+# - Non-blocking by default
+# - FAIL CI ONLY on internal corruption
+# - Upload report as artifact
+# - Post PR comment summarizing status
+# - CI uses runner script as the ONLY executable entrypoint
+#
+# Reference: /schema/plan-monitoring.md Step 8, Step 9, Step 12
+
+name: Monitoring
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  # Run after daily generation workflow
+  workflow_run:
+    workflows: ["Daily Generation"]
+    types: [completed]
+  # Allow manual trigger
+  workflow_dispatch:
+
+# Required for PR comments
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  monitoring:
+    name: Canonical Integrity Check
+    runs-on: ubuntu-latest
+    # Skip if triggered by workflow_run and the workflow failed
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run monitoring (single entrypoint)
+        id: monitoring
+        run: |
+          echo "Running monitoring via scripts/run-monitoring.sh..."
+
+          # Make script executable
+          chmod +x scripts/run-monitoring.sh
+
+          # Run monitoring and capture exit code
+          set +e
+          bash scripts/run-monitoring.sh > monitoring_output.txt 2>&1
+          EXIT_CODE=$?
+          set -e
+
+          # Display output
+          cat monitoring_output.txt
+
+          # Set status based on exit code
+          if [ $EXIT_CODE -eq 0 ]; then
+            echo "status=pass" >> $GITHUB_OUTPUT
+          else
+            echo "status=fail" >> $GITHUB_OUTPUT
+          fi
+
+          # Extract report values from the latest report file
+          LATEST_REPORT=$(ls -t monitoring/reports/monitor-*.json 2>/dev/null | head -1)
+
+          if [ -n "$LATEST_REPORT" ] && [ -f "$LATEST_REPORT" ]; then
+            REPORT_ID=$(jq -r '.report_id // "unknown"' "$LATEST_REPORT")
+            TOTAL_VIOLATIONS=$(jq -r '.summary.total_violations // 0' "$LATEST_REPORT")
+            CONSISTENCY=$(jq -r '.summary.consistency_status // "unknown"' "$LATEST_REPORT")
+            TOPOLOGY=$(jq -r '.summary.topology_status // "unknown"' "$LATEST_REPORT")
+            METADATA=$(jq -r '.summary.metadata_status // "unknown"' "$LATEST_REPORT")
+            SNAPSHOT=$(jq -r '.summary.snapshot_status // "unknown"' "$LATEST_REPORT")
+          else
+            REPORT_ID="unknown"
+            TOTAL_VIOLATIONS="0"
+            CONSISTENCY="unknown"
+            TOPOLOGY="unknown"
+            METADATA="unknown"
+            SNAPSHOT="unknown"
+          fi
+
+          echo "report_id=$REPORT_ID" >> $GITHUB_OUTPUT
+          echo "total_violations=$TOTAL_VIOLATIONS" >> $GITHUB_OUTPUT
+          echo "consistency=$CONSISTENCY" >> $GITHUB_OUTPUT
+          echo "topology=$TOPOLOGY" >> $GITHUB_OUTPUT
+          echo "metadata=$METADATA" >> $GITHUB_OUTPUT
+          echo "snapshot=$SNAPSHOT" >> $GITHUB_OUTPUT
+
+      - name: Upload monitoring report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: monitoring-report
+          path: monitoring/reports/*.json
+          retention-days: 30
+
+      - name: Post PR comment (pass)
+        if: github.event_name == 'pull_request' && steps.monitoring.outputs.status == 'pass'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = `## Monitoring Report
+
+            **Status:** PASS
+
+            | Check | Status |
+            |-------|--------|
+            | Consistency | ${{ steps.monitoring.outputs.consistency }} |
+            | Topology | ${{ steps.monitoring.outputs.topology }} |
+            | Metadata | ${{ steps.monitoring.outputs.metadata }} |
+            | Snapshot | ${{ steps.monitoring.outputs.snapshot }} |
+
+            **Violations:** ${{ steps.monitoring.outputs.total_violations }}
+
+            **Report ID:** \`${{ steps.monitoring.outputs.report_id }}\`
+
+            > See [monitoring-report artifact](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) for full details.
+
+            ---
+            *Canonical Integrity Check — governed by monitoring-spec.md*`;
+
+            // Find existing comment
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const botComment = comments.find(c =>
+              c.user.type === 'Bot' &&
+              c.body.includes('## Monitoring Report')
+            );
+
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: body
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: body
+              });
+            }
+
+      - name: Post PR comment (fail)
+        if: github.event_name == 'pull_request' && steps.monitoring.outputs.status == 'fail'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = `## Monitoring Report
+
+            **Status:** FAIL — Internal Corruption Detected
+
+            | Check | Status |
+            |-------|--------|
+            | Consistency | ${{ steps.monitoring.outputs.consistency }} |
+            | Topology | ${{ steps.monitoring.outputs.topology }} |
+            | Metadata | ${{ steps.monitoring.outputs.metadata }} |
+            | Snapshot | ${{ steps.monitoring.outputs.snapshot }} |
+
+            **Violations:** ${{ steps.monitoring.outputs.total_violations }}
+
+            **Report ID:** \`${{ steps.monitoring.outputs.report_id }}\`
+
+            ### Possible Causes
+            - Registry ↔ filesystem mismatch
+            - Dataset ↔ filesystem mismatch
+            - CR-BLOCK inconsistency
+            - Topology violation
+            - Metadata drift
+
+            > See [monitoring-report artifact](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) for full details.
+
+            ---
+            *Canonical Integrity Check — governed by monitoring-spec.md*`;
+
+            // Find existing comment
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const botComment = comments.find(c =>
+              c.user.type === 'Bot' &&
+              c.body.includes('## Monitoring Report')
+            );
+
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: body
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: body
+              });
+            }
+
+      - name: Fail CI on internal corruption
+        if: steps.monitoring.outputs.status == 'fail'
+        run: |
+          echo "CI FAIL: Internal corruption detected"
+          echo "See monitoring report artifact for details."
+          exit 1

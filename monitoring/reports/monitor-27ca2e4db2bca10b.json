@@ -1,0 +1,52 @@
+{
+  "report_id": "monitor-27ca2e4db2bca10b",
+  "scope": "internal",
+  "status": "pass",
+  "engine_version": "0.1.0",
+  "checked_at": "2026-01-11",
+  "summary": {
+    "total_violations": 0,
+    "consistency_status": "pass",
+    "topology_status": "pass",
+    "metadata_status": "pass",
+    "snapshot_status": "pass"
+  },
+  "consistency": {
+    "status": "pass",
+    "violations": [],
+    "checked": {
+      "registry_entries": 189,
+      "dataset_records": 169,
+      "cr_blocks": 8,
+      "filesystem_pages": 173
+    }
+  },
+  "topology": {
+    "status": "pass",
+    "violations": [],
+    "checked": {
+      "pages_scanned": 173,
+      "links_analyzed": 343
+    }
+  },
+  "metadata": {
+    "status": "pass",
+    "violations": [],
+    "checked": {
+      "pages_scanned": 173,
+      "robots_present": true,
+      "sitemap_present": true
+    }
+  },
+  "snapshot": {
+    "status": "pass",
+    "violations": [],
+    "checked": {
+      "snapshot_id": "snapshot-2026-01-11-ecc424f2a8e1e6b6",
+      "files_compared": 175,
+      "files_unchanged": 175,
+      "files_modified": 0,
+      "files_deleted": 0
+    }
+  }
+}
