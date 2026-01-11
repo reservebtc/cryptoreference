@@ -120,6 +120,14 @@ export default function LighterPage() {
                 <td>Child_Link</td>
                 <td><a href="/dex/lighter/staking-guide">Link_Q</a></td>
               </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/lighter/insurance-fund">Link_R</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/lighter/security-features">Link_S</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

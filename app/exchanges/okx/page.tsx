@@ -150,6 +150,22 @@ export default function OKXPage() {
                 <td>Child_Page</td>
                 <td><a href="/exchanges/okx/options-trading">Link_T</a></td>
               </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/okx/bot-trading">Link_U</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/okx/leverage-guide">Link_V</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/okx/insurance-fund">Link_W</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/okx/security-features">Link_X</a></td>
+              </tr>
             </tbody>
           </table>
         </section>
