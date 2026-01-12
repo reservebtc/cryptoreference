@@ -128,6 +128,14 @@ export default function LighterPage() {
                 <td>Child_Link</td>
                 <td><a href="/dex/lighter/security-features">Link_S</a></td>
               </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/lighter/risk-management">Link_T</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/lighter/cross-margin">Link_U</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

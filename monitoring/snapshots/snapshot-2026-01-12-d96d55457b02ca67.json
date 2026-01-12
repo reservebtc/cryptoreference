@@ -1,0 +1,983 @@
+{
+  "snapshot_id": "snapshot-2026-01-12-d96d55457b02ca67",
+  "created_at": "2026-01-12",
+  "files": [
+    {
+      "path": "app/cards/etherfi/api-guide/page.tsx",
+      "hash": "489d4f423a131252b2e99a22cfb86c25d9fcf5d069b5cb4a16d2df91d54d8a39",
+      "size": 1711
+    },
+    {
+      "path": "app/cards/etherfi/governance/page.tsx",
+      "hash": "f0eb5b74b99478842fd2b4947a03b08140792989935d87d70604f7293766381d",
+      "size": 1711
+    },
+    {
+      "path": "app/cards/etherfi/integration-guide/page.tsx",
+      "hash": "0c1758af7b147364ded2a0d1e122da9fbd493a8570462d86c70f8211a8399fab",
+      "size": 1618
+    },
+    {
+      "path": "app/cards/etherfi/liquid-staking/page.tsx",
+      "hash": "8fad3bcc820b98595592b6755ee57e54fd52f54988d594b496f5a2d6e1eb3412",
+      "size": 1711
+    },
+    {
+      "path": "app/cards/etherfi/page.tsx",
+      "hash": "7e76784f55eef84eebbed860bec38a72fe4489d75fc2bf2df47d1e518f4c9fa1",
+      "size": 3718
+    },
+    {
+      "path": "app/cards/etherfi/rewards-program/page.tsx",
+      "hash": "37dd348b915550f9f0e5901f8808d6f4322aef2b86df5cb97db10c9c7b1fd987",
+      "size": 1711
+    },
+    {
+      "path": "app/cards/etherfi/risk-management/page.tsx",
+      "hash": "18e8321ded20bb3450bde45cb0f8bd5175bcafa41f57e719a446563d134ecdac",
+      "size": 1618
+    },
+    {
+      "path": "app/cards/etherfi/security-features/page.tsx",
+      "hash": "99b9794b09aa9d5c768a4f47c7081546c0aa421a0de382b38ab09458c473d577",
+      "size": 1618
+    },
+    {
+      "path": "app/cards/etherfi/staking-guide/page.tsx",
+      "hash": "4f91db5a5abeb10b6e883484d052d1732a56cf0ba9128b4fa71171d509121448",
+      "size": 1711
+    },
+    {
+      "path": "app/cards/etherfi/supported-chains/page.tsx",
+      "hash": "b6af33048e6ff9d1506cafecf124f4b3c2f3fce7a200283f7c54434e393cebfe",
+      "size": 1711
+    },
+    {
+      "path": "app/cards/etherfi/wallet-integration/page.tsx",
+      "hash": "8e953382b3e97cc41d12e3b07d0e3cf14283b3678798661631b0f514138bb8bd",
+      "size": 1618
+    },
+    {
+      "path": "app/cards/page.tsx",
+      "hash": "55d6fc2873e6d05070f5e0771801801007afb2615b22d80c9b560b9213c8bb6d",
+      "size": 1246
+    },
+    {
+      "path": "app/dex/asterdex/api-guide/page.tsx",
+      "hash": "a58e06482d275d2f02161bdc9ad0e93d75538b10ade14a92d214307751f0e022",
+      "size": 1197
+    },
+    {
+      "path": "app/dex/asterdex/apx-token/page.tsx",
+      "hash": "ed2d7995c61223d03af99e5481aaeee0713e572802418a1e20cc8de2e076672b",
+      "size": 1830
+    },
+    {
+      "path": "app/dex/asterdex/campaigns/page.tsx",
+      "hash": "fb42d9d689b4323fe66977ac1b9f18a369183b0599b49599b893ceef34fde0ae",
+      "size": 1718
+    },
+    {
+      "path": "app/dex/asterdex/copy-trading/page.tsx",
+      "hash": "af9e775aebd9ff06b0e0516e1a271aad254e9f3dd39ab5b949b26e3a3aed5346",
+      "size": 1602
+    },
+    {
+      "path": "app/dex/asterdex/earn-features/page.tsx",
+      "hash": "1fc576607153f206afd1815d57b4fe103e3575deb2dca4d521e24fece1eb363f",
+      "size": 1832
+    },
+    {
+      "path": "app/dex/asterdex/funding-rates/page.tsx",
+      "hash": "f41b751c194a5a81939cbdb85ec42910a53f437223111a4027092140c5204e7b",
+      "size": 1602
+    },
+    {
+      "path": "app/dex/asterdex/futures-trading/page.tsx",
+      "hash": "85013a182c23da053061e562481674c56d2c4b050235722b5c8c57dcb18b579c",
+      "size": 3385
+    },
+    {
+      "path": "app/dex/asterdex/grid-trading/page.tsx",
+      "hash": "46091b55ae87e6445bd33a1eba3dc7822f540a8d7dac0d53c054de44c8151f47",
+      "size": 1719
+    },
+    {
+      "path": "app/dex/asterdex/hidden-orders/page.tsx",
+      "hash": "10417492921b8fc69895252a3810b72e317cf62f72e3b9ea9470492739429d39",
+      "size": 1835
+    },
+    {
+      "path": "app/dex/asterdex/insurance-fund/page.tsx",
+      "hash": "8cf218e018fb57f3ab7c578b433757ef844561d7599b996f09cbddc0f78d81ef",
+      "size": 1602
+    },
+    {
+      "path": "app/dex/asterdex/interface-overview/page.tsx",
+      "hash": "12889fc8cc26f108ccd71db7449a47d2a37d12de1857e910611bba2cad2e5c91",
+      "size": 2813
+    },
+    {
+      "path": "app/dex/asterdex/leverage-1001x/page.tsx",
+      "hash": "ddec475f6095fe7a49ebbd5457ab49658b5691d52bb4548ee37750e9bfbe5740",
+      "size": 1947
+    },
+    {
+      "path": "app/dex/asterdex/liquidation-guide/page.tsx",
+      "hash": "3e0f2d8bd2cfabbefbc959a87f8e015cdaaaedad208ce2b765c3b95f32dc9763",
+      "size": 1602
+    },
+    {
+      "path": "app/dex/asterdex/margin-leverage/page.tsx",
+      "hash": "4644f58a9a5fe48b621ec37a1bfd356c5192860372dbd45fee49fc13c7627089",
+      "size": 1834
+    },
+    {
+      "path": "app/dex/asterdex/order-types/page.tsx",
+      "hash": "ef12b19229ab37bd5b88b1fcdab289961bfbae4da58e69cfa12d89f78a128942",
+      "size": 1647
+    },
+    {
+      "path": "app/dex/asterdex/page.tsx",
+      "hash": "6f627c1317a24a30889599a998d63d5b457c58e2e57259db20f9dfde64e49b8d",
+      "size": 4292
+    },
+    {
+      "path": "app/dex/asterdex/portfolio-guide/page.tsx",
+      "hash": "e725536ae3c2dde686ea9b5891e394895650d531f2f8126793df41e39020499f",
+      "size": 2696
+    },
+    {
+      "path": "app/dex/asterdex/referral-program/page.tsx",
+      "hash": "fb5194b2033032159520b52b3391551c43532c751987c07ab1ae649c8c4aa5c9",
+      "size": 1832
+    },
+    {
+      "path": "app/dex/asterdex/security-features/page.tsx",
+      "hash": "fdec472281b7cc92b93979e3067acc4ce462f0fd67ce10aa538076291f9166b9",
+      "size": 1602
+    },
+    {
+      "path": "app/dex/asterdex/spot-trading/page.tsx",
+      "hash": "cf88333b95ef0d7d14869e89b5bce647c7207d93c55c99ab1f9a832dd6c40894",
+      "size": 1943
+    },
+    {
+      "path": "app/dex/asterdex/staking-guide/page.tsx",
+      "hash": "483dfaa8e78d0354ef6beb07fb8016688bbdafb75f7ae63ba4b8e81483b01da0",
+      "size": 1602
+    },
+    {
+      "path": "app/dex/asterdex/supported-chains/page.tsx",
+      "hash": "382f1926bfafc1170458226a96a6f4f79d8c00f2927b19a8a40acabf88d9022d",
+      "size": 1600
+    },
+    {
+      "path": "app/dex/asterdex/trading-fees/page.tsx",
+      "hash": "79beed23a4012e759f2dd63f41f19caeeea95cbdd40a6dd927e3d0ac0ec8862c",
+      "size": 1832
+    },
+    {
+      "path": "app/dex/asterdex/trading-pairs/page.tsx",
+      "hash": "4ab3f451150f30168f4b7539135c85571b4b88cbaf2a4429bf2e246829107261",
+      "size": 2240
+    },
+    {
+      "path": "app/dex/asterdex/trading-volume/page.tsx",
+      "hash": "57ba40895f96cb0cb41c2c8c4a53b2a97cbea8eadaf3961b467c4132d3b4bb1d",
+      "size": 1947
+    },
+    {
+      "path": "app/dex/asterdex/usdf-stablecoin/page.tsx",
+      "hash": "ad12a59326441635651c0dce71b9507ae6dcaf0b6e6a13f399cf0feebd919995",
+      "size": 1944
+    },
+    {
+      "path": "app/dex/asterdex/vault-system/page.tsx",
+      "hash": "f1b38ab01c4bac9830575cb405c318401b875c56a6fbf2481beeef871d9fcebc",
+      "size": 1602
+    },
+    {
+      "path": "app/dex/compare/page.tsx",
+      "hash": "1fc221e8209bdc6911f04c78e41497714b4902360d7a3657850da8f365ae2d53",
+      "size": 2034
+    },
+    {
+      "path": "app/dex/hibachi/api-guide/page.tsx",
+      "hash": "d49c49cfdda8cd595e13aa409dff2c8881fe424bc2432437c272b269ea64a8bd",
+      "size": 1859
+    },
+    {
+      "path": "app/dex/hibachi/copy-trading/page.tsx",
+      "hash": "89bfae6845f0a9be59e4aab0b709c2bdce51f2bad5cbe8698c4369c0566000e1",
+      "size": 1597
+    },
+    {
+      "path": "app/dex/hibachi/cross-margin/page.tsx",
+      "hash": "f5a31e3837668477a23ad1cb1080c61cd81f77f00493a201f8035cfe46f7b2c9",
+      "size": 1618
+    },
+    {
+      "path": "app/dex/hibachi/funding-rates/page.tsx",
+      "hash": "60f3649a3004b3bc5ead85a57a5d17d362403fce188d44e9209dcbeab7588936",
+      "size": 1827
+    },
+    {
+      "path": "app/dex/hibachi/futures-trading/page.tsx",
+      "hash": "1f34001c5a936f9c5378d760fb90f7c5c08d7c9ef10979ea4a2635ec1e54b308",
+      "size": 1597
+    },
+    {
+      "path": "app/dex/hibachi/grid-trading/page.tsx",
+      "hash": "16530dc7c6f46e752dae225b4420ba76d09447db2bab9b784ba5bf04b9f0e468",
+      "size": 1827
+    },
+    {
+      "path": "app/dex/hibachi/insurance-fund/page.tsx",
+      "hash": "ccff8ebfcc61cb9e200066fbc1b73e31f28ff6ab31d7f7d621542789d8f5f154",
+      "size": 1618
+    },
+    {
+      "path": "app/dex/hibachi/interface-guide/page.tsx",
+      "hash": "fca93957cb344ea5904762768af0b3b1c4c7bba1373eff259d56e140bb5db730",
+      "size": 1827
+    },
+    {
+      "path": "app/dex/hibachi/liquidation-guide/page.tsx",
+      "hash": "41e16e75af1ba85228a4a2623202dfa42beb5478a62e1b93f0797ea9c407c824",
+      "size": 1827
+    },
+    {
+      "path": "app/dex/hibachi/margin-leverage/page.tsx",
+      "hash": "da4b5a60922fef9acfd556284864184ef3150fa7e65fc7f65d0a45c58c805f3e",
+      "size": 1859
+    },
+    {
+      "path": "app/dex/hibachi/order-types/page.tsx",
+      "hash": "5be099d2c32f666f386faa9a39a9588da266615007bbc9a235edc93971cf2913",
+      "size": 1859
+    },
+    {
+      "path": "app/dex/hibachi/page.tsx",
+      "hash": "e8a5689da07da1ab47ac108aae41b55a9c948b12c45f4198629cbbedbbfc8fd3",
+      "size": 4269
+    },
+    {
+      "path": "app/dex/hibachi/portfolio-guide/page.tsx",
+      "hash": "85f60001d0789b0452b50b4328e753985f53b1f1dd2cbac33a8d706194a95dc6",
+      "size": 1827
+    },
+    {
+      "path": "app/dex/hibachi/referral-program/page.tsx",
+      "hash": "bbedabb628e81b57b1891efb7fb786bd5d491aa096d722bddca1a28e6544c31e",
+      "size": 1827
+    },
+    {
+      "path": "app/dex/hibachi/risk-management/page.tsx",
+      "hash": "8749cd1695e4503e76c5f5e0f544c6543633f55ac544c2eca805f728ddbf0284",
+      "size": 1618
+    },
+    {
+      "path": "app/dex/hibachi/security-features/page.tsx",
+      "hash": "f8496dc6b5b3fd9e78e24007a9e57a4b6cfdc5dce723a0d8f7f2a56482184d3a",
+      "size": 1618
+    },
+    {
+      "path": "app/dex/hibachi/spot-trading/page.tsx",
+      "hash": "0465bcd58561d1a8df280cadb9bcd89bc5306dfe975592a4951fee94e51be4bb",
+      "size": 1827
+    },
+    {
+      "path": "app/dex/hibachi/supported-chains/page.tsx",
+      "hash": "d9794791c3ad7b789f08f1c3b06a160c87c3daa4481d3b8b35ed531dbff3886c",
+      "size": 1859
+    },
+    {
+      "path": "app/dex/hibachi/trading-fees/page.tsx",
+      "hash": "ec23d13d3b35903ab2220e0d87474d958106021d12d8b24278083c00250b7691",
+      "size": 1859
+    },
+    {
+      "path": "app/dex/hibachi/trading-pairs/page.tsx",
+      "hash": "269ee5bc83b3bdfe1fe3a395aee37011137f9244dc94d6a4909e2e85ed697ddc",
+      "size": 1827
+    },
+    {
+      "path": "app/dex/hibachi/vault-system/page.tsx",
+      "hash": "2d090b34faf32a82dac68d828ae020d983d7d70f1d7796d3f5db50289eb8b319",
+      "size": 1597
+    },
+    {
+      "path": "app/dex/hyperliquid/api-guide/page.tsx",
+      "hash": "ec2b188841392126a1db1c444a5e16f1250b66b11bfee6d77045e5a561e1740c",
+      "size": 1879
+    },
+    {
+      "path": "app/dex/hyperliquid/copy-trading/page.tsx",
+      "hash": "107318c7593e836e295663105fb855021789c8f58cdfb03b7cd9f547347a7060",
+      "size": 1617
+    },
+    {
+      "path": "app/dex/hyperliquid/cross-margin/page.tsx",
+      "hash": "998dc8815988a21ad036e6da4a7d75a20e7f3a41baa9e811e84b3ad3aae3092e",
+      "size": 1638
+    },
+    {
+      "path": "app/dex/hyperliquid/funding-rates/page.tsx",
+      "hash": "eccaaa07cf39583318972e7caebb19cd5a60089253eaadf501dcfcf03b0a3564",
+      "size": 1847
+    },
+    {
+      "path": "app/dex/hyperliquid/futures-trading/page.tsx",
+      "hash": "e93fa4fedb3bec73e0f20bbef5280fc60f75cedfe8fa1cf399697aaf4d71cf11",
+      "size": 1617
+    },
+    {
+      "path": "app/dex/hyperliquid/grid-trading/page.tsx",
+      "hash": "fe6f4c1d712831b446b60c481801e4336e91831b90c46400c88253b21e56fe79",
+      "size": 1847
+    },
+    {
+      "path": "app/dex/hyperliquid/insurance-fund/page.tsx",
+      "hash": "51e63823bb25862c077a2e2ddaa5ad8b0db4d872ce173d209a880609ddc6d88a",
+      "size": 1638
+    },
+    {
+      "path": "app/dex/hyperliquid/interface-guide/page.tsx",
+      "hash": "f832b1daf5aadb6d2be9bc8d9cda489f7e7a8a7beb23d82ebe828e9b9952be7a",
+      "size": 1847
+    },
+    {
+      "path": "app/dex/hyperliquid/liquidation-guide/page.tsx",
+      "hash": "a8a0a2c24b07b17ea04348b1de6679b0e2ffb74cf4ec92cd842a3e5a015cb90f",
+      "size": 1847
+    },
+    {
+      "path": "app/dex/hyperliquid/margin-leverage/page.tsx",
+      "hash": "a3d14717cfbb4c0bf0f5dbd4d25b78fc774ba0c02aaa90b9a843ac9731901f08",
+      "size": 1879
+    },
+    {
+      "path": "app/dex/hyperliquid/order-types/page.tsx",
+      "hash": "ef033e338959494e435d7d244f571c3a48e58a496ca89538f02351ee8f73a446",
+      "size": 1879
+    },
+    {
+      "path": "app/dex/hyperliquid/page.tsx",
+      "hash": "ab1490ef131af9a5f1a7766d63584202e5b3a65cbe218d766961d55917da3d2a",
+      "size": 4531
+    },
+    {
+      "path": "app/dex/hyperliquid/portfolio-guide/page.tsx",
+      "hash": "f37f597485e42738d49b05fe954f2b3a44613c9160ca4b759cdc4beab9ee91dc",
+      "size": 1617
+    },
+    {
+      "path": "app/dex/hyperliquid/referral-program/page.tsx",
+      "hash": "7dfdea14d8e0eb9f411758afdafbba93953b20a786b72bd8744f49fa50d48b6b",
+      "size": 1847
+    },
+    {
+      "path": "app/dex/hyperliquid/risk-management/page.tsx",
+      "hash": "b17789f08a40f97c29dd30183ed72325c9eee3a5d71e25ea203d23e6cfb52a50",
+      "size": 1638
+    },
+    {
+      "path": "app/dex/hyperliquid/security-features/page.tsx",
+      "hash": "ed09aaf3c1e2982629e4463e45daa62250a87773fa43ee03882fb2159904fdd8",
+      "size": 1638
+    },
+    {
+      "path": "app/dex/hyperliquid/spot-trading/page.tsx",
+      "hash": "6b76180dbdab332e2ee85ac9b09c77d9fcf2b214070244ec45f1f22e61a3965d",
+      "size": 1847
+    },
+    {
+      "path": "app/dex/hyperliquid/staking-guide/page.tsx",
+      "hash": "34f3c7ac205f35cfcba1730b00fe70d1a5480c6af749268f5289342fbc4ff156",
+      "size": 1617
+    },
+    {
+      "path": "app/dex/hyperliquid/supported-chains/page.tsx",
+      "hash": "cb0d9ba30d6b18b860b04c1d426fd8a9360e158d247a0e193663f89ccaee3d09",
+      "size": 1879
+    },
+    {
+      "path": "app/dex/hyperliquid/trading-fees/page.tsx",
+      "hash": "9755aa4ac0c83d1748369047901349ca88866510bf7c99f5aedfba86859b268c",
+      "size": 1879
+    },
+    {
+      "path": "app/dex/hyperliquid/trading-pairs/page.tsx",
+      "hash": "7b1ea60c0261bcce97a5d3e58650d2318ed9197802b2bfaa886110f70f0adecf",
+      "size": 1847
+    },
+    {
+      "path": "app/dex/hyperliquid/vault-system/page.tsx",
+      "hash": "eb1705be0590ede6c07809a6ce72a958228cddffc660fb32d67f9c65bb24836f",
+      "size": 1847
+    },
+    {
+      "path": "app/dex/lighter/api-guide/page.tsx",
+      "hash": "9135be2aaab761365ea783c736e5d9c0da0b10a0920011b5601baab33696b6f6",
+      "size": 1859
+    },
+    {
+      "path": "app/dex/lighter/copy-trading/page.tsx",
+      "hash": "5a0f49e020186e76b1a07a860dd4b6d977a1c6bcb719f1549e56c264d8533e9e",
+      "size": 1597
+    },
+    {
+      "path": "app/dex/lighter/cross-margin/page.tsx",
+      "hash": "f1bb44ce7746abfb5dff5ce4118c19a387f304252666433c16785f929fbc3576",
+      "size": 1618
+    },
+    {
+      "path": "app/dex/lighter/funding-rates/page.tsx",
+      "hash": "05313e2aa587f3d81d383f5117f450e560ebcec46576567cc5fd57c0bca9cd3f",
+      "size": 1827
+    },
+    {
+      "path": "app/dex/lighter/futures-trading/page.tsx",
+      "hash": "381287cdde0a9f82e7f22ea9c1c4b0624f6ffcdb352ab9f9a147f1af490566bd",
+      "size": 1597
+    },
+    {
+      "path": "app/dex/lighter/grid-trading/page.tsx",
+      "hash": "35c2aea4eab3afe26117d0520ad254518cba319ef6749fbb048eb1b17d02062f",
+      "size": 1827
+    },
+    {
+      "path": "app/dex/lighter/insurance-fund/page.tsx",
+      "hash": "370c7bc99b6ebed1f970148e4633aefffdc9bff8624fb42063277ea2c864879b",
+      "size": 1618
+    },
+    {
+      "path": "app/dex/lighter/interface-guide/page.tsx",
+      "hash": "3541c2752c164cf042336210359542c41588109fffa3070ce961a8850befdacc",
+      "size": 1827
+    },
+    {
+      "path": "app/dex/lighter/liquidation-guide/page.tsx",
+      "hash": "20c971dd4739ff27483466351ae5585e206e390029e0a4a750442392c039d2ed",
+      "size": 1827
+    },
+    {
+      "path": "app/dex/lighter/margin-leverage/page.tsx",
+      "hash": "74f6f4d397833dca62486708d9c3e701acf456d1037b0b1faf7d17c32fc9831b",
+      "size": 1859
+    },
+    {
+      "path": "app/dex/lighter/order-types/page.tsx",
+      "hash": "0ab16889e23cb9109b120c4c9370516364f7279b08695fa087247a6ff3329fc7",
+      "size": 1859
+    },
+    {
+      "path": "app/dex/lighter/page.tsx",
+      "hash": "413b010e743f316589a5218c19ff41522770145af934c2cf9e0eeb13c7a985e0",
+      "size": 4417
+    },
+    {
+      "path": "app/dex/lighter/portfolio-guide/page.tsx",
+      "hash": "3c5ad4b4f3216fae018cf6ce99f5417405efff811b52206fa7747f4e4a84201b",
+      "size": 1827
+    },
+    {
+      "path": "app/dex/lighter/referral-program/page.tsx",
+      "hash": "1e4f428868c84dfab457cb4ec9ce9162896cb07063db989649d0347e9231cafa",
+      "size": 1827
+    },
+    {
+      "path": "app/dex/lighter/risk-management/page.tsx",
+      "hash": "22380fa91f38beec27149708c3e2d56578c3bde846c4e3875d67c8b17b5df47e",
+      "size": 1618
+    },
+    {
+      "path": "app/dex/lighter/security-features/page.tsx",
+      "hash": "e3d4fd4245094d05b9b7c72e2adabd017e1f19a32bd2d1b231f4a78dc174815c",
+      "size": 1618
+    },
+    {
+      "path": "app/dex/lighter/spot-trading/page.tsx",
+      "hash": "f0576d0fd5f38aadfff0554dcafba8758f731200c728b2e1ea28f1f9474fa5f0",
+      "size": 1827
+    },
+    {
+      "path": "app/dex/lighter/staking-guide/page.tsx",
+      "hash": "39bdaa03f8679a93c3ae64e62356a715d6140df0ebc24708c342f7e4333bd38f",
+      "size": 1597
+    },
+    {
+      "path": "app/dex/lighter/supported-chains/page.tsx",
+      "hash": "1a30246353861fba99e76f66f8b12b2efa6661a7d4e38641d70cbbedca35c871",
+      "size": 1859
+    },
+    {
+      "path": "app/dex/lighter/trading-fees/page.tsx",
+      "hash": "d685a524b2613419652ad5aabb16fdd94d89a5d543bdfeed6ed3a6ee01048137",
+      "size": 1859
+    },
+    {
+      "path": "app/dex/lighter/trading-pairs/page.tsx",
+      "hash": "8f40fc1049e119d2cbc3b725e814473eceb42e6c9db1300130613c903629b960",
+      "size": 1827
+    },
+    {
+      "path": "app/dex/lighter/vault-system/page.tsx",
+      "hash": "305a22c4d4c1f0023950c94d4f3b29bfcc05bb9e44bd00f3525635972acc743d",
+      "size": 1597
+    },
+    {
+      "path": "app/dex/page.tsx",
+      "hash": "15642fd763c6463eebee35c5431027e836649bae3c3ba09f8686b680f011dcd4",
+      "size": 1948
+    },
+    {
+      "path": "app/exchanges/binance/api-guide/page.tsx",
+      "hash": "b0b4e1a53a5766f9131c41c4cf94a48a7f62ea48a5a297af57494a54b6ac0bdb",
+      "size": 1827
+    },
+    {
+      "path": "app/exchanges/binance/bot-trading/page.tsx",
+      "hash": "7afd54d883358e272466aadbe2f475a5a79cd7d60cbea4d56a915bb13e284935",
+      "size": 1618
+    },
+    {
+      "path": "app/exchanges/binance/copy-trading/page.tsx",
+      "hash": "c343ff45ca0020d1b4ddd5584fe31eef463f9752f62e49c1ff0d3e9c7df8315a",
+      "size": 1711
+    },
+    {
+      "path": "app/exchanges/binance/cross-margin/page.tsx",
+      "hash": "c6b5d3899baf72fcc43d80eceaf089be31df804f5f21c5549295de73330b1c4c",
+      "size": 1618
+    },
+    {
+      "path": "app/exchanges/binance/deposit-methods/page.tsx",
+      "hash": "160af9b02be8cbc5ae4c4d20d90a881dcc27ca4fa442b0d248d3e324f711db46",
+      "size": 1711
+    },
+    {
+      "path": "app/exchanges/binance/funding-rates/page.tsx",
+      "hash": "333961304d58a621a50052811de577f849e8cbf1f12797da2896602e6f44b415",
+      "size": 1827
+    },
+    {
+      "path": "app/exchanges/binance/futures-trading/page.tsx",
+      "hash": "6cb8d7e499bbc9696e9b0b755cb04585c8128d319dc674b976ed5dfb239e0339",
+      "size": 1826
+    },
+    {
+      "path": "app/exchanges/binance/grid-trading/page.tsx",
+      "hash": "cd51fe118b6a533fb8027a089b7be0d72a45e9285743fceb5a22a089090828da",
+      "size": 1711
+    },
+    {
+      "path": "app/exchanges/binance/insurance-fund/page.tsx",
+      "hash": "b6d983b0f8efce0e9a53acb980abed2928f52473294d57cfaa4f1c748d1e1490",
+      "size": 1618
+    },
+    {
+      "path": "app/exchanges/binance/isolated-margin/page.tsx",
+      "hash": "1913e4127651867bfc49cbd6a35f78d7dabe1ac51d371045c4bc8aa645a8928b",
+      "size": 1618
+    },
+    {
+      "path": "app/exchanges/binance/leverage-guide/page.tsx",
+      "hash": "1e6c5a8083d7eefe566de8d80c6d6bf6e98c5c22190588472e03413b6ffc14f5",
+      "size": 1618
+    },
+    {
+      "path": "app/exchanges/binance/liquidation-guide/page.tsx",
+      "hash": "94116f3587df70c14372d60747f7ec8a28fcdcc25a394795a89216ad70500181",
+      "size": 1711
+    },
+    {
+      "path": "app/exchanges/binance/margin-trading/page.tsx",
+      "hash": "cb7d9316dd2a193e90f82035776e6fdf6d8f8882aa381b255ecbe10830c6310d",
+      "size": 1827
+    },
+    {
+      "path": "app/exchanges/binance/order-types/page.tsx",
+      "hash": "fed40db21f07321c430a9ddab52f6bcc49f49e2d06d3e9cc4377d4b172c98d35",
+      "size": 1827
+    },
+    {
+      "path": "app/exchanges/binance/page.tsx",
+      "hash": "1c6ed14fa322d05794d2cb4d457fe73de9812ec3aea9c92f7ba8f7957b984a36",
+      "size": 6308
+    },
+    {
+      "path": "app/exchanges/binance/portfolio-guide/page.tsx",
+      "hash": "4ce67b353ad32ecf58d69983877a90314b6bbea0afdbb8ccc212c9f3e0f8f7dc",
+      "size": 1711
+    },
+    {
+      "path": "app/exchanges/binance/referral-program/page.tsx",
+      "hash": "59218f69918df7a774c084a51bcc4b79a3b3dedbac37824c3f65d8eb9abd184d",
+      "size": 1827
+    },
+    {
+      "path": "app/exchanges/binance/risk-management/page.tsx",
+      "hash": "d0c57dfddd63fb997827683c3ef336acc42355d7cae14b0c2a6ce9be5cf09333",
+      "size": 1618
+    },
+    {
+      "path": "app/exchanges/binance/security-features/page.tsx",
+      "hash": "a340d124f8c018969cb72a193cc0e996c28a637ce49162709f7d40b7f9affe3d",
+      "size": 1618
+    },
+    {
+      "path": "app/exchanges/binance/spot-trading/page.tsx",
+      "hash": "2b5ccb3f5fdfcbace138f4cc83fc51170d0b52ca60752cccd5a0dd6d1eb7f34d",
+      "size": 1826
+    },
+    {
+      "path": "app/exchanges/binance/staking-guide/page.tsx",
+      "hash": "6ef0d5e0b905c6331aec0dec8d4f7633c3fdf182795a6e67f101b230a40048ae",
+      "size": 1827
+    },
+    {
+      "path": "app/exchanges/binance/supported-chains/page.tsx",
+      "hash": "a33130bffe59e906af6a5614ebfc9a6d7b79944f1aa9e2e8177dbaa89c14c287",
+      "size": 1827
+    },
+    {
+      "path": "app/exchanges/binance/trading-bots/page.tsx",
+      "hash": "69790ab6805095a3b77eefafacfc7f5f1aabe4542ebf00d22de3f208a012602a",
+      "size": 1618
+    },
+    {
+      "path": "app/exchanges/binance/trading-fees/page.tsx",
+      "hash": "98e83406b4519b8fae6ba678f7f42fba3115255d147fe01daaabfbc605d65f47",
+      "size": 1827
+    },
+    {
+      "path": "app/exchanges/binance/trading-pairs/page.tsx",
+      "hash": "40e832d05f243c119bbdc600555fd6d1e3312f133dbe220340e90f7bbe82a577",
+      "size": 1711
+    },
+    {
+      "path": "app/exchanges/binance/vault-system/page.tsx",
+      "hash": "fdd4f66ea6817753a98b8a793e310c43f797ad022902c14aba5e4ccef479f4ae",
+      "size": 1711
+    },
+    {
+      "path": "app/exchanges/binance/withdrawal-limits/page.tsx",
+      "hash": "e6b222defe422f5d12d6240cd38cd6f4b6fe4d93d73f25f0de43ec7ffbc8b5d2",
+      "size": 1711
+    },
+    {
+      "path": "app/exchanges/gate/api-guide/page.tsx",
+      "hash": "1a046c0c8694f779a22df8e50af04dd8a5223500a8593fe5354e5d03ad199a8c",
+      "size": 1696
+    },
+    {
+      "path": "app/exchanges/gate/bot-trading/page.tsx",
+      "hash": "0359f49a81275a12b6463296664ea460baf33684280709d289c1903fefcc0f7d",
+      "size": 1603
+    },
+    {
+      "path": "app/exchanges/gate/copy-trading/page.tsx",
+      "hash": "6d848bf34058cde46fa590bac2072c66f9190aa0e6c1774b958ee6d981218452",
+      "size": 1696
+    },
+    {
+      "path": "app/exchanges/gate/cross-margin/page.tsx",
+      "hash": "e7d9190e534e154d53cf48ec4d4e034ddef7ba2ba00cc7549b0baea2cb3a1498",
+      "size": 1603
+    },
+    {
+      "path": "app/exchanges/gate/deposit-methods/page.tsx",
+      "hash": "265dfdc210deab7e67acd27007ba13b08c7ade2d7057189b5e4f7be184ccb9a5",
+      "size": 1696
+    },
+    {
+      "path": "app/exchanges/gate/funding-rates/page.tsx",
+      "hash": "f0db5d16844d17eaa437ffac976a5e66131259d4b4ac218c313ddad571e9add8",
+      "size": 1582
+    },
+    {
+      "path": "app/exchanges/gate/futures-trading/page.tsx",
+      "hash": "0fb0902feae6b36ea94b03910efab9bffdcf4de8ad4fcc4dda5d294d0cd42c44",
+      "size": 1812
+    },
+    {
+      "path": "app/exchanges/gate/grid-trading/page.tsx",
+      "hash": "4a25878d72c3552b2f2bedb3e51f05dee5a686cca6784e2ffb69cacf68795932",
+      "size": 1696
+    },
+    {
+      "path": "app/exchanges/gate/insurance-fund/page.tsx",
+      "hash": "21123fb2a57750fcdd106ca79f467946aaa9d24a81a9068d6cd0863abf98cb78",
+      "size": 1603
+    },
+    {
+      "path": "app/exchanges/gate/isolated-margin/page.tsx",
+      "hash": "b9c97958ade0c1f29ac781e29ffda71dfe2373feafb64c5744a96ae71969f1e0",
+      "size": 1603
+    },
+    {
+      "path": "app/exchanges/gate/leverage-guide/page.tsx",
+      "hash": "837289c39877e85957c59cfdba748ea66c64bb19a1c69af72fa370e261c5ce5d",
+      "size": 1603
+    },
+    {
+      "path": "app/exchanges/gate/liquidation-guide/page.tsx",
+      "hash": "1a7e57b7c9e7bfd537f717283297d48b25d112336762b21c9d1845fe03679a37",
+      "size": 1582
+    },
+    {
+      "path": "app/exchanges/gate/margin-trading/page.tsx",
+      "hash": "31853b6b5605572017b68cb2627c7a4b43ff9cbbca3da2a101940246a44f5047",
+      "size": 1696
+    },
+    {
+      "path": "app/exchanges/gate/options-trading/page.tsx",
+      "hash": "f50caf0b44096f0e55b96c242787d5347ffcd2afe5c2c89e7a64e649713a77eb",
+      "size": 1696
+    },
+    {
+      "path": "app/exchanges/gate/order-types/page.tsx",
+      "hash": "5a94152def8814c8a24c689654efcf1c28cedd6681b5db62b2b676dbc457540f",
+      "size": 1696
+    },
+    {
+      "path": "app/exchanges/gate/p2p-trading/page.tsx",
+      "hash": "64bf080070de93879adadb3658aa56d4a719c1fbaed24d01041f7190149693d1",
+      "size": 1696
+    },
+    {
+      "path": "app/exchanges/gate/page.tsx",
+      "hash": "aec8d95ac0ce543cc22780df03368db5ef53a0f1fdbb94b80a0124fd2608acc6",
+      "size": 6694
+    },
+    {
+      "path": "app/exchanges/gate/portfolio-guide/page.tsx",
+      "hash": "94507e8a77e858c3864b75d960b433dc78dc260f2a91901f3bf266b4685fe088",
+      "size": 1696
+    },
+    {
+      "path": "app/exchanges/gate/referral-program/page.tsx",
+      "hash": "f6ce64384bbe8a0e2e42348a27ef7346cd25403d354c65368e1d9854c95077d1",
+      "size": 1696
+    },
+    {
+      "path": "app/exchanges/gate/risk-management/page.tsx",
+      "hash": "66ae80faabb737992b47350ad6988fe781bf659540a7d9c300dd46a7a3f90832",
+      "size": 1603
+    },
+    {
+      "path": "app/exchanges/gate/security-features/page.tsx",
+      "hash": "341da9d0857da1ba7539af5837203cbe9416ed2fe64a3fe47fdd2490ba945f00",
+      "size": 1603
+    },
+    {
+      "path": "app/exchanges/gate/spot-trading/page.tsx",
+      "hash": "f3734c3454405ec3d09171e9020d81982634395c60fd64b52d4b49718908d35b",
+      "size": 1811
+    },
+    {
+      "path": "app/exchanges/gate/staking-guide/page.tsx",
+      "hash": "4700d3d2fbf5e6c3705f73b2631c4228b75f53ad7558ab24cd19fc9b3ef1226d",
+      "size": 1696
+    },
+    {
+      "path": "app/exchanges/gate/supported-chains/page.tsx",
+      "hash": "8753830a61fe8441df23deef780263f92ec31caa20c551ab8a77367adef6140c",
+      "size": 1696
+    },
+    {
+      "path": "app/exchanges/gate/trading-bots/page.tsx",
+      "hash": "7b7654d859370068b5cdfec74f46b852f07745122797f25d8357393771e2d7b3",
+      "size": 1603
+    },
+    {
+      "path": "app/exchanges/gate/trading-fees/page.tsx",
+      "hash": "9e5e5301ff4bbb69608407b2648592096eb91e2383235197243e67c8416cb095",
+      "size": 1812
+    },
+    {
+      "path": "app/exchanges/gate/trading-pairs/page.tsx",
+      "hash": "321425e2f3ba290abc8b163c77e0663bdd4f2d21e6b257a4863f66492e0d9134",
+      "size": 1696
+    },
+    {
+      "path": "app/exchanges/gate/vault-system/page.tsx",
+      "hash": "b99f41810e82725c5304a8b13c30cf38397d8c21999906ffb8024a2b6900b5d2",
+      "size": 1696
+    },
+    {
+      "path": "app/exchanges/gate/withdrawal-limits/page.tsx",
+      "hash": "e38ad9ca2ef58e46c852d6761680141075f92774cb023cb1f208c006dc05c08f",
+      "size": 1696
+    },
+    {
+      "path": "app/exchanges/okx/api-guide/page.tsx",
+      "hash": "7a76f037d7ac56dd383bae7465f081ce30f86b80974e8b74d0ce48cdb321d525",
+      "size": 1807
+    },
+    {
+      "path": "app/exchanges/okx/bot-trading/page.tsx",
+      "hash": "6ab5471f7481695300f3dfc413ed1ff05ad32bc23c2a1947b326f0ea283c4748",
+      "size": 1598
+    },
+    {
+      "path": "app/exchanges/okx/copy-trading/page.tsx",
+      "hash": "f0a895a44adb259c1f0bc877fc079e6194339aa4fe719a78e855a4a0f0919a19",
+      "size": 1691
+    },
+    {
+      "path": "app/exchanges/okx/cross-margin/page.tsx",
+      "hash": "e2325a07352f5fa09eaaebcf99dad42aa63f2366a9a4d53005aa02726f1b1841",
+      "size": 1598
+    },
+    {
+      "path": "app/exchanges/okx/deposit-methods/page.tsx",
+      "hash": "39f134f1f6361784b4aeed3d3f5989908f09dfce289111953357eec1f2dd6cb5",
+      "size": 1691
+    },
+    {
+      "path": "app/exchanges/okx/funding-rates/page.tsx",
+      "hash": "99abd30d40858ba5ee1095adda9124b231c4d594f2e2bf5e23d59215171ddddb",
+      "size": 1577
+    },
+    {
+      "path": "app/exchanges/okx/futures-trading/page.tsx",
+      "hash": "4884e1494efbefa54da167c1f8dfb6cbab39b7066f071e341397da01ac029a8c",
+      "size": 1806
+    },
+    {
+      "path": "app/exchanges/okx/grid-trading/page.tsx",
+      "hash": "3c4d8ad953a46db0ada661e000537f0987ba91bb160ef705abacabf3a3ef457f",
+      "size": 1807
+    },
+    {
+      "path": "app/exchanges/okx/insurance-fund/page.tsx",
+      "hash": "1c22c82b16b53c3bbb90292bbe8692395db11af6e23f890796ca4993fc058e6f",
+      "size": 1598
+    },
+    {
+      "path": "app/exchanges/okx/isolated-margin/page.tsx",
+      "hash": "a199f26db6bca8e96e311210ca3825c8956373825ddc0a86ee22d656446de59e",
+      "size": 1598
+    },
+    {
+      "path": "app/exchanges/okx/leverage-guide/page.tsx",
+      "hash": "8edf379b6973e798e3d531a39d8aa93be661a2ea30df7ada02779814ddd570ca",
+      "size": 1598
+    },
+    {
+      "path": "app/exchanges/okx/liquidation-guide/page.tsx",
+      "hash": "04909156e4f4ea8c075a579a56f951f1f8907ba2c964cc6bf82595a15447e0ad",
+      "size": 1577
+    },
+    {
+      "path": "app/exchanges/okx/margin-trading/page.tsx",
+      "hash": "6afcaf459cf37007fbc045ae37d397ba4f771380c8e1936de501935252b8e7b1",
+      "size": 1807
+    },
+    {
+      "path": "app/exchanges/okx/options-trading/page.tsx",
+      "hash": "8c2b0ea0f17fae5579a50f85fcf4fa70362c4ce1cd8cdca00731960996cd1b9a",
+      "size": 1691
+    },
+    {
+      "path": "app/exchanges/okx/order-types/page.tsx",
+      "hash": "f0ef757e59fc3cbf25350ecb52acc6d4158c2e54708466d07393fbee75ec97ef",
+      "size": 1807
+    },
+    {
+      "path": "app/exchanges/okx/p2p-trading/page.tsx",
+      "hash": "f90c71941361f06e37d65aa45b5e2103c7ea207e3269ebc17d5b3971244b310b",
+      "size": 1691
+    },
+    {
+      "path": "app/exchanges/okx/page.tsx",
+      "hash": "fd917abfe37dee094084eae3d3259f7453c49333afcd6cf7718a18d3f6286c24",
+      "size": 6733
+    },
+    {
+      "path": "app/exchanges/okx/portfolio-guide/page.tsx",
+      "hash": "30e5ca475adba847b53f745ea74f791e9f649c43899651ee04f91048a1b53ede",
+      "size": 1807
+    },
+    {
+      "path": "app/exchanges/okx/referral-program/page.tsx",
+      "hash": "cd8eb93a59cf97713ac8dd7b6a9ad7177d9de840161c84d4ffac3968592c5702",
+      "size": 1807
+    },
+    {
+      "path": "app/exchanges/okx/risk-management/page.tsx",
+      "hash": "b79a097d5e6fd76f132b53f34cad92fb5cb5add6dcdb8d021e94c08549543782",
+      "size": 1598
+    },
+    {
+      "path": "app/exchanges/okx/security-features/page.tsx",
+      "hash": "001042e44256a25009209a3f19c9ba79708705446e31af2bd4e073857b17f1ad",
+      "size": 1598
+    },
+    {
+      "path": "app/exchanges/okx/spot-trading/page.tsx",
+      "hash": "95bd2d3c1fb88d8248d8a868056c9eef8afad3d01ed2510d089492d453234cc3",
+      "size": 1806
+    },
+    {
+      "path": "app/exchanges/okx/staking-guide/page.tsx",
+      "hash": "1f6ff9bc1bac1f959a83814c145da17f6da2d90f000487fd902a8a7f07fca2e1",
+      "size": 1807
+    },
+    {
+      "path": "app/exchanges/okx/supported-chains/page.tsx",
+      "hash": "1cbb853249e4b8aa6fe26f43fd6d2c319dd9e8544c43c73a76a73cacfc2efbdb",
+      "size": 1807
+    },
+    {
+      "path": "app/exchanges/okx/trading-bots/page.tsx",
+      "hash": "8541de9924fc0f252fbcd5abe758812041517529c6bc110597f32bbb5258411e",
+      "size": 1598
+    },
+    {
+      "path": "app/exchanges/okx/trading-fees/page.tsx",
+      "hash": "5489dc0d08d58ae20d6b423d763a5f4a838de3c9eced5f8e00d60773b70320c6",
+      "size": 1807
+    },
+    {
+      "path": "app/exchanges/okx/trading-pairs/page.tsx",
+      "hash": "7c262a81e47f6b100caa562b436d8e38aaff71f93e265853b8603c3ab86b6204",
+      "size": 1807
+    },
+    {
+      "path": "app/exchanges/okx/vault-system/page.tsx",
+      "hash": "f1427eac21667b6f37ffbcfada617f96de85c196c9ec343f557efad49227d187",
+      "size": 1807
+    },
+    {
+      "path": "app/exchanges/okx/withdrawal-limits/page.tsx",
+      "hash": "4353767cb19aeea866e71afa7962e2a0df4c29bfcf3face088701c6d64c82a99",
+      "size": 1691
+    },
+    {
+      "path": "app/exchanges/page.tsx",
+      "hash": "453f678a7f1793c584d3c8bb5df625002bf4d557ec8becf75107228268fb5fb9",
+      "size": 1486
+    },
+    {
+      "path": "app/page.tsx",
+      "hash": "81616ccd9fa6ae667636be45e35ac943b6420fb110c892b2963b8658e5ac1686",
+      "size": 704
+    },
+    {
+      "path": "public/dataset/latest.jsonl",
+      "hash": "c15bdd6ced037a50797e04e6804fedef2721d58d8453d3c585834e03b8a5f974",
+      "size": 19397
+    },
+    {
+      "path": "public/dataset/registry.json",
+      "hash": "34dcab19c633e89c4e5eb94be66843efcf52072b654bec942dc452fe89a24e00",
+      "size": 27018
+    }
+  ],
+  "total_files": 195,
+  "total_size": 409319
+}

@@ -1,0 +1,116 @@
+{
+  "report_id": "monitor-dd435f66401690e4",
+  "scope": "internal",
+  "status": "fail",
+  "engine_version": "0.1.0",
+  "checked_at": "2026-01-12",
+  "summary": {
+    "total_violations": 9,
+    "consistency_status": "pass",
+    "topology_status": "pass",
+    "metadata_status": "pass",
+    "snapshot_status": "fail"
+  },
+  "consistency": {
+    "status": "pass",
+    "violations": [],
+    "checked": {
+      "registry_entries": 209,
+      "dataset_records": 189,
+      "cr_blocks": 8,
+      "filesystem_pages": 193
+    }
+  },
+  "topology": {
+    "status": "pass",
+    "violations": [],
+    "checked": {
+      "pages_scanned": 193,
+      "links_analyzed": 383
+    }
+  },
+  "metadata": {
+    "status": "pass",
+    "violations": [],
+    "checked": {
+      "pages_scanned": 193,
+      "robots_present": true,
+      "sitemap_present": true
+    }
+  },
+  "snapshot": {
+    "status": "fail",
+    "violations": [
+      {
+        "type": "FILE_MODIFIED",
+        "file_path": "app/cards/etherfi/page.tsx",
+        "details": "File hash differs from snapshot",
+        "expected_hash": "57cc152bf2bae263068a36ce5be6ec275cc5a9cfcf8fbb02b580f75d6fffb7dc",
+        "actual_hash": "7e76784f55eef84eebbed860bec38a72fe4489d75fc2bf2df47d1e518f4c9fa1"
+      },
+      {
+        "type": "FILE_MODIFIED",
+        "file_path": "app/dex/hibachi/page.tsx",
+        "details": "File hash differs from snapshot",
+        "expected_hash": "c0aeb16bdcae13a074f19962bfe609f1041b47d56d7e3fdf8f9a73e28e22ccc8",
+        "actual_hash": "e8a5689da07da1ab47ac108aae41b55a9c948b12c45f4198629cbbedbbfc8fd3"
+      },
+      {
+        "type": "FILE_MODIFIED",
+        "file_path": "app/dex/hyperliquid/page.tsx",
+        "details": "File hash differs from snapshot",
+        "expected_hash": "1e161cd0c0d1a24a729da3b6ffd10bd716cfc6bca2944b2f0b934cfac465b66b",
+        "actual_hash": "ab1490ef131af9a5f1a7766d63584202e5b3a65cbe218d766961d55917da3d2a"
+      },
+      {
+        "type": "FILE_MODIFIED",
+        "file_path": "app/dex/lighter/page.tsx",
+        "details": "File hash differs from snapshot",
+        "expected_hash": "cd5ca71bcc830d8b7bc8aaf4e4206a37d79bd2bb237b84e4ddd41a9015f80b87",
+        "actual_hash": "413b010e743f316589a5218c19ff41522770145af934c2cf9e0eeb13c7a985e0"
+      },
+      {
+        "type": "FILE_MODIFIED",
+        "file_path": "app/exchanges/binance/page.tsx",
+        "details": "File hash differs from snapshot",
+        "expected_hash": "3cc3fe05860a79f6fa561f4186262c25fad6ec99157c400fe95e8ed0d20c3143",
+        "actual_hash": "1c6ed14fa322d05794d2cb4d457fe73de9812ec3aea9c92f7ba8f7957b984a36"
+      },
+      {
+        "type": "FILE_MODIFIED",
+        "file_path": "app/exchanges/gate/page.tsx",
+        "details": "File hash differs from snapshot",
+        "expected_hash": "49259f75bcc2880e072e1017c38cd92eb717a8321f3ff1816e9fa709acbecd53",
+        "actual_hash": "aec8d95ac0ce543cc22780df03368db5ef53a0f1fdbb94b80a0124fd2608acc6"
+      },
+      {
+        "type": "FILE_MODIFIED",
+        "file_path": "app/exchanges/okx/page.tsx",
+        "details": "File hash differs from snapshot",
+        "expected_hash": "1b0aed927562e7e7833d307e70dec1307404961fdccfdc7cea12a3d7eb846eff",
+        "actual_hash": "fd917abfe37dee094084eae3d3259f7453c49333afcd6cf7718a18d3f6286c24"
+      },
+      {
+        "type": "FILE_MODIFIED",
+        "file_path": "public/dataset/latest.jsonl",
+        "details": "File hash differs from snapshot",
+        "expected_hash": "0206ead613a14d07732de002736322a3d6e8561cb18789ee0569917295220bb0",
+        "actual_hash": "c15bdd6ced037a50797e04e6804fedef2721d58d8453d3c585834e03b8a5f974"
+      },
+      {
+        "type": "FILE_MODIFIED",
+        "file_path": "public/dataset/registry.json",
+        "details": "File hash differs from snapshot",
+        "expected_hash": "759f004252004135fa5fe1221b3ef7c07e1509f290751c1826985f1fad65978e",
+        "actual_hash": "34dcab19c633e89c4e5eb94be66843efcf52072b654bec942dc452fe89a24e00"
+      }
+    ],
+    "checked": {
+      "snapshot_id": "snapshot-2026-01-11-ecc424f2a8e1e6b6",
+      "files_compared": 175,
+      "files_unchanged": 166,
+      "files_modified": 9,
+      "files_deleted": 0
+    }
+  }
+}

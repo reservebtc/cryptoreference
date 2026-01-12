@@ -124,6 +124,14 @@ export default function HibachiPage() {
                 <td>Child_Link</td>
                 <td><a href="/dex/hibachi/security-features">Link_R</a></td>
               </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hibachi/risk-management">Link_S</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hibachi/cross-margin">Link_T</a></td>
+              </tr>
             </tbody>
           </table>
         </section>
