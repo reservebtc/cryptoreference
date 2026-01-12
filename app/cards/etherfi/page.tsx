@@ -122,6 +122,14 @@ export default function EtherFiPage() {
                 <td>Child_Page</td>
                 <td><a href="/cards/etherfi/security-features">Link_H</a></td>
               </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/cards/etherfi/risk-management">Link_I</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/cards/etherfi/wallet-integration">Link_J</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

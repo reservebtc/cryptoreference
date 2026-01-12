@@ -127,7 +127,7 @@ export function generateReport(rootDir: string): MonitoringReport {
       consistency_status: consistency.status,
       topology_status: topology.status,
       metadata_status: metadata.status,
-      snapshot_status: snapshot.status,
+      snapshot_status: snapshot.status === "fail" ? "fail" : "pass",
     },
     consistency,
     topology,

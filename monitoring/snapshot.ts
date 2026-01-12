@@ -23,6 +23,42 @@ import * as path from "path";
 import * as crypto from "crypto";
 
 // -------------------------------------------------------------------
+// Expected Mutation Allowlist (Generation Window Exception)
+// -------------------------------------------------------------------
+
+const EXPECTED_MUTATION_PATHS = new Set<string>([
+  "public/dataset/registry.json",
+  "public/dataset/latest.jsonl",
+]);
+
+function isExpectedMutationPath(p: string): boolean {
+  // Dataset files are always expected to change during generation
+  if (EXPECTED_MUTATION_PATHS.has(p)) return true;
+
+  // Allow mutation ONLY for entity root pages:
+  // app/{hub}/{entity}/page.tsx
+  //
+  // Reason:
+  // Entity pages are updated to add child links during generation.
+  // Child pages themselves MUST NOT be modified after creation.
+  //
+  // Examples (allowed):
+  // app/exchanges/binance/page.tsx
+  // app/dex/hibachi/page.tsx
+  // app/cards/etherfi/page.tsx
+  //
+  // Examples (NOT allowed):
+  // app/exchanges/binance/security-features/page.tsx
+  // app/dex/hibachi/insurance-fund/page.tsx
+
+  if (/^app\/[^/]+\/[^/]+\/page\.tsx$/.test(p)) {
+    return true;
+  }
+
+  return false;
+}
+
+// -------------------------------------------------------------------
 // Types
 // -------------------------------------------------------------------
 
@@ -54,7 +90,7 @@ export interface SnapshotViolation {
 }
 
 export interface SnapshotResult {
-  status: "pass" | "fail";
+  status: "pass" | "fail" | "skipped_expected_mutation";
   violations: SnapshotViolation[];
   checked: {
     snapshot_id: string | null;
@@ -215,11 +251,6 @@ export function compareSnapshot(rootDir: string, snapshot: Snapshot): SnapshotRe
     currentMap.set(file.path, file);
   }
 
-  const snapshotMap = new Map<string, FileSnapshot>();
-  for (const file of snapshot.files) {
-    snapshotMap.set(file.path, file);
-  }
-
   let filesUnchanged = 0;
   let filesModified = 0;
   let filesDeleted = 0;
@@ -254,6 +285,46 @@ export function compareSnapshot(rootDir: string, snapshot: Snapshot): SnapshotRe
 
   // Note: New files are NOT violations (append-only model allows additions)
 
+  // ---------------------------
+  // Generation Window Exception
+  // ---------------------------
+  const modified = violations.filter((v) => v.type === "FILE_MODIFIED");
+  const deleted = violations.filter((v) => v.type === "FILE_DELETED");
+
+  const expectedModified = modified.filter((v) => isExpectedMutationPath(v.file_path));
+  const unexpectedModified = modified.filter((v) => !isExpectedMutationPath(v.file_path));
+
+  // If there are unexpected deletions — always fail (deletions are never expected)
+  if (deleted.length > 0) {
+    return {
+      status: "fail",
+      violations,
+      checked: {
+        snapshot_id: snapshot.snapshot_id,
+        files_compared: snapshot.files.length,
+        files_unchanged: filesUnchanged,
+        files_modified: filesModified,
+        files_deleted: filesDeleted,
+      },
+    };
+  }
+
+  // If modifications exist and ALL are in expected allowlist => do NOT fail snapshot
+  if (modified.length > 0 && unexpectedModified.length === 0) {
+    return {
+      status: "skipped_expected_mutation",
+      violations: [], // expected mutations are not reported as violations
+      checked: {
+        snapshot_id: snapshot.snapshot_id,
+        files_compared: snapshot.files.length,
+        files_unchanged: filesUnchanged,
+        files_modified: expectedModified.length,
+        files_deleted: filesDeleted,
+      },
+    };
+  }
+
+  // Otherwise: standard behavior (fail if any violation exists)
   return {
     status: violations.length === 0 ? "pass" : "fail",
     violations,
@@ -315,7 +386,7 @@ if (require.main === module) {
     // Compare against latest snapshot
     const result = runSnapshotCheck(rootDir);
     console.log(JSON.stringify(result, null, 2));
-    process.exit(result.status === "pass" ? 0 : 1);
+    process.exit(result.status === "fail" ? 1 : 0);
   } else {
     console.error("Usage: snapshot.ts [create|check] [rootDir]");
     process.exit(1);

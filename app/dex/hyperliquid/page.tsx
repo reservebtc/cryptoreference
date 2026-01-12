@@ -128,6 +128,14 @@ export default function HyperliquidPage() {
                 <td>Child_Link</td>
                 <td><a href="/dex/hyperliquid/security-features">Link_S</a></td>
               </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hyperliquid/risk-management">Link_T</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hyperliquid/cross-margin">Link_U</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

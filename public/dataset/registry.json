@@ -1016,119 +1016,239 @@
   {
     "id": "binance_risk_management",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "binance"
   },
   {
     "id": "binance_cross_margin",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "binance"
   },
   {
     "id": "binance_isolated_margin",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "binance"
   },
   {
     "id": "binance_trading_bots",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "binance"
   },
   {
     "id": "okx_risk_management",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "okx"
   },
   {
     "id": "okx_cross_margin",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "okx"
   },
   {
     "id": "okx_isolated_margin",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "okx"
   },
   {
     "id": "okx_trading_bots",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "okx"
   },
   {
     "id": "gate_risk_management",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "gate"
   },
   {
     "id": "gate_cross_margin",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "gate"
   },
   {
     "id": "gate_isolated_margin",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "gate"
   },
   {
     "id": "gate_trading_bots",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "gate"
   },
   {
     "id": "etherfi_wallet_integration",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "etherfi"
   },
   {
     "id": "etherfi_risk_management",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "etherfi"
   },
   {
     "id": "hibachi_risk_management",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "hibachi"
   },
   {
     "id": "hibachi_cross_margin",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "hibachi"
   },
   {
     "id": "hyperliquid_risk_management",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "hyperliquid"
   },
   {
     "id": "hyperliquid_cross_margin",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "hyperliquid"
   },
   {
     "id": "lighter_risk_management",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "lighter"
   },
   {
     "id": "lighter_cross_margin",
+    "type": "child_entity",
+    "page_status": "published",
+    "parent_id": "lighter"
+  },
+  {
+    "id": "binance_advanced_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "binance"
+  },
+  {
+    "id": "binance_p2p_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "binance"
+  },
+  {
+    "id": "binance_options_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "binance"
+  },
+  {
+    "id": "binance_launchpad",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "binance"
+  },
+  {
+    "id": "okx_advanced_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "okx"
+  },
+  {
+    "id": "okx_launchpad",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "okx"
+  },
+  {
+    "id": "okx_web3_wallet",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "okx"
+  },
+  {
+    "id": "okx_earn_products",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "okx"
+  },
+  {
+    "id": "gate_web3_wallet",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "gate"
+  },
+  {
+    "id": "gate_launchpad",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "gate"
+  },
+  {
+    "id": "gate_earn_products",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "gate"
+  },
+  {
+    "id": "gate_advanced_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "gate"
+  },
+  {
+    "id": "etherfi_node_operators",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "etherfi"
+  },
+  {
+    "id": "etherfi_restaking",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "etherfi"
+  },
+  {
+    "id": "hibachi_advanced_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "hibachi"
+  },
+  {
+    "id": "hibachi_limit_orders",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "hibachi"
+  },
+  {
+    "id": "hyperliquid_advanced_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "hyperliquid"
+  },
+  {
+    "id": "hyperliquid_twap_orders",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "hyperliquid"
+  },
+  {
+    "id": "lighter_advanced_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "lighter"
+  },
+  {
+    "id": "lighter_limit_orders",
     "type": "child_entity",
     "page_status": "missing",
     "parent_id": "lighter"
