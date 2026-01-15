@@ -136,6 +136,14 @@ export default function HyperliquidPage() {
                 <td>Child_Link</td>
                 <td><a href="/dex/hyperliquid/cross-margin">Link_U</a></td>
               </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hyperliquid/advanced-trading">Link_V</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hyperliquid/twap-orders">Link_W</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

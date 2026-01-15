@@ -90,7 +90,7 @@ export interface SnapshotViolation {
 }
 
 export interface SnapshotResult {
-  status: "pass" | "fail" | "skipped_expected_mutation";
+  status: "pass" | "fail";
   violations: SnapshotViolation[];
   checked: {
     snapshot_id: string | null;
@@ -98,6 +98,9 @@ export interface SnapshotResult {
     files_unchanged: number;
     files_modified: number;
     files_deleted: number;
+
+    // informational only (does not affect pass/fail)
+    expected_mutations: number;
   };
 }
 
@@ -305,14 +308,15 @@ export function compareSnapshot(rootDir: string, snapshot: Snapshot): SnapshotRe
         files_unchanged: filesUnchanged,
         files_modified: filesModified,
         files_deleted: filesDeleted,
+        expected_mutations: 0,
       },
     };
   }
 
-  // If modifications exist and ALL are in expected allowlist => do NOT fail snapshot
+  // If modifications exist and ALL are in expected allowlist => PASS snapshot
   if (modified.length > 0 && unexpectedModified.length === 0) {
     return {
-      status: "skipped_expected_mutation",
+      status: "pass",
       violations: [], // expected mutations are not reported as violations
       checked: {
         snapshot_id: snapshot.snapshot_id,
@@ -320,6 +324,7 @@ export function compareSnapshot(rootDir: string, snapshot: Snapshot): SnapshotRe
         files_unchanged: filesUnchanged,
         files_modified: expectedModified.length,
         files_deleted: filesDeleted,
+        expected_mutations: expectedModified.length,
       },
     };
   }
@@ -334,6 +339,7 @@ export function compareSnapshot(rootDir: string, snapshot: Snapshot): SnapshotRe
       files_unchanged: filesUnchanged,
       files_modified: filesModified,
       files_deleted: filesDeleted,
+      expected_mutations: 0,
     },
   };
 }
@@ -347,7 +353,7 @@ export function runSnapshotCheck(rootDir: string): SnapshotResult {
 
   if (!snapshot) {
     return {
-      status: "pass", // No snapshot = nothing to compare (first run)
+      status: "pass",
       violations: [],
       checked: {
         snapshot_id: null,
@@ -355,6 +361,7 @@ export function runSnapshotCheck(rootDir: string): SnapshotResult {
         files_unchanged: 0,
         files_modified: 0,
         files_deleted: 0,
+        expected_mutations: 0,
       },
     };
   }

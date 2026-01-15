@@ -181,6 +181,22 @@ export default function GatePage() {
                 <td>Child_Page</td>
                 <td><a href="/exchanges/gate/trading-bots">Link_AB</a></td>
               </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/advanced-trading">Link_AC</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/earn-products">Link_AD</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/launchpad">Link_AE</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/web3-wallet">Link_AF</a></td>
+              </tr>
             </tbody>
           </table>
         </section>
