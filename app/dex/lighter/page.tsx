@@ -136,6 +136,14 @@ export default function LighterPage() {
                 <td>Child_Link</td>
                 <td><a href="/dex/lighter/cross-margin">Link_U</a></td>
               </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/lighter/advanced-trading">Link_V</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/lighter/limit-orders">Link_W</a></td>
+              </tr>
             </tbody>
           </table>
         </section>
