@@ -1256,121 +1256,241 @@
   {
     "id": "binance_perpetuals_guide",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "binance"
   },
   {
     "id": "binance_fee_tiers",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "binance"
   },
   {
     "id": "binance_vip_program",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "binance"
   },
   {
     "id": "binance_sub_accounts",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "binance"
   },
   {
     "id": "okx_perpetuals_guide",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "okx"
   },
   {
     "id": "okx_fee_tiers",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "okx"
   },
   {
     "id": "okx_vip_program",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "okx"
   },
   {
     "id": "okx_sub_accounts",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "okx"
   },
   {
     "id": "gate_perpetuals_guide",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "gate"
   },
   {
     "id": "gate_fee_tiers",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "gate"
   },
   {
     "id": "gate_vip_program",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "gate"
   },
   {
     "id": "gate_sub_accounts",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "gate"
   },
   {
     "id": "etherfi_eeth_token",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "etherfi"
   },
   {
     "id": "etherfi_weeth_token",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "etherfi"
   },
   {
     "id": "hibachi_perpetuals_guide",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "hibachi"
   },
   {
     "id": "hibachi_fee_tiers",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "hibachi"
   },
   {
     "id": "hyperliquid_fee_tiers",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "hyperliquid"
   },
   {
     "id": "hyperliquid_points_system",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "hyperliquid"
   },
   {
     "id": "lighter_fee_tiers",
     "type": "child_entity",
-    "page_status": "missing",
+    "page_status": "published",
     "parent_id": "lighter"
   },
   {
     "id": "lighter_perpetuals_guide",
     "type": "child_entity",
+    "page_status": "published",
+    "parent_id": "lighter"
+  },
+  {
+    "id": "asterdex_risk_management",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_cross_margin",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_fee_tiers",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "asterdex_perpetuals_guide",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "asterdex"
+  },
+  {
+    "id": "binance_convert_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "binance"
+  },
+  {
+    "id": "binance_dual_investment",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "binance"
+  },
+  {
+    "id": "binance_leveraged_tokens",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "binance"
+  },
+  {
+    "id": "binance_nft_marketplace",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "binance"
+  },
+  {
+    "id": "etherfi_cash_card",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "etherfi"
+  },
+  {
+    "id": "etherfi_dvt_technology",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "etherfi"
+  },
+  {
+    "id": "etherfi_validator_performance",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "etherfi"
+  },
+  {
+    "id": "etherfi_withdrawal_guide",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "etherfi"
+  },
+  {
+    "id": "gate_convert_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "gate"
+  },
+  {
+    "id": "gate_dual_investment",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "gate"
+  },
+  {
+    "id": "gate_leveraged_tokens",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "gate"
+  },
+  {
+    "id": "gate_nft_marketplace",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "gate"
+  },
+  {
+    "id": "hibachi_wallet_integration",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "hibachi"
+  },
+  {
+    "id": "hyperliquid_wallet_integration",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "hyperliquid"
+  },
+  {
+    "id": "lighter_wallet_integration",
+    "type": "child_entity",
     "page_status": "missing",
     "parent_id": "lighter"
+  },
+  {
+    "id": "okx_convert_trading",
+    "type": "child_entity",
+    "page_status": "missing",
+    "parent_id": "okx"
   }
 ]

@@ -92,6 +92,12 @@ jobs:
             exit 1
           fi
 
+          echo "Checking latest.jsonl has no empty/whitespace-only lines"
+          if rg -n "^[[:space:]]*$" "$DATASET_FILE"; then
+            echo "ERROR: latest.jsonl contains empty/whitespace-only lines"
+            exit 1
+          fi
+
           echo "Ensuring latest.jsonl is byte-stable"
           HASH1=$(sha256sum "$DATASET_FILE" | cut -d ' ' -f 1)
           HASH2=$(sha256sum "$DATASET_FILE" | cut -d ' ' -f 1)

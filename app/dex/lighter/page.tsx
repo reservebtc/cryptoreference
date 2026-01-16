@@ -144,6 +144,14 @@ export default function LighterPage() {
                 <td>Child_Link</td>
                 <td><a href="/dex/lighter/limit-orders">Link_W</a></td>
               </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/lighter/fee-tiers">Link_X</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/lighter/perpetuals-guide">Link_Y</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

@@ -198,6 +198,22 @@ export default function OKXPage() {
                 <td>Child_Page</td>
                 <td><a href="/exchanges/okx/web3-wallet">Link_AF</a></td>
               </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/okx/fee-tiers">Link_AG</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/okx/perpetuals-guide">Link_AH</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/okx/sub-accounts">Link_AI</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/okx/vip-program">Link_AJ</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

@@ -140,6 +140,14 @@ export default function HibachiPage() {
                 <td>Child_Link</td>
                 <td><a href="/dex/hibachi/limit-orders">Link_V</a></td>
               </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hibachi/fee-tiers">Link_W</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hibachi/perpetuals-guide">Link_X</a></td>
+              </tr>
             </tbody>
           </table>
         </section>
