@@ -144,6 +144,14 @@ export default function HyperliquidPage() {
                 <td>Child_Link</td>
                 <td><a href="/dex/hyperliquid/twap-orders">Link_W</a></td>
               </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hyperliquid/fee-tiers">Link_X</a></td>
+              </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hyperliquid/points-system">Link_Y</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

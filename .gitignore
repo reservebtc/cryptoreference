@@ -76,5 +76,7 @@ schema/git push.md
 schema/monitoring-spec.md
 schema/plan-monitoring.md
 monitoring/monitoring-implementation-report.v1.md
+cryptoreference-snapshot.tgz
 
 
+monitoring/reports/

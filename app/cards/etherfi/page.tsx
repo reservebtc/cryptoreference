@@ -138,6 +138,14 @@ export default function EtherFiPage() {
                 <td>Child_Page</td>
                 <td><a href="/cards/etherfi/restaking">Link_L</a></td>
               </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/cards/etherfi/eeth-token">Link_M</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/cards/etherfi/weeth-token">Link_N</a></td>
+              </tr>
             </tbody>
           </table>
         </section>
