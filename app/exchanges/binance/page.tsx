@@ -215,6 +215,22 @@ export default function BinancePage() {
                 <td>Child_Page</td>
                 <td><a href="/exchanges/binance/vip-program">Link_AH</a></td>
               </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/binance/convert-trading">Link_AI</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/binance/dual-investment">Link_AJ</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/binance/leveraged-tokens">Link_AK</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/binance/nft-marketplace">Link_AL</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

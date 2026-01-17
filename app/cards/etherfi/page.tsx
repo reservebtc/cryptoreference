@@ -146,6 +146,22 @@ export default function EtherFiPage() {
                 <td>Child_Page</td>
                 <td><a href="/cards/etherfi/weeth-token">Link_N</a></td>
               </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/cards/etherfi/cash-card">Link_O</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/cards/etherfi/dvt-technology">Link_P</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/cards/etherfi/validator-performance">Link_Q</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/cards/etherfi/withdrawal-guide">Link_R</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

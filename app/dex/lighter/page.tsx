@@ -152,6 +152,10 @@ export default function LighterPage() {
                 <td>Child_Link</td>
                 <td><a href="/dex/lighter/perpetuals-guide">Link_Y</a></td>
               </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/lighter/wallet-integration">Link_Z</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

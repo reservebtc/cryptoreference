@@ -213,6 +213,22 @@ export default function GatePage() {
                 <td>Child_Page</td>
                 <td><a href="/exchanges/gate/vip-program">Link_AJ</a></td>
               </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/convert-trading">Link_AK</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/dual-investment">Link_AL</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/leveraged-tokens">Link_AM</a></td>
+              </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/gate/nft-marketplace">Link_AN</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

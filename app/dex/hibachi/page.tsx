@@ -148,6 +148,10 @@ export default function HibachiPage() {
                 <td>Child_Link</td>
                 <td><a href="/dex/hibachi/perpetuals-guide">Link_X</a></td>
               </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hibachi/wallet-integration">Link_Y</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

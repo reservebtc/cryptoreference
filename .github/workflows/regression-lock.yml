@@ -108,6 +108,22 @@ jobs:
           fi
 
       # --------------------------------------------------
+      # STEP 4.5 — NDJSON Strictness: no empty lines
+      # --------------------------------------------------
+      - name: NDJSON strictness (no empty lines in latest.jsonl)
+        run: |
+          set -euo pipefail
+
+          DATASET_FILE="public/dataset/latest.jsonl"
+
+          if rg -n "^[[:space:]]*$" "$DATASET_FILE"; then
+            echo "ERROR: latest.jsonl contains empty/whitespace-only lines"
+            exit 1
+          fi
+
+          echo "OK: latest.jsonl contains no empty lines"
+
+      # --------------------------------------------------
       # STEP 5 — Refusal-on-Ambiguity Enforcement
       # --------------------------------------------------
       - name: Refusal on ambiguity enforcement
