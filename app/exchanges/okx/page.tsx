@@ -214,6 +214,10 @@ export default function OKXPage() {
                 <td>Child_Page</td>
                 <td><a href="/exchanges/okx/vip-program">Link_AJ</a></td>
               </tr>
+              <tr>
+                <td>Child_Page</td>
+                <td><a href="/exchanges/okx/convert-trading">Link_AK</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

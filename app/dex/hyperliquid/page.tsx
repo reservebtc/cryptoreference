@@ -152,6 +152,10 @@ export default function HyperliquidPage() {
                 <td>Child_Link</td>
                 <td><a href="/dex/hyperliquid/points-system">Link_Y</a></td>
               </tr>
+              <tr>
+                <td>Child_Link</td>
+                <td><a href="/dex/hyperliquid/wallet-integration">Link_Z</a></td>
+              </tr>
             </tbody>
           </table>
         </section>

@@ -64,6 +64,10 @@ export default function AsterDEXPage() {
               <tr><td>Content_Link</td><td><a href="/dex/asterdex/staking-guide">/dex/asterdex/staking-guide</a></td></tr>
               <tr><td>Content_Link</td><td><a href="/dex/asterdex/insurance-fund">/dex/asterdex/insurance-fund</a></td></tr>
               <tr><td>Content_Link</td><td><a href="/dex/asterdex/security-features">/dex/asterdex/security-features</a></td></tr>
+              <tr><td>Content_Link</td><td><a href="/dex/asterdex/cross-margin">/dex/asterdex/cross-margin</a></td></tr>
+              <tr><td>Content_Link</td><td><a href="/dex/asterdex/fee-tiers">/dex/asterdex/fee-tiers</a></td></tr>
+              <tr><td>Content_Link</td><td><a href="/dex/asterdex/perpetuals-guide">/dex/asterdex/perpetuals-guide</a></td></tr>
+              <tr><td>Content_Link</td><td><a href="/dex/asterdex/risk-management">/dex/asterdex/risk-management</a></td></tr>
             </tbody>
           </table>
         </section>
