@@ -40,9 +40,9 @@ export default function AsterdexLanding() {
         }
 
         .page {
-          max-width: 1100px;
+          max-width: 100%;
           margin: 0 auto;
-          padding: 32px 20px 96px;
+          padding: 32px clamp(16px, 4vw, 64px) 96px;
         }
 
         .hero {
@@ -98,7 +98,7 @@ export default function AsterdexLanding() {
           border-radius: 999px;
           border: 1px solid rgba(209,191,168,0.5);
           background: linear-gradient(135deg, rgba(209,191,168,0.15), rgba(209,191,168,0.05));
-          color: var(--text);
+          color: var(--accent);
           box-shadow: 0 14px 40px rgba(209,191,168,0.22);
           transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
           min-width: 180px;
@@ -226,7 +226,7 @@ export default function AsterdexLanding() {
         <section className="hero" aria-label="Hero">
           <div className="kicker"><span className="dot" /> Aster DEX</div>
           <h1>
-            Decentralized perpetual contracts.
+            <span className="accent">Decentralized perpetual contracts.</span>
             <br />
             <span className="accent">Trade crypto</span>
           </h1>
