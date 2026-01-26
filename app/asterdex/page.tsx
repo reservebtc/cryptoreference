@@ -45,10 +45,24 @@ export default function AsterdexLanding() {
         }
 
         .page {
-          max-width: 100%;
-          margin: 0 auto;
-          padding: 32px 0 96px;
           width: 100%;
+          margin: 0;
+          padding: 32px clamp(16px, 4vw, 96px) 96px;
+        }
+
+        .page::before {
+          content: "";
+          position: fixed;
+          inset: 0;
+          z-index: -1;
+          background-image:
+            radial-gradient(800px 400px at 20% 10%, rgba(209,191,168,0.12), transparent 60%),
+            radial-gradient(900px 500px at 80% 20%, rgba(209,191,168,0.08), transparent 60%),
+            linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.0) 40%),
+            linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+            linear-gradient(180deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+          background-size: auto, auto, auto, 80px 80px, 80px 80px;
+          background-position: center, center, center, 0 0, 0 0;
         }
 
         .hero {
