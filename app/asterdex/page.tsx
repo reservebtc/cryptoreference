@@ -48,6 +48,7 @@ export default function AsterdexLanding() {
           max-width: 100%;
           margin: 0 auto;
           padding: 32px 0 96px;
+          width: 100%;
         }
 
         .hero {
@@ -106,18 +107,27 @@ export default function AsterdexLanding() {
           padding: 14px 28px;
           font-weight: 600;
           border-radius: 999px;
-          border: 1px solid rgba(209,191,168,0.5);
-          background: linear-gradient(135deg, rgba(209,191,168,0.15), rgba(209,191,168,0.05));
-          color: var(--text);
-          box-shadow: 0 14px 40px rgba(209,191,168,0.22);
+          border: 1px solid #e8c08d;
+          background: #e8c08d;
+          color: #000000;
+          box-shadow: 0 14px 40px rgba(232,192,141,0.35);
           transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
           min-width: 180px;
         }
 
         .cta:hover {
           transform: translateY(-1px);
-          box-shadow: 0 18px 48px rgba(209,191,168,0.32);
-          border-color: rgba(209,191,168,0.85);
+          box-shadow: 0 18px 48px rgba(232,192,141,0.45);
+          border-color: #e8c08d;
+        }
+
+        .cta:active {
+          transform: translateY(1px);
+          box-shadow: 0 10px 28px rgba(232,192,141,0.35);
+        }
+
+        .cta:visited {
+          color: #000000;
         }
 
         .features {
