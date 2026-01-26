@@ -14,7 +14,7 @@ export default function AsterdexLanding() {
           --panel: rgba(255,255,255,0.04);
           --text: #f0f0f0;
           --muted: rgba(240,240,240,0.7);
-          --accent: #d1bfa8;
+          --accent: #E8C08D;
           --border: rgba(255,255,255,0.08);
         }
 
@@ -25,6 +25,11 @@ export default function AsterdexLanding() {
           color: var(--text) !important;
           font-family: "Space Grotesk", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
           letter-spacing: 0.1px;
+        }
+
+        a {
+          color: var(--text);
+          text-decoration: none;
         }
 
         .asterdex {
@@ -42,7 +47,7 @@ export default function AsterdexLanding() {
         .page {
           max-width: 100%;
           margin: 0 auto;
-          padding: 32px clamp(16px, 4vw, 64px) 96px;
+          padding: 32px 0 96px;
         }
 
         .hero {
@@ -81,6 +86,11 @@ export default function AsterdexLanding() {
           display: inline-block;
         }
 
+        .headline {
+          color: var(--text);
+          display: inline-block;
+        }
+
         .subtitle {
           margin: 0;
           color: var(--muted);
@@ -98,7 +108,7 @@ export default function AsterdexLanding() {
           border-radius: 999px;
           border: 1px solid rgba(209,191,168,0.5);
           background: linear-gradient(135deg, rgba(209,191,168,0.15), rgba(209,191,168,0.05));
-          color: var(--accent);
+          color: var(--text);
           box-shadow: 0 14px 40px rgba(209,191,168,0.22);
           transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
           min-width: 180px;
@@ -226,7 +236,7 @@ export default function AsterdexLanding() {
         <section className="hero" aria-label="Hero">
           <div className="kicker"><span className="dot" /> Aster DEX</div>
           <h1>
-            <span className="accent">Decentralized perpetual contracts.</span>
+            <span className="headline">Decentralized perpetual contracts.</span>
             <br />
             <span className="accent">Trade crypto</span>
           </h1>
