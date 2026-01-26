@@ -6,7 +6,9 @@ export const metadata = {
 export default function AsterdexLanding() {
   return (
     <main className="asterdex">
-      <style jsx global>{`
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
         :root {
           --bg: #0b0b0b;
           --panel: rgba(255,255,255,0.04);
@@ -216,7 +218,9 @@ export default function AsterdexLanding() {
           .sticky-cta { display: block; }
           body { padding-bottom: 90px; }
         }
-      `}</style>
+      `,
+        }}
+      />
 
       <div className="page">
         <section className="hero" aria-label="Hero">
