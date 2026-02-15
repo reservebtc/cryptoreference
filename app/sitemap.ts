@@ -16,6 +16,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
 
     // =========================
+    // Landing (Affiliate)
+    // =========================
+    {
+      url: `${baseUrl}/hyperfoundation`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+
+    // =========================
     // Exchanges (CEX)
     // =========================
     {
