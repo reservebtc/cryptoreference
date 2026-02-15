@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Hyperfoundation",
   description: "Start trading on Hyperliquid using the CryptoReference referral link.",
   alternates: {
-    canonical: "https://cryptoreference.io/hyperfoundation",
+    canonical: "",
   },
   robots: {
     index: true,
