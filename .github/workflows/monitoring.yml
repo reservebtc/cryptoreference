@@ -6,9 +6,7 @@
 #
 # HARD RULES:
 # - Non-blocking by default
-# - FAIL CI ONLY on internal corruption
 # - Upload report as artifact
-# - Post PR comment summarizing status
 # - CI uses runner script as the ONLY executable entrypoint
 #
 # Reference: /schema/plan-monitoring.md Step 8, Step 9, Step 12
@@ -18,8 +16,6 @@ name: Monitoring
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
   # Run after daily generation workflow
   workflow_run:
     workflows: ["Daily Generation"]
@@ -27,10 +23,9 @@ on:
   # Allow manual trigger
   workflow_dispatch:
 
-# Required for PR comments
+# No PR checks: this workflow is intentionally NOT triggered on pull requests.
 permissions:
   contents: read
-  pull-requests: write
 
 jobs:
   monitoring:
@@ -109,123 +104,3 @@ jobs:
           name: monitoring-report
           path: monitoring/reports/*.json
           retention-days: 30
-
-      - name: Post PR comment (pass)
-        if: github.event_name == 'pull_request' && steps.monitoring.outputs.status == 'pass'
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const body = `## Monitoring Report
-
-            **Status:** PASS
-
-            | Check | Status |
-            |-------|--------|
-            | Consistency | ${{ steps.monitoring.outputs.consistency }} |
-            | Topology | ${{ steps.monitoring.outputs.topology }} |
-            | Metadata | ${{ steps.monitoring.outputs.metadata }} |
-            | Snapshot | ${{ steps.monitoring.outputs.snapshot }} |
-
-            **Violations:** ${{ steps.monitoring.outputs.total_violations }}
-
-            **Report ID:** \`${{ steps.monitoring.outputs.report_id }}\`
-
-            > See [monitoring-report artifact](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) for full details.
-
-            ---
-            *Canonical Integrity Check — governed by monitoring-spec.md*`;
-
-            // Find existing comment
-            const { data: comments } = await github.rest.issues.listComments({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.issue.number,
-            });
-
-            const botComment = comments.find(c =>
-              c.user.type === 'Bot' &&
-              c.body.includes('## Monitoring Report')
-            );
-
-            if (botComment) {
-              await github.rest.issues.updateComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                comment_id: botComment.id,
-                body: body
-              });
-            } else {
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: context.issue.number,
-                body: body
-              });
-            }
-
-      - name: Post PR comment (fail)
-        if: github.event_name == 'pull_request' && steps.monitoring.outputs.status == 'fail'
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const body = `## Monitoring Report
-
-            **Status:** FAIL — Internal Corruption Detected
-
-            | Check | Status |
-            |-------|--------|
-            | Consistency | ${{ steps.monitoring.outputs.consistency }} |
-            | Topology | ${{ steps.monitoring.outputs.topology }} |
-            | Metadata | ${{ steps.monitoring.outputs.metadata }} |
-            | Snapshot | ${{ steps.monitoring.outputs.snapshot }} |
-
-            **Violations:** ${{ steps.monitoring.outputs.total_violations }}
-
-            **Report ID:** \`${{ steps.monitoring.outputs.report_id }}\`
-
-            ### Possible Causes
-            - Registry ↔ filesystem mismatch
-            - Dataset ↔ filesystem mismatch
-            - CR-BLOCK inconsistency
-            - Topology violation
-            - Metadata drift
-
-            > See [monitoring-report artifact](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) for full details.
-
-            ---
-            *Canonical Integrity Check — governed by monitoring-spec.md*`;
-
-            // Find existing comment
-            const { data: comments } = await github.rest.issues.listComments({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.issue.number,
-            });
-
-            const botComment = comments.find(c =>
-              c.user.type === 'Bot' &&
-              c.body.includes('## Monitoring Report')
-            );
-
-            if (botComment) {
-              await github.rest.issues.updateComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                comment_id: botComment.id,
-                body: body
-              });
-            } else {
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: context.issue.number,
-                body: body
-              });
-            }
-
-      - name: Fail CI on internal corruption
-        if: steps.monitoring.outputs.status == 'fail'
-        run: |
-          echo "CI FAIL: Internal corruption detected"
-          echo "See monitoring report artifact for details."
-          exit 1
