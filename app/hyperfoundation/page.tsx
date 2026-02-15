@@ -97,6 +97,17 @@ export default function HyperfoundationLanding() {
   return (
     <main className={styles.hfMain}>
       <article className={styles.stage}>
+        {/* On macOS/iOS overscroll can reveal the <body> background from RootLayout (white).
+            Keep it dark only while this page is mounted to avoid white bands. */}
+        <style>{`
+          html, body, #main-content {
+            background: #041b16 !important;
+          }
+          body {
+            overscroll-behavior-y: none;
+          }
+        `}</style>
+
         <div className={styles.blobs}>
           <div className={`${styles.blob} ${styles.blobA}`} />
           <div className={`${styles.blob} ${styles.blobB}`} />
@@ -253,7 +264,13 @@ export default function HyperfoundationLanding() {
                         />
                       </svg>
                     </div>
-                    <div>Referral goes to the official Hyperliquid app.</div>
+                    <div>
+                      Link destination is{" "}
+                      <span style={{ color: "rgba(243,255,251,0.90)", fontWeight: 650 }}>
+                        app.hyperliquid.xyz
+                      </span>
+                      .
+                    </div>
                   </li>
 
                   <li className={styles.checkItem}>
@@ -275,7 +292,13 @@ export default function HyperfoundationLanding() {
                         />
                       </svg>
                     </div>
-                    <div>Code is shown clearly before you click.</div>
+                    <div>
+                      Join path is{" "}
+                      <span style={{ color: "rgba(243,255,251,0.90)", fontWeight: 650 }}>
+                        /join/CRYPTOREFERENCE
+                      </span>
+                      .
+                    </div>
                   </li>
 
                   <li className={styles.checkItem}>
@@ -297,7 +320,9 @@ export default function HyperfoundationLanding() {
                         />
                       </svg>
                     </div>
-                    <div>No extra steps on this page.</div>
+                    <div>
+                      This page has no forms. Click goes straight to the join link.
+                    </div>
                   </li>
                 </ul>
 
@@ -348,4 +373,3 @@ export default function HyperfoundationLanding() {
     </main>
   );
 }
-
